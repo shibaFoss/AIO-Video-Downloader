@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- =============== PERMISSIONS =============== -->
+    <!-- Network permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <!-- Notification permissions -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- Background operation permissions -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- File and storage permissions -->
+    <uses-permission android:name="android.permission.FLAG_GRANT_READ_URI_PERMISSION" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32"
+        tools:ignore="ScopedStorage" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+
+    <!-- Foreground service permissions -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+
+    <!-- Battery optimization and installation permissions -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <!-- =============== APPLICATION CONFIGURATION =============== -->
+    <application
+        android:name="app.core.AIOApp"
+        android:extractNativeLibs="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher_v4"
+        android:label="@string/title_app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_v4"
+        android:supportsRtl="false"
+        android:theme="@style/style.application"
+        android:usesCleartextTraffic="true">
+
+        <!-- =============== ACTIVITIES =============== -->
+        <!-- Main launcher activity -->
+        <activity
+            android:name="app.ui.others.startup.LauncherActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Activity for handling shared content (text) -->
+        <activity
+            android:name="app.ui.others.information.IntentInterceptActivity"
+            android:clearTaskOnLaunch="true"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:label="@string/text_empty_string"
+            android:launchMode="singleTop"
+            android:noHistory="true"
+            android:taskAffinity=""
+            android:theme="@style/style.transparent_activity"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+
+        <!-- Main media player activity -->
+        <activity
+            android:name="app.ui.others.media_player.MediaPlayerActivity"
+            android:configChanges="orientation|screenSize|layoutDirection|
+			screenLayout|smallestScreenSize|keyboardHidden|uiMode"
+            android:exported="false"
+            android:label="@string/title_aio_video_player"
+            android:launchMode="singleTop"
+            android:resizeableActivity="true"
+            android:supportsPictureInPicture="true"
+            android:theme="@style/style.application.video_player_activity"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Other activities with standard configuration -->
+
+        <activity
+            android:name="app.ui.others.information.UserFeedbackActivity"
+            android:launchMode="singleTop" />
+
+        <!-- Main mother activity (likely the core UI) -->
+        <activity
+            android:name="app.ui.main.MotherActivity"
+            android:alwaysRetainTaskState="true"
+            android:excludeFromRecents="false"
+            android:exported="false"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop"
+            android:taskAffinity="com.aio.mother"
+            android:theme="@style/style.application"
+            android:windowSoftInputMode="adjustPan" />
+
+        <!-- Browser bookmarks and history activity -->
+        <activity
+            android:name="app.ui.main.fragments.browser.activities.BookmarksActivity"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name="app.ui.main.fragments.browser.activities.HistoryActivity"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:windowSoftInputMode="adjustPan" />
+
+        <!-- More activities with standard configuration -->
+        <activity
+            android:name="app.ui.others.information.PrivacyPolicyActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name="app.ui.others.information.ContentPolicyActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name="app.ui.others.information.TermsConditionsActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name="app.ui.others.startup.AdTestActivity"
+            android:launchMode="singleTop" />
+
+        <!-- =============== SERVICES =============== -->
+        <!-- Foreground service for ongoing operations -->
+
+        <service
+            android:name="app.core.engines.services.AIOForegroundService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="dataSync" />
+
+        <!-- Receiver to restart service after boot -->
+        <receiver
+            android:name="app.core.engines.services.RestartIdleServiceReceiver"
+            android:enabled="true"
+            android:exported="false" />
+
+        <!-- =============== PROVIDERS =============== -->
+        <!-- File provider for secure file sharing -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <!-- =============== METADATA =============== -->
+        <!-- Back4App (Parse server) configuration -->
+        <meta-data
+            android:name="com.parse.SERVER_URL"
+            android:value="@string/text_back4app_server_url" />
+
+        <meta-data
+            android:name="com.parse.APPLICATION_ID"
+            android:value="@string/text_back4app_app_id" />
+
+        <meta-data
+            android:name="com.parse.CLIENT_KEY"
+            android:value="@string/text_back4app_client_key" />
+
+        <!-- Google AdMob configuration -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/admob_application_id" />
+    </application>
+
+    <!-- =============== QUERIES =============== -->
+    <!-- Declare which external intents the app needs to query for -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.SEND" />
+            <data android:mimeType="message/rfc822" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="https" />
+        </intent>
+
+        <package android:name="com.google.android.youtube" />
+        <package android:name="com.instagram.android" />
+        <package android:name="com.facebook.katana" />
+        <package android:name="com.whatsapp" />
+    </queries>
+</manifest>

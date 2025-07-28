@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="admob_application_id" translatable="false">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="text_app_open_ad_unit_id" translatable="false">ca-app-pub-3940256099942544/9257395921</string>
+    <string name="text_adaptive_banner_ad_unit_id" translatable="false">ca-app-pub-3940256099942544/9214589741</string>
+    <string name="text_fixed_sized_banner_ad_unit_id" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="text_interstitial_ad_unit_id" translatable="false">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="text_rewarded_ad_unit_id" translatable="false">ca-app-pub-3940256099942544/5224354917</string>
+    <string name="text_rewarded_interstitial_ad_unit_id" translatable="false">ca-app-pub-3940256099942544/5354046379</string>
+
+<!--    -->
+<!--    <string name="admob_application_id" translatable="false">ca-app-pub-7955090308860664~9610598455</string>-->
+<!--    <string name="text_app_open_ad_unit_id" translatable="false">ca-app-pub-7955090308860664/2671422060</string>-->
+<!--    <string name="text_fixed_sized_banner_ad_unit_id" translatable="false">ca-app-pub-7955090308860664/8968698107</string>-->
+<!--    <string name="text_interstitial_ad_unit_id" translatable="false">ca-app-pub-7955090308860664/8113683959</string>-->
+<!--    <string name="text_rewarded_interstitial_ad_unit_id" translatable="false">ca-app-pub-7955090308860664/6342534767</string>-->
+
+    <string name="text_back4app_server_url" translatable="false">https://parseapi.back4app.com</string>
+    <string name="text_back4app_app_id" translatable="false">9TyDoO30yooAjO6LfVGQVUlThLNrlqz7XAT2mjFt</string>
+    <string name="text_back4app_client_key" translatable="false">cbE17hkveBGIkWYpAEu2PAm72UFRKg8NRNyXJb6v</string>
+</resources>

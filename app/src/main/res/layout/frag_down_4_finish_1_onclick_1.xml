@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/style_dialog"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:ignore="UseAppTint,UseCompatTextViewDrawableXml">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/_5"
+        android:layout_marginTop="@dimen/_10"
+        android:layout_marginEnd="@dimen/_5"
+        android:layout_marginBottom="@dimen/_10"
+        app:cardBackgroundColor="@color/color_background"
+        app:cardCornerRadius="@dimen/_10"
+        app:cardElevation="@dimen/_5">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/button_file_info_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8"
+                android:layout_marginTop="@dimen/_8"
+                android:layout_marginEnd="@dimen/_8"
+                android:layout_marginBottom="@dimen/_8"
+                android:background="@drawable/ic_button_selector_secondary"
+                android:clickable="true"
+                android:elevation="@dimen/_2">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/thumbnail_container"
+                    android:layout_width="@dimen/_85"
+                    android:layout_height="@dimen/_55"
+                    android:layout_marginStart="@dimen/_5"
+                    android:layout_marginTop="@dimen/_5"
+                    android:layout_marginEnd="@dimen/_0"
+                    android:layout_marginBottom="@dimen/_5"
+                    android:background="@color/transparent"
+                    app:cardCornerRadius="@dimen/_5">
+
+                    <ImageView
+                        android:id="@+id/image_file_thumbnail"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:adjustViewBounds="true"
+                        android:importantForAccessibility="no"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/image_no_thumb_available" />
+
+                </androidx.cardview.widget.CardView>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_8"
+                    android:layout_marginEnd="@dimen/_5"
+                    android:layout_toEndOf="@+id/thumbnail_container"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/text_file_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5"
+                        android:layout_marginBottom="@dimen/_3"
+                        android:layout_toStartOf="@+id/img_open_file"
+                        android:ellipsize="marquee"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:fontFamily="@font/font_family_medium"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:scrollHorizontally="true"
+                        android:singleLine="true"
+                        android:text="@string/text__"
+                        android:textColor="@color/color_on_secondary"
+                        android:textSize="@dimen/normal_text_size" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/text_file_title"
+                        android:layout_toStartOf="@id/img_open_file"
+                        android:alpha="0.5"
+                        android:background="@drawable/rounded_transparent_white_f5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/text_file_url"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5"
+                            android:layout_marginTop="@dimen/_2"
+                            android:layout_marginEnd="@dimen/_5"
+                            android:layout_marginBottom="@dimen/_2"
+                            android:alpha="1"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/font_family_regular"
+                            android:singleLine="true"
+                            android:text="@string/text__"
+                            android:textColor="@color/color_on_secondary"
+                            android:textSize="@dimen/small_text_size" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/img_open_file"
+                        android:layout_width="@dimen/_30"
+                        android:layout_height="@dimen/_30"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_10"
+                        android:layout_marginEnd="@dimen/_5"
+                        android:adjustViewBounds="true"
+                        android:importantForAccessibility="no"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_button_media_play"
+                        android:tint="@color/color_on_secondary"
+                        android:visibility="visible" />
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/button_open_download_file"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_8"
+                    android:layout_marginTop="@dimen/_0"
+                    android:layout_marginEnd="@dimen/_3"
+                    android:layout_marginBottom="@dimen/_0"
+                    android:layout_weight="1"
+                    android:background="@drawable/ic_button_negative_selector"
+                    android:clickable="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/_8"
+                        android:drawableStart="@drawable/ic_button_open_v2"
+                        android:drawablePadding="@dimen/_5"
+                        android:drawableTint="@color/color_secondary"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/font_family_regular"
+                        android:singleLine="true"
+                        android:text="@string/text_open_file"
+                        android:textColor="@color/color_text_primary"
+                        android:textSize="@dimen/normal_text_size" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/button_share_download_file"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_0"
+                    android:layout_marginTop="@dimen/_0"
+                    android:layout_marginEnd="@dimen/_8"
+                    android:layout_marginBottom="@dimen/_0"
+                    android:layout_weight="1"
+                    android:background="@drawable/ic_button_negative_selector"
+                    android:clickable="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/_8"
+                        android:drawableStart="@drawable/ic_button_share_v2"
+                        android:drawablePadding="@dimen/_5"
+                        android:drawableTint="@color/color_secondary"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/font_family_regular"
+                        android:singleLine="true"
+                        android:text="@string/text_share_file"
+                        android:textColor="@color/color_text_primary"
+                        android:textSize="@dimen/normal_text_size" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/button_clear_download"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_8"
+                    android:layout_marginTop="@dimen/_0"
+                    android:layout_marginEnd="@dimen/_3"
+                    android:layout_marginBottom="@dimen/_0"
+                    android:layout_weight="1"
+                    android:background="@drawable/ic_button_negative_selector"
+                    android:clickable="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/_8"
+                        android:drawableStart="@drawable/ic_button_clear"
+                        android:drawablePadding="@dimen/_5"
+                        android:drawableTint="@color/color_secondary"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/font_family_regular"
+                        android:singleLine="true"
+                        android:text="@string/text_clear_from_list"
+                        android:textColor="@color/color_text_primary"
+                        android:textSize="@dimen/normal_text_size" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/button_delete_download"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_0"
+                    android:layout_marginTop="@dimen/_0"
+                    android:layout_marginEnd="@dimen/_8"
+                    android:layout_marginBottom="@dimen/_0"
+                    android:layout_weight="1"
+                    android:background="@drawable/ic_button_negative_selector"
+                    android:clickable="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/_8"
+                        android:drawableStart="@drawable/ic_button_delete_v2"
+                        android:drawablePadding="@dimen/_5"
+                        android:drawableTint="@color/color_secondary"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/font_family_regular"
+                        android:singleLine="true"
+                        android:text="@string/text_delete_file"
+                        android:textColor="@color/color_text_primary"
+                        android:textSize="@dimen/normal_text_size" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/button_rename_download"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_8"
+                    android:layout_marginTop="@dimen/_0"
+                    android:layout_marginEnd="@dimen/_3"
+                    android:layout_marginBottom="@dimen/_0"
+                    android:layout_weight="1"
+                    android:background="@drawable/ic_button_negative_selector"
+                    android:clickable="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/_8"
+                        android:drawableStart="@drawable/ic_button_rename"
+                        android:drawablePadding="@dimen/_5"
+                        android:drawableTint="@color/color_secondary"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/font_family_regular"
+                        android:singleLine="true"
+                        android:text="@string/text_rename_file"
+                        android:textColor="@color/color_text_primary"
+                        android:textSize="@dimen/normal_text_size" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/button_discover_more"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_0"
+                    android:layout_marginTop="@dimen/_0"
+                    android:layout_marginEnd="@dimen/_8"
+                    android:layout_marginBottom="@dimen/_0"
+                    android:layout_weight="1"
+                    android:background="@drawable/ic_button_negative_selector"
+                    android:clickable="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/_8"
+                        android:drawableStart="@drawable/ic_button_discovery_v2"
+                        android:drawablePadding="@dimen/_5"
+                        android:drawableTint="@color/color_secondary"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/font_family_regular"
+                        android:singleLine="true"
+                        android:text="@string/text_discover_more"
+                        android:textColor="@color/color_text_primary"
+                        android:textSize="@dimen/normal_text_size" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3"
+                android:layout_marginBottom="@dimen/_5"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/button_show_download_information"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_8"
+                    android:layout_marginTop="@dimen/_0"
+                    android:layout_marginEnd="@dimen/_3"
+                    android:layout_marginBottom="@dimen/_0"
+                    android:layout_weight="1"
+                    android:background="@drawable/ic_button_negative_selector"
+                    android:clickable="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/_8"
+                        android:drawableStart="@drawable/ic_button_information"
+                        android:drawablePadding="@dimen/_5"
+                        android:drawableTint="@color/color_secondary"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/font_family_regular"
+                        android:singleLine="true"
+                        android:text="@string/text_show_download_information"
+                        android:textColor="@color/color_text_primary"
+                        android:textSize="@dimen/normal_text_size" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

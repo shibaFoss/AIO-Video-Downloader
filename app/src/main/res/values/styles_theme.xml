@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="pure_black">#000000</color>
+    <color name="color_primary">#232323</color>
+    <color name="color_primary_dark">#161616</color>
+    <color name="color_primary_variant">#424242</color>
+    <color name="color_on_primary">#ffffff</color>
+    <color name="color_secondary">#F0570B</color>
+    <color name="color_secondary_variant">#963A00</color>
+    <color name="color_on_secondary">#ffffff</color>
+    <color name="color_background">#ffffff</color>
+    <color name="color_surface">#F6F6F6</color>
+
+    <color name="color_action_bar_bg">#FEFEFE</color>
+    <color name="color_navigation_bar_bg">@color/color_action_bar_bg</color>
+    <color name="color_on_background">#2E2E2E</color>
+    <color name="color_on_surface">#515151</color>
+
+    <color name="color_text_primary">#3E3D3D</color>
+    <color name="color_text_secondary">#616161</color>
+    <color name="color_text_hint">#939393</color>
+    <color name="color_text_subheading">#4A4A4A</color>
+
+    <color name="color_deep_blue">#0B366C</color>
+    <color name="color_yellow_accent">#FFC107</color>
+    <color name="color_yellow_accent_variant">#FF9800</color>
+    <color name="color_error">#E42610</color>
+    <color name="color_error_dark">#A4251D</color>
+    <color name="color_on_error">#ffffff</color>
+    <color name="color_green">#009688</color>
+    <color name="color_green_lite">#D5EDE5</color>
+    <color name="transparent_white">#AEFFFFFF</color>
+    <color name="transparent">#00000000</color>
+    <color name="transparent_dark">#0A000000</color>
+    <color name="transparent_darker">#4F000000</color>
+    <color name="black_light">#dd000000</color>
+    <color name="black_light_secondary">#89000000</color>
+    <color name="black_lighter">#55000000</color>
+    <color name="black_deep_lighter">#d3000000</color>
+    <color name="color_border">#C6CACC</color>
+    <color name="player_launcher_bg">#192F3C</color>
+
+    <style name="style.application" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@color/color_surface</item>
+        <item name="android:navigationBarColor">@color/color_surface</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:windowBackground">@color/color_surface</item>
+        <item name="android:windowActivityTransitions">false</item>
+
+        <item name="android:windowLayoutInDisplayCutoutMode">always</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:fitsSystemWindows">true</item>
+
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/color_primary_variant</item>
+        <item name="colorError">@color/color_error</item>
+        <item name="colorAccent">@color/color_secondary</item>
+        <item name="android:layoutDirection">ltr</item>
+        <item name="android:textColorPrimary">@color/color_text_primary</item>
+        <item name="android:textColorSecondary">@color/color_text_secondary</item>
+        <item name="android:textColorHint">@color/color_text_hint</item>
+        <item name="android:textColor">@color/color_text_primary</item>
+        <item name="android:textColorLink">@color/color_secondary</item>
+        <item name="android:fontFamily">@font/application_font_family</item>
+        <item name="android:textViewStyle">@style/style_padding_textview_style</item>
+        <item name="android:checkboxStyle">@style/style_padding_textview_style</item>
+        <item name="android:switchStyle">@style/style_padding_textview_style</item>
+    </style>
+
+    <style name="style.application.video_player_activity" parent="style.application">
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:fitsSystemWindows">false</item>
+    </style>
+
+    <style name="style.application.opening_activity" parent="style.application">
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:fitsSystemWindows">false</item>
+    </style>
+
+    <style name="style.transparent_activity" parent="Theme.AppCompat.DayNight.Dialog.Alert">
+        <item name="android:statusBarColor">@color/color_surface</item>
+        <item name="android:navigationBarColor">@color/color_surface</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:windowActivityTransitions">false</item>
+
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowActionBarOverlay">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowIsFloating">true</item>
+
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:fitsSystemWindows">true</item>
+
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/color_primary_variant</item>
+        <item name="colorError">@color/color_error</item>
+        <item name="colorAccent">@color/color_secondary</item>
+        <item name="android:textColorPrimary">@color/color_text_primary</item>
+        <item name="android:textColorSecondary">@color/color_text_secondary</item>
+        <item name="android:textColorHint">@color/color_text_hint</item>
+        <item name="android:textColor">@color/color_text_primary</item>
+        <item name="android:textColorLink">@color/color_secondary</item>
+        <item name="android:fontFamily">@font/application_font_family</item>
+        <item name="android:textViewStyle">@style/style_padding_textview_style</item>
+        <item name="android:checkboxStyle">@style/style_padding_textview_style</item>
+        <item name="android:switchStyle">@style/style_padding_textview_style</item>
+    </style>
+
+    <style name="style_webview_loading" parent="android:Widget.ProgressBar.Horizontal">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/ic_webview_progress</item>
+        <item name="android:minHeight">@dimen/_4</item>
+    </style>
+
+    <style name="style_padding_textview_style">
+        <item name="android:includeFontPadding">true</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+    </style>
+
+</resources>

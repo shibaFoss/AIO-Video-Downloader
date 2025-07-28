@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:ignore="UseAppTint">
+
+    <RelativeLayout
+        android:id="@+id/browser_tab_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="@dimen/_15"
+        android:layout_marginTop="@dimen/_5"
+        android:layout_marginEnd="@dimen/_10"
+        android:layout_marginBottom="@dimen/_5"
+        android:layout_toStartOf="@+id/browser_tab_close_button"
+        android:background="@drawable/ic_button_selector_background"
+        android:clickable="true"
+        android:elevation="@dimen/_1">
+
+        <ImageView
+            android:id="@+id/browser_tab_favicon"
+            android:layout_width="@dimen/_25"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_10"
+            android:layout_marginEnd="@dimen/_8"
+            android:adjustViewBounds="true"
+            android:importantForAccessibility="no"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_button_information"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_5"
+            android:layout_marginTop="@dimen/_5"
+            android:layout_marginEnd="@dimen/_10"
+            android:layout_marginBottom="@dimen/_5"
+            android:layout_toEndOf="@+id/browser_tab_favicon"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/browser_tab_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/font_family_medium"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="@string/text_sample_google_domain"
+                android:textSize="@dimen/message_text_size" />
+
+            <TextView
+                android:id="@+id/browser_tab_url"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2"
+                android:ellipsize="end"
+                android:fontFamily="@font/font_family_regular"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="@string/text__"
+                android:textColor="@color/color_text_hint"
+                android:textSize="@dimen/smaller_text_size" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/browser_tab_close_button"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_35"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/_0"
+        android:layout_marginEnd="@dimen/_15"
+        android:adjustViewBounds="true"
+        android:background="@drawable/ic_button_negative_selector"
+        android:clickable="true"
+        android:importantForAccessibility="no"
+        android:src="@drawable/ic_button_cancel"
+        android:tint="@color/color_secondary" />
+
+</RelativeLayout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/progress_container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_42"
+        android:layout_marginStart="@dimen/_10"
+        android:layout_marginTop="@dimen/_5"
+        android:layout_marginEnd="@dimen/_10"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/text_video_progress_timer_container_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/rounded_surface_color">
+
+            <TextView
+                android:id="@+id/text_video_progress_timer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10"
+                android:layout_marginTop="@dimen/_3"
+                android:layout_marginEnd="@dimen/_10"
+                android:layout_marginBottom="@dimen/_3"
+                android:fontFamily="@font/font_family_bold"
+                android:text="@string/text_time_representation"
+                android:textColor="@color/color_text_primary"
+                android:textSize="@dimen/message_text_size" />
+        </LinearLayout>
+
+        <lib.ui.RoundedTimeBar
+            android:id="@+id/video_progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/text_video_duration_container_right"
+            android:layout_toEndOf="@+id/text_video_progress_timer_container_left"
+            app:bar_height="@dimen/_5"
+            app:buffered_color="@color/color_yellow_accent_variant"
+            app:played_color="@color/color_primary_variant"
+            app:scrubber_drawable="@drawable/ic_button_scrubber"
+            app:show_buffering="always"
+            app:unplayed_color="@color/color_secondary" />
+
+        <LinearLayout
+            android:id="@+id/text_video_duration_container_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/rounded_surface_color">
+
+            <TextView
+                android:id="@+id/text_video_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10"
+                android:layout_marginTop="@dimen/_3"
+                android:layout_marginEnd="@dimen/_10"
+                android:layout_marginBottom="@dimen/_3"
+                android:fontFamily="@font/font_family_bold"
+                android:text="@string/text_time_representation"
+                android:textColor="@color/color_text_primary"
+                android:textSize="@dimen/message_text_size" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</merge>

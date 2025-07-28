@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/custom_toast_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/_10"
+    android:layout_marginTop="@dimen/_10"
+    android:layout_marginEnd="@dimen/_10"
+    android:layout_marginBottom="@dimen/_10"
+    android:orientation="horizontal"
+    app:cardBackgroundColor="@color/color_background"
+    app:cardCornerRadius="@dimen/_10"
+    app:cardElevation="@dimen/_5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_background"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/image_toast_app_icon"
+            android:layout_width="@dimen/_30"
+            android:layout_height="@dimen/_30"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/_10"
+            android:layout_marginTop="@dimen/_5"
+            android:layout_marginEnd="@dimen/_0"
+            android:layout_marginBottom="@dimen/_5"
+            android:elevation="@dimen/_1"
+            android:importantForAccessibility="no"
+            android:src="@mipmap/ic_launcher_v4" />
+
+        <TextView
+            android:id="@+id/text_toast_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/_10"
+            android:layout_marginTop="@dimen/_5"
+            android:layout_marginEnd="@dimen/_10"
+            android:layout_marginBottom="@dimen/_5"
+            android:fontFamily="@font/font_family_medium"
+            android:gravity="center_vertical"
+            android:text="@string/text__"
+            android:textColor="@color/color_text_primary"
+            android:textSize="@dimen/message_text_size" />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

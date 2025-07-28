@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/style_dialog"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:ignore="UseAppTint,UseCompatTextViewDrawableXml">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/_5"
+        android:layout_marginTop="@dimen/_10"
+        android:layout_marginEnd="@dimen/_5"
+        android:layout_marginBottom="@dimen/_10"
+        app:cardBackgroundColor="@color/color_background"
+        app:cardCornerRadius="@dimen/_10"
+        app:cardElevation="@dimen/_5">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_current_homepage"
+                style="@style/style_dialog.message"
+                android:layout_marginStart="@dimen/_15"
+                android:layout_marginTop="@dimen/_15"
+                android:layout_marginEnd="@dimen/_15"
+                android:layout_marginBottom="@dimen/_15"
+                android:autoLink="web"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:fontFamily="@font/font_family_medium"
+                android:text="@string/title_message_goes_here"
+                android:textIsSelectable="true"
+                android:textSize="@dimen/message_text_size" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_2"
+                android:layout_marginStart="@dimen/_10"
+                android:layout_marginEnd="@dimen/_10"
+                android:layout_marginBottom="@dimen/_5"
+                android:background="@color/transparent_dark" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15"
+                android:layout_marginTop="@dimen/_5"
+                android:layout_marginEnd="@dimen/_15"
+                android:layout_marginBottom="@dimen/_5"
+                android:background="@drawable/rounded_surface_color"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/edit_field_url"
+                    style="@style/style_dialog.message"
+                    android:layout_margin="@dimen/_8"
+                    android:background="@color/transparent"
+                    android:gravity="center_vertical"
+                    android:hint="@string/text_enter_the_url"
+                    android:importantForAutofill="no"
+                    android:inputType="textUri"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/color_on_surface"
+                    android:textColorHint="@color/color_text_hint"
+                    android:textSize="@dimen/normal_text_size"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/button_dialog_positive_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15"
+                android:layout_marginTop="@dimen/_5"
+                android:layout_marginEnd="@dimen/_15"
+                android:layout_marginBottom="@dimen/_5"
+                android:background="@drawable/ic_button_selector_secondary"
+                android:clickable="true"
+                android:elevation="@dimen/_2">
+
+                <TextView
+                    android:id="@+id/button_dialog_positive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="@dimen/_7"
+                    android:drawableStart="@drawable/ic_button_settings"
+                    android:drawablePadding="@dimen/_5"
+                    android:drawableTint="@color/color_background"
+                    android:fontFamily="@font/font_family_bold"
+                    android:gravity="center"
+                    android:text="@string/title_apply_changes"
+                    android:textColor="@color/color_on_secondary"
+                    android:textSize="@dimen/normal_text_size" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="@dimen/_15"
+                android:layout_marginTop="@dimen/_2"
+                android:layout_marginEnd="@dimen/_15"
+                android:layout_marginBottom="@dimen/_8"
+                android:fontFamily="@font/font_family_regular"
+                android:text="@string/text_app_need_restart_to_take_effect"
+                android:textColor="@color/color_secondary"
+                android:textSize="@dimen/smaller_text_size" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_surface"
+    android:orientation="vertical"
+    tools:context="app.ui.main.fragments.browser.activities.BookmarksActivity"
+    tools:ignore="UseCompatTextViewDrawableXml,UseAppTint">
+
+    <LinearLayout
+        android:id="@+id/ad_space_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5"
+        android:layout_marginBottom="@dimen/_2"
+        android:orientation="vertical">
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/admob_fixed_sized_banner_ad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            ads:adSize="320x100"
+            ads:adUnitId="@string/text_fixed_sized_banner_ad_unit_id" />
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15"
+        android:layout_marginTop="@dimen/_5"
+        android:layout_marginEnd="@dimen/_15"
+        android:layout_marginBottom="@dimen/_8"
+        app:cardBackgroundColor="@color/color_background"
+        app:cardCornerRadius="@dimen/_10">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/button_home_tab"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8"
+                android:layout_marginTop="@dimen/_8"
+                android:layout_marginEnd="@dimen/_0"
+                android:layout_marginBottom="@dimen/_8"
+                android:layout_weight="1"
+                android:background="@drawable/ic_button_negative_selector"
+                android:clickable="true"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/image_home_tab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_5"
+                    android:adjustViewBounds="true"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_button_nav_home"
+                    android:tint="@color/color_secondary" />
+
+                <TextView
+                    android:id="@+id/text_home_tab"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/_5"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/font_family_bold"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="@string/title_home"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="@dimen/small_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/button_browser_tab"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_0"
+                android:layout_marginTop="@dimen/_8"
+                android:layout_marginEnd="@dimen/_0"
+                android:layout_marginBottom="@dimen/_8"
+                android:layout_weight="1"
+                android:background="@drawable/ic_button_negative_selector"
+                android:clickable="true"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/image_browser_tab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_5"
+                    android:adjustViewBounds="true"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_button_nav_browser"
+                    android:tint="@color/color_secondary" />
+
+                <TextView
+                    android:id="@+id/text_browser_tab"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/_5"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/font_family_bold"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="@string/title_browser"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="@dimen/small_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/button_tasks_tab"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_0"
+                android:layout_marginTop="@dimen/_8"
+                android:layout_marginEnd="@dimen/_0"
+                android:layout_marginBottom="@dimen/_8"
+                android:layout_weight="1"
+                android:background="@drawable/ic_button_negative_selector"
+                android:clickable="true"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/image_tasks_tab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_5"
+                    android:adjustViewBounds="true"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_button_nav_download"
+                    android:tint="@color/color_secondary" />
+
+                <TextView
+                    android:id="@+id/text_task_tab"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/_5"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/font_family_bold"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="@string/title_tasks"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="@dimen/small_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/button_settings_tab"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_0"
+                android:layout_marginTop="@dimen/_8"
+                android:layout_marginEnd="@dimen/_8"
+                android:layout_marginBottom="@dimen/_8"
+                android:layout_weight="1"
+                android:background="@drawable/ic_button_negative_selector"
+                android:clickable="true"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/image_settings_tab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_5"
+                    android:adjustViewBounds="true"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_button_nav_settings"
+                    android:tint="@color/color_secondary" />
+
+                <TextView
+                    android:id="@+id/text_settings_tab"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/_5"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/font_family_bold"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="@string/title_settings"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="@dimen/small_text_size" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

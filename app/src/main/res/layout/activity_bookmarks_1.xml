@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_surface"
+    android:orientation="vertical"
+    tools:context="app.ui.main.fragments.browser.activities.BookmarksActivity"
+    tools:ignore="UseCompatTextViewDrawableXml,UseAppTint">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/top_layout_actionbar_section"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="@dimen/_15"
+        android:layout_marginTop="@dimen/_10"
+        android:layout_marginEnd="@dimen/_15"
+        android:layout_marginBottom="@dimen/_0"
+        app:cardBackgroundColor="@color/color_background"
+        app:cardCornerRadius="@dimen/_10">
+
+        <RelativeLayout
+            android:id="@+id/container_actionbar_top"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/button_left_actionbar"
+                android:layout_width="@dimen/_50"
+                android:layout_height="match_parent"
+                android:background="@drawable/ic_button_negative_selector"
+                android:clickable="true">
+
+                <ImageView
+                    android:id="@+id/button_left_actionbar_img"
+                    android:layout_width="@dimen/_30"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:adjustViewBounds="true"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_button_actionbar_back"
+                    android:tint="@color/color_secondary" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/title_actionbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_10"
+                android:layout_marginTop="@dimen/_0"
+                android:layout_marginEnd="@dimen/_10"
+                android:layout_marginBottom="@dimen/_0"
+                android:layout_toStartOf="@id/button_right_actionbar"
+                android:layout_toEndOf="@id/button_left_actionbar"
+                android:ellipsize="end"
+                android:fontFamily="@font/font_family_bold"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:text="@string/title_bookmarks"
+                android:textSize="@dimen/title_text_size" />
+
+            <RelativeLayout
+                android:id="@+id/button_right_actionbar"
+                android:layout_width="@dimen/_50"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/ic_button_negative_selector"
+                android:clickable="true">
+
+                <ImageView
+                    android:id="@+id/button_right_actionbar_img"
+                    android:layout_width="@dimen/_30"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:adjustViewBounds="true"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_button_clear"
+                    android:tint="@color/color_secondary" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/empty_bookmarks_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="@dimen/_15"
+        android:layout_marginTop="@dimen/_0"
+        android:layout_marginEnd="@dimen/_15"
+        android:layout_marginBottom="@dimen/_0"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:cardBackgroundColor="@color/color_background"
+        app:cardCornerRadius="@dimen/_10">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/empty_bookmarks_img_indicator"
+                android:layout_width="@dimen/_250"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginBottom="-50dp"
+                android:adjustViewBounds="true"
+                android:hardwareAccelerated="true"
+                android:importantForAccessibility="no"
+                android:layerType="hardware"
+                app:lottie_autoPlay="true"
+                app:lottie_enableMergePathsForKitKatAndAbove="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/empty_downloads_animation" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_marginStart="@dimen/_10"
+                android:layout_marginTop="@dimen/_10"
+                android:layout_marginEnd="@dimen/_10"
+                android:layout_marginBottom="@dimen/_10"
+                android:fontFamily="@font/font_family_regular"
+                android:gravity="center"
+                android:text="@string/text_bookmarks_empty"
+                android:textColor="@color/color_text_primary"
+                android:textSize="@dimen/message_text_size" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <ListView
+        android:id="@+id/list_bookmarks"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_section"
+        android:layout_below="@+id/top_layout_actionbar_section"
+        android:layout_marginStart="@dimen/_0"
+        android:layout_marginTop="@dimen/_8"
+        android:layout_marginEnd="@dimen/_0"
+        android:layout_marginBottom="@dimen/_8"
+        android:divider="@color/transparent"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/bottom_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ad_space_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:orientation="vertical">
+
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/admob_fixed_sized_banner_ad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                ads:adSize="320x100"
+                ads:adUnitId="@string/text_fixed_sized_banner_ad_unit_id" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/button_load_more_bookmarks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15"
+            android:layout_marginTop="@dimen/_0"
+            android:layout_marginEnd="@dimen/_15"
+            android:layout_marginBottom="@dimen/_10"
+            android:background="@drawable/ic_button_selector_secondary"
+            android:clickable="true"
+            android:elevation="@dimen/_2">
+
+            <TextView
+                android:id="@+id/button_dialog_positive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_margin="@dimen/_7"
+                android:drawableStart="@drawable/ic_button_add_plus"
+                android:drawablePadding="@dimen/_5"
+                android:drawableTint="@color/color_background"
+                android:fontFamily="@font/font_family_regular"
+                android:gravity="center"
+                android:text="@string/text_load_more_bookmarks"
+                android:textColor="@color/color_on_secondary"
+                android:textSize="@dimen/normal_text_size" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

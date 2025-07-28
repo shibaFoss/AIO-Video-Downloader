@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_5"
+    android:background="@drawable/ic_button_negative_selector"
+    android:clickable="true"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/image_of_favicon"
+        android:layout_width="@dimen/_40"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:adjustViewBounds="true"
+        android:importantForAccessibility="no"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_google" />
+
+    <TextView
+        android:id="@+id/title_of_favicon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/_2"
+        android:layout_marginBottom="@dimen/_2"
+        android:ellipsize="end"
+        android:fontFamily="@font/font_family_regular"
+        android:gravity="center_horizontal"
+        android:maxLines="1"
+        android:text="@string/title_google"
+        android:textColor="@color/color_text_primary"
+        android:textSize="@dimen/small_text_size" />
+
+</LinearLayout>

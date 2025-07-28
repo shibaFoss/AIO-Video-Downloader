@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pure_black"
+    tools:context="app.ui.others.media_player.MediaPlayerActivity"
+    tools:ignore="UseAppTint">
+
+    <androidx.media3.ui.PlayerView
+        android:id="@+id/video_player_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/pure_black"
+        app:player_layout_id="@layout/activity_player_3_con_layout_1"
+        app:resize_mode="fit"
+        app:show_buffering="when_playing"
+        app:show_timeout="4000"
+        app:shutter_background_color="@color/pure_black"
+        app:surface_type="surface_view"
+        app:use_controller="false" />
+
+    <ImageView
+        android:id="@+id/img_audio_album_art"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/pure_black"
+        android:importantForAccessibility="no"
+        android:src="@drawable/image_audio_thumb"
+        android:visibility="gone" />
+
+    <View
+        android:id="@+id/night_mode_invisible_area"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent_dark" />
+
+    <View
+        android:id="@+id/invisible_touch_area"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="@dimen/_15"
+        android:layout_marginEnd="@dimen/_15"
+        android:background="@drawable/rounded_transparent_black">
+
+        <TextView
+            android:id="@+id/text_video_quick_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/_10"
+            android:elevation="@dimen/_2"
+            android:gravity="center"
+            android:text="@string/title_zoomed_in"
+            android:textColor="@color/color_on_primary"
+            android:textSize="@dimen/title_text_size"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/container_player_controller"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/device_cutout_padding_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_alignParentTop="true"
+            android:background="@color/pure_black" />
+
+        <include
+            android:id="@+id/action_bar"
+            layout="@layout/activity_player_1_ab"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/actionbar_height_size"
+            android:layout_below="@id/device_cutout_padding_view" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/player_controller_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/_15"
+            android:layout_marginTop="@dimen/_10"
+            android:layout_marginEnd="@dimen/_15"
+            android:layout_marginBottom="@dimen/_30"
+            app:cardBackgroundColor="@color/color_background"
+            app:cardCornerRadius="@dimen/_10"
+            app:cardElevation="@dimen/_5">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5"
+                android:layout_marginBottom="@dimen/_8"
+                android:orientation="vertical">
+
+                <include layout="@layout/activity_player_2_con_01" />
+
+                <include layout="@layout/activity_player_2_con_02" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/button_video_unlock_overlay"
+        android:layout_width="@dimen/_50"
+        android:layout_height="@dimen/_50"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/_20"
+        android:adjustViewBounds="true"
+        android:background="@drawable/ic_button_positive_selector"
+        android:clickable="true"
+        android:elevation="@dimen/_2"
+        android:importantForAccessibility="no"
+        android:src="@drawable/ic_button_unlock"
+        android:tint="@color/color_secondary"
+        android:visibility="gone" />
+
+</RelativeLayout>

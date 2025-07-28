@@ -1,0 +1,475 @@
+<resources>
+
+    <string name="title_app_name" translatable="false">AIO</string>
+    <string name="title_aio_video_downloader" translatable="false">AIO Video Downloader</string>
+    <string name="title_default_application_folder" translatable="false">AIO Downloads</string>
+    <string name="text_default_aio_download_folder_path" translatable="false">/storage/emulated/0/Download/AIO Downloads</string>
+    <string name="title_aio_images" translatable="false">AIO Images</string>
+    <string name="title_aio_videos" translatable="false">AIO Videos</string>
+    <string name="title_aio_sounds" translatable="false">AIO Sounds</string>
+    <string name="title_aio_documents" translatable="false">AIO Documents</string>
+    <string name="title_aio_programs" translatable="false">AIO Programs</string>
+    <string name="title_aio_archives" translatable="false">AIO Archives</string>
+    <string name="title_aio_others" translatable="false">AIO Others</string>
+
+    <string name="title_home">Home</string>
+    <string name="title_browser">Browser</string>
+    <string name="title_check_new_update">Check New Update</string>
+    <string name="text_search_or_enter_url">Search or enter URL</string>
+    <string name="title_browser_history">Browsing History</string>
+    <string name="text_delete_browsing_history_confirmation">Deleting history is permanent and cannot be undone. <b>Are you sure you want to proceed?</b></string>
+
+    <string name="title_clear_now">Clear Now</string>
+    <string name="text_your_browsing_history_empty">Your browsing history is empty.</string>
+    <string name="text_copied_to_clipboard">Copied to the clipboard.</string>
+    <string name="text_copy_site_url">Copy page link</string>
+    <string name="text_new_download">New download</string>
+
+    <string name="text_describe_your_experience">Describe your experience</string>
+    <string name="title_privacy_policy">Privacy Policy</string>
+    <string name="title_terms_and_conditions"><![CDATA[Terms & Conditions]]></string>
+    <string name="title_content_policy">Content Policy</string>
+    <string name="title_share_feedback">Share Feedback</string>
+    <string name="title_active_downloads">Active Downloads</string>
+    <string name="text_file_name_must_not_be_empty">File name must not be empty.</string>
+    <string name="text_error_advice_on_renaming_download_file">Something went wrong, try giving another file name.</string>
+    <string name="title_unknown">Unknown</string>
+    <string name="title_cancel">Cancel</string>
+    <string name="title_yes">Yes</string>
+    <string name="text_title_goes_here">Title goes here</string>
+    <string name="title_message_goes_here">Message goes here</string>
+    <string name="title_download_information">Download Information</string>
+    <string name="text_warning_not_enough_space_msg">Your device does\'t have enough storage space to complete the download. <b>Please free up some space.</b></string>
+    <string name="text_file_url_not_valid">File link is not valid.</string>
+    <string name="title_invalid_file_url">Invalid File URL</string>
+    <string name="text_dont_have_anything_to_share">You don\'t have anything to share</string>
+    <string name="text_share_download_file_url">Share download file URL…</string>
+    <string name="text_dont_have_anything_to_copy">You don\'t have anything to copy</string>
+    <string name="text_file_url_has_been_copied">URL has been copied to clipboard.</string>
+    <string name="text_cant_rename_on_active_download">You cannot rename the file while the download is in progress. <b>Please pause it first.</b></string>
+    <string name="title_delete_file">Delete File</string>
+    <string name="text_delete_file">Delete files</string>
+    <string name="text_are_you_sure_about_delete">Are you sure you want to permanently delete this file? <b>Once deleted, it cannot be undone.</b></string>
+    <string name="text_cant_delete_on_active_download">You cannot delete the file while the download is in progress. <b>Please pause it first.</b></string>
+    <string name="title_clear_from_list">Clear Fom List</string>
+    <string name="text_are_you_sure_about_clear">The download file will remain in your storage, <b>but the entry will be removed from the list</b>.</string>
+    <string name="text_cant_remove_one_active_download">You cannot remove the file while the download is in progress. <b>Please pause it first.</b></string>
+    <string name="title_pause_anyway">Pause Anyway</string>
+    <string name="text_warning_resume_not_supported"><b>The file you are downloading does not support resuming.</b> If paused, it will resume from the beginning.</string>
+    <string name="text_download_task_already_paused">The download task is already paused.</string>
+    <string name="title_are_you_sure_about_this">Are You Sure About This?</string>
+    <string name="text_no_referrer_message_warning">You haven\'t provided a referral site when adding this download. A referral site can be useful for tracking or resuming downloads, but it\'s not mandatory. You can still proceed to open the download URL directly if needed.</string>
+    <string name="title_no_referral_site_added">No Referral Site Added</string>
+    <string name="title_open_download_url">Open Download URL</string>
+
+
+
+    <string name="text_no">No</string>
+    <string name="title_performed">Performed</string>
+    <string name="title_not_performed">Not Performed</string>
+    <string name="text_click_here_to_open_link">Click here to open the link</string>
+
+    <string name="title_sounds">Sounds</string>
+    <string name="title_archives">Archives</string>
+    <string name="title_programs">Programs</string>
+    <string name="title_videos">Videos</string>
+    <string name="title_documents">Documents</string>
+    <string name="title_images">Images</string>
+    <string name="title_others">Others</string>
+
+    <string name="text_closed">Closed</string>
+    <string name="title_in_progress">In Progress</string>
+    <string name="title_completed">Completed</string>
+    <string name="text_file_name_b_br"><![CDATA[<b>File Name:</b> %1$s<br>]]></string>
+    <string name="text_file_size_b_br"><![CDATA[<b>File Size:</b> %1$s<br>]]></string>
+    <string name="text_file_type_b_br"><![CDATA[<b>File Type:</b> %1$s<br>]]></string>
+
+    <string name="text_file_format_b_br"><![CDATA[<b>File Format:</b> %1$s<br>]]></string>
+    <string name="text_duration_b_br"><![CDATA[<b>Duration:</b> %1$s<br>]]></string>
+    <string name="text_download_status_b_br"><![CDATA[<b>Download Status:</b> %1$s<br>]]></string>
+    <string name="text_downloaded_date_b_br"><![CDATA[<b>Downloaded Date:</b> %1$s<br>]]></string>
+    <string name="text_resolution_b_x_br"><![CDATA[<b>Resolution:</b> %1$sx%2$s<br>]]></string>
+    <string name="text_video_codec_b_br"><![CDATA[<b>Video Codec:</b> %1$s<br>]]></string>
+    <string name="text_bitrate_b_bps_br"><![CDATA[<b>Bitrate:</b> %1$sbps<br>]]></string>
+    <string name="text_audio_codec_b_br"><![CDATA[<b>Audio Codec:</b> %1$s]]></string>
+    <string name="title_media_file_info">Media File Information</string>
+    <string name="text_file_directory_b"><![CDATA[<b>File Directory:</b>%1$s<br>]]></string>
+    <string name="text_video_stream_info_unavailable">You are currently playing a streaming video. <b>Detailed media information is unavailable.</b></string>
+    <string name="text_open_stream_media_unavailable">You are currently playing a streaming video. <b>Opening video in unavailable.</b></string>
+    <string name="text_delete_stream_media_unavailable">You are currently playing a streaming video. <b>Deleting video is not possible.</b></string>
+    <string name="text_share_stream_media_unavailable">You are currently playing a streaming video. <b>Sharing video file is not possible.</b></string>
+    <string name="text_preparing_video_please_wait">Preparing video, Please wait…</string>
+    <string name="text_enter_video_url_hint">Paste the video link here…</string>
+    <string name="text_error_failed_to_fetch_video_format"><b>Unable to retrieve video formats at the moment.</b> Please try opening the link directly in your browser.</string>
+    <string name="title_downloads_manager">Downloads Manager</string>
+    <string name="text_missing_associate_webpage">Missing Associate Webpage</string>
+
+    <string name="text_sample_video_file_name">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
+    <string name="text_app_running_in_the_background">Search and download your videos.</string>
+    <string name="text_feature_isnt_available_yet">This feature is currently not available, but we\'re working on it and it will be coming soon. <b>Thank you for your patience—stay tuned for future updates! 😊</b></string>
+    <string name="text_feature_isnt_implemented">Feature isn\'t implemented yet</string>
+    <string name="title_okay">Okay</string>
+    <string name="text_mobile_user_agent">Mobile user agent</string>
+    <string name="title_zoomed_in">Zoomed In</string>
+    <string name="title_aio_video_player">AIO Video Player</string>
+    <string name="text_select_subtitle_from_file_manager">Open file manager and pick the appropriate subtitle file to attach it to the video.</string>
+    <string name="title_select_file">Select File</string>
+    <string name="text_subtitle_file_not_readable">It looks like there was a problem adding the selected subtitle file to the player. Unfortunately, you’ll need to watch the video withoutsubtitles. We apologize for the inconvenience.</string>
+    <string name="text_subtitle_file_not_supported">The selected file is unsupported, please pick a valid subtitle file for the video.</string>
+    <string name="text_error_media_cant_be_played"><b>Unable to play due to an error.</b> Please check if the file format is supported by your device.</string>
+
+
+
+    <string name="title_media_options">Media Options</string>
+    <string name="title_share_with_others">Share with others</string>
+    <string name="text_file_information">File information</string>
+    <string name="text_delete_from_disk">Delete from disk</string>
+    <string name="text_open_in_another">Open in another</string>
+    <string name="text_convert_to_audio">Convert to audio</string>
+    <string name="title_invalid_streaming_link">Invalid Streaming Link</string>
+
+    <string name="text_streaming_link_invalid"><b>Video unavailable:</b> The provided link does\'t work. Please try another.</string>
+    <string name="title_exit_the_player">Exit Player</string>
+    <string name="text_no_next_item_to_play">No next item to play.</string>
+    <string name="text_no_previous_item_to_play">No previous item to play.</string>
+    <string name="text_invalid_media_file">Invalid media file…</string>
+    <string name="text_file_not_readable">File\'s not readable, due to permission issue.</string>
+    <string name="text_welcome_to_aio">Welcome to AIO…</string>
+    <string name="text_exiting_application">Exiting Application…</string>
+    <string name="title_open_new_tab">Open New Tab</string>
+    <string name="text_invalid_url">The URL is invalid.</string>
+    <string name="title_recalculating_file_size">Recalculating File Size…</string>
+    <string name="calculating">Calculating…</string>
+
+    <string name="title_validating_download">Validating Download…</string>
+    <string name="text_old_data_found">Old Data Found…</string>
+    <string name="title_failed_deleted_paused">File Deleted: Paused</string>
+    <string name="text_download_complete_click_to_open">Download\'s completed, click here to open.</string>
+    <string name="text_open_file">Open file</string>
+    <string name="text_share_file">Share file</string>
+    <string name="text_clear_from_list">Clear from list</string>
+    <string name="text_media_file_has_deleted">Media file has been deleted.</string>
+    <string name="text_show_download_info">Show download info…</string>
+    <string name="text_rename_file">Rename file</string>
+    <string name="text_discover_more">Discover more</string>
+    <string name="text_you_dont_have_any_downloads"><b>You don\'t have any downloads</b>\nGo and download something!</string>
+    <string name="text_share_with_others">Share with others</string>
+    <string name="title_open_link_in_browser">Open With Browser</string>
+    <string name="text_info">Info</string>
+    <string name="text_sample_google_domain">https://www.google.com</string>
+    <string name="text__">--</string>
+    <string name="text_downloads_default_http_user_agent">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36</string>
+    <string name="text_browser_default_mobile_http_user_agent">Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Mobile Safari/537.36</string>
+    <string name="text_waiting_to_join">Waiting to join the download…</string>
+    <string name="title_generating_parts">Generating Download Parts…</string>
+    <string name="title_creating_empty_file">Creating Empty File…</string>
+    <string name="title_started_downloading">Started Downloading…</string>
+    <string name="text_completed">Completed</string>
+    <string name="title_download_io_failed">Download Failed : File IO…</string>
+    <string name="text_failed_to_write_file_to_storage">The download failed to save the file to
+		storage. This usually occurs when the operating system denies access to the selected file
+		location, or the destination file is deleted manually.\n\nWe recommend restarting the download and selecting a folder that the app can
+		access, such as the Download folder.
+	</string>
+    <string name="title_paused">Paused</string>
+    <string name="text_waiting_for_network">Waiting for Network…</string>
+    <string name="text_waiting_for_wifi">Waiting for WiFi…</string>
+    <string name="text_waiting_for_internet">Waiting for Internet…</string>
+    <string name="text_filtering_url">Filtering URL…</string>
+    <string name="text_configuring_auto_resume">Configuring Auto Resume…</string>
+    <string name="text_configuring_auto_remove">Configuring Auto Remove…</string>
+    <string name="title_unknown_size">Unknown Size</string>
+    <string name="text_download_has_been_paused">Download has been paused.</string>
+    <string name="text_copy_file_link">Copy file link</string>
+    <string name="text_resume_task">Resume task</string>
+    <string name="text_pause_task">Pause task</string>
+
+
+
+
+    <string name="text_share_file_link">Share file link</string>
+    <string name="text_type_new_file_name_hint">Type a new file name here…</string>
+	<string name="text_missing_webpage_link_info">The downloaded file is missing <b> its associated webpage link</b>.</string>
+    <string name="title_download_failed">Download Failed</string>
+    <string name="title_link_expired">Link Expired: Paused</string>
+    <string name="title_file_deleted_paused">File Deleted: Paused</string>
+    <string name="title_successful">Successful</string>
+    <string name="txt_no_app_found_to_open_this_file">No app found to open this file.</string>
+    <string name="txt_download_failed">Download Failed</string>
+    <string name="text_analyzing_url_please_wait">Analyzing URL, Please wait a sec…</string>
+    <string name="title_content_download_policy">Content Download Policy</string>
+    <string name="text_not_support_youtube_download"><b>We don\'t support downloading videos from YouTube and other Google services</b> in compliance with YouTube\'s terms of service.</string>
+
+    <string name="title_download_now">Download Now</string>
+    <string name="text_failed_open_the_video">Failed open the video.</string>
+    <string name="title_allow_now">Allow Now</string>
+    <string name="text_allow_permission_in_setting">You need to allow necessary permissions in Settings manually.</string>
+    <string name="text_allow_the_permissions">Allow the permissions</string>
+    <string name="text_press_back_button_to_exit">Press back once more to exit.</string>
+    <string name="title_not_now">Not Now</string>
+    <string name="text_unknown_video_title">Unknown Video Title</string>
+    <string name="text_application_language">Application language</string>
+    <string name="text_00_00">00:00</string>
+    <string name="text_failed_to_add_download_task">Failed to add download.</string>
+    <string name="text_download_added_successfully">Download\'s added successfully</string>
+    <string name="text_player_is_locked_unlock_first">Player is locked, unlock first.</string>
+    <string name="text_getting_name_from_server">Getting name from server…</string>
+    <string name="text_select_a_video_resolution">Select your desired resolution first</string>
+    <string name="text_wait_for_video_title">Wait till server return the video title.</string>
+    <string name="text_b_b_b_date_b"><![CDATA[<b>%1$s:</b> %2$s  <b>/</b>  %3$s %4$s    <b>/</b>   %5$s]]></string>
+    <string name="text_something_went_wrong">Something went wrong, try again later.</string>
+    <string name="text_bookmark_saved">Bookmark is saved.</string>
+    <string name="title_preparing_download">Preparing The Download…</string>
+    <string name="text_downloaded">Downloaded</string>
+    <string name="title_connecting_to_the_server">Connecting To The Server…</string>
+    <string name="text_100_percentage">100%</string>
+    <string name="text_not_configured">Not configured</string>
+    <string name="text_merging_video_and_audio_format">Merging Video &amp; Audio Format…</string>
+    <string name="text_finishing_up_the_download">Finishing Up The Download…</string>
+    <string name="text_setting_up_session">Setting Up Download Session…</string>
+    <string name="text_setting_destination_files">Setting Destination Files…</string>
+    <string name="text_checking_formats_to_download">Checking Formats To Download…</string>
+    <string name="text_validating_already_downloaded_part">Validating Already Downloaded Parts…</string>
+    <string name="text_connection_failed_retrying">Connection Failed, Retrying (%1$s/%2$s)…</string>
+    <string name="text_load_more_history">Load More History</string>
+    <string name="text_copied_url_to_clipboard">Copied URL to the clipboard.</string>
+    <string name="title_not_available">Not Available</string>
+    <string name="text_pick_video_resolution_for_getting_file_name">Pick a video resolution to generate a file name.</string>
+    <string name="text_invalid_webpage_url">Webpage URL is Invalid</string>
+    <string name="text_waiting_for_server_to_respond">Waiting for the server to respond.</string>
+    <string name="text_reached_limit_for_going_back">Reached the limit for going back.</string>
+    <string name="text_reached_limit_for_going_forward">Reached the limit for going forward.</string>
+    <string name="text_many_tabs_open_consider_warning"><b>You have %1$s browser tabs open.</b> Once closed, access the lost tabs from the browser history.</string>
+    <string name="text_exit_the_app">Exit Now</string>
+    <string name="text_close_tabs">Close Tabs</string>
+
+
+
+    <string name="text_load_more_bookmarks">Load More Bookmarks</string>
+    <string name="text_bookmarks_empty">Your bookmarks collection is empty.</string>
+    <string name="title_bookmarks">Bookmarks</string>
+    <string name="text_delete_bookmarks_confirmation">Deleting bookmarks is permanent and cannot be undone. <b>Do you want to continue?</b></string>
+    <string name="text_aio_system_service">AIO System Service</string>
+    <string name="text_feedback_message">We value your feedback and are committed to making improvements as quickly as possible.</string>
+    <string name="text_no_sound">No sound on downloaded videos</string>
+    <string name="text_incomplete_video">Incomplete downloaded video</string>
+    <string name="text_app_crashed">App crashed unexpectedly</string>
+    <string name="text_glitch_in_video">Glitch in downloaded videos</string>
+    <string name="text_showing_many_ads">Showing too many ads</string>
+    <string name="text_other_problems">Other problem found</string>
+    <string name="text_user_message">"User Message: "</string>
+    <string name="text_no_sound_in_videos">- No sound in videos\n</string>
+    <string name="text_videos_are_incomplete">- Videos are incomplete\n</string>
+    <string name="text_app_crashed_during_use">- App crashed during use\n</string>
+    <string name="text_videos_are_glitching">- Videos are glitching\n</string>
+    <string name="text_too_many_ads_are_being_shown">- Too many ads are being shown\n</string>
+    <string name="text_other_problems_experienced">- Other problems experienced\n</string>
+    <string name="text_no_specific_issues_reported">No specific issues reported.\n</string>
+    <string name="text_device_information">\nDevice Information:\n</string>
+    <string name="text_issues_reported">Issues Reported:\n</string>
+    <string name="text_feedbacks_sent_successfully">Feedback\'s been sent successfully.</string>
+    <string name="title_send_feedback">Send Feedback</string>
+    <string name="text_app_crash_feedback_message"><b>We\'re sorry the app crashed!</b> Please share what happened so we can fix this issue in the future.</string>
+    <string name="text_oops_app_was_crashed">Oops, App Was Crashed</string>
+    <string name="text_open_in_browser">Open in browser</string>
+    <string name="text_open_bookmark">Open bookmarks</string>
+    <string name="text_share_bookmark">Share with others</string>
+    <string name="text_delete_bookmark">Delete bookmark</string>
+    <string name="text_copy_bookmark">Copy to clipboard</string>
+    <string name="text_copy_history">Copy to clipboard</string>
+
+
+
+    <string name="text_delete_history">Delete history</string>
+    <string name="text_no_video_resources_found"><b>Try playing the video first then wait a few seconds</b> for the app to capture the video link.</string>
+    <string name="text_no_video_found">No videos are found, try again later.</string>
+    <string name="text_grabbed_videos">Extracted Video Links</string>
+    <string name="text_blocked_unwanted_popup_links">Blocked unwanted popup links.</string>
+    <string name="text_closed_tab">Closed Tab</string>
+    <string name="text_click_to_get_info">Click to get info…</string>
+    <string name="type_video_type_m3u8_available_resolutions">Type : M3U8 | Available Resolutions: %1$s</string>
+    <string name="text_video_type_m3u8_resolution">Type : M3U8 | Resolution: %1$s</string>
+    <string name="text_video_type_mp4_resolution">Type : Mp4 | Resolution: %1$s</string>
+    <string name="text_video_type_mp4">Type: MP4 | %1$s</string>
+    <string name="text_fetching_file_info">Fetching File Info…</string>
+    <string name="text_youtube_download_not_supported">Youtube Download Not Supported.</string>
+    <string name="text_add_to_bookmark">Add to bookmark</string>
+    <string name="text_media_file_is_not_existed">Media file is not existed anymore.</string>
+    <string name="title_private_folder">Private Folder</string>
+    <string name="text_fixing_mpeg_ts_in_mp4_container">Fixing MPEG-TS in MP4 Container…</string>
+    <string name="text_checking_m3u8_live_status">Checking M3U8 Live Status…</string>
+    <string name="text_extracting_source_url">Extracting Source URL…</string>
+    <string name="text_downloading_m3u8_information">Downloading M3U8 Information…</string>
+    <string name="text_rate_your_experience_explain">Take a moment to rate us on the Google Play Store — your support helps us grow and improve! 🌟🚀</string>
+    <string name="text_watch_ad_to_download">Watch Ad To Download</string>
+    <string name="text_checking_permission_wait">Checking permissions…</string>
+    <string name="text_empty_string" translatable="false" />
+    <string name="title_close">Close</string>
+    <string name="text_enter_your_email_address_here">Enter your email address</string>
+    <string name="text_user_email">User Email:</string>
+    <string name="text_enter_your_email_message_first">Enter your email and message first.</string>
+    <string name="text_time_representation">--:--</string>
+    <string name="title_rate_now">Rate Now</string>
+    <string name="title_love_using_the_app">Love Using The App? 😍</string>
+    <string name="title_couldnt_play_media">⚠️ Could\'t Play The Media</string>
+    <string name="text_unavailable_for_streaming">⚠️ Unavailable For Streaming</string>
+    <string name="text_no_discovery_during_streaming"><b>This feature is designed for downloaded videos only</b> and not possible for streaming.</string>
+    <string name="text_no_app_can_handle_this_request">No app can handle this request.</string>
+    <string name="text_cancel_converting">Cancel Converting</string>
+    <string name="text_converting_audio_has_been_successful">Converting audio has been successful.</string>
+    <string name="text_converting_audio_has_been_failed">Converting audio has been failed.</string>
+    <string name="text_converting_audio_progress">Converting Audio… Progress(%1$s)</string>
+    <string name="text_converting_audio_progress_0">Converting Audio… Progress (0%)</string>
+    <string name="text_failed_to_load_media_info"><b>Opps! Something went wrong.</b> Failed to load the media file information.</string>
+    <string name="title_settings">Settings</string>
+    <string name="text_open_application_info">Open application info</string>
+    <string name="text_terms_conditions"><![CDATA[Terms & conditions]]></string>
+    <string name="text_privacy_policy">Privacy policy</string>
+    <string name="text_content_policy">Content policy</string>
+    <string name="text_your_send_feedback">Send your feedback</string>
+    <string name="text_send_feedback">Send feedback</string>
+    <string name="text_special_support_thank_you">The app was made possible with the support of many incredible people.<b> <u>Thank you Goutam</u> for being part of this journey!</b></string>
+    <string name="text_share_with_friends">Share with friends</string>
+    <string name="text_download_location">Downloads location</string>
+    <string name="text_browser_homepage">Browser homepage</string>
+    <string name="text_block_popup_ads">Block popup-ads</string>
+    <string name="text_hide_task_notifications">Hide task notifications</string>
+    <string name="text_wifi_only_download">Wifi only downloads</string>
+    <string name="text_play_sound_completion">Play sound on completion</string>
+    <string name="title_tasks">Tasks</string>
+    <string name="title_build_version">Build Version:</string>
+    <string name="title_version_number">Version Number:</string>
+    <string name="text_not_visible_in_system_gallery">Not visible in system gallery, secure and private.</string>
+    <string name="title_system_gallery">System Gallery</string>
+    <string name="text_visible_in_system_gallery">Visible in system gallery, easy but not private.</string>
+    <string name="text_changes_will_apply_on_next_download">Changes will apply to your next download.</string>
+    <string name="title_apply_changes">Apply Changes</string>
+
+    <string name="text_enter_the_url">Enter the URL…</string>
+    <string name="text_current_homepage"><b>Current Homepage:</b> %1$s</string>
+    <string name="text_sharing_app_msg">"\n\t\t\t Hey! I've been using %1$s and thought you'd love it too! 🌟 Get it here: %2$s\n\t\t "</string>
+    <string name="title_how_to_download">How To Download</string>
+    <string name="title_downloaded_files">Downloaded Files</string>
+    <string name="text_unsupported_video_link">Unsupported video link.</string>
+    <string name="title_player_default">Player Default</string>
+    <string name="text_resolution_info">Resolution: %1$s</string>
+    <string name="title_paused_server_problem">Paused: Server Problem…</string>
+    <string name="title_paused_login_required">Paused: Login Required</string>
+    <string name="title_paused_content_not_available">Paused: Content Not Available</string>
+    <string name="title_paused_ytdlp_format_not_found">Paused: Format Not Found</string>
+    <string name="title_getting_cookie">Getting Cookie From Server…</string>
+    <string name="title_login_now">Login Now</string>
+    <string name="title_login_required">Login Required</string>
+    <string name="text_login_to_download_private_videos"><b>Please login to the website</b> before you can download restricted contents.</string>
+    <string name="text_how_to_download">How to download</string>
+    <string name="text_open_web_history">Open web history</string>
+    <string name="text_share_page_link">Share page link</string>
+    <string name="text_please_install_web_browser">Please install a web browser.</string>
+    <string name="title_server_issue">%1$s: Server Issue</string>
+    <string name="text_wait_for_video_info">Wait for video info…</string>
+    <string name="title_download_available">Download Available</string>
+    <string name="text_unsupported_file_link">Unsupported file link.</string>
+    <string name="text_show_video_grabber">Show video grabber</string>
+    <string name="title_site_banned_in_your_area">Failed: Site Banned In Your Area</string>
+    <string name="title_video_downloader">Video Downloader</string>
+    <string name="title_google">Google</string>
+    <string name="title_bing">Bing</string>
+    <string name="title_facebook">Facebook</string>
+    <string name="title_x">X.com</string>
+    <string name="title_instagram">Instagram</string>
+    <string name="title_yahoo">Yahoo</string>
+    <string name="title_dailymotion">Dailymotion</string>
+    <string name="title_whatsapp">Whatsapp</string>
+    <string name="title_high_quality">High Quality</string>
+    <string name="title_history">History</string>
+    <string name="text_open_downloads_for_recent_downloads"><b>Open Tasks</b> for all downloads</string>
+    <string name="title_recent_downloads">Recent Downloads</string>
+    <string name="text_fb_how_to_guide_1">Click <b><u>Share</u></b> and copy the video link.</string>
+    <string name="text_fb_how_to_guide_2">Back to the app,  <b><u>paste the link</u></b> and download.</string>
+    <string name="text_fb_how_to_guide_3"><u>Paste the video link</u>, and click <b>download</b>.</string>
+    <string name="title_what_videos_will_you_download">What Videos Will You Download?</string>
+    <string name="title_copied_link">Copied Link</string>
+    <string name="title_open_the_link">Open The Link</string>
+    <string name="title_youtube">Youtube</string>
+    <string name="title_duckduckgo">Duckduckgo</string>
+    <string name="text_instagram_isnt_installed">Instagram is not installed.</string>
+    <string name="text_facebook_isnt_installed">Facebook is not installed.</string>
+    <string name="text_youtube_isnt_installed">YouTube is not installed.</string>
+    <string name="title_file_size">File Size:</string>
+    <string name="text_inst_how_to_guide_1">Open a reel and click the share icon.</string>
+    <string name="text_inst_how_to_guide_2">Click on the share icon again.</string>
+    <string name="text_inst_how_to_guide_3">Now select AIO, and download the video.</string>
+    <string name="text_you_have_b_active_downloads_b">You have <b>%1$s active downloads.</b></string>
+    <string name="text_google_play_store_inst_installed">Google play store isn\'t installed.</string>
+    <string name="title_upgrade_to_aio_premium">Upgrade to premium ad-free</string>
+    <string name="title_you_are_using_aio_premium">You\'re a premium user of AIO</string>
+    <string name="text_thank_you_taking_interest_in_premium">Thank you for showing interest in purchasing the premium subscription. <b>We\'ll have it soon.</b></string>
+    <string name="text_thank_you_using_premium_version"><b>Thank you for choosing our premium subscription!</b> We appreciate your support and hope you enjoy the upgraded features.</string>
+    <string name="text_app_will_restart_to_take_effect">The app will restart to take effect.</string>
+    <string name="text_app_need_restart_to_take_effect">The change will apply after the app is restarted.</string>
+    <string name="text_loaded_successfully">"Loaded successfully "</string>
+    <string name="text_sharing_media_file">Sharing media file…</string>
+    <string name="title_change_file_name">Change File Name</string>
+    <string name="text_no_referer_link_found">No referer link found.</string>
+    <string name="title_thank_you_so_much">Thank You So Much</string>
+    <string name="text_go_to_tasks_tab_to_see_progress">Monitor the download progress in the <b>Tasks</b> tab.</string>
+    <string name="title_paste_video_link">Paste The Video Link</string>
+    <string name="title_download_location">Download Location</string>
+    <string name="title_guide_for_instagram_reels">Guide For Instagram Reels</string>
+    <string name="title_guide_for_facebook_reels">Guide For Facebook Videos</string>
+    <string name="title_guide_for_web_videos">Guide For Web Videos</string>
+    <string name="text_web_how_to_guide_1"><b>Play the video first</b>, then click the <b><u>video grabber</u></b>.</string>
+    <string name="text_web_how_to_guide_2">Select a <b><u>video resolution</u></b>.</string>
+    <string name="text_web_how_to_guide_3">Now, click on the <b><u>Download</u></b>.</string>
+    <string name="title_internet">Internet</string>
+    <string name="text_show_download_information">Download information…</string>
+    <string name="text_file_name_will_be_renamed"><b>The actual file name</b> on disk will be changed.</string>
+    <string name="title_experimental_feature">Experimental Feature</string>
+    <string name="text_feature_is_experimental_msg">This feature is currently experimental. <b>We don\'t recommend switching the language.</b></string>
+    <string name="title_proceed">Proceed</string>
+    <string name="title_restart_application">Restart Application</string>
+    <string name="text_cation_msg_of_restarting_application"><b>You are about to restart the application process.</b> Please proceed with caution, and only if you are sure of what you\'re doing.</string>
+    <string name="b_download_id_b_br"><![CDATA[<b>Download Id:</b> %1$s<br>]]></string>
+    <string name="b_file_name_b_br"><![CDATA[<b>File Name:</b> %1$s<br>]]></string>
+    <string name="b_progress_percentage_b_br"><![CDATA[<b>Progress Percentage:</b> %1$s<br>]]></string>
+    <string name="b_download_stream_info_b_br"><![CDATA[<b>Download Stream Info:</b> %1$s<br>]]></string>
+    <string name="b_file_size_b_br"><![CDATA[<b>File Size:</b> %1$s<br>]]></string>
+    <string name="b_downloaded_bytes_b_bytes_br"><![CDATA[<b>Downloaded Bytes:</b> %1$s bytes<br>]]></string>
+    <string name="b_downloaded_bytes_in_format_b_br"><![CDATA[<b>Downloaded Bytes In Format:</b> %1$s<br>]]></string>
+    <string name="b_file_category_b_br"><![CDATA[<b>File Category:</b> %1$s<br>]]></string>
+    <string name="b_file_directory_b_br"><![CDATA[<b>File Directory:</b> %1$s<br>]]></string>
+    <string name="b_file_url_b_br"><![CDATA[<b>File URL:</b> %1$s<br>]]></string>
+    <string name="b_download_webpage_b_br"><![CDATA[<b>Download Webpage:</b> %1$s<br>]]></string>
+    <string name="b_download_status_info_b_br"><![CDATA[<b>Download Status Info:</b> %1$s<br>]]></string>
+    <string name="b_download_started_b_br"><![CDATA[<b>Download Started :</b> %1$s<br>]]></string>
+    <string name="b_download_last_modified_b_br"><![CDATA[<b>Download Last Modified:</b> %1$s<br>]]></string>
+    <string name="b_time_spent_b_br"><![CDATA[<b>Time Spent:</b> %1$s<br>]]></string>
+    <string name="b_is_file_url_expired_b_br"><![CDATA[<b>Is File URL Expired:</b> %1$s<br>]]></string>
+    <string name="b_is_failed_to_access_file_b_br"><![CDATA[<b>Is Failed To Access File:</b> %1$s<br>]]></string>
+    <string name="b_is_waiting_for_network_b_br"><![CDATA[<b>Is Waiting For Network:</b> %1$s<br>]]></string>
+    <string name="b_checksum_validation_b_br"><![CDATA[<b>Checksum Validation:</b> %1$s<br>]]></string>
+    <string name="b_multi_thread_support_b_br"><![CDATA[<b>Multi-thread Support:</b> %1$s<br>]]></string>
+    <string name="b_resume_support_b_br"><![CDATA[<b>Resume Support:</b> %1$s<br>]]></string>
+    <string name="b_unknown_file_size_b_br"><![CDATA[<b>Unknown File size:</b> %1$s<br>]]></string>
+    <string name="b_connection_retry_counts_b_times_br"><![CDATA[<b>Connection Retry Counts:</b> %1$s times<br>]]></string>
+    <string name="b_default_parallel_connections_b_br"><![CDATA[<b>Default Parallel Connections:</b> %1$s<br>]]></string>
+    <string name="b_default_thread_connections_b_br"><![CDATA[<b>Default Thread Connections:</b> %1$s<br>]]></string>
+    <string name="b_buffer_size_b_br"><![CDATA[<b>Buffer Size:</b> %1$s<br>]]></string>
+    <string name="b_http_proxy_b_br"><![CDATA[<b>HTTP Proxy:</b> %1$s<br>]]></string>
+    <string name="b_download_speed_limiter_b_br"><![CDATA[<b>Download Speed Limiter:</b> %1$s<br>]]></string>
+    <string name="b_user_agent_b_br"><![CDATA[<b>User Agent:</b> %1$s<br>]]></string>
+    <string name="b_remaining_time_b_br"><![CDATA[<b>Remaining Time:</b> %1$s<br>]]></string>
+    <string name="b_realtime_network_speed_b_br"><![CDATA[<b>Realtime Network Speed:</b> %1$s<br>]]></string>
+    <string name="b_average_network_speed_b_br"><![CDATA[<b>Average Network Speed:</b> %1$s<br>]]></string>
+    <string name="b_max_network_speed_b_br"><![CDATA[<b>Max Network Speed:</b> %1$s<br>]]></string>
+    <string name="b_est_part_chunk_size_b_br"><![CDATA[<b>Est. Part Chunk Size:</b> %1$s<br>]]></string>
+    <string name="b_part_progress_percentages_b_br"><![CDATA[<b>Part Progress Percentages:</b> %1$s<br>]]></string>
+    <string name="b_parts_downloaded_bytes_b_br"><![CDATA[<b>Parts Downloaded Bytes:</b> %1$s<br>]]></string>
+    <string name="text_left">left</string>
+    <string name="text_spent">spent</string>
+    <string name="title_turn_off_battery_optimization">Turn Off Battery Optimization</string>
+    <string name="title_disable_now">Disable Now</string>
+    <string name="text_battery_optimization_msg"><b>To ensure downloads are not interrupted</b>, exclude this app from battery optimization.</string>
+    <string name="text_couldnt_get_video_title">Server\'s busy, try again later.</string>
+
+</resources>

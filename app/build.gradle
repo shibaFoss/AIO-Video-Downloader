@@ -1,0 +1,135 @@
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+}
+
+android {
+    namespace 'com.aio'
+    compileSdk 35
+    ndkVersion '28.0.12916984 rc3'
+
+    defaultConfig {
+        applicationId "com.aio"
+        minSdk 28
+        //noinspection OldTargetApi
+        targetSdk 34
+        versionCode 67
+        versionName '20250510'
+
+        vectorDrawables {
+            useSupportLibrary = true
+        }
+
+        ndk {
+            abiFilters.add("x86")
+            abiFilters.add("x86_64")
+            abiFilters.add("armeabi-v7a")
+            abiFilters.add("arm64-v8a")
+        }
+
+        multiDexEnabled true
+        signingConfig signingConfigs.debug
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            shrinkResources false
+            multiDexEnabled true
+            debuggable true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    android.buildTypes.release.ndk.debugSymbolLevel "FULL"
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+
+        jniLibs {
+            useLegacyPackaging = true
+        }
+    }
+
+    bundle {
+        density {
+            enableSplit = true
+        }
+
+        abi {
+            enableSplit = true
+        }
+    }
+
+    splits.abi {
+        enable true
+        reset()
+        include 'x86', 'x86_64', 'armeabi-v7a', 'arm64-v8a'
+        universalApk true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+        coreLibraryDesugaringEnabled true
+    }
+
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+
+    dependenciesInfo {
+        includeInBundle = false
+        includeInApk = false
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation libs.androidx.appcompat
+    implementation libs.androidx.viewpager2
+    implementation libs.androidx.cardview
+    implementation libs.circleimageview
+    implementation libs.androidx.webkit
+
+    implementation libs.androidx.core.ktx
+    implementation libs.kotlin.coroutines.core
+    implementation libs.kotlin.coroutines
+    implementation libs.androidx.lifecycle.process
+
+    implementation libs.media3.exoplayer
+    implementation libs.media3.exoplayer.hls
+    implementation libs.media3.exoplayer.dash
+    implementation libs.media3.datasource
+    implementation libs.media3.ui
+    implementation libs.media3.session
+
+    implementation libs.gson
+    implementation libs.jsoup
+
+    implementation libs.retrofit
+    implementation libs.retrofit.converter.gson
+
+    implementation libs.okhttp
+    implementation libs.logging.interceptor
+
+    implementation libs.parse
+
+    implementation libs.lottie
+    implementation libs.glide
+    annotationProcessor libs.glide.compiler
+
+    implementation libs.permissionx
+    implementation libs.saf.storage
+
+    implementation libs.ytdlp.library
+    implementation libs.ytdlp.ffmpeg
+
+    implementation libs.billing.library
+    implementation libs.play.services.base
+    implementation libs.play.services.ads
+    coreLibraryDesugaring(libs.desugar.jdk.libs)
+}

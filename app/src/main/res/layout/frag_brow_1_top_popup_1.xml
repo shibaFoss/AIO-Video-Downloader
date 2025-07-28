@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/style_dialog"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:ignore="UseAppTint,UseCompatTextViewDrawableXml">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/_5"
+        android:layout_marginTop="@dimen/_10"
+        android:layout_marginEnd="@dimen/_5"
+        android:layout_marginBottom="@dimen/_10"
+        app:cardBackgroundColor="@color/color_background"
+        app:cardCornerRadius="@dimen/_10"
+        app:cardElevation="@dimen/_2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45"
+                android:layout_marginStart="@dimen/_0"
+                android:layout_marginTop="@dimen/_0"
+                android:layout_marginEnd="@dimen/_0"
+                android:layout_marginBottom="@dimen/_0"
+                android:background="@color/color_surface"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/button_webpage_back"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/ic_button_transparent_selector"
+                    android:importantForAccessibility="no"
+                    android:padding="@dimen/_5"
+                    android:src="@drawable/ic_button_arrow_back"
+                    android:tint="@color/color_secondary" />
+
+                <ImageButton
+                    android:id="@+id/button_webpage_forward"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/ic_button_transparent_selector"
+                    android:importantForAccessibility="no"
+                    android:padding="@dimen/_5"
+                    android:src="@drawable/ic_button_arrow_next"
+                    android:tint="@color/color_secondary" />
+
+                <ImageButton
+                    android:id="@+id/button_save_bookmark"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/ic_button_transparent_selector"
+                    android:importantForAccessibility="no"
+                    android:padding="@dimen/_5"
+                    android:src="@drawable/ic_button_save_bookmark"
+                    android:tint="@color/color_secondary" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/button_share_webpage_url"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_10"
+                android:layout_marginTop="@dimen/_5"
+                android:layout_marginEnd="@dimen/_15"
+                android:layout_marginBottom="@dimen/_0"
+                android:background="@drawable/ic_button_negative_selector"
+                android:clickable="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/_8"
+                    android:drawableStart="@drawable/ic_button_share_v3"
+                    android:drawablePadding="@dimen/_5"
+                    android:drawableTint="@color/color_secondary"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/font_family_regular"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="@string/text_share_page_link"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="@dimen/normal_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/button_copy_webpage_url"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_10"
+                android:layout_marginTop="@dimen/_0"
+                android:layout_marginEnd="@dimen/_15"
+                android:layout_marginBottom="@dimen/_0"
+                android:background="@drawable/ic_button_negative_selector"
+                android:clickable="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/_8"
+                    android:drawableStart="@drawable/ic_button_clipboard_v2"
+                    android:drawablePadding="@dimen/_5"
+                    android:drawableTint="@color/color_secondary"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/font_family_regular"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="@string/text_copy_site_url"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="@dimen/normal_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/button_open_with_system_browser"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_10"
+                android:layout_marginTop="@dimen/_0"
+                android:layout_marginEnd="@dimen/_15"
+                android:layout_marginBottom="@dimen/_0"
+                android:background="@drawable/ic_button_negative_selector"
+                android:clickable="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/_8"
+                    android:drawableStart="@drawable/ic_button_open_v2"
+                    android:drawablePadding="@dimen/_5"
+                    android:drawableTint="@color/color_secondary"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/font_family_regular"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="@string/text_open_in_browser"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="@dimen/normal_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/button_add_download_task_editor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_10"
+                android:layout_marginTop="@dimen/_0"
+                android:layout_marginEnd="@dimen/_15"
+                android:layout_marginBottom="@dimen/_0"
+                android:background="@drawable/ic_button_negative_selector"
+                android:clickable="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/_8"
+                    android:drawableStart="@drawable/ic_button_download"
+                    android:drawablePadding="@dimen/_5"
+                    android:drawableTint="@color/color_secondary"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/font_family_regular"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="@string/text_new_download"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="@dimen/normal_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/button_open_bookmark"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_10"
+                android:layout_marginTop="@dimen/_0"
+                android:layout_marginEnd="@dimen/_15"
+                android:layout_marginBottom="@dimen/_0"
+                android:background="@drawable/ic_button_negative_selector"
+                android:clickable="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/_8"
+                    android:drawableStart="@drawable/ic_button_folder"
+                    android:drawablePadding="@dimen/_5"
+                    android:drawableTint="@color/color_secondary"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/font_family_regular"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="@string/text_open_bookmark"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="@dimen/normal_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/button_open_history"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_10"
+                android:layout_marginTop="@dimen/_0"
+                android:layout_marginEnd="@dimen/_15"
+                android:layout_marginBottom="@dimen/_0"
+                android:background="@drawable/ic_button_negative_selector"
+                android:clickable="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/_8"
+                    android:drawableStart="@drawable/ic_button_web_history"
+                    android:drawablePadding="@dimen/_5"
+                    android:drawableTint="@color/color_secondary"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/font_family_regular"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="@string/text_open_web_history"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="@dimen/normal_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/button_how_to_use"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_10"
+                android:layout_marginTop="@dimen/_0"
+                android:layout_marginEnd="@dimen/_15"
+                android:layout_marginBottom="@dimen/_0"
+                android:background="@drawable/ic_button_negative_selector"
+                android:clickable="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/_8"
+                    android:drawableStart="@drawable/ic_button_question"
+                    android:drawablePadding="@dimen/_5"
+                    android:drawableTint="@color/color_secondary"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/font_family_regular"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="@string/text_how_to_download"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="@dimen/normal_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/button_open_feedback"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_10"
+                android:layout_marginTop="@dimen/_0"
+                android:layout_marginEnd="@dimen/_15"
+                android:layout_marginBottom="@dimen/_8"
+                android:background="@drawable/ic_button_negative_selector"
+                android:clickable="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/_8"
+                    android:drawableStart="@drawable/ic_button_feedback"
+                    android:drawablePadding="@dimen/_5"
+                    android:drawableTint="@color/color_secondary"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/font_family_regular"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="@string/text_send_feedback"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="@dimen/normal_text_size" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

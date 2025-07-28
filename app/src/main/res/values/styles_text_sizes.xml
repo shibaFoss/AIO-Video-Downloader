@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="smallest_text_size">8sp</dimen>
+    <dimen name="smaller_text_size">10sp</dimen>
+    <dimen name="small_text_size">12sp</dimen>
+    <dimen name="message_text_size">14sp</dimen>
+    <dimen name="normal_text_size_small">15sp</dimen>
+    <dimen name="normal_text_size">16sp</dimen>
+    <dimen name="sub_heading_text_size">18sp</dimen>
+    <dimen name="title_text_size">19sp</dimen>
+    <dimen name="actionbar_text_size">19sp</dimen>
+</resources>

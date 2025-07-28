@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container_running_info"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    tools:ignore="UseAppTint, UselessParent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15"
+        android:layout_marginTop="@dimen/_3"
+        android:layout_marginEnd="@dimen/_15"
+        android:layout_marginBottom="@dimen/_5"
+        android:background="@drawable/ic_button_selector_background"
+        android:elevation="@dimen/_1"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/image_card_view"
+            android:layout_width="@dimen/_90"
+            android:layout_height="@dimen/_60"
+            android:layout_marginStart="@dimen/_5"
+            android:layout_marginTop="@dimen/_5"
+            android:layout_marginEnd="@dimen/_5"
+            android:layout_marginBottom="@dimen/_5"
+            app:cardBackgroundColor="@color/color_background"
+            app:cardCornerRadius="@dimen/_5">
+
+            <ImageView
+                android:id="@+id/image_file_thumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:adjustViewBounds="true"
+                android:importantForAccessibility="no"
+                android:scaleType="centerCrop"
+                android:src="@drawable/image_no_thumb_available" />
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/_8"
+            android:layout_toEndOf="@id/image_card_view"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/text_file_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@id/image_status_indicator"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/font_family_medium"
+                    android:gravity="center_vertical"
+                    android:maxLines="2"
+                    android:singleLine="false"
+                    android:text="@string/text_sample_video_file_name"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="@dimen/message_text_size" />
+
+                <ImageView
+                    android:id="@+id/image_status_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_5"
+                    android:adjustViewBounds="true"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_button_open_v2"
+                    android:tint="@color/color_secondary" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5"
+                android:background="@drawable/rounded_surface_color"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/text_download_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="@dimen/_5"
+                    android:layout_marginTop="@dimen/_2"
+                    android:layout_marginEnd="@dimen/_5"
+                    android:layout_marginBottom="@dimen/_2"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/font_family_regular"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:text="@string/text__"
+                    android:textColor="@color/color_text_hint"
+                    android:textSize="@dimen/smaller_text_size" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

@@ -8,7 +8,7 @@
 [![Keep a Changelog](https://img.shields.io/badge/Changelog-lightgray?style=flat&color=gray&logo=keep-a-changelog)](https://github.com/shibafoss/VideoMate/blob/main/CHANGELOG.md)
 [![GitHub all releases](https://img.shields.io/github/downloads/shibafoss/VideoMate/total?label=Downloads&logo=github)](https://github.com/shibafoss/VideoMate/releases/)
 
-![VideoMate Logo](others/graphics/github_project_promo_1.jpg)
+![VideoMate Logo](others/graphics/feature_cover.png)
 </div>
 
 ## 📌 Introduction

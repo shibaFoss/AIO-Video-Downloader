@@ -5,16 +5,15 @@ plugins {
 
 android {
     namespace 'com.aio'
-    compileSdk 35
+    compileSdk 36
     ndkVersion '28.0.12916984 rc3'
 
     defaultConfig {
-        applicationId "com.aio"
+        applicationId "com.aio.video_downloader"
         minSdk 28
-        //noinspection OldTargetApi
-        targetSdk 34
+        targetSdk 36
         versionCode 67
-        versionName '20250510'
+        versionName '20250729'
 
         vectorDrawables {
             useSupportLibrary = true
@@ -36,7 +35,7 @@ android {
             minifyEnabled false
             shrinkResources false
             multiDexEnabled true
-            debuggable true
+            debuggable false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.debug
         }
@@ -73,11 +72,10 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
-        coreLibraryDesugaringEnabled true
     }
 
-    kotlinOptions {
-        jvmTarget = '11'
+    kotlin {
+        jvmToolchain(11)
     }
 
     dependenciesInfo {
@@ -110,26 +108,14 @@ dependencies {
     implementation libs.gson
     implementation libs.jsoup
 
-    implementation libs.retrofit
-    implementation libs.retrofit.converter.gson
-
     implementation libs.okhttp
-    implementation libs.logging.interceptor
-
-    implementation libs.parse
-
     implementation libs.lottie
+
     implementation libs.glide
-    annotationProcessor libs.glide.compiler
 
     implementation libs.permissionx
     implementation libs.saf.storage
 
     implementation libs.ytdlp.library
     implementation libs.ytdlp.ffmpeg
-
-    implementation libs.billing.library
-    implementation libs.play.services.base
-    implementation libs.play.services.ads
-    coreLibraryDesugaring(libs.desugar.jdk.libs)
 }

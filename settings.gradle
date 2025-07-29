@@ -17,6 +17,9 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
+plugins {
+    id 'org.gradle.toolchains.foojay-resolver-convention' version '0.8.0'
+}
 
 // Dependency resolution management - controls how app dependencies are resolved
 dependencyResolutionManagement {
@@ -33,5 +36,5 @@ dependencyResolutionManagement {
 }
 
 // Project configuration
-rootProject.name = "AIO"  // Sets the root project name
-include ':app'  // Includes the app module in the build
+rootProject.name = "VideoMate"  // Sets the root project name
+include ':app'                  // Includes the app module in the build

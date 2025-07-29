@@ -15,8 +15,8 @@ import app.core.engines.downloader.DownloadStatus.CLOSE
 import app.core.engines.downloader.DownloadStatus.COMPLETE
 import app.core.engines.downloader.DownloadStatus.DOWNLOADING
 import com.aio.R
-import lib.files.FileUtility.getFileExtension
-import lib.files.FileUtility.isVideo
+import lib.files.FileSystemUtility.getFileExtension
+import lib.files.FileSystemUtility.isVideo
 import lib.texts.CommonTextUtils.getText
 import java.io.File
 import java.text.SimpleDateFormat

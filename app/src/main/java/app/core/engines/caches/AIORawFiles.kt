@@ -4,94 +4,152 @@ import app.core.AIOApp
 import com.aio.R
 import com.airbnb.lottie.LottieComposition
 import com.airbnb.lottie.LottieCompositionFactory.fromRawRes
+import lib.process.ThreadsUtility
 import lib.process.ThreadsUtility.executeInBackground
 
 /**
- * AIORawFiles is responsible for loading and caching Lottie animation resources used throughout the app.
+ * AIORawFiles - Lottie Animation Cache Manager
  *
- * This class preloads frequently used Lottie compositions in a background thread to ensure
- * smoother playback and reduced loading times when animations are needed in the UI.
+ * A centralized cache for preloading and managing Lottie animations used throughout the application.
+ * This class improves performance by:
+ * 1. Loading animations in the background during app initialization
+ * 2. Maintaining strong references to prevent garbage collection
+ * 3. Providing thread-safe access to cached animations
+ *
+ * Usage:
+ * 1. Access animations through the provided getter methods
+ * 2. All animations are loaded asynchronously during class initialization
+ * 3. Returns null if animation hasn't finished loading when requested
  */
 class AIORawFiles {
-    
-    // Cached Lottie composition objects for different animation resources
-    private var circularMotionComposition: LottieComposition? = null
-    private var gradientMotionComposition: LottieComposition? = null
-    private var emptyDownloadAnimationComposition: LottieComposition? = null
-    private var openActiveTasksAnimationComposition: LottieComposition? = null
-    private var downloadParsingAnimationComposition: LottieComposition? = null
-    private var downloadFoundAnimationComposition: LottieComposition? = null
-    
+
     /**
-     * Initializes the class and triggers preloading of animations in a background thread.
+     * Cached composition for circular gradient motion animation
+     * Used for: Loading indicators, progress animations
      */
-    init {
-        executeInBackground(codeBlock = { preloadLottieAnimation() })
-    }
-    
+    private var circularMotionComposition: LottieComposition? = null
+
     /**
-     * Returns the cached Lottie composition for the circular loading animation.
+     * Cached composition for colored circle loading animation
+     * Used for: General loading states
+     */
+    private var circleLoadingComposition: LottieComposition? = null
+
+    /**
+     * Cached composition for empty box animation
+     * Used for: Empty state illustrations
+     */
+    private var emptyBoxAnimationComposition: LottieComposition? = null
+
+    /**
+     * Cached composition for active tasks animation
+     * Used for: Background task indicators
+     */
+    private var openActiveTasksAnimationComposition: LottieComposition? = null
+
+    /**
+     * Cached composition for video parsing animation
+     * Used for: Video analysis/processing states
+     */
+    private var downloadParsingAnimationComposition: LottieComposition? = null
+
+    /**
+     * Cached composition for download found animation
+     * Used for: Success states when media is found
+     */
+    private var downloadFoundAnimationComposition: LottieComposition? = null
+
+    /**
+     * Retrieves the circular motion animation composition.
+     * @return Cached LottieComposition or null if not yet loaded
      */
     fun getCircularMotionComposition(): LottieComposition? {
         return circularMotionComposition
     }
-    
+
     /**
-     * Returns the cached Lottie composition for the fullscreen gradient animation.
+     * Retrieves the circle loading animation composition.
+     * @return Cached LottieComposition or null if not yet loaded
      */
-    fun getGradientMotionComposition(): LottieComposition? {
-        return gradientMotionComposition
+    fun getCircleLoadingComposition(): LottieComposition? {
+        return circleLoadingComposition
     }
-    
+
     /**
-     * Returns the cached Lottie composition used for the empty downloads screen.
+     * Retrieves the empty box animation composition.
+     * @return Cached LottieComposition or null if not yet loaded
      */
-    fun getEmptyDownloadAnimComposition(): LottieComposition? {
-        return emptyDownloadAnimationComposition
+    fun getEmptyBoxAnimComposition(): LottieComposition? {
+        return emptyBoxAnimationComposition
     }
-    
+
     /**
-     * Returns the cached Lottie composition used to animate active download tasks.
+     * Retrieves the active tasks animation composition.
+     * @return Cached LottieComposition or null if not yet loaded
      */
     fun getOpenActiveTasksAnimationComposition(): LottieComposition? {
         return openActiveTasksAnimationComposition
     }
-    
+
     /**
-     * Returns the cached Lottie composition used during the video parsing process.
+     * Retrieves the video parsing animation composition.
+     * @return Cached LottieComposition or null if not yet loaded
      */
     fun getDownloadParsingAnimationComposition(): LottieComposition? {
         return downloadParsingAnimationComposition
     }
-    
+
     /**
-     * Returns the cached Lottie composition used when a downloadable video is found.
+     * Retrieves the download found animation composition.
+     * @return Cached LottieComposition or null if not yet loaded
      */
     fun getDownloadFoundAnimationComposition(): LottieComposition? {
         return downloadFoundAnimationComposition
     }
-    
+
     /**
-     * Preloads all required Lottie compositions from raw resources into memory.
-     * This is done asynchronously to avoid blocking the UI thread.
+     * Preloads all Lottie animations from raw resources into memory cache.
+     * Each animation is loaded asynchronously with a completion listener.
+     *
+     * Note: Runs on background thread during initialization.
      */
     fun preloadLottieAnimation() {
-        fromRawRes(AIOApp.INSTANCE, R.raw.animation_circular_gradient)
-            .addListener { composition -> circularMotionComposition = composition }
-        
-        fromRawRes(AIOApp.INSTANCE, R.raw.fullscreen_gradient_anim)
-            .addListener { composition -> gradientMotionComposition = composition }
-        
-        fromRawRes(AIOApp.INSTANCE, R.raw.animation_empty_box)
-            .addListener { composition -> emptyDownloadAnimationComposition = composition }
-        
-        fromRawRes(AIOApp.INSTANCE, R.raw.animation_active_tasks)
-            .addListener { composition -> openActiveTasksAnimationComposition = composition }
-        
-        fromRawRes(AIOApp.INSTANCE, R.raw.animation_video_parsing)
-            .addListener { composition -> downloadParsingAnimationComposition = composition }
-        
-        fromRawRes(AIOApp.INSTANCE, R.raw.animation_videos_found)
-            .addListener { composition -> downloadFoundAnimationComposition = composition }
+        ThreadsUtility.executeInBackground(codeBlock = {
+            // Circular gradient motion (loading/progress)
+            fromRawRes(AIOApp.INSTANCE, R.raw.animation_circular_gradient)
+                .addListener { composition ->
+                    circularMotionComposition = composition
+                }
+
+            // Colored circle loading indicator
+            fromRawRes(AIOApp.INSTANCE, R.raw.anim_color_circle_loading)
+                .addListener { composition ->
+                    circleLoadingComposition = composition
+                }
+
+            // Empty state illustration
+            fromRawRes(AIOApp.INSTANCE, R.raw.animation_empty_box)
+                .addListener { composition ->
+                    emptyBoxAnimationComposition = composition
+                }
+
+            // Background tasks indicator
+            fromRawRes(AIOApp.INSTANCE, R.raw.animation_active_tasks)
+                .addListener { composition ->
+                    openActiveTasksAnimationComposition = composition
+                }
+
+            // Video processing state
+            fromRawRes(AIOApp.INSTANCE, R.raw.animation_video_parsing)
+                .addListener { composition ->
+                    downloadParsingAnimationComposition = composition
+                }
+
+            // Media found success state
+            fromRawRes(AIOApp.INSTANCE, R.raw.animation_videos_found)
+                .addListener { composition ->
+                    downloadFoundAnimationComposition = composition
+                }
+        })
     }
 }

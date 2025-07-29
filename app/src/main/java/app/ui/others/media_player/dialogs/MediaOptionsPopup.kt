@@ -13,7 +13,7 @@ import com.aio.R
 import com.aio.R.layout
 import com.aio.R.string
 import lib.device.DateTimeUtils.millisToDateTimeString
-import lib.files.FileUtility
+import lib.files.FileSystemUtility
 import lib.files.VideoToAudioConverter
 import lib.files.VideoToAudioConverter.ConversionListener
 import lib.networks.DownloaderUtils.getHumanReadableFormat
@@ -209,7 +209,7 @@ class MediaOptionsPopup(private val mediaPlayerActivity: MediaPlayerActivity?) {
             val videoToAudioConverter = VideoToAudioConverter()
             // Setup waiting dialog with progress updates
             val waitingDialog = WaitingDialog(
-                activityInf = safeActivityRef,
+                baseActivityInf = safeActivityRef,
                 loadingMessage = getText(string.text_converting_audio_progress_0),
                 isCancelable = false,
                 shouldHideOkayButton = false
@@ -259,7 +259,7 @@ class MediaOptionsPopup(private val mediaPlayerActivity: MediaPlayerActivity?) {
                                         waitingDialog.close()
                                         safeActivityRef.resumePlayer()
                                         // Add to media store and show success message
-                                        FileUtility.addToMediaStore(outputMediaFile)
+                                        FileSystemUtility.addToMediaStore(outputMediaFile)
                                         showToast(msgId = string.text_converting_audio_has_been_successful)
                                         try {
                                             addNewDownloadModelToSystem(downloadDataModel, outputMediaFile)

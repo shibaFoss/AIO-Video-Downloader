@@ -74,7 +74,7 @@ class SharedVideoURLIntercept(
 	private fun initWaitingMessageDialog() {
 		waitingDialog = WaitingDialog(
 			isCancelable = false,
-			activityInf = safeBaseActivityRef,
+			baseActivityInf = safeBaseActivityRef,
 			loadingMessage = getText(R.string.text_analyzing_url_please_wait),
 			dialogCancelListener = {
 				waitingDialog?.let { waitingDialog ->

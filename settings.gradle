@@ -38,5 +38,5 @@ dependencyResolutionManagement {
 }
 
 // Project configuration
-rootProject.name = "VideoMate"  // Sets the root project name
+rootProject.name = "AIO - Video Downloader"  // Sets the root project name
 include ':app'                  // Includes the app module in the build

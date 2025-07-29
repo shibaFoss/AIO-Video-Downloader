@@ -3,7 +3,7 @@ package app.core.engines.browser.bookmarks
 import app.core.AIOApp.Companion.INSTANCE
 import app.core.AIOApp.Companion.aioBookmark
 import app.core.AIOApp.Companion.aioGSONInstance
-import lib.files.FileUtility.saveStringToInternalStorage
+import lib.files.FileSystemUtility.saveStringToInternalStorage
 import lib.process.ThreadsUtility
 import java.io.BufferedReader
 import java.io.File

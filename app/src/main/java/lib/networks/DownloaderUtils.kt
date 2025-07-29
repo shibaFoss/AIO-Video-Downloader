@@ -11,9 +11,9 @@ import app.core.engines.downloader.DownloadDataModel
 import com.aio.R
 import lib.device.DateTimeUtils.calculateTime
 import lib.device.DateTimeUtils.formatVideoDuration
-import lib.files.FileUtility.isAudio
-import lib.files.FileUtility.isVideo
-import lib.files.FileUtility.isWritableFile
+import lib.files.FileSystemUtility.isAudio
+import lib.files.FileSystemUtility.isVideo
+import lib.files.FileSystemUtility.isWritableFile
 import lib.texts.CommonTextUtils.removeDuplicateSlashes
 import java.io.File
 import java.text.DecimalFormat

@@ -29,9 +29,9 @@ import com.yausername.youtubedl_android.YoutubeDLRequest
 import com.yausername.youtubedl_android.YoutubeDLResponse
 import lib.device.DateTimeUtils.calculateTime
 import lib.device.DateTimeUtils.millisToDateTimeString
-import lib.files.FileUtility.findFileStartingWith
-import lib.files.FileUtility.isFileNameValid
-import lib.files.FileUtility.sanitizeFileNameExtreme
+import lib.files.FileSystemUtility.findFileStartingWith
+import lib.files.FileSystemUtility.isFileNameValid
+import lib.files.FileSystemUtility.sanitizeFileNameExtreme
 import lib.networks.DownloaderUtils.getAudioPlaybackTimeIfAvailable
 import lib.networks.DownloaderUtils.getFormattedPercentage
 import lib.networks.DownloaderUtils.getHumanReadableFormat

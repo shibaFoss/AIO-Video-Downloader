@@ -129,7 +129,7 @@ class VideoLinkPasteEditor(
 					// Handle social media URL
 					val waitingDialog = WaitingDialog(
 						isCancelable = false,
-						activityInf = motherActivity,
+						baseActivityInf = motherActivity,
 						loadingMessage = getText(R.string.text_analyzing_url_please_wait),
 						dialogCancelListener = { dialog ->
 							isParsingTitleFromUrlAborted = true

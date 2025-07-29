@@ -201,7 +201,7 @@ open class FinishedTasksFragment : BaseFragment(), FinishedTasksClickEvents, AIO
 		emptyDownloadAnim.apply {
 			clipToCompositionBounds = false
 			setScaleType(ImageView.ScaleType.FIT_XY)
-			aioRawFiles.getEmptyDownloadAnimComposition()?.let {
+			aioRawFiles.getEmptyBoxAnimComposition()?.let {
 				setComposition(it)
 				playAnimation()
 			} ?: run {

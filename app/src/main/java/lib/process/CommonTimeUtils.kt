@@ -9,8 +9,6 @@ import java.lang.ref.WeakReference
  */
 object CommonTimeUtils {
 	
-	private val logger = LogHelperUtils.from(javaClass)
-	
 	/**
 	 * Executes a delayed task once after a specified duration.
 	 *

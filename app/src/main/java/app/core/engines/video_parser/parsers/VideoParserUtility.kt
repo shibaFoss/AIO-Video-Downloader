@@ -13,9 +13,9 @@ import com.anggrayudi.storage.file.getAbsolutePath
 import com.yausername.youtubedl_android.YoutubeDL.version
 import com.yausername.youtubedl_android.YoutubeDLRequest
 import lib.device.DateTimeUtils.calculateTime
-import lib.files.FileUtility.sanitizeFileNameExtreme
-import lib.files.FileUtility.sanitizeFileNameNormal
-import lib.files.FileUtility.saveStringToInternalStorage
+import lib.files.FileSystemUtility.sanitizeFileNameExtreme
+import lib.files.FileSystemUtility.sanitizeFileNameNormal
+import lib.files.FileSystemUtility.saveStringToInternalStorage
 import lib.networks.DownloaderUtils.generateNetscapeFormattedCookieString
 import lib.networks.URLUtilityKT.getBaseDomain
 import lib.networks.URLUtilityKT.getWebpageTitleOrDescription

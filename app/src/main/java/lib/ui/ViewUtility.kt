@@ -57,7 +57,7 @@ import androidx.core.view.isVisible
 import app.core.AIOApp
 import com.aio.R
 import com.bumptech.glide.Glide
-import lib.files.FileUtility
+import lib.files.FileSystemUtility
 import lib.process.ThreadsUtility
 import java.io.BufferedInputStream
 import java.io.File
@@ -1052,12 +1052,12 @@ object ViewUtility {
 		requiredThumbWidth: Int
 	): Bitmap? {
 		// Check if the file is audio and attempt to extract album art
-		if (FileUtility.isAudioByName(targetFile.name)) {
+		if (FileSystemUtility.isAudioByName(targetFile.name)) {
 			extractAudioAlbumArt(targetFile)?.let { return it }
 		}
 		
 		// Check if the file is an image and retrieve the bitmap, scaling it to the required width
-		else if (FileUtility.isImageByName(targetFile.name)) {
+		else if (FileSystemUtility.isImageByName(targetFile.name)) {
 			getBitmapFromFile(imageFile = targetFile)?.let {
 				return scaleBitmap(it, requiredThumbWidth)
 			}
@@ -1345,6 +1345,7 @@ object ViewUtility {
 	 * @param imageFile The image file from which the bitmap should be decoded.
 	 * @return A [Bitmap] if the decoding is successful, or `null` if the file is invalid or unreadable.
 	 */
+	@JvmStatic
 	fun getBitmapFromFile(imageFile: File): Bitmap? {
 		return try {
 			if (imageFile.exists() && imageFile.isFile) {

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Layout: Custom Progress Dialog
+    Description: Dialog layout showing a Lottie animation, a message, and a single cancel button.
+    Style: Applies @style/style_dialog
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/style_dialog"
@@ -8,6 +12,7 @@
     android:layout_height="wrap_content"
     tools:ignore="UseAppTint,UseCompatTextViewDrawableXml">
 
+    <!-- Card container for dialog content -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -19,13 +24,15 @@
         app:cardCornerRadius="@dimen/_10"
         app:cardElevation="@dimen/_5">
 
+        <!-- Main vertical layout inside the card -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <!-- Lottie animation for progress indicator -->
             <com.airbnb.lottie.LottieAnimationView
-                android:id="@+id/img_progress_circle"
+                android:id="@+id/image_progress_circle"
                 android:layout_width="@dimen/_150"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|center_horizontal"
@@ -41,8 +48,9 @@
                 app:lottie_loop="true"
                 tools:ignore="ImageContrastCheck,VisualLintBounds" />
 
+            <!-- Message or status text -->
             <TextView
-                android:id="@+id/txt_progress_info"
+                android:id="@+id/text_progress_info"
                 style="@style/style_dialog.message"
                 android:layout_marginStart="@dimen/_10"
                 android:layout_marginTop="@dimen/_8"
@@ -53,22 +61,7 @@
                 android:text="@string/title_message_goes_here"
                 android:textSize="@dimen/message_text_size" />
 
-            <LinearLayout
-                android:id="@+id/ad_space_container"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_3"
-                android:orientation="vertical">
-
-                <com.google.android.gms.ads.AdView
-                    android:id="@+id/admob_fixed_sized_banner_ad"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    ads:adSize="320x100"
-                    ads:adUnitId="@string/text_fixed_sized_banner_ad_unit_id" />
-            </LinearLayout>
-
+            <!-- Cancel button container -->
             <RelativeLayout
                 android:id="@+id/button_dialog_positive_container"
                 android:layout_width="match_parent"
@@ -79,8 +72,10 @@
                 android:layout_marginBottom="@dimen/_10"
                 android:background="@drawable/ic_button_selector_secondary"
                 android:clickable="true"
-                android:elevation="@dimen/_2">
+                android:elevation="@dimen/_2"
+                tools:ignore="TouchTargetSizeCheck">
 
+                <!-- Cancel button text -->
                 <TextView
                     android:id="@+id/button_dialog_positive"
                     android:layout_width="wrap_content"

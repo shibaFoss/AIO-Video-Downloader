@@ -10,11 +10,11 @@ import com.aio.R
 import com.aio.R.id
 import com.aio.R.layout
 import com.aio.R.string
-import lib.files.FileUtility.getFileExtension
-import lib.files.FileUtility.getFileNameWithoutExtension
-import lib.files.FileUtility.isFileNameValid
-import lib.files.FileUtility.sanitizeFileNameExtreme
-import lib.files.FileUtility.sanitizeFileNameNormal
+import lib.files.FileSystemUtility.getFileExtension
+import lib.files.FileSystemUtility.getFileNameWithoutExtension
+import lib.files.FileSystemUtility.isFileNameValid
+import lib.files.FileSystemUtility.sanitizeFileNameExtreme
+import lib.files.FileSystemUtility.sanitizeFileNameNormal
 import lib.process.AsyncJobUtils.executeInBackground
 import lib.process.AsyncJobUtils.executeOnMainThread
 import lib.process.CommonTimeUtils

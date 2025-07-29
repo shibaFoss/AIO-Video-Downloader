@@ -19,9 +19,9 @@ import com.google.android.gms.ads.AdView
 import lib.device.DateTimeUtils.millisToDateTimeString
 import lib.device.IntentUtility.openLinkInSystemBrowser
 import lib.device.StorageUtility.getFreeExternalStorageSpace
-import lib.files.FileUtility.isFileNameValid
-import lib.files.FileUtility.sanitizeFileNameExtreme
-import lib.files.FileUtility.sanitizeFileNameNormal
+import lib.files.FileSystemUtility.isFileNameValid
+import lib.files.FileSystemUtility.sanitizeFileNameExtreme
+import lib.files.FileSystemUtility.sanitizeFileNameNormal
 import lib.networks.URLUtilityKT
 import lib.networks.URLUtilityKT.getWebpageTitleOrDescription
 import lib.process.AsyncJobUtils.executeOnMainThread

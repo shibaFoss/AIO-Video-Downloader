@@ -13,7 +13,7 @@ import app.core.engines.downloader.DownloadDataModel.Companion.THUMB_EXTENSION
 import app.core.engines.downloader.DownloadStatus.DOWNLOADING
 import com.aio.R
 import com.anggrayudi.storage.file.getAbsolutePath
-import lib.files.FileUtility.isVideoByName
+import lib.files.FileSystemUtility.isVideoByName
 import lib.process.AsyncJobUtils.executeInBackground
 import lib.process.AsyncJobUtils.executeOnMainThread
 import lib.texts.CommonTextUtils.getText

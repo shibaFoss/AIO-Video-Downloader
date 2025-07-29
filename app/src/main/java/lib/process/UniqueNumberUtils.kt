@@ -47,13 +47,4 @@ object UniqueNumberUtils {
 		val maxNumber = existingNumbers.maxOrNull() ?: 0
 		return maxNumber + 1
 	}
-	
-	/**
-	 * Randomly determines whether a rewarded ad should be shown.
-	 *
-	 * This is a simple 50/50 random decision, and can be used for controlling ad frequency or eligibility.
-	 *
-	 * @return `true` if the ad should be shown, otherwise `false`.
-	 */
-	fun shouldShowRewardedAd(): Boolean = Random().nextBoolean()
 }

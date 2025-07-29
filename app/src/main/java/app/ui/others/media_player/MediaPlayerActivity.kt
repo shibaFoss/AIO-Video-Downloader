@@ -72,9 +72,9 @@ import com.anggrayudi.storage.file.getAbsolutePath
 import com.google.common.io.Files.getFileExtension
 import lib.device.ShareUtility
 import lib.device.ShareUtility.shareMediaFile
-import lib.files.FileUtility.getFileFromUri
-import lib.files.FileUtility.isAudio
-import lib.files.FileUtility.isVideo
+import lib.files.FileSystemUtility.getFileFromUri
+import lib.files.FileSystemUtility.isAudio
+import lib.files.FileSystemUtility.isVideo
 import lib.networks.URLUtility.isValidURL
 import lib.process.AsyncJobUtils.executeOnMainThread
 import lib.process.CommonTimeUtils.OnTaskFinishListener

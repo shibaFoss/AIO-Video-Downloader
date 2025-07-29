@@ -244,7 +244,7 @@ class ActiveTasksOptions(private val motherActivity: MotherActivity?) {
 			) {
 				// Show loading dialog while preparing stream
 				val waitingDialog = WaitingDialog(
-					activityInf = safeMotherActivityRef,
+					baseActivityInf = safeMotherActivityRef,
 					loadingMessage = getText(string.text_preparing_video_please_wait)
 				); waitingDialog.show()
 				

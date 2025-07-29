@@ -7,9 +7,9 @@ import app.core.AIOApp.Companion.aioSettings
 import app.core.AIOLanguage.Companion.ENGLISH
 import com.aio.R.string
 import com.anggrayudi.storage.file.DocumentFileCompat.fromFullPath
-import lib.files.FileUtility.isWritableFile
-import lib.files.FileUtility.readStringFromInternalStorage
-import lib.files.FileUtility.saveStringToInternalStorage
+import lib.files.FileSystemUtility.isWritableFile
+import lib.files.FileSystemUtility.readStringFromInternalStorage
+import lib.files.FileSystemUtility.saveStringToInternalStorage
 import lib.process.ThreadsUtility
 import lib.texts.CommonTextUtils.getText
 import java.io.Serializable

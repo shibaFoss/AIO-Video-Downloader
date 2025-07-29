@@ -24,8 +24,8 @@ import app.ui.others.media_player.MediaPlayerActivity
 import app.ui.others.media_player.MediaPlayerActivity.Companion.FROM_FINISHED_DOWNLOADS_LIST
 import app.ui.others.media_player.MediaPlayerActivity.Companion.PLAY_MEDIA_FILE_PATH
 import com.aio.R
-import lib.files.FileUtility.isAudio
-import lib.files.FileUtility.isVideo
+import lib.files.FileSystemUtility.isAudio
+import lib.files.FileSystemUtility.isVideo
 import lib.texts.CommonTextUtils.getText
 import java.io.File
 

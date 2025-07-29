@@ -2,7 +2,7 @@ package app.ui.main.fragments.downloads.fragments.finished;
 
 import static android.view.LayoutInflater.from;
 import static com.aio.R.layout;
-import static lib.files.FileUtility.addToMediaStore;
+import static lib.files.FileSystemUtility.addToMediaStore;
 
 import android.annotation.SuppressLint;
 import android.view.LayoutInflater;

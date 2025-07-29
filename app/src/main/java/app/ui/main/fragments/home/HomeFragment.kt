@@ -39,9 +39,9 @@ import app.ui.others.media_player.MediaPlayerActivity.Companion.FROM_FINISHED_DO
 import app.ui.others.media_player.MediaPlayerActivity.Companion.PLAY_MEDIA_FILE_PATH
 import app.ui.others.media_player.MediaPlayerActivity.Companion.WHERE_DID_YOU_COME_FROM
 import com.aio.R
-import lib.files.FileUtility.isAudioByName
-import lib.files.FileUtility.isVideo
-import lib.files.FileUtility.isVideoByName
+import lib.files.FileSystemUtility.isAudioByName
+import lib.files.FileSystemUtility.isVideo
+import lib.files.FileSystemUtility.isVideoByName
 import lib.networks.URLUtility
 import lib.process.AsyncJobUtils.executeInBackground
 import lib.process.AsyncJobUtils.executeOnMainThread

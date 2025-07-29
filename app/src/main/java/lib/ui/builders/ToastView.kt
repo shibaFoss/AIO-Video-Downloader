@@ -108,7 +108,7 @@ class ToastView(context: Context) : Toast(context) {
 				val inflater = context.getSystemService(LAYOUT_INFLATER_SERVICE) as LayoutInflater
 				val toastView = inflater.inflate(layout.lay_custom_toast_view_1, null)
 				toastView.findViewById<TextView>(id.text_toast_message).text = message
-				setView(toastView)
+				view = toastView
 				setDuration(duration)
 			}
 		}

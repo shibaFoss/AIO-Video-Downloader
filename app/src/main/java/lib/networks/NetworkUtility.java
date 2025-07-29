@@ -36,7 +36,6 @@ import lib.process.LogHelperUtils;
  * URL processing, and network information retrieval.
  */
 public class NetworkUtility {
-    private static final LogHelperUtils logger = LogHelperUtils.from(NetworkUtility.class);
 
     /**
      * Checks if network connectivity is available.
@@ -141,7 +140,7 @@ public class NetworkUtility {
             int responseCode = connection.getResponseCode();
             return responseCode == HttpURLConnection.HTTP_OK;
         } catch (Throwable error) {
-            logger.d(error);
+            error.printStackTrace();
             return false;
         }
     }

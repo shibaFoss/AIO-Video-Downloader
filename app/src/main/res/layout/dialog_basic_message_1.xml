@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Custom Dialog Layout
+    ======================
+    This layout defines a styled dialog with a title, a scrollable message,
+    and two action buttons (positive & negative) inside a CardView.
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/style_dialog"
@@ -8,6 +13,7 @@
     android:layout_height="wrap_content"
     tools:ignore="UseAppTint,UseCompatTextViewDrawableXml">
 
+    <!-- Root container with CardView styling for elevation and rounded corners -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -19,17 +25,20 @@
         app:cardCornerRadius="@dimen/_10"
         app:cardElevation="@dimen/_5">
 
+        <!-- Vertical layout to stack the title, message, and action buttons -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <!-- Title container with background -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/color_surface"
                 android:orientation="vertical">
 
+                <!-- Dialog title text -->
                 <TextView
                     android:id="@+id/text_dialog_title"
                     android:layout_width="match_parent"
@@ -43,9 +52,9 @@
                     android:textColor="@color/color_text_primary"
                     android:textSize="@dimen/normal_text_size"
                     android:textStyle="bold" />
-
             </LinearLayout>
 
+            <!-- Scrollable message content -->
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -55,6 +64,7 @@
                 android:layout_marginBottom="@dimen/_8"
                 android:layout_weight="1">
 
+                <!-- Dialog message text -->
                 <TextView
                     android:id="@+id/text_dialog_message"
                     style="@style/style_dialog.message"
@@ -65,27 +75,9 @@
                     android:autoLink="web"
                     android:text="@string/title_message_goes_here"
                     android:textSize="@dimen/message_text_size" />
-
             </ScrollView>
 
-            <LinearLayout
-                android:id="@+id/ad_space_container"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_0"
-                android:layout_marginBottom="@dimen/_0"
-                android:orientation="vertical"
-                android:visibility="visible">
-
-                <com.google.android.gms.ads.AdView
-                    android:id="@+id/admob_fixed_sized_banner_ad"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    ads:adSize="320x100"
-                    ads:adUnitId="@string/text_fixed_sized_banner_ad_unit_id" />
-            </LinearLayout>
-
+            <!-- Button row: horizontal layout for negative & positive buttons -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -93,6 +85,7 @@
                 android:baselineAligned="true"
                 android:orientation="horizontal">
 
+                <!-- Negative button container -->
                 <RelativeLayout
                     android:id="@+id/button_dialog_negative_container"
                     android:layout_width="0dp"
@@ -103,8 +96,10 @@
                     android:layout_marginBottom="@dimen/_5"
                     android:layout_weight="1"
                     android:background="@drawable/ic_button_negative_selector"
-                    android:clickable="true">
+                    android:clickable="true"
+                    tools:ignore="TouchTargetSizeCheck">
 
+                    <!-- Negative button text and icon -->
                     <TextView
                         android:id="@+id/button_dialog_negative"
                         android:layout_width="wrap_content"
@@ -123,6 +118,7 @@
                         android:textSize="@dimen/normal_text_size" />
                 </RelativeLayout>
 
+                <!-- Positive button container -->
                 <RelativeLayout
                     android:id="@+id/button_dialog_positive_container"
                     android:layout_width="0dp"
@@ -134,8 +130,10 @@
                     android:layout_weight="1"
                     android:background="@drawable/ic_button_selector_secondary"
                     android:clickable="true"
-                    android:elevation="@dimen/_2">
+                    android:elevation="@dimen/_2"
+                    tools:ignore="TouchTargetSizeCheck">
 
+                    <!-- Positive button text and icon -->
                     <TextView
                         android:id="@+id/button_dialog_positive"
                         android:layout_width="wrap_content"

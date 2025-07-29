@@ -68,8 +68,9 @@
             android:launchMode="singleTop"
             android:noHistory="true"
             android:taskAffinity=""
+            android:resizeableActivity="true"
             android:theme="@style/style.transparent_activity"
-            android:windowSoftInputMode="adjustPan">
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
                 <category android:name="android.intent.category.DEFAULT" />

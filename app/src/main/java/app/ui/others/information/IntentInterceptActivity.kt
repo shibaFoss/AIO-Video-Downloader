@@ -76,7 +76,7 @@ class IntentInterceptActivity : BaseActivity() {
 					if (isSocialMediaUrl(intentUrl)) {
 						val waitingDialog = WaitingDialog(
 							isCancelable = false,
-							activityInf = it,
+							baseActivityInf = it,
 							loadingMessage = getString(R.string.text_analyzing_url_please_wait),
 							dialogCancelListener = { dialog -> dialog.dismiss() }
 						)

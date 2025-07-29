@@ -8,10 +8,8 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import app.core.AIOApp
 import app.core.AIOApp.Companion.INSTANCE
-import app.core.AIOApp.Companion.admobHelper
 import app.core.bases.interfaces.BaseActivityInf
 import com.aio.R
-import com.google.android.gms.ads.AdView
 import lib.texts.CommonTextUtils.getText
 import lib.ui.builders.DialogBuilder
 import java.lang.ref.WeakReference
@@ -180,15 +178,6 @@ object MsgDialogUtils {
 				// Set Click Handling
 				btnNegativeContainer.setOnClickListener(onNegativeButtonClickListener ?: OnClickListener { close() })
 				btnPositiveContainer.setOnClickListener(onPositiveButtonClickListener ?: OnClickListener { close() })
-				
-				// Set up AdMob banner if user is not premium
-				val admobView: AdView = view.findViewById(R.id.admob_fixed_sized_banner_ad)
-				admobHelper.loadBannerAd(admobView)
-				
-				// Hide ad space for premium users
-				if (AIOApp.IS_PREMIUM_USER) {
-					view.findViewById<View>(R.id.ad_space_container).visibility = GONE
-				}
 			}
 		}
 	}

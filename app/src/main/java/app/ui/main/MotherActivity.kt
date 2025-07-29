@@ -492,7 +492,7 @@ class MotherActivity : BaseActivity() {
 				val waitingMsg = getText(R.string.text_analyzing_url_please_wait)
 				val waitingDialog = WaitingDialog(
 					isCancelable = false,
-					activityInf = safeMotherActivityRef,
+					baseActivityInf = safeMotherActivityRef,
 					loadingMessage = waitingMsg.toString(),
 					dialogCancelListener = { dialog ->
 						isParsingTitleFromUrlAborted = true

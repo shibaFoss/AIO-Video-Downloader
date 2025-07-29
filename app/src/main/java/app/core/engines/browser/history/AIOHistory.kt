@@ -3,7 +3,7 @@ package app.core.engines.browser.history
 import app.core.AIOApp.Companion.INSTANCE
 import app.core.AIOApp.Companion.aioGSONInstance
 import app.core.AIOApp.Companion.aioHistory
-import lib.files.FileUtility.saveStringToInternalStorage
+import lib.files.FileSystemUtility.saveStringToInternalStorage
 import lib.process.ThreadsUtility
 import java.io.BufferedReader
 import java.io.File

@@ -14,8 +14,8 @@ import app.ui.main.fragments.browser.webengine.WebVideoParser.resetVideoGrabbing
 import com.bumptech.glide.Glide
 import lib.files.FileExtensions.ALL_DOWNLOADABLE_FORMATS
 import lib.files.FileExtensions.ONLINE_VIDEO_FORMATS
-import lib.files.FileUtility
-import lib.files.FileUtility.decodeURLFileName
+import lib.files.FileSystemUtility
+import lib.files.FileSystemUtility.decodeURLFileName
 import lib.networks.URLUtility.isValidURL
 import lib.process.ThreadsUtility
 import java.io.ByteArrayInputStream
@@ -156,7 +156,7 @@ class BrowserWebClient(val webviewEngine: WebViewEngine) : WebViewClient() {
 										userAgent = aioSettings.downloadHttpUserAgent,
 										contentDisposition = null,
 										safeWebEngineRef = webviewEngine,
-										mimetype = FileUtility.getMimeType(urlFileInfo.fileName),
+										mimetype = FileSystemUtility.getMimeType(urlFileInfo.fileName),
 										userGivenFileName = filename
 									)
 								}

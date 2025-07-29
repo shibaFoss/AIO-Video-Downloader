@@ -36,7 +36,7 @@ import java.util.Locale
  * Utility functions for file operations, such as extracting file information, saving data,
  * handling file extensions, and interacting with Android's media store.
  */
-object FileUtility {
+object FileSystemUtility {
 	
 	/**
 	 * Updates the media store with files from the finished download data models.
@@ -375,7 +375,6 @@ object FileUtility {
 	/**
 	 * Determines whether the given file has one of the specified extensions.
 	 *
-	 * @param file The file to check.
 	 * @param extensions The list of file extensions to check against.
 	 * @return True if the file's name ends with one of the specified extensions, false otherwise.
 	 */

@@ -23,9 +23,9 @@ import lib.files.FileExtensions.MUSIC_EXTENSIONS
 import lib.files.FileExtensions.PROGRAM_EXTENSIONS
 import lib.files.FileExtensions.VIDEO_EXTENSIONS
 import lib.files.FileSizeFormatter
-import lib.files.FileUtility.endsWithExtension
-import lib.files.FileUtility.isWritableFile
-import lib.files.FileUtility.saveStringToInternalStorage
+import lib.files.FileSystemUtility.endsWithExtension
+import lib.files.FileSystemUtility.isWritableFile
+import lib.files.FileSystemUtility.saveStringToInternalStorage
 import lib.networks.DownloaderUtils.getHumanReadableFormat
 import lib.process.CopyObjectUtils.deepCopy
 import lib.process.ThreadsUtility

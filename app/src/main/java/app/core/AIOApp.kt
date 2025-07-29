@@ -6,7 +6,6 @@ import androidx.documentfile.provider.DocumentFile.fromFile
 import androidx.lifecycle.LifecycleObserver
 import app.core.bases.BaseActivity
 import app.core.bases.language.LanguageAwareApplication
-import app.core.engines.admob.AdmobHelper
 import app.core.engines.backend.AIOBackend
 import app.core.engines.backend.AppUsageTimer
 import app.core.engines.browser.bookmarks.AIOBookmarks
@@ -53,7 +52,6 @@ class AIOApp : LanguageAwareApplication(), LifecycleObserver {
 		// App mode flags
 		const val IS_DEBUG_MODE_ON = true
 		const val IS_ULTIMATE_VERSION_UNLOCKED = true
-		var IS_AD_NOT_WORKING = true
 		var IS_PREMIUM_USER = true
 		
 		// Internal file paths
@@ -68,7 +66,6 @@ class AIOApp : LanguageAwareApplication(), LifecycleObserver {
 		lateinit var ytdlpInstance: YoutubeDL
 		
 		// Lazily loaded managers and utilities
-		val admobHelper: AdmobHelper by lazy { AdmobHelper() }
 		val aioBackend: AIOBackend by lazy { AIOBackend() }
 		val aioFavicons: AIOFavicons by lazy { AIOFavicons() }
 		val aioAdblocker: AIOAdBlocker by lazy { AIOAdBlocker() }
@@ -124,10 +121,10 @@ class AIOApp : LanguageAwareApplication(), LifecycleObserver {
 		startupManager.executeCriticalTasks()
 		
 		// Launch remaining tasks concurrently
-		CoroutineScope(Dispatchers.Default).launch {
+		executeInBackground(codeBlock = {
 			startupManager.executeHighPriorityTasks()
 			startupManager.executeBackgroundTasks()
-		}
+		})
 	}
 	
 	/**
@@ -171,13 +168,13 @@ class AIOApp : LanguageAwareApplication(), LifecycleObserver {
 	 * Flushes data and cancels long-running timers or downloads.
 	 */
 	override fun onTerminate() {
-		super.onTerminate()
-		CoroutineScope(Dispatchers.IO).launch {
+		executeInBackground(codeBlock = {
 			aioBookmark.updateInStorage()
 			aioHistory.updateInStorage()
 			downloadSystem.pauseAllDownloads()
 			aioTimer.cancel()
-		}
+		})
+		super.onTerminate()
 	}
 	
 	/**
@@ -243,12 +240,6 @@ class AIOApp : LanguageAwareApplication(), LifecycleObserver {
 	 * Returns the backend service manager that handles core networking and data operations.
 	 */
 	fun getAIOBackend(): AIOBackend = aioBackend
-	
-	/**
-	 * Returns the AdMob helper for managing advertisements within the application.
-	 */
-	fun getAdmobHelper(): AdmobHelper = admobHelper
-	
 	
 	/**
 	 * Handles categorized task execution during app startup.

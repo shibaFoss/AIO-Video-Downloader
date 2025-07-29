@@ -74,7 +74,7 @@ object URLUtilityKT {
 						if (!response.isSuccessful) {
 							callback(null); return
 						}
-						val html = response.body?.string().orEmpty()
+						val html = response.body.string()
 						if (html.isEmpty()) {
 							callback(null); return
 						}
@@ -348,7 +348,7 @@ object URLUtilityKT {
 			return try {
 				client.newCall(request).execute().use { response ->
 					if (response.isSuccessful)
-						response.body?.string()?.takeIf { it.isNotEmpty() }
+                        response.body.string().takeIf { it.isNotEmpty() }
 					else null
 				}
 			} catch (error: IOException) {
@@ -392,7 +392,7 @@ object URLUtilityKT {
 			val request = Request.Builder().url(url).build()
 			return try {
 				client.newCall(request).execute().use { response ->
-					if (response.isSuccessful) response.body?.string() else null
+					if (response.isSuccessful) response.body.string() else null
 				}
 			} catch (error: IOException) {
 				error.printStackTrace()

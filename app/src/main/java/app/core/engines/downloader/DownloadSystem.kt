@@ -12,7 +12,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import lib.files.FileUtility.updateMediaStore
+import lib.files.FileSystemUtility.updateMediaStore
 import lib.process.ThreadsUtility
 
 /**

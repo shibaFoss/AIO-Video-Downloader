@@ -11,11 +11,11 @@ import app.core.engines.downloader.DownloadDataModel
 import com.aio.R
 import lib.device.DateTimeUtils.millisToDateTimeString
 import lib.device.StorageUtility.getFreeExternalStorageSpace
-import lib.files.FileUtility.decodeURLFileName
-import lib.files.FileUtility.extractFileNameFromContentDisposition
-import lib.files.FileUtility.isFileNameValid
-import lib.files.FileUtility.sanitizeFileNameExtreme
-import lib.files.FileUtility.sanitizeFileNameNormal
+import lib.files.FileSystemUtility.decodeURLFileName
+import lib.files.FileSystemUtility.extractFileNameFromContentDisposition
+import lib.files.FileSystemUtility.isFileNameValid
+import lib.files.FileSystemUtility.sanitizeFileNameExtreme
+import lib.files.FileSystemUtility.sanitizeFileNameNormal
 import lib.networks.DownloaderUtils.getHumanReadableFormat
 import lib.process.AsyncJobUtils.executeOnMainThread
 import lib.process.ThreadsUtility

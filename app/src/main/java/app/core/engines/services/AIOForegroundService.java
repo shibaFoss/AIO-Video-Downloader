@@ -140,7 +140,7 @@ public class AIOForegroundService extends Service {
         return new Builder(this, CHANNEL_ID)
                 .setContentTitle(getString(R.string.title_aio_video_downloader))
                 .setContentText(getString(R.string.text_app_running_in_the_background))
-                .setSmallIcon(R.drawable.ic_launcher_full_v4)
+                .setSmallIcon(R.drawable.ic_launcher_logo_v4)
                 .setContentIntent(pendingIntent)
                 .setAutoCancel(true)
                 .setOngoing(true)

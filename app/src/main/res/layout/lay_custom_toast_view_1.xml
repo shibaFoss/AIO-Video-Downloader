@@ -30,7 +30,7 @@
             android:layout_marginBottom="@dimen/_5"
             android:elevation="@dimen/_1"
             android:importantForAccessibility="no"
-            android:src="@mipmap/ic_launcher_v4" />
+            android:src="@mipmap/ic_launcher" />
 
         <TextView
             android:id="@+id/text_toast_message"

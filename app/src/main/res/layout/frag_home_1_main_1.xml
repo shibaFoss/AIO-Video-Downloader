@@ -42,7 +42,7 @@
                 app:lottie_autoPlay="true"
                 app:lottie_enableMergePathsForKitKatAndAbove="true"
                 app:lottie_loop="true"
-                app:lottie_rawRes="@raw/home_title_bg_animation"
+                app:lottie_rawRes="@raw/animation_premium_badge"
                 tools:ignore="ImageContrastCheck,VisualLintBounds" />
 
             <ImageView
@@ -52,7 +52,7 @@
                 android:layout_margin="@dimen/_10"
                 android:adjustViewBounds="true"
                 android:importantForAccessibility="no"
-                android:src="@drawable/ic_premium_badge_big" />
+                android:src="@drawable/ic_premium_badge" />
 
             <LinearLayout
                 android:id="@+id/left_container"
@@ -451,7 +451,7 @@
                         app:lottie_autoPlay="true"
                         app:lottie_enableMergePathsForKitKatAndAbove="true"
                         app:lottie_loop="true"
-                        app:lottie_rawRes="@raw/empty_downloads_animation" />
+                        app:lottie_rawRes="@raw/animation_empty_box" />
 
                     <TextView
                         android:layout_width="wrap_content"

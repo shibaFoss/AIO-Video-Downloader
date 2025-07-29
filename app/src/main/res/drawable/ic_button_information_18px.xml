@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:width="@dimen/_18"
-        android:height="@dimen/_18"
-        android:drawable="@drawable/ic_button_information" />
-</layer-list>

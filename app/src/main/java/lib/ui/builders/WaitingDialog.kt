@@ -96,7 +96,7 @@ class WaitingDialog(
                 AIOApp.aioRawFiles.getCircularMotionComposition()?.let {
                     setComposition(it)
                     playAnimation()
-                } ?: run { setAnimation(R.raw.circular_motion_anim) }
+                } ?: run { setAnimation(R.raw.animation_circular_gradient) }
                 
                 showView(targetView = this, shouldAnimate = true, animTimeout = 400)
             }

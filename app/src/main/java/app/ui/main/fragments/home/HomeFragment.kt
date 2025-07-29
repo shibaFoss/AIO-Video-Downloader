@@ -347,14 +347,14 @@ class HomeFragment : BaseFragment(), AIOTimer.AIOTimerListener {
 		with(layoutView) {
 			val recyclerView = findViewById<RecyclerView>(R.id.favicons_recycler_list)
 			val favicons = listOf(
-				Pair(first = R.drawable.ic_google, second = R.string.title_google),
-				Pair(first = R.drawable.ic_bing, second = R.string.title_bing),
-				Pair(first = R.drawable.ic_yahoo, second = R.string.title_yahoo),
-				Pair(first = R.drawable.ic_duckduckgo, second = R.string.title_duckduckgo),
-				Pair(first = R.drawable.ic_dailymotion, second = R.string.title_dailymotion),
-				Pair(first = R.drawable.ic_facebook, second = R.string.title_facebook),
-				Pair(first = R.drawable.ic_twitter, second = R.string.title_x),
-				Pair(first = R.drawable.ic_instagram, second = R.string.title_instagram),
+				Pair(first = R.drawable.ic_site_google, second = R.string.title_google),
+				Pair(first = R.drawable.ic_site_bing, second = R.string.title_bing),
+				Pair(first = R.drawable.ic_site_yahoo, second = R.string.title_yahoo),
+				Pair(first = R.drawable.ic_site_duckduckgo, second = R.string.title_duckduckgo),
+				Pair(first = R.drawable.ic_site_dailymotion, second = R.string.title_dailymotion),
+				Pair(first = R.drawable.ic_site_facebook, second = R.string.title_facebook),
+				Pair(first = R.drawable.ic_site_twitter, second = R.string.title_x),
+				Pair(first = R.drawable.ic_site_instagram, second = R.string.title_instagram),
 			)
 			
 			recyclerView.layoutManager = GridLayoutManager(safeMotherActivityRef, 4)

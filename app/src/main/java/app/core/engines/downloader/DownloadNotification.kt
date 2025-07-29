@@ -91,7 +91,7 @@ class DownloadNotification {
 		notificationBuilder
 			.setContentTitle(downloadDataModel.fileName)
 			.setContentText(getContentTextByStatus(downloadDataModel))
-			.setSmallIcon(R.drawable.ic_launcher_full_v4)
+			.setSmallIcon(R.drawable.ic_launcher_logo_v4)
 			.setPriority(PRIORITY_LOW)
 			.setAutoCancel(true)
 			.setContentIntent(

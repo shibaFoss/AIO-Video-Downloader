@@ -56,7 +56,7 @@ object WebVideoParser {
 				val thumbnailUrl = startParsingVideoThumbUrl(webpageUrl)
 				if (!thumbnailUrl.isNullOrEmpty()) {
 					ThreadsUtility.executeOnMain {
-						videoGrabberButton.setAnimation(R.raw.video_found_animation)
+						videoGrabberButton.setAnimation(R.raw.animation_videos_found)
 						
 						videoGrabberButton.setOnClickListener {
 							if (isSocialMediaUrl(webpageUrl)) {
@@ -130,7 +130,7 @@ object WebVideoParser {
 		val browserFragment = webviewEngine.browserFragment
 		val browserFragmentBody = browserFragment.browserFragmentBody
 		val videoGrabberButton = browserFragmentBody.videoGrabberButton
-		videoGrabberButton.setAnimation(R.raw.video_found_animation)
+		videoGrabberButton.setAnimation(R.raw.animation_videos_found)
 		
 		videoGrabberButton.setOnClickListener {
 			// Retain only M3U8 URLs if present
@@ -176,7 +176,7 @@ object WebVideoParser {
 		videoGrabberButton: LottieAnimationView?,
 		webviewEngine: WebViewEngine?
 	) {
-		videoGrabberButton?.setAnimation(R.raw.video_parsing_animation)
+		videoGrabberButton?.setAnimation(R.raw.animation_video_parsing)
 		videoGrabberButton?.setOnClickListener { webviewEngine?.let { showHowToInfoDialog(it) } }
 	}
 	

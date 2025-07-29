@@ -39,10 +39,10 @@
         android:name="app.core.AIOApp"
         android:extractNativeLibs="true"
         android:hardwareAccelerated="true"
-        android:icon="@mipmap/ic_launcher_v4"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/title_app_name"
         android:requestLegacyExternalStorage="true"
-        android:roundIcon="@mipmap/ic_launcher_v4"
+        android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="false"
         android:theme="@style/style.application"
         android:usesCleartextTraffic="true">

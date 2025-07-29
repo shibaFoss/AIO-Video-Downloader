@@ -17,8 +17,10 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
+
+// Plugin declaration block - applies a plugin globally to support JDK toolchain resolution
 plugins {
-    id 'org.gradle.toolchains.foojay-resolver-convention' version '0.8.0'
+    id 'org.gradle.toolchains.foojay-resolver-convention' version '1.0.0'
 }
 
 // Dependency resolution management - controls how app dependencies are resolved

@@ -17,7 +17,7 @@
         android:adjustViewBounds="true"
         android:importantForAccessibility="no"
         android:scaleType="fitCenter"
-        android:src="@drawable/ic_google" />
+        android:src="@drawable/ic_site_google" />
 
     <TextView
         android:id="@+id/title_of_favicon"

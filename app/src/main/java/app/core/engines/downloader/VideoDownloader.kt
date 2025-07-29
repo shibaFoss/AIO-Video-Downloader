@@ -720,7 +720,7 @@ class VideoDownloader(override val downloadDataModel: DownloadDataModel) : Downl
 				moveToUserSelectedDestination()
 				
 				if (downloadDataModelConfig.downloadPlayNotificationSound)
-					AudioPlayerUtils(INSTANCE).play(R.raw.download_finished_sfx)
+					AudioPlayerUtils(INSTANCE).play(R.raw.sound_download_finished)
 				
 				downloadDataModel.isRunning = false
 				downloadDataModel.isComplete = true

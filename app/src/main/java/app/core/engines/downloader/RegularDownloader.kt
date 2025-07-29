@@ -165,7 +165,7 @@ class RegularDownloader(override val downloadDataModel: DownloadDataModel) :
 			
 			// Play completion sound if enabled
 			if (downloadDataModelConfig.downloadPlayNotificationSound) {
-				AudioPlayerUtils(INSTANCE).play(raw.download_finished_sfx)
+				AudioPlayerUtils(INSTANCE).play(raw.sound_download_finished)
 			}
 			
 			downloadDataModel.isRunning = false

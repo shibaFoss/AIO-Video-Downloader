@@ -76,22 +76,22 @@ class AIORawFiles {
      * This is done asynchronously to avoid blocking the UI thread.
      */
     fun preloadLottieAnimation() {
-        fromRawRes(AIOApp.INSTANCE, R.raw.circular_motion_anim)
+        fromRawRes(AIOApp.INSTANCE, R.raw.animation_circular_gradient)
             .addListener { composition -> circularMotionComposition = composition }
         
         fromRawRes(AIOApp.INSTANCE, R.raw.fullscreen_gradient_anim)
             .addListener { composition -> gradientMotionComposition = composition }
         
-        fromRawRes(AIOApp.INSTANCE, R.raw.empty_downloads_animation)
+        fromRawRes(AIOApp.INSTANCE, R.raw.animation_empty_box)
             .addListener { composition -> emptyDownloadAnimationComposition = composition }
         
-        fromRawRes(AIOApp.INSTANCE, R.raw.active_tasks_animation)
+        fromRawRes(AIOApp.INSTANCE, R.raw.animation_active_tasks)
             .addListener { composition -> openActiveTasksAnimationComposition = composition }
         
-        fromRawRes(AIOApp.INSTANCE, R.raw.video_parsing_animation)
+        fromRawRes(AIOApp.INSTANCE, R.raw.animation_video_parsing)
             .addListener { composition -> downloadParsingAnimationComposition = composition }
         
-        fromRawRes(AIOApp.INSTANCE, R.raw.video_found_animation)
+        fromRawRes(AIOApp.INSTANCE, R.raw.animation_videos_found)
             .addListener { composition -> downloadFoundAnimationComposition = composition }
     }
 }

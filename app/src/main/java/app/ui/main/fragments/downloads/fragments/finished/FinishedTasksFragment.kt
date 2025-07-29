@@ -205,7 +205,7 @@ open class FinishedTasksFragment : BaseFragment(), FinishedTasksClickEvents, AIO
 				setComposition(it)
 				playAnimation()
 			} ?: run {
-				setAnimation(R.raw.empty_downloads_animation)
+				setAnimation(R.raw.animation_empty_box)
 			}; showView(this, true, 100)
 		}
 	}
@@ -221,7 +221,7 @@ open class FinishedTasksFragment : BaseFragment(), FinishedTasksClickEvents, AIO
 				setComposition(it)
 				playAnimation()
 			} ?: run {
-				setAnimation(R.raw.active_tasks_animation)
+				setAnimation(R.raw.animation_active_tasks)
 			}; showView(this, true, 100)
 		}
 	}

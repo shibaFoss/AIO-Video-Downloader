@@ -93,9 +93,9 @@ class GuidePlatformPicker(private val baseActivity: BaseActivity?) {
 			
 			// Platform options with their icons and labels
 			val favicons = listOf(
-				Pair(first = R.drawable.ic_web, second = R.string.title_internet),
-				Pair(first = R.drawable.ic_instagram, second = R.string.title_instagram),
-				Pair(first = R.drawable.ic_facebook, second = R.string.title_facebook)
+				Pair(first = R.drawable.ic_site_web, second = R.string.title_internet),
+				Pair(first = R.drawable.ic_site_instagram, second = R.string.title_instagram),
+				Pair(first = R.drawable.ic_site_facebook, second = R.string.title_facebook)
 			)
 			
 			// Configure grid layout

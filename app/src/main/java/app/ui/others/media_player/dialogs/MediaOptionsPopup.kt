@@ -217,7 +217,7 @@ class MediaOptionsPopup(private val mediaPlayerActivity: MediaPlayerActivity?) {
             
             var messageTextView: TextView? = null
             waitingDialog.dialogBuilder?.view?.apply {
-                messageTextView = findViewById(R.id.txt_progress_info)
+                messageTextView = findViewById(R.id.text_progress_info)
                 findViewById<TextView>(R.id.button_dialog_positive)?.apply {
                     this.setText(string.text_cancel_converting)
                     this.setLeftSideDrawable(R.drawable.ic_button_cancel)

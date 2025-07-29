@@ -4,7 +4,6 @@ import android.webkit.DownloadListener
 import androidx.documentfile.provider.DocumentFile.fromFile
 import app.core.AIOApp.Companion.IS_PREMIUM_USER
 import app.core.AIOApp.Companion.IS_ULTIMATE_VERSION_UNLOCKED
-import app.core.AIOApp.Companion.admobHelper
 import app.core.AIOApp.Companion.aioSettings
 import app.core.AIOApp.Companion.downloadSystem
 import app.core.engines.downloader.DownloadDataModel
@@ -167,28 +166,7 @@ class WebViewDownloadHandler(val webviewEngine: WebViewEngine) : DownloadListene
 				dialogBuilder.show()
 				dialogBuilder.setOnClickForPositiveButton {
 					dialogBuilder.close()
-					val numberOfDownloadsUserDid = aioSettings.numberOfDownloadsUserDid
-					val maxDownloadThreshold = aioSettings.numberOfMaxDownloadThreshold
-					val condition1 = numberOfDownloadsUserDid < maxDownloadThreshold
-					val condition2 = !admobHelper.isRewardedInterstitialAdReady()
-					if (condition1 || condition2) { //Admob reward interstitial ads is not loaded.
-						addToDownloadSystem(downloadModel)
-						admobHelper.loadRewardedInterstitialAd(safeActivityRef)
-					} else {
-						if (admobHelper.isRewardedInterstitialAdReady()) {
-							admobHelper.showRewardedInterstitialAd(
-								activity = safeActivityRef,
-								onAdCompleted = { addToDownloadSystem(downloadModel) },
-								onAdClosed = {
-									safeActivityRef.doSomeVibration(50)
-									showToast(msgId = R.string.text_failed_to_add_download_task)
-								}
-							)
-						} else {
-							admobHelper.loadRewardedInterstitialAd(safeActivityRef)
-							addToDownloadSystem(downloadModel)
-						}
-					}
+					addToDownloadSystem(downloadModel)
 				}
 			}
 		} catch (error: Exception) {

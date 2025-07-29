@@ -5,8 +5,6 @@ import android.content.Intent
 import android.view.View
 import android.view.View.GONE
 import android.widget.ListView
-import app.core.AIOApp
-import app.core.AIOApp.Companion.admobHelper
 import app.core.AIOApp.Companion.aioBookmark
 import app.core.AIOApp.Companion.aioTimer
 import app.core.AIOTimer.AIOTimerListener
@@ -16,7 +14,6 @@ import app.ui.main.MotherActivity.Companion.ACTIVITY_RESULT_KEY
 import app.ui.main.fragments.browser.activities.BookmarkAdapter.OnBookmarkItemClick
 import app.ui.main.fragments.browser.activities.BookmarkAdapter.OnBookmarkItemLongClick
 import com.aio.R
-import com.google.android.gms.ads.AdView
 import lib.process.CommonTimeUtils
 import lib.process.CommonTimeUtils.OnTaskFinishListener
 import lib.ui.MsgDialogUtils
@@ -142,15 +139,6 @@ class BookmarksActivity : BaseActivity(),
 			emptyBookmarksIndicator.visibility = GONE
 			buttonLoadMoreBookmarks.visibility = GONE
 			updateLoadMoreButtonVisibility()
-			
-			// Set up AdMob banner if user is not premium
-			val admobView: AdView = findViewById(R.id.admob_fixed_sized_banner_ad)
-			admobHelper.loadBannerAd(admobView)
-			
-			// Hide ad space for premium users
-			if (AIOApp.IS_PREMIUM_USER) {
-				findViewById<View>(R.id.ad_space_container).visibility = GONE
-			}
 		}
 	}
 	

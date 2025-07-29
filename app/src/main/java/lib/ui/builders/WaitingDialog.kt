@@ -68,12 +68,6 @@ class WaitingDialog(
      */
     private fun DialogBuilder.configureDialogContent() {
         view.apply {
-            
-            // Hide ad space for premium users
-            if (AIOApp.IS_PREMIUM_USER) {
-                findViewById<View>(R.id.ad_space_container).visibility = GONE
-            }
-            
             // Set loading message
             findViewById<TextView>(R.id.text_progress_info).let {
                 it.text = loadingMessage

@@ -470,62 +470,62 @@ object VideoFormatsUtils {
 			val (progress, totalSize, speed, eta, _, _) = matchResult.destructured
 			"$progress Of $totalSize | $speed | $eta Left"
 		} else {
-			formatDownloadStatus(input)
+			formatDownloadLineStage3(input)
 		}
 	}
 	
 	/**
 	 * Fallback for formatting download progress lines with a simpler format.
 	 */
-	private fun formatDownloadStatus(input: String): String {
+	private fun formatDownloadLineStage3(input: String): String {
 		val regex = Regex("""(\d+\.\d+%) of\s+([\d.]+[KMGT]iB) at\s+([\d.]+[KMGT]iB/s) ETA\s+([\d:]+)""")
 		val matchResult = regex.find(input)
 		return if (matchResult != null) {
 			val (progress, totalSize, speed, eta) = matchResult.destructured
 			"$progress Of $totalSize | $speed | $eta Left"
 		} else {
-			formatSessionLine(input)
+			formatDownloadLineStage4(input)
 		}
 	}
 	
 	/**
 	 * Detects and replaces session initialization message with localized string.
 	 */
-	private fun formatSessionLine(input: String): String {
+	private fun formatDownloadLineStage4(input: String): String {
 		val targetPhrase = getText(R.string.text_setting_up_session)
 		return if (input.contains(targetPhrase)) {
 			targetPhrase
 		} else {
-			formatDestinationLine(input)
+			formatDownloadLineStage5(input)
 		}
 	}
 	
 	/**
 	 * Detects and replaces destination message with localized string.
 	 */
-	private fun formatDestinationLine(input: String): String {
+	private fun formatDownloadLineStage5(input: String): String {
 		return if (input.startsWith("Destination:")) {
 			getText(R.string.text_setting_destination_files)
 		} else {
-			formatDownloadingLine(input)
+			formatDownloadingLineStage6(input)
 		}
 	}
 	
 	/**
 	 * Detects format-check messages and returns localized text for user interface.
 	 */
-	private fun formatDownloadingLine(input: String): String {
+	private fun formatDownloadingLineStage6(input: String): String {
 		return if (input.startsWith("Downloading") && input.contains("format(s):")) {
 			getText(R.string.text_checking_formats_to_download)
 		} else {
-			formatProgressLine(input)
+			formatDownloadLineStage7(input)
 		}
 	}
 	
 	/**
 	 * Formats generic progress lines showing percentage, size, duration, and speed.
 	 */
-	private fun formatProgressLine(input: String): String {
+	private fun formatDownloadLineStage7(input: String): String {
 		val regex = """(\d+%)\s+of\s+([\d.]+[KMGT]?iB)\s+in\s+([\d:]+)\s+at\s+([\d.]+[KMGT]?iB/s)""".toRegex()
 		val matchResult = regex.find(input)
 		
@@ -533,27 +533,27 @@ object VideoFormatsUtils {
 			val (percentage, size, time, speed) = matchResult.destructured
 			"$percentage Of $size  |  $time  |  $speed"
 		} else {
-			formatDownloadedPartMessage(input)
+			formatDownloadLineStage8(input)
 		}
 	}
 	
 	/**
 	 * Detects already downloaded part message and replaces with localized message.
 	 */
-	private fun formatDownloadedPartMessage(input: String): String {
+	private fun formatDownloadLineStage8(input: String): String {
 		val regex = """.*/.*\.part-Frag\d+ has already been downloaded""".toRegex()
 		
 		return if (regex.matches(input)) {
 			getText(R.string.text_validating_already_downloaded_part)
 		} else {
-			formatDownloadProgress(input)
+			formatDownloadLineStage9(input)
 		}
 	}
 	
 	/**
 	 * Parses and formats full download progress line including fragment info.
 	 */
-	private fun formatDownloadProgress(input: String): String {
+	private fun formatDownloadLineStage9(input: String): String {
 		val regex = """(\d+\.\d+%) of ~?\s+([\d.]+[A-Z]iB) at\s+([\d.]+[A-Z]?B/s) ETA ([\d:]+|--:--) \(frag (\d+)/(\d+)\)""".toRegex()
 		val matchResult = regex.find(input)
 		
@@ -561,14 +561,14 @@ object VideoFormatsUtils {
 			val (percentage, size, speed, eta, _, _) = matchResult.destructured
 			"$percentage Of $size  |  $speed  |  $eta Left  "
 		} else {
-			modifyRetryingMessage(input)
+			formatDownloadLineStage10(input)
 		}
 	}
 	
 	/**
 	 * Detects retrying log messages and formats them with localized retry count.
 	 */
-	private fun modifyRetryingMessage(input: String): String {
+	private fun formatDownloadLineStage10(input: String): String {
 		return if (input.contains("Retrying", ignoreCase = true)) {
 			val regex = Regex("Retrying \\((\\d+)/(\\d+)\\)")
 			val matchResult = regex.find(input)
@@ -579,41 +579,39 @@ object VideoFormatsUtils {
 				)
 			} ?: input
 		} else {
-			modifyExtractingMessage(input)
+			formatDownloadLineStage11(input)
 		}
 	}
 	
 	/**
 	 * Detects and converts URL extraction message to a localized version.
 	 */
-	private fun modifyExtractingMessage(input: String): String {
+	private fun formatDownloadLineStage11(input: String): String {
 		return if (input.contains("Extracting URL", ignoreCase = true)) {
 			getText(R.string.text_extracting_source_url)
 		} else {
-			checkM3u8LiveStatus(input)
+			formatDownloadLineStage12(input)
 		}
 	}
 	
 	/**
 	 * Converts M3U8 live check logs to localized string.
 	 */
-	private fun checkM3u8LiveStatus(input: String): String {
+	private fun formatDownloadLineStage12(input: String): String {
 		return if (input.contains("Checking m3u8 live status", ignoreCase = true)) {
 			getText(R.string.text_checking_m3u8_live_status)
 		} else {
-			fixingMpegTsMp4(input)
+			formatDownloadLineStage13(input)
 		}
 	}
 	
 	/**
 	 * Converts MPEG-TS to MP4 container fix log to a user-readable message.
 	 */
-	private fun fixingMpegTsMp4(input: String): String {
+	private fun formatDownloadLineStage13(input: String): String {
 		return if (input.contains("Fixing MPEG-TS in MP4 container", ignoreCase = true)) {
 			getText(R.string.text_fixing_mpeg_ts_in_mp4_container)
-		} else {
-			input
-		}
+		} else input
 	}
 	
 	/**

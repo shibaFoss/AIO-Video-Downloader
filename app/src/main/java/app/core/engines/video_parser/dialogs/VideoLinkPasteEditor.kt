@@ -2,8 +2,6 @@ package app.core.engines.video_parser.dialogs
 
 import android.view.View
 import android.widget.EditText
-import app.core.AIOApp.Companion.admobHelper
-import app.core.AIOApp.Companion.aioBackend
 import app.core.engines.video_parser.parsers.SupportedURLs.isSocialMediaUrl
 import app.core.engines.video_parser.parsers.VideoThumbGrabber.startParsingVideoThumbUrl
 import app.ui.main.MotherActivity
@@ -14,7 +12,8 @@ import lib.networks.URLUtility
 import lib.networks.URLUtilityKT.fetchWebPageContent
 import lib.networks.URLUtilityKT.getWebpageTitleOrDescription
 import lib.process.AsyncJobUtils.executeOnMainThread
-import lib.process.CommonTimeUtils
+import lib.process.CommonTimeUtils.OnTaskFinishListener
+import lib.process.CommonTimeUtils.delay
 import lib.process.ThreadsUtility
 import lib.texts.CommonTextUtils.getText
 import lib.ui.ViewUtility.showOnScreenKeyboard
@@ -54,11 +53,7 @@ class VideoLinkPasteEditor(
 	 * Initializes the dialog and preloads the interstitial ad if needed.
 	 */
 	init {
-		safeMotherActivityRef?.let { safeActivityRef ->
-			if (!admobHelper.isInterstitialAdReady()) {
-				admobHelper.loadInterstitialAd(safeActivityRef)
-			}
-			
+		safeMotherActivityRef?.let {
 			dialogBuilder?.let { builder ->
 				builder.setView(R.layout.dialog_video_link_editor_1)
 				builder.view.apply {
@@ -88,7 +83,7 @@ class VideoLinkPasteEditor(
 			downloadVideo()
 		} else {
 			dialogBuilder?.show()
-			CommonTimeUtils.delay(200, object : CommonTimeUtils.OnTaskFinishListener {
+			delay(200, object : OnTaskFinishListener {
 				override fun afterDelay() {
 					focusEditTextField()
 					editFieldFileURL.selectAll()
@@ -96,7 +91,6 @@ class VideoLinkPasteEditor(
 				}
 			})
 		}
-		
 	}
 	
 	/**
@@ -147,7 +141,7 @@ class VideoLinkPasteEditor(
 								executeOnMainThread {
 									SingleResolutionPrompter(
 										baseActivity = motherActivity,
-										singleResolutionName = "High Quality",
+										singleResolutionName = getText(R.string.title_high_quality),
 										extractedVideoLink = userGivenURL,
 										currentWebUrl = userGivenURL,
 										videoTitle = resultedTitle,
@@ -157,7 +151,6 @@ class VideoLinkPasteEditor(
 										dontParseFBTitle = true,
 										thumbnailUrlProvided = thumbnailUrl
 									).show()
-									showInterstitialAd()
 								}
 							} else {
 								executeOnMainThread {
@@ -170,25 +163,8 @@ class VideoLinkPasteEditor(
 				} else {
 					// Direct video URL
 					startParingVideoURL(safeActivity)
-					showInterstitialAd()
 				}
-				
-				aioBackend.updateClickCountOnVideoUrlEditor()
 			}
-		}
-	}
-	
-	/**
-	 * Displays an interstitial ad if available, or loads and shows it.
-	 */
-	private fun showInterstitialAd() {
-		if (admobHelper.isInterstitialAdReady()) {
-			admobHelper.showInterstitialAd(safeMotherActivityRef)
-		} else {
-			admobHelper.loadInterstitialAd(
-				context = safeMotherActivityRef,
-				onAdLoaded = { admobHelper.showInterstitialAd(safeMotherActivityRef) }
-			)
 		}
 	}
 	

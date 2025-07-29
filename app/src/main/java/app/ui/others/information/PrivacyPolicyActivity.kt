@@ -1,13 +1,9 @@
 package app.ui.others.information
 
 import android.view.View
-import android.view.View.GONE
 import android.widget.TextView
-import app.core.AIOApp
-import app.core.AIOApp.Companion.admobHelper
 import app.core.bases.BaseActivity
 import com.aio.R
-import com.google.android.gms.ads.AdView
 import lib.texts.CommonTextUtils.fromHtmlStringToSpanned
 import lib.texts.CommonTextUtils.getHtmlString
 import java.lang.ref.WeakReference
@@ -88,15 +84,6 @@ class PrivacyPolicyActivity : BaseActivity() {
 			findViewById<TextView>(R.id.text_privacy_policy).text = contentHTML
 		} catch (error: Exception) {
 			error.printStackTrace()
-		}
-		
-		// Load AdMob banner ad if user is not premium
-		val admobView: AdView = findViewById(R.id.admob_fixed_sized_banner_ad)
-		admobHelper.loadBannerAd(admobView)
-		
-		// Hide ad space if user has premium access
-		if (AIOApp.IS_PREMIUM_USER) {
-			findViewById<View>(R.id.ad_space_container).visibility = GONE
 		}
 	}
 }

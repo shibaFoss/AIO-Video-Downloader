@@ -6,7 +6,6 @@ import android.view.View.GONE
 import android.widget.LinearLayout
 import androidx.lifecycle.ViewModelProvider
 import app.core.AIOApp.Companion.IS_ULTIMATE_VERSION_UNLOCKED
-import app.core.AIOApp.Companion.admobHelper
 import app.core.AIOApp.Companion.aioAdblocker
 import app.core.AIOApp.Companion.aioTimer
 import app.core.AIOTimer
@@ -34,10 +33,7 @@ class BrowserFragment : BaseFragment(), AIOTimer.AIOTimerListener {
 	
 	// Reference to the hosting activity
 	lateinit var safeMotherActivityRef: MotherActivity
-	
-	// Timer counter to control interstitial ad display
-	var timeSpentOverdue = 0
-	
+
 	/**
 	 * Provides the layout resource ID for this fragment.
 	 */
@@ -130,7 +126,6 @@ class BrowserFragment : BaseFragment(), AIOTimer.AIOTimerListener {
 			keepWebviewAlive()
 			analyzeExtractedVideoLinks()
 			filterOutAdsMu38Links()
-			showInterstitialAds()
 		} catch (error: Exception) {
 			error.printStackTrace()
 		}
@@ -151,26 +146,7 @@ class BrowserFragment : BaseFragment(), AIOTimer.AIOTimerListener {
 			getBrowserWebEngine().toggleVideoGrabbingFeature()
 		}
 	}
-	
-	/**
-	 * Displays an interstitial ad every 600 ticks if the activity is running.
-	 * Resumes the webview afterward.
-	 */
-	private fun showInterstitialAds() {
-		timeSpentOverdue++
-		if (timeSpentOverdue >= 600) {
-			timeSpentOverdue = 0
-			getBrowserWebEngine().pageCurrentWebView()
-			if (safeMotherActivityRef.isActivityRunning()) {
-				admobHelper.showInterstitialAd(
-					activity = safeMotherActivityRef,
-					onAdClosed = {
-						getBrowserWebEngine().resumeCurrentWebView()
-					})
-			}
-		}
-	}
-	
+
 	/**
 	 * Keeps the current webview active and alive while the browser is visible.
 	 */

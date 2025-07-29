@@ -120,7 +120,7 @@ class SettingsFragment : BaseFragment() {
 			mapOf(
 				R.id.button_upgrade_to_premium to { settingsOnClickLogic?.openApplicationUpgradePage() },
 				R.id.button_restart_application to { settingsOnClickLogic?.restartApplication() },
-				R.id.button_check_new_update to { settingsOnClickLogic?.openApplicationInPlayStore() },
+				R.id.button_check_new_update to { settingsOnClickLogic?.checkForNewApkVersion() },
 				R.id.button_share_with_friends to { settingsOnClickLogic?.shareApplicationWithFriends() },
 				R.id.button_open_about_info to { settingsOnClickLogic?.openApplicationInformation() },
 				R.id.button_open_feedback to { settingsOnClickLogic?.openUserFeedbackActivity() },

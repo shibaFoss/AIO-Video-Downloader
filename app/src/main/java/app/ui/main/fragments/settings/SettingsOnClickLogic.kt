@@ -7,7 +7,6 @@ import android.widget.TextView
 import androidx.annotation.IdRes
 import androidx.core.content.ContextCompat.getDrawable
 import app.core.AIOApp
-import app.core.AIOApp.Companion.aioBackend
 import app.core.AIOApp.Companion.aioSettings
 import app.ui.main.fragments.settings.dialogs.DownloadLocation
 import app.ui.others.information.ContentPolicyActivity
@@ -106,7 +105,6 @@ class SettingsOnClickLogic(private val settingsFragment: SettingsFragment) {
 							OSProcessUtils.restartApp(shouldKillProcess = true)
 						}
 					}.show()
-					aioBackend.updateClickCountOnLanguageChanger()
 				}
 			}?.show()
 		}
@@ -268,9 +266,8 @@ class SettingsOnClickLogic(private val settingsFragment: SettingsFragment) {
 	}
 	
 	/** Open app page on Play Store */
-	fun openApplicationInPlayStore() {
-		safeSettingsFragmentRef?.safeBaseActivityRef?.openApplicationInPlayStore()
-		aioBackend.updateClickCountOnCheckVersionUpdate()
+	fun checkForNewApkVersion() {
+		safeSettingsFragmentRef?.safeBaseActivityRef?.openApplicationOfficialSite()
 	}
 	
 	/** Update the end icon of each setting option based on current settings */

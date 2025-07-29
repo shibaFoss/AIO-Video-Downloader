@@ -65,9 +65,9 @@ class AIOAdBlocker {
 			client.newCall(request).execute().use { response ->
 				if (!response.isSuccessful) return@use null
 				
-				response.body?.string()
-					?.lines()?.filterNot { it.startsWith("#") || it.isBlank() }
-					?.map { it.trim() }?.toSet()
+				response.body.string()
+					.lines().filterNot { it.startsWith("#") || it.isBlank() }
+					.map { it.trim() }.toSet()
 			}
 		}
 	}

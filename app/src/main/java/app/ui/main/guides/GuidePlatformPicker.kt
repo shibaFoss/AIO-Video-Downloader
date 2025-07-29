@@ -5,7 +5,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import app.core.AIOApp.Companion.aioBackend
 import app.core.bases.BaseActivity
 import app.ui.main.fragments.home.HomeFragment.FaviconViewHolder
 import com.aio.R
@@ -67,7 +66,6 @@ class GuidePlatformPicker(private val baseActivity: BaseActivity?) {
 	fun show() {
 		if (!dialogBuilder.isShowing) {
 			dialogBuilder.show()
-			aioBackend.updateClickCountOnHowToDownload()
 		}
 	}
 	

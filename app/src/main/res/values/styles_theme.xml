@@ -83,7 +83,7 @@
         <item name="android:fitsSystemWindows">false</item>
     </style>
 
-    <style name="style.transparent_activity" parent="Theme.AppCompat.DayNight.Dialog.Alert">
+    <style name="style.transparent_activity" parent="Theme.AppCompat.DayNight.NoActionBar">
         <item name="android:statusBarColor">@color/color_surface</item>
         <item name="android:navigationBarColor">@color/color_surface</item>
         <item name="android:windowLightStatusBar">true</item>

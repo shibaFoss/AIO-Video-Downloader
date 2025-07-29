@@ -155,22 +155,6 @@
         android:layout_alignParentBottom="true"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:id="@+id/ad_space_container"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:orientation="vertical">
-
-            <com.google.android.gms.ads.AdView
-                android:id="@+id/admob_fixed_sized_banner_ad"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                ads:adSize="320x100"
-                ads:adUnitId="@string/text_fixed_sized_banner_ad_unit_id" />
-        </LinearLayout>
-
         <RelativeLayout
             android:id="@+id/button_load_more_bookmarks"
             android:layout_width="match_parent"
@@ -181,7 +165,8 @@
             android:layout_marginBottom="@dimen/_10"
             android:background="@drawable/ic_button_selector_secondary"
             android:clickable="true"
-            android:elevation="@dimen/_2">
+            android:elevation="@dimen/_2"
+            tools:ignore="UselessParent">
 
             <TextView
                 android:id="@+id/button_dialog_positive"

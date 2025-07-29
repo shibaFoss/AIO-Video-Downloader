@@ -52,7 +52,6 @@ import androidx.media3.ui.CaptionStyleCompat.EDGE_TYPE_NONE
 import androidx.media3.ui.PlayerView
 import androidx.media3.ui.TimeBar
 import app.core.AIOApp.Companion.INSTANCE
-import app.core.AIOApp.Companion.admobHelper
 import app.core.AIOApp.Companion.aioTimer
 import app.core.AIOApp.Companion.downloadSystem
 import app.core.AIOTimer.AIOTimerListener
@@ -206,28 +205,13 @@ class MediaPlayerActivity : BaseActivity(), AIOTimerListener, Listener {
 			val quickInfoText = getString(string.text_player_is_locked_unlock_first)
 			showQuickPlayerInfo(quickInfoText); return
 		}; stopAndReleasePlayer()
-		
-		if (!admobHelper.isInterstitialAdReady()) {
-			hideView(exoMediaPlayerView, true, 1000).let {
-				delay(500, object : OnTaskFinishListener {
-					override fun afterDelay() {
-						closeActivityWithFadeAnimation(true)
-					}
-				})
-			}
-		} else {
-			safeSelfReference?.let { safeActivityRef ->
-				hideView(exoMediaPlayerView, true, 1000)
-				admobHelper.showInterstitialAd(
-					activity = safeActivityRef,
-					onAdClosed = {
-						delay(100, object : OnTaskFinishListener {
-							override fun afterDelay() {
-								closeActivityWithFadeAnimation(true)
-							}
-						})
-					})
-			} ?: run { closeActivityWithFadeAnimation(true) }
+
+		hideView(exoMediaPlayerView, true, 1000).let {
+			delay(500, object : OnTaskFinishListener {
+				override fun afterDelay() {
+					closeActivityWithFadeAnimation(true)
+				}
+			})
 		}
 	}
 	
@@ -236,7 +220,6 @@ class MediaPlayerActivity : BaseActivity(), AIOTimerListener, Listener {
 	 */
 	override fun onResumeActivity() {
 		resumePlayer()
-		admobHelper.loadInterstitialAd(safeSelfReference)
 	}
 	
 	/**

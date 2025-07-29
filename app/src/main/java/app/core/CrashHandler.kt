@@ -1,6 +1,5 @@
 package app.core
 
-import app.core.AIOApp.Companion.aioBackend
 import app.core.AIOApp.Companion.aioSettings
 import java.io.PrintWriter
 import java.io.StringWriter
@@ -37,8 +36,7 @@ class CrashHandler : Thread.UncaughtExceptionHandler {
 			}
 			
 			// Save crash information for later inspection
-			aioBackend.saveAppCrashedInfo(stackTrace)
-			
+
 			// Update crash flag in settings
 			aioSettings.hasAppCrashedRecently = true
 			aioSettings.updateInStorage()

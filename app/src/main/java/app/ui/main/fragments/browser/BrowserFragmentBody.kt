@@ -6,7 +6,6 @@ import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import app.core.AIOApp.Companion.IS_ULTIMATE_VERSION_UNLOCKED
-import app.core.AIOApp.Companion.admobHelper
 import app.core.AIOApp.Companion.aioSettings
 import app.core.engines.video_parser.parsers.SupportedURLs.isSocialMediaUrl
 import app.core.engines.video_parser.parsers.SupportedURLs.isYouTubeUrl
@@ -151,7 +150,7 @@ class BrowserFragmentBody(val browserFragment: BrowserFragment) {
 						executeOnMainThread {
 							SingleResolutionPrompter(
 								baseActivity = safeMotherActivityRef,
-								singleResolutionName = "High Quality",
+								singleResolutionName = getText(R.string.title_high_quality),
 								extractedVideoLink = intentURL,
 								currentWebUrl = intentURL,
 								videoTitle = resultedTitle,
@@ -161,7 +160,6 @@ class BrowserFragmentBody(val browserFragment: BrowserFragment) {
 								isSocialMediaUrl = true,
 								isDownloadFromBrowser = false
 							).show()
-							showInterstitialAd()
 						}
 					} else {
 						executeOnMainThread {
@@ -190,21 +188,6 @@ class BrowserFragmentBody(val browserFragment: BrowserFragment) {
 		alreadyLoadedIntentURL = intentURL
 		safeMotherActivityRef.openDownloadsFragment()
 		SharedVideoURLIntercept(safeMotherActivityRef).interceptIntentURI(intentURL)
-		showInterstitialAd()
-	}
-	
-	/**
-	 * Displays an interstitial ad if available. Loads it if not yet ready.
-	 */
-	private fun showInterstitialAd() {
-		if (admobHelper.isInterstitialAdReady()) {
-			admobHelper.showInterstitialAd(safeMotherActivityRef)
-		} else {
-			admobHelper.loadInterstitialAd(
-				context = safeMotherActivityRef,
-				onAdLoaded = { admobHelper.showInterstitialAd(safeMotherActivityRef) }
-			)
-		}
 	}
 	
 	/**

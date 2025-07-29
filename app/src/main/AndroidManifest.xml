@@ -42,10 +42,12 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/title_app_name"
         android:requestLegacyExternalStorage="true"
+        android:enableOnBackInvokedCallback="true"
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="false"
         android:theme="@style/style.application"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true"
+        tools:targetApi="33">
 
         <!-- =============== ACTIVITIES =============== -->
         <!-- Main launcher activity -->
@@ -133,10 +135,6 @@
 
         <activity
             android:name="app.ui.others.information.TermsConditionsActivity"
-            android:launchMode="singleTop" />
-
-        <activity
-            android:name="app.ui.others.startup.AdTestActivity"
             android:launchMode="singleTop" />
 
         <!-- =============== SERVICES =============== -->

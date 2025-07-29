@@ -20,7 +20,6 @@ import app.ui.main.MotherActivity;
 /**
  * AIOForegroundService is a persistent foreground service that ensures
  * background operations can continue without being interrupted by the Android system.
- *
  * This service shows a silent notification and restarts automatically if destroyed.
  */
 public class AIOForegroundService extends Service {

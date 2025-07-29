@@ -2,7 +2,6 @@ package app.ui.main.fragments.browser.webengine
 
 import android.view.View
 import app.core.AIOApp.Companion.IS_ULTIMATE_VERSION_UNLOCKED
-import app.core.AIOApp.Companion.admobHelper
 import app.core.AIOApp.Companion.aioAdblocker
 import app.core.AIOApp.Companion.aioSettings
 import app.core.engines.video_parser.parsers.SupportedURLs
@@ -71,7 +70,6 @@ object WebVideoParser {
 									isSocialMediaUrl = true,
 									isDownloadFromBrowser = true
 								).show()
-								showInterstitialAd(webviewEngine)
 							} else {
 								val userGivenVideoInfo = VideoInfo(
 									videoUrlReferer = webpageUrl,
@@ -81,7 +79,6 @@ object WebVideoParser {
 								val baseActivity = webviewEngine.safeMotherActivityRef
 								val videoParser = SharedVideoURLIntercept(baseActivity, userGivenVideoInfo)
 								videoParser.interceptIntentURI(webpageUrl, false)
-								showInterstitialAd(webviewEngine)
 							}
 						}
 					}
@@ -98,24 +95,6 @@ object WebVideoParser {
 				} else videoFoundIndicate(webviewEngine, listOfAvailableVideoUrls)
 			} else {
 				assignNoVideoLinkFoundDialog(videoGrabberButton, webviewEngine)
-			}
-		}
-	}
-	
-	/**
-	 * Displays an interstitial ad if it's ready, or loads one and shows it after loading.
-	 *
-	 * @param webviewEngine The WebViewEngine instance associated with the ad context.
-	 */
-	private fun showInterstitialAd(webviewEngine: WebViewEngine) {
-		webviewEngine.safeMotherActivityRef.let { safeMotherActivity ->
-			if (admobHelper.isInterstitialAdReady()) {
-				admobHelper.showInterstitialAd(safeMotherActivity)
-			} else {
-				admobHelper.loadInterstitialAd(
-					context = safeMotherActivity,
-					onAdLoaded = { admobHelper.showInterstitialAd(safeMotherActivity) }
-				)
 			}
 		}
 	}

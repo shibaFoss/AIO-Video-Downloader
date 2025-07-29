@@ -4,6 +4,7 @@ package app.core.bases
 
 import android.Manifest.permission.POST_NOTIFICATIONS
 import android.Manifest.permission.WRITE_EXTERNAL_STORAGE
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP
 import android.content.Intent.FLAG_ACTIVITY_SINGLE_TOP
@@ -46,17 +47,14 @@ import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import app.core.AIOApp.Companion.INSTANCE
-import app.core.AIOApp.Companion.admobHelper
 import app.core.AIOApp.Companion.aioAdblocker
 import app.core.AIOApp.Companion.aioLanguage
 import app.core.AIOApp.Companion.aioSettings
 import app.core.AIOApp.Companion.idleForegroundService
 import app.core.CrashHandler
-import app.core.bases.dialogs.RatingPrompter
 import app.core.bases.interfaces.BaseActivityInf
 import app.core.bases.interfaces.PermissionsResult
 import app.core.bases.language.LanguageAwareActivity
-import app.core.engines.backend.AIOSelfDestruct.shouldSelfDestruct
 import app.ui.main.MotherActivity
 import com.aio.R
 import com.anggrayudi.storage.SimpleStorageHelper
@@ -126,7 +124,8 @@ abstract class BaseActivity : LanguageAwareActivity(), BaseActivityInf {
 		isActivityRunning = true
 	}
 	
-	override fun onCreate(savedInstanceState: Bundle?) {
+	@SuppressLint("SourceLockedOrientationActivity")
+    override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		// Initialize weak reference to this activity
 		weakBaseActivityRef = WeakReference(this)
@@ -147,10 +146,6 @@ abstract class BaseActivity : LanguageAwareActivity(), BaseActivityInf {
 			
 			// Lock orientation to portrait
 			requestedOrientation = SCREEN_ORIENTATION_PORTRAIT
-			
-			// Load ads
-			admobHelper.loadInterstitialAd(safeActivityRef)
-			admobHelper.loadRewardedInterstitialAd(safeActivityRef)
 			
 			// Set up back press handler
 			WeakReference(object : OnBackPressedCallback(true) {
@@ -194,14 +189,8 @@ abstract class BaseActivity : LanguageAwareActivity(), BaseActivityInf {
 			// Check for language changes
 			aioLanguage.closeActivityIfLanguageChanged(safeActivityRef)
 			
-			// Show rating prompt if conditions are met
-			showRatingPromptToUser(safeActivityRef)
-			
 			// Update ad blocker filters
 			aioAdblocker.fetchAdFilters()
-			
-			//self destruct activate if ordered
-			shouldSelfDestruct()
 		}
 	}
 	
@@ -413,13 +402,13 @@ abstract class BaseActivity : LanguageAwareActivity(), BaseActivityInf {
 	/**
 	 * Opens the app in Play Store.
 	 */
-	override fun openApplicationInPlayStore() {
+	override fun openApplicationOfficialSite() {
 		try {
-			val uri = "market://details?id=$packageName"
+			val uri = "https://github.com/shibaFoss/VideoMate"
 			startActivity(Intent(Intent.ACTION_VIEW, uri.toUri()))
 		} catch (error: Exception) {
 			error.printStackTrace()
-			showToast(msgId = R.string.text_google_play_store_inst_installed)
+			showToast(msgId = R.string.text_please_install_web_browser)
 		}
 	}
 	
@@ -521,24 +510,7 @@ abstract class BaseActivity : LanguageAwareActivity(), BaseActivityInf {
 			}
 		}
 	}
-	
-	/**
-	 * Shows rating prompt to user if conditions are met.
-	 *
-	 * @param safeActivityRef The activity reference
-	 */
-	fun showRatingPromptToUser(safeActivityRef: BaseActivity) {
-		try {
-			val hasUserRatedInPlayStore = aioSettings.hasUserRatedTheApplication
-			val totalNumberOfSuccessfulDownloads = aioSettings.totalNumberOfSuccessfulDownloads
-			if ((totalNumberOfSuccessfulDownloads >= 2 && !hasUserRatedInPlayStore)) {
-				RatingPrompter(baseActivityInf = safeActivityRef).show()
-			}
-		} catch (error: Exception) {
-			error.printStackTrace()
-		}
-	}
-	
+
 	/**
 	 * Checks if activity is currently running.
 	 *

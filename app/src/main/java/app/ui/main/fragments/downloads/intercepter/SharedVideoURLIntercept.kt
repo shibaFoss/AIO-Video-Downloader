@@ -93,7 +93,7 @@ class SharedVideoURLIntercept(
 		waitingDialog?.let { waitingDialog ->
 			AsyncJobUtils.executeOnMainThread {
 				waitingDialog.dialogBuilder?.apply {
-					val textProgressInfo = view.findViewById<TextView>(R.id.txt_progress_info)
+					val textProgressInfo = view.findViewById<TextView>(R.id.text_progress_info)
 					textProgressInfo.text = updatedMessage
 				}
 			}

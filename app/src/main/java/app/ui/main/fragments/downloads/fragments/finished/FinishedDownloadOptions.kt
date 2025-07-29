@@ -15,7 +15,6 @@ import androidx.core.content.res.ResourcesCompat.getDrawable
 import androidx.core.net.toUri
 import androidx.media3.common.util.UnstableApi
 import app.core.AIOApp.Companion.INSTANCE
-import app.core.AIOApp.Companion.aioBackend
 import app.core.AIOApp.Companion.downloadSystem
 import app.core.engines.downloader.DownloadDataModel
 import app.core.engines.downloader.DownloadDataModel.Companion.DOWNLOAD_MODEL_ID_KEY
@@ -311,9 +310,6 @@ class FinishedDownloadOptions(finishedTasksFragment: FinishedTasksFragment?) : O
 							// For non-media files, just open them
 							openFile()
 						}
-						
-						// Track media play button click
-						aioBackend.updateClickCountOnMediaPlayButton()
 					}
 				}
 			}

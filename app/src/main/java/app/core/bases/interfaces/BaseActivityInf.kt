@@ -99,7 +99,7 @@ interface BaseActivityInf {
 	/**
 	 * Opens the application's page in the Google Play Store.
 	 */
-	fun openApplicationInPlayStore()
+	fun openApplicationOfficialSite()
 	
 	/**
 	 * Retrieves the current device time zone ID.

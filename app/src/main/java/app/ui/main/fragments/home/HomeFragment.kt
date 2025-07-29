@@ -22,7 +22,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import app.core.AIOApp
 import app.core.AIOApp.Companion.INSTANCE
-import app.core.AIOApp.Companion.aioBackend
 import app.core.AIOApp.Companion.downloadSystem
 import app.core.AIOTimer
 import app.core.bases.BaseFragment
@@ -47,6 +46,7 @@ import lib.process.AsyncJobUtils.executeInBackground
 import lib.process.AsyncJobUtils.executeOnMainThread
 import lib.process.IntentHelperUtils.openFacebookApp
 import lib.process.IntentHelperUtils.openInstagramApp
+import lib.process.IntentHelperUtils.openYouTubeApp
 import lib.texts.CommonTextUtils.getText
 import lib.ui.ActivityAnimator.animActivityFade
 import lib.ui.MsgDialogUtils
@@ -179,7 +179,7 @@ class HomeFragment : BaseFragment(), AIOTimer.AIOTimerListener {
 						val string = getString(
 							R.string.text_you_have_b_active_downloads_b,
 							activeDownloadModels.size.toString()
-						); activeDownloadsInfo.setText(string)
+						); activeDownloadsInfo.text = string
 						
 						with(layout.findViewById<View>(R.id.button_open_active_downloads)) {
 							setOnClickListener {
@@ -303,7 +303,6 @@ class HomeFragment : BaseFragment(), AIOTimer.AIOTimerListener {
 							showToast(msgId = R.string.text_file_url_not_valid)
 						}
 						
-						aioBackend.updateClickCountOnVideoUrlEditor()
 					} catch (error: Exception) {
 						error.printStackTrace()
 						safeMotherActivity.doSomeVibration(50)
@@ -326,7 +325,6 @@ class HomeFragment : BaseFragment(), AIOTimer.AIOTimerListener {
 			safeMotherActivityRef?.let { motherActivity ->
 				val input = Intent(motherActivity, BookmarksActivity::class.java)
 				motherActivity.resultLauncher.launch(input)
-				aioBackend.updateClickCountOnHomeBookmark()
 			}
 		}
 		
@@ -334,7 +332,6 @@ class HomeFragment : BaseFragment(), AIOTimer.AIOTimerListener {
 			safeMotherActivityRef?.let { motherActivity ->
 				val input = Intent(motherActivity, HistoryActivity::class.java)
 				motherActivity.resultLauncher.launch(input)
-				aioBackend.updateClickCountOnHomeHistory()
 			}
 		}
 	}
@@ -351,7 +348,7 @@ class HomeFragment : BaseFragment(), AIOTimer.AIOTimerListener {
 				Pair(first = R.drawable.ic_site_bing, second = R.string.title_bing),
 				Pair(first = R.drawable.ic_site_yahoo, second = R.string.title_yahoo),
 				Pair(first = R.drawable.ic_site_duckduckgo, second = R.string.title_duckduckgo),
-				Pair(first = R.drawable.ic_site_dailymotion, second = R.string.title_dailymotion),
+				Pair(first = R.drawable.ic_site_youtube, second = R.string.title_youtube),
 				Pair(first = R.drawable.ic_site_facebook, second = R.string.title_facebook),
 				Pair(first = R.drawable.ic_site_twitter, second = R.string.title_x),
 				Pair(first = R.drawable.ic_site_instagram, second = R.string.title_instagram),
@@ -368,7 +365,7 @@ class HomeFragment : BaseFragment(), AIOTimer.AIOTimerListener {
 							getText(R.string.title_bing).toString() to "https://bing.com",
 							getText(R.string.title_yahoo).toString() to "https://yahoo.com",
 							getText(R.string.title_duckduckgo).toString() to "https://duckduckgo.com",
-							getText(R.string.title_dailymotion).toString() to "https://dailymotion.com",
+							getText(R.string.title_youtube).toString() to "https://youtube.com",
 							getText(R.string.title_facebook).toString() to "https://facebook.com",
 							getText(R.string.title_whatsapp).toString() to "https://web.whatsapp.com",
 							getText(R.string.title_x).toString() to "https://x.com",
@@ -397,6 +394,15 @@ class HomeFragment : BaseFragment(), AIOTimer.AIOTimerListener {
 												showToast(msgId = R.string.text_instagram_isnt_installed)
 											}
 										}
+
+										getText(R.string.title_youtube).toString() -> {
+											openYouTubeApp(INSTANCE) {
+												activity.sideNavigation?.addNewBrowsingTab(match.value, it)
+												activity.openBrowserFragment()
+												activity.doSomeVibration(50)
+												showToast(msgId = R.string.text_youtube_isnt_installed)
+											}
+										}
 										
 										else -> {
 											activity.sideNavigation?.addNewBrowsingTab(match.value, it)
@@ -406,8 +412,6 @@ class HomeFragment : BaseFragment(), AIOTimer.AIOTimerListener {
 								}
 							}
 						}
-						
-						aioBackend.updateClickCountOnHomesFavicon()
 					}
 				}
 				
@@ -510,7 +514,6 @@ class HomeFragment : BaseFragment(), AIOTimer.AIOTimerListener {
 		) {
 			itemView.findViewById<View>(R.id.main_container).setOnClickListener {
 				playTheMedia(downloadDataModel, safeMotherActivityRef)
-				aioBackend.updateClickCountOnRecentDownloadsList()
 			}
 		}
 		

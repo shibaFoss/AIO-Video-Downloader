@@ -239,7 +239,7 @@ object DownloadURLHelper {
 			client.newCall(request).execute().use { response ->
 				if (response.isSuccessful) {
 					val digest = MessageDigest.getInstance(algorithm)
-					response.body?.byteStream()?.use { inputStream ->
+					response.body.byteStream().use { inputStream ->
 						val buffer = ByteArray(1024)
 						var bytesRead: Int
 						while (inputStream.read(buffer).also { bytesRead = it } != -1) {

@@ -1,13 +1,9 @@
 package app.ui.main.fragments.browser.webengine
 
 import android.view.View
-import android.view.View.GONE
 import android.widget.ListView
-import app.core.AIOApp
-import app.core.AIOApp.Companion.admobHelper
 import app.ui.main.fragments.browser.webengine.WebVideoParser.analyzeUrl
 import com.aio.R
-import com.google.android.gms.ads.AdView
 import lib.ui.builders.DialogBuilder
 import lib.ui.builders.ToastView
 
@@ -35,15 +31,9 @@ class ExtractedLinksDialog(
 	/** ListView component to display the list of extracted links. */
 	private var linkListView: ListView? = null
 	
-	/** AdMob banner ad view shown in the dialog. */
-	private var admobAdView: AdView? = null
-	
 	init {
 		dialogBuilder.setView(R.layout.dialog_extracted_links)
 		dialogBuilder.view.apply { setupDialogViews() }
-		
-		loadAdmobInterstitialAd()
-		setupAdmobAdview()
 		setupLinkListAdapter()
 	}
 	
@@ -65,7 +55,6 @@ class ExtractedLinksDialog(
 	 * Initializes view references and button click listeners within the dialog layout.
 	 */
 	private fun View.setupDialogViews() {
-		admobAdView = findViewById(R.id.admob_fixed_sized_banner_ad)
 		linkListView = findViewById(R.id.list_extracted_video_urls)
 		
 		val mapOfButtonActions = mapOf(
@@ -87,29 +76,6 @@ class ExtractedLinksDialog(
 			webviewEngine = webviewEngine,
 			listOfVideoUrlInfos = listOfVideoUrlInfos
 		)
-	}
-	
-	/**
-	 * Configures the AdMob banner ad inside the dialog based on user's premium status.
-	 */
-	private fun setupAdmobAdview() {
-		admobAdView?.let {
-			if (!AIOApp.IS_PREMIUM_USER) {
-				admobHelper.loadBannerAd(it)
-			} else {
-				it.visibility = GONE
-				dialogBuilder.view.apply {
-					findViewById<View>(R.id.ad_space_container).visibility = GONE
-				}
-			}
-		}
-	}
-	
-	/**
-	 * Preloads an interstitial ad when the dialog is initialized.
-	 */
-	private fun loadAdmobInterstitialAd() {
-		admobHelper.loadInterstitialAd(motherActivity)
 	}
 	
 	/**

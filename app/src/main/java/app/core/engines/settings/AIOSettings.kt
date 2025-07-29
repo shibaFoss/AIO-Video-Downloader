@@ -32,7 +32,7 @@ class AIOSettings : Serializable {
     var lastProcessedClipboardText = ""
     
     // Default download location
-    var defaultDownloadLocation = PRIVATE_FOLDER
+    var defaultDownloadLocation = SYSTEM_GALLERY
     
     // Language settings
     var userSelectedUILanguage: String = ENGLISH

@@ -1,8 +1,6 @@
 package app.ui.main
 
 import android.content.Intent
-import android.view.View
-import android.view.View.GONE
 import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult
 import androidx.annotation.OptIn
 import androidx.core.content.ContextCompat.getColor
@@ -11,11 +9,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.media3.common.util.UnstableApi
-import androidx.viewpager.widget.ViewPager
-import androidx.viewpager.widget.ViewPager.OnPageChangeListener
-import app.core.AIOApp
+import androidx.viewpager2.widget.ViewPager2
 import app.core.AIOApp.Companion.IS_ULTIMATE_VERSION_UNLOCKED
-import app.core.AIOApp.Companion.admobHelper
 import app.core.AIOApp.Companion.aioSettings
 import app.core.bases.BaseActivity
 import app.core.engines.downloader.DownloadNotification.Companion.FROM_DOWNLOAD_NOTIFICATION
@@ -31,7 +26,6 @@ import app.ui.main.fragments.home.HomeFragment
 import app.ui.main.fragments.settings.SettingsFragment
 import app.ui.others.media_player.MediaPlayerActivity.Companion.WHERE_DID_YOU_COME_FROM
 import com.aio.R
-import com.google.android.gms.ads.AdView
 import lib.device.IntentUtility.getIntentDataURI
 import lib.networks.URLUtility
 import lib.networks.URLUtilityKT.fetchWebPageContent
@@ -74,7 +68,7 @@ class MotherActivity : BaseActivity() {
 	private lateinit var sharedViewModel: SharedViewModel
 	
 	// UI Components
-	private lateinit var fragmentViewPager: ViewPager
+	private lateinit var fragmentViewPager: ViewPager2
 	private lateinit var motherBottomTabs: MotherBottomTabs
 	
 	// Lazy initialized side navigation drawer
@@ -111,8 +105,6 @@ class MotherActivity : BaseActivity() {
 			setLightSystemBarTheme()
 			setupFragmentViewpager()
 			setupBottomTabs()
-			loadBottomBannerAd()
-			showInterstitialAd()
 		}
 	}
 	
@@ -193,23 +185,22 @@ class MotherActivity : BaseActivity() {
 	 * Sets up the ViewPager for fragment navigation
 	 */
 	private fun setupFragmentViewpager() {
-		fragmentViewPager = findViewById(R.id.fragment_viewpager)
-		// Keep all fragments in memory
-		fragmentViewPager.offscreenPageLimit = 4
-		fragmentViewPager.adapter = FragmentsPageAdapter(supportFragmentManager)
-		
-		// Listener for page changes
-		fragmentViewPager.addOnPageChangeListener(object : OnPageChangeListener {
-			override fun onPageScrollStateChanged(state: Int) {}
-			
-			override fun onPageScrolled(p1: Int, p2: Float, p3: Int) {
-				// No action needed during scroll
-			}
-			
-			override fun onPageSelected(position: Int) {
-				updateButtonTabSelectionUI(position)
-			}
-		})
+		safeMotherActivityRef?.let {
+			fragmentViewPager = findViewById(R.id.fragment_viewpager)
+			// Keep all fragments in memory
+			fragmentViewPager.offscreenPageLimit = 4
+			fragmentViewPager.adapter = FragmentsPageAdapter(it)
+
+			// Listener for page changes
+			//fragmentViewPager.setPageTransformer(FadeViewPage2Transformer())
+			fragmentViewPager.isUserInputEnabled = false
+
+			fragmentViewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+				override fun onPageSelected(position: Int) {
+					updateButtonTabSelectionUI(position)
+				}
+			})
+		}
 	}
 	
 	/**
@@ -378,44 +369,6 @@ class MotherActivity : BaseActivity() {
 			}
 		}
 	}
-	
-	private fun loadBottomBannerAd() {
-		// Set up AdMob banner if user is not premium
-		val admobView: AdView = findViewById(R.id.admob_fixed_sized_banner_ad)
-		admobHelper.loadBannerAd(admobView)
-		
-		// Hide ad space for premium users
-		if (AIOApp.IS_PREMIUM_USER) {
-			findViewById<View>(R.id.ad_space_container).visibility = GONE
-		}
-	}
-	
-	/**
-	 * Shows interstitial ad if conditions are met
-	 */
-	private fun showInterstitialAd() {
-		safeMotherActivityRef?.let { safeActivityRef ->
-			admobHelper.loadInterstitialAd(
-				context = safeActivityRef,
-				onAdLoaded = {
-					delay(1000, object : OnTaskFinishListener{
-						override fun afterDelay() {
-							val currentItem = safeActivityRef.fragmentViewPager.currentItem
-							
-							// Only show ad when not on browser or downloads
-							if (currentItem == 1 || currentItem == 2) return
-							
-							// Only show ad when activity is visible or has already shown the ad
-							if (!isActivityRunning()) return
-							
-							admobHelper.showInterstitialAd(safeActivityRef)
-						}
-					})
-				}
-			)
-		}
-	}
-	
 	/**
 	 * Monitors clipboard for URLs and shows prompt if found
 	 */
@@ -524,14 +477,12 @@ class MotherActivity : BaseActivity() {
 									dontParseFBTitle = true,
 									thumbnailUrlProvided = thumbnailUrl
 								).show()
-								showInterstitialAd()
 							}
 						}
 					}
 				})
 			} else {
 				startParingVideoURL(safeMotherActivityRef, clipboardText)
-				showInterstitialAd()
 			}
 		} else {
 			invalidUrlErrorToast(safeMotherActivityRef)

@@ -6,7 +6,6 @@ import android.view.View.inflate
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
-import app.core.AIOApp.Companion.admobHelper
 import app.core.engines.video_parser.parsers.SupportedURLs.isM3U8Url
 import app.core.engines.video_parser.parsers.VideoFormatsUtils
 import app.ui.main.MotherActivity
@@ -233,7 +232,6 @@ class ExtractedLinksAdapter(
 					return@setOnClickListener
 				}
 				
-				showInterstitialAd()
 				val videoTitle = webviewEngine.currentWebView?.title
 				if (isM3U8Url(videoUrlInfo.fileUrl)) {
 					val currentWebUrl = webviewEngine.currentWebView?.url
@@ -291,20 +289,6 @@ class ExtractedLinksAdapter(
 						error.printStackTrace()
 					}
 				}
-			}
-		}
-		
-		/**
-		 * Displays an interstitial ad if it's ready, otherwise triggers a load.
-		 */
-		private fun showInterstitialAd() {
-			if (admobHelper.isInterstitialAdReady()) {
-				admobHelper.showInterstitialAd(safeMotherActivity)
-			} else {
-				admobHelper.loadInterstitialAd(
-					context = safeMotherActivity,
-					onAdLoaded = { admobHelper.showInterstitialAd(safeMotherActivity) }
-				)
 			}
 		}
 		

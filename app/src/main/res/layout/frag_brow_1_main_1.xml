@@ -326,7 +326,6 @@
             android:id="@+id/button_video_grabber"
             android:layout_width="@dimen/_50"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/ad_space_container"
             android:layout_gravity="bottom|right"
             android:layout_marginStart="@dimen/_0"
             android:layout_marginEnd="@dimen/_15"

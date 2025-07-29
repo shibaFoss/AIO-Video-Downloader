@@ -2,7 +2,6 @@ package app.ui.others.information;
 
 import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP;
 import static android.content.Intent.FLAG_ACTIVITY_SINGLE_TOP;
-import static android.view.View.GONE;
 import static lib.device.DeviceInfoUtils.getDeviceInformation;
 import static lib.process.CommonTimeUtils.delay;
 import static lib.ui.MsgDialogUtils.showMessageDialog;
@@ -17,11 +16,11 @@ import android.widget.EditText;
 import androidx.appcompat.content.res.AppCompatResources;
 
 import com.aio.R;
-import com.google.android.gms.ads.AdView;
 
 import app.core.AIOApp;
 import app.core.bases.BaseActivity;
 import app.ui.main.MotherActivity;
+import lib.device.ShareUtility;
 import lib.ui.builders.DialogBuilder;
 
 /**
@@ -40,7 +39,6 @@ public class UserFeedbackActivity extends BaseActivity {
     private CheckBox checkBoxNoSound, checkBoxIncompleteVideo,
             checkBoxAppCrashed, checkBoxGlitchedVideos,
             checkBoxShowingManyAds, checkBoxOtherProblem;
-    private AdView admobAdview;
 
     /**
      * Returns the layout resource for this activity.
@@ -60,7 +58,6 @@ public class UserFeedbackActivity extends BaseActivity {
         initializeViews();
         initializeViewClickEvents();
         handleIntentExtra();
-        loadAdmobBannerAds();
     }
 
     /**
@@ -86,19 +83,6 @@ public class UserFeedbackActivity extends BaseActivity {
         checkBoxGlitchedVideos = findViewById(R.id.checkbox_glitch_in_video);
         checkBoxShowingManyAds = findViewById(R.id.checkbox_showing_too_many_ads);
         checkBoxOtherProblem = findViewById(R.id.checkbox_other_problem);
-        admobAdview = findViewById(R.id.admob_fixed_sized_banner_ad);
-    }
-
-    /**
-     * Load AdMob banner (shown only for non-premium users).
-     */
-    private void loadAdmobBannerAds() {
-        AIOApp.INSTANCE.getAdmobHelper().loadBannerAd(admobAdview);
-        // Hide ad container for premium users
-        if (AIOApp.Companion.getIS_PREMIUM_USER()) {
-            View container = findViewById(R.id.ad_space_container);
-            container.setVisibility(GONE);
-        }
     }
 
     /**
@@ -136,8 +120,12 @@ public class UserFeedbackActivity extends BaseActivity {
                 return;
             }
 
-            AIOApp.INSTANCE.getAIOBackend().saveUserFeedback(messageToSend);
-            showToast(getString(R.string.text_feedbacks_sent_successfully), -1);
+            ShareUtility.shareText(AIOApp.INSTANCE, messageToSend,
+                    getText(R.string.title_share_feedback).toString(), () -> {
+                        showToast(getString(R.string.text_feedbacks_sent_successfully), -1);
+                        return null;
+                    });
+
             resetFormFields();
         });
     }

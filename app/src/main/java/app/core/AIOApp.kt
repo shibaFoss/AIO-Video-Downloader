@@ -6,8 +6,6 @@ import androidx.documentfile.provider.DocumentFile.fromFile
 import androidx.lifecycle.LifecycleObserver
 import app.core.bases.BaseActivity
 import app.core.bases.language.LanguageAwareApplication
-import app.core.engines.backend.AIOBackend
-import app.core.engines.backend.AppUsageTimer
 import app.core.engines.browser.bookmarks.AIOBookmarks
 import app.core.engines.browser.history.AIOHistory
 import app.core.engines.caches.AIOAdBlocker
@@ -52,7 +50,7 @@ class AIOApp : LanguageAwareApplication(), LifecycleObserver {
 		// App mode flags
 		const val IS_DEBUG_MODE_ON = true
 		const val IS_ULTIMATE_VERSION_UNLOCKED = true
-		var IS_PREMIUM_USER = true
+		const val IS_PREMIUM_USER = true
 		
 		// Internal file paths
 		val internalDataFolder: DocumentFile get() = fromFile(INSTANCE.filesDir)
@@ -66,13 +64,10 @@ class AIOApp : LanguageAwareApplication(), LifecycleObserver {
 		lateinit var ytdlpInstance: YoutubeDL
 		
 		// Lazily loaded managers and utilities
-		val aioBackend: AIOBackend by lazy { AIOBackend() }
 		val aioFavicons: AIOFavicons by lazy { AIOFavicons() }
 		val aioAdblocker: AIOAdBlocker by lazy { AIOAdBlocker() }
 		
 		val aioLanguage: AIOLanguage by lazy { AIOLanguage() }
-		val aioUsageTimer: AppUsageTimer by lazy { AppUsageTimer() }
-		
 		val aioGSONInstance: Gson by lazy { GsonBuilder().setStrictness(LENIENT).create() }
 		
 		// Persistent background service
@@ -113,7 +108,6 @@ class AIOApp : LanguageAwareApplication(), LifecycleObserver {
 			// Load Youtube-DL and session tracker
 			addBackgroundTask {
 				initializeYtDLP()
-				startAppUISessionTracking()
 			}
 		}
 		
@@ -177,13 +171,6 @@ class AIOApp : LanguageAwareApplication(), LifecycleObserver {
 		super.onTerminate()
 	}
 	
-	/**
-	 * Starts the app usage tracking engine.
-	 */
-	fun startAppUISessionTracking() {
-		executeOnMainThread { aioUsageTimer.startTracking() }
-	}
-	
 	// Helper accessors
 	
 	/**
@@ -235,11 +222,6 @@ class AIOApp : LanguageAwareApplication(), LifecycleObserver {
 	 * Returns the favicon manager responsible for fetching and storing website icons.
 	 */
 	fun getAIOFavicon(): AIOFavicons = aioFavicons
-	
-	/**
-	 * Returns the backend service manager that handles core networking and data operations.
-	 */
-	fun getAIOBackend(): AIOBackend = aioBackend
 	
 	/**
 	 * Handles categorized task execution during app startup.

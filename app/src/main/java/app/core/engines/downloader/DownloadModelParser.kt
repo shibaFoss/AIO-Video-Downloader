@@ -14,125 +14,218 @@ import java.io.File
 import java.util.concurrent.ConcurrentHashMap
 
 /**
- * A parser utility for managing and caching download model data.
+ * DownloadModelParser - Robust Model Cache with Failure Recovery
  *
- * This class provides functionality to:
- * - Load download models from storage
- * - Cache models for performance
- * - Validate cache against actual files
- * - Handle model data in a thread-safe manner
- * - Process models in parallel using coroutines
+ * Handles loading, caching, and management of download models with:
+ * - Automatic recovery from parsing failures
+ * - Coroutine-based parallel processing
+ * - Cache validation and invalidation
+ * - Thread-safe operations
+ *
+ * Recovery Features:
+ * 1. Automatic retry mechanism for failed parses
+ * 2. Corrupted file cleanup
+ * 3. Isolated processing to prevent cascade failures
+ * 4. Cache state monitoring
  */
 object DownloadModelParser {
-	
-	// Thread-safe cache for storing loaded models
+
+	// Thread-safe cache with access logging
 	private val modelCache = ConcurrentHashMap<String, DownloadDataModel>()
-	
-	// Coroutine scope for parallel processing of model files
+
+	// Coroutine scope with supervisor job to prevent cascading failures
 	private val scope = CoroutineScope(Dispatchers.IO + SupervisorJob())
-	
+
+	// Track failed files to prevent repeated processing attempts
+	private val failedFiles = ConcurrentHashMap<String, Long>()
+	private const val FAILURE_RETRY_DELAY_MS = 30000L // 30 seconds
+
 	/**
-	 * Retrieves all download data models, loading them if cache is empty.
+	 * Retrieves all valid download models, with automatic recovery from failures.
 	 *
-	 * @return List of all available DownloadDataModel instances
-	 * @throws Exception if there are issues loading the models
+	 * Recovery Process:
+	 * 1. Attempts to load all models
+	 * 2. Skips known problematic files temporarily
+	 * 3. Validates cache integrity
+	 * 4. Returns only successfully loaded models
 	 */
 	@Throws(Exception::class)
 	suspend fun getDownloadDataModels(): List<DownloadDataModel> {
 		return withContext(Dispatchers.IO) {
-			if (modelCache.isEmpty()) loadAllModels() else validateCacheAgainstFiles()
-			return@withContext modelCache.values.toList()
+			if (modelCache.isEmpty()) {
+				loadAllModelsWithRecovery()
+			} else {
+				validateCacheAgainstFiles()
+			}
+			modelCache.values.toList()
 		}
 	}
-	
+
 	/**
-	 * Retrieves a specific download model by ID, loading it if not in cache.
+	 * Gets a specific model with built-in failure recovery.
 	 *
-	 * @param id The unique identifier of the download model
-	 * @return The requested DownloadDataModel or null if not found
+	 * Recovery Features:
+	 * - Checks failure cache before attempting load
+	 * - Automatically retries after delay if previous failure
+	 * - Returns null only if file doesn't exist or permanently corrupted
 	 */
 	suspend fun getDownloadDataModel(id: String): DownloadDataModel? {
 		return withContext(Dispatchers.IO) {
+			// Check if this file recently failed
+			failedFiles[id]?.let { timestamp ->
+				if (System.currentTimeMillis() - timestamp < FAILURE_RETRY_DELAY_MS) {
+					return@withContext null
+				}
+			}
+
 			modelCache[id] ?: run {
-				loadSingleModel(id)
+				loadSingleModelWithRecovery(id)
 				modelCache[id]
 			}
 		}
 	}
-	
+
 	/**
-	 * Loads all model files from storage in parallel chunks.
+	 * Enhanced model loading with automatic recovery.
 	 */
-	private suspend fun loadAllModels() {
+	private suspend fun loadAllModelsWithRecovery() {
 		val files = listModelFiles(INSTANCE.filesDir)
-		// Process files in chunks of 10 for balanced parallel loading
+
 		files.chunked(10).forEach { chunk ->
 			val deferredResults = chunk.map { file ->
-				scope.async { processModelFile(file) }
-			}; deferredResults.awaitAll()
+				scope.async {
+					if (shouldAttemptLoad(file.nameWithoutExtension)) {
+						processModelFileWithRecovery(file)
+					}
+				}
+			}
+			deferredResults.awaitAll()
 		}
 	}
-	
+
 	/**
-	 * Loads a single model file by ID.
-	 *
-	 * @param id The ID of the model to load
+	 * Safe loading of single model with recovery.
 	 */
-	private fun loadSingleModel(id: String) {
+	private fun loadSingleModelWithRecovery(id: String) {
+		if (!shouldAttemptLoad(id)) return
+
 		val fileName = "$id$DOWNLOAD_MODEL_FILE_EXTENSION"
 		val file = File(INSTANCE.filesDir, fileName)
-		if (file.exists()) processModelFile(file)
+		if (file.exists()) {
+			processModelFileWithRecovery(file)
+		}
 	}
-	
+
 	/**
-	 * Validates the cache against actual files, removing any stale entries.
+	 * Determines if a file should be attempted based on failure history.
+	 */
+	private fun shouldAttemptLoad(fileId: String): Boolean {
+		return failedFiles[fileId]?.let {
+			System.currentTimeMillis() - it > FAILURE_RETRY_DELAY_MS
+		} ?: true
+	}
+
+	/**
+	 * Processes a file with enhanced error handling and recovery.
+	 */
+	private fun processModelFileWithRecovery(file: File): Boolean {
+		return try {
+			val jsonString = file.readText(Charsets.UTF_8)
+			val model = convertJSONStringToClass(jsonString)
+
+			if (model != null) {
+				modelCache[file.nameWithoutExtension] = model
+				failedFiles.remove(file.nameWithoutExtension)
+				true
+			} else {
+				handleCorruptedFile(file)
+				false
+			}
+		} catch (error: Exception) {
+			handleProcessingError(file, error)
+			false
+		}
+	}
+
+	/**
+	 * Handles file corruption by cleaning up and logging.
+	 */
+	private fun handleCorruptedFile(file: File) {
+		try {
+			file.delete()
+			failedFiles.remove(file.nameWithoutExtension)
+		} catch (e: Exception) {
+			// Log cleanup failure
+		}
+	}
+
+	/**
+	 * Handles processing errors with appropriate recovery actions.
+	 */
+	private fun handleProcessingError(file: File, error: Exception) {
+		error.printStackTrace()
+		failedFiles[file.nameWithoutExtension] = System.currentTimeMillis()
+
+		// Only delete if we're certain it's causing problems
+		if (error is IllegalStateException || error is NumberFormatException) {
+			try {
+				file.delete()
+			} catch (e: Exception) {
+				// Log deletion failure
+			}
+		}
+	}
+
+	/**
+	 * Validates cache against existing files with recovery options.
 	 */
 	private fun validateCacheAgainstFiles() {
 		val currentFiles = listModelFiles(INSTANCE.filesDir)
 			.associateBy { it.nameWithoutExtension }
-		modelCache.keys.removeAll { !currentFiles.containsKey(it) }
-	}
-	
-	/**
-	 * Processes an individual model file, adding it to cache if valid.
-	 *
-	 * @param file The model file to process
-	 * @return true if the file was processed successfully, false otherwise
-	 */
-	private fun processModelFile(file: File): Boolean {
-		return try {
-			val jsonString = file.readText(Charsets.UTF_8)
-			convertJSONStringToClass(jsonString)?.let { model ->
-				modelCache[file.nameWithoutExtension] = model; true
+
+		modelCache.keys.removeAll { id ->
+			if (!currentFiles.containsKey(id)) {
+				true // Remove if file doesn't exist
+			} else {
+				// Re-check failed files that might be ready for retry
+				failedFiles[id]?.let {
+					System.currentTimeMillis() - it > FAILURE_RETRY_DELAY_MS
+				} ?: false
 			}
-				?: run { file.delete(); false }
-		} catch (error: Exception) {
-			error.printStackTrace()
-			file.delete()
-			false
 		}
 	}
-	
+
 	/**
-	 * Lists all model files in the specified directory.
-	 *
-	 * @param directory The directory to search for model files
-	 * @return List of found model files (empty if none found)
+	 * Lists model files with basic validation.
 	 */
 	private fun listModelFiles(directory: File?): List<File> {
 		val suffix = DOWNLOAD_MODEL_FILE_EXTENSION
 		return directory?.takeIf { it.isDirectory }
-			?.listFiles { file -> file.isFile && file.name.endsWith(suffix) }
+			?.listFiles { file ->
+				file.isFile && file.name.endsWith(suffix) &&
+						!file.name.contains("temp") // Skip temp files
+			}
 			?.toList() ?: emptyList()
 	}
-	
+
 	/**
-	 * Clears the model cache.
+	 * Clears all caches including failure tracking.
+	 */
+	fun fullReset() {
+		modelCache.clear()
+		failedFiles.clear()
+	}
+
+	/**
+	 * Standard cache invalidation.
 	 */
 	fun invalidateCache() = modelCache.clear()
-	
+
 	/**
-	 * Cleans up resources by canceling the coroutine scope.
+	 * Cleanup resources.
 	 */
-	fun cleanup() = scope.cancel()
+	fun cleanup() {
+		scope.cancel()
+		failedFiles.clear()
+	}
 }

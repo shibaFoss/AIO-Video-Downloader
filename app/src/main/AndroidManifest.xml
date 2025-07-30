@@ -60,7 +60,7 @@
             </intent-filter>
         </activity>
 
-
+        <!-- Opening activity -->
         <activity
             android:name="app.ui.others.startup.OpeningActivity"
             android:excludeFromRecents="true"
@@ -103,12 +103,6 @@
             android:theme="@style/style.application.video_player_activity"
             android:windowSoftInputMode="adjustResize" />
 
-        <!-- Other activities with standard configuration -->
-
-        <activity
-            android:name="app.ui.others.information.UserFeedbackActivity"
-            android:launchMode="singleTop" />
-
         <!-- Main mother activity (likely the core UI) -->
         <activity
             android:name="app.ui.main.MotherActivity"
@@ -121,13 +115,19 @@
             android:theme="@style/style.application"
             android:windowSoftInputMode="adjustPan" />
 
-        <!-- Browser bookmarks and history activity -->
+        <!-- Feedback user activity -->
+        <activity
+            android:name="app.ui.others.information.UserFeedbackActivity"
+            android:launchMode="singleTop" />
+
+        <!-- Browser bookmarks activity -->
         <activity
             android:name="app.ui.main.fragments.browser.activities.BookmarksActivity"
             android:exported="false"
             android:launchMode="singleTop"
             android:windowSoftInputMode="adjustPan" />
 
+        <!-- Browser history activity -->
         <activity
             android:name="app.ui.main.fragments.browser.activities.HistoryActivity"
             android:exported="false"

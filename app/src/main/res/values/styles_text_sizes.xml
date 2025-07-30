@@ -9,4 +9,5 @@
     <dimen name="sub_heading_text_size">18sp</dimen>
     <dimen name="title_text_size">19sp</dimen>
     <dimen name="actionbar_text_size">19sp</dimen>
+    <dimen name="extra_large_text_size">22sp</dimen>
 </resources>

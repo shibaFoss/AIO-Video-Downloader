@@ -39,10 +39,8 @@ class LauncherActivity : BaseActivity() {
         if (aioSettings.hasAppCrashedRecently) {
             launchFeedbackActivity()
         } else {
-            openActivity(
-                activity = OpeningActivity::class.java,
-                shouldAnimate = true
-            )
+            openActivity(OpeningActivity::class.java, true)
+            finish()
         }
     }
 

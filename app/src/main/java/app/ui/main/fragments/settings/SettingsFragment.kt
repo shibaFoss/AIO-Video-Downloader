@@ -31,12 +31,6 @@ class SettingsFragment : BaseFragment() {
 	// Reference to the "Check for Update" button
 	var buttonCheckNewUpdate: View? = null
 	
-	// Reference to the "Upgrade to Premium" button
-	var buttonUpgradeToPremium: View? = null
-	
-	// Reference to the Premium status text.
-	var textPremiumStatus: TextView? = null
-	
 	/**
 	 * Provides the layout resource ID for this fragment.
 	 */
@@ -101,9 +95,7 @@ class SettingsFragment : BaseFragment() {
 	 * Initializes views like buttons and labels used in the fragment.
 	 */
 	private fun initializeViews(fragmentLayout: View) {
-		buttonCheckNewUpdate = fragmentLayout.findViewById(R.id.button_check_new_update)
-		buttonUpgradeToPremium = fragmentLayout.findViewById(R.id.button_upgrade_to_premium)
-		textPremiumStatus = fragmentLayout.findViewById(R.id.text_premium_status)
+		buttonCheckNewUpdate = fragmentLayout.findViewById(R.id.btn_check_new_update)
 		initializeViewsInfo(fragmentLayout)
 	}
 	
@@ -112,29 +104,25 @@ class SettingsFragment : BaseFragment() {
 	 */
 	private fun initializeViewsOnClick(settingsFragmentRef: SettingsFragment, fragmentLayout: View) {
 		settingsOnClickLogic = SettingsOnClickLogic(settingsFragmentRef)
-		if (AIOApp.IS_ULTIMATE_VERSION_UNLOCKED && AIOApp.IS_PREMIUM_USER) {
-			textPremiumStatus?.text = getText(R.string.title_you_are_using_aio_premium)
-		}
 		
 		with(fragmentLayout) {
 			mapOf(
-				R.id.button_upgrade_to_premium to { settingsOnClickLogic?.openApplicationUpgradePage() },
-				R.id.button_restart_application to { settingsOnClickLogic?.restartApplication() },
-				R.id.button_check_new_update to { settingsOnClickLogic?.checkForNewApkVersion() },
-				R.id.button_share_with_friends to { settingsOnClickLogic?.shareApplicationWithFriends() },
-				R.id.button_open_about_info to { settingsOnClickLogic?.openApplicationInformation() },
-				R.id.button_open_feedback to { settingsOnClickLogic?.openUserFeedbackActivity() },
-				R.id.button_open_content_policy to { settingsOnClickLogic?.showContentPolicyActivity() },
-				R.id.button_open_privacy_policy to { settingsOnClickLogic?.showPrivacyPolicyActivity() },
-				R.id.button_open_terms_condition to { settingsOnClickLogic?.showTermsConditionActivity() },
-				R.id.button_play_notification_sound to { settingsOnClickLogic?.toggleDownloadNotificationSound() },
-				R.id.button_wifi_only_downloads to { settingsOnClickLogic?.toggleWifiOnlyDownload() },
-				R.id.button_hide_task_notifications to { settingsOnClickLogic?.toggleHideDownloadNotification() },
-				R.id.button_enable_popup_blocker to { settingsOnClickLogic?.toggleBrowserPopupAdBlocker() },
-				R.id.button_enable_video_grabber to { settingsOnClickLogic?.toggleBrowserVideoGrabber() },
-				R.id.button_browser_homepage to { settingsOnClickLogic?.setBrowserDefaultHomepage() },
-				R.id.button_language_picker to { settingsOnClickLogic?.showApplicationLanguageChanger() },
-				R.id.button_default_download_folder to { settingsOnClickLogic?.setDefaultDownloadLocationPicker() },
+				R.id.btn_restart_application to { settingsOnClickLogic?.restartApplication() },
+				R.id.btn_check_new_update to { settingsOnClickLogic?.checkForNewApkVersion() },
+				R.id.btn_share_with_friends to { settingsOnClickLogic?.shareApplicationWithFriends() },
+				R.id.btn_open_about_info to { settingsOnClickLogic?.openApplicationInformation() },
+				R.id.btn_open_feedback to { settingsOnClickLogic?.openUserFeedbackActivity() },
+				R.id.btn_open_content_policy to { settingsOnClickLogic?.showContentPolicyActivity() },
+				R.id.btn_open_privacy_policy to { settingsOnClickLogic?.showPrivacyPolicyActivity() },
+				R.id.btn_open_terms_condition to { settingsOnClickLogic?.showTermsConditionActivity() },
+				R.id.btn_play_notification_sound to { settingsOnClickLogic?.toggleDownloadNotificationSound() },
+				R.id.btn_wifi_only_downloads to { settingsOnClickLogic?.toggleWifiOnlyDownload() },
+				R.id.btn_hide_task_notifications to { settingsOnClickLogic?.toggleHideDownloadNotification() },
+				R.id.btn_enable_popup_blocker to { settingsOnClickLogic?.toggleBrowserPopupAdBlocker() },
+				R.id.btn_enable_video_grabber to { settingsOnClickLogic?.toggleBrowserVideoGrabber() },
+				R.id.btn_browser_homepage to { settingsOnClickLogic?.setBrowserDefaultHomepage() },
+				R.id.btn_language_picker to { settingsOnClickLogic?.showApplicationLanguageChanger() },
+				R.id.btn_default_download_folder to { settingsOnClickLogic?.setDefaultDownloadLocationPicker() },
 			).forEach { (id, action) ->
 				setClickListener(id) { action() }
 			}
@@ -146,7 +134,7 @@ class SettingsFragment : BaseFragment() {
 	 */
 	private fun initializeViewsInfo(fragmentLayout: View) {
 		with(fragmentLayout) {
-			findViewById<TextView>(R.id.text_version_info)?.apply {
+			findViewById<TextView>(R.id.txt_version_info)?.apply {
 				val versionName = "${getString(R.string.title_version_number)} $versionName"
 				val versionCode = "${getString(R.string.title_build_version)} $versionCode"
 				text = fromHtmlStringToSpanned("${versionName}<br/>${versionCode}")

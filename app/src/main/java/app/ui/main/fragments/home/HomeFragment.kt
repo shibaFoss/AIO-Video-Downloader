@@ -49,13 +49,11 @@ import lib.process.IntentHelperUtils.openInstagramApp
 import lib.process.IntentHelperUtils.openYouTubeApp
 import lib.texts.CommonTextUtils.getText
 import lib.ui.ActivityAnimator.animActivityFade
-import lib.ui.MsgDialogUtils
 import lib.ui.ViewUtility.getThumbnailFromFile
 import lib.ui.ViewUtility.hideOnScreenKeyboard
 import lib.ui.ViewUtility.hideView
 import lib.ui.ViewUtility.rotateBitmap
 import lib.ui.ViewUtility.saveBitmapToFile
-import lib.ui.ViewUtility.setLeftSideDrawable
 import lib.ui.ViewUtility.showOnScreenKeyboard
 import lib.ui.ViewUtility.showView
 import lib.ui.builders.ToastView.Companion.showToast
@@ -102,7 +100,6 @@ class HomeFragment : BaseFragment(), AIOTimer.AIOTimerListener {
 	 * @param state The saved instance state bundle
 	 */
 	override fun onAfterLayoutLoad(layoutView: View, state: Bundle?) {
-		setupPremiumSubscriptionCard(layoutView)
 		setupPasteVideoLinkEditor(layoutView)
 		setupHistoryAndBookmarks(layoutView)
 		setupFavoriteSitesAdapter(layoutView)
@@ -142,9 +139,9 @@ class HomeFragment : BaseFragment(), AIOTimer.AIOTimerListener {
 	override fun onAIOTimerTick(loopCount: Double) {
 		safeFragmentLayoutRef?.let { layout ->
 			try {
-				val activeDownloadsContainer = layout.findViewById<View>(R.id.active_downloads_section)
-				val recentContainer = layout.findViewById<View>(R.id.recent_downloads_section)
-				val emptyDownloadContainer = layout.findViewById<View>(R.id.empty_downloads_container)
+				val activeDownloadsContainer = layout.findViewById<View>(R.id.container_active_downloads)
+				val recentContainer = layout.findViewById<View>(R.id.container_recent_downloads)
+				val emptyDownloadContainer = layout.findViewById<View>(R.id.container_empty_downloads)
 				val buttonHowToDownload = layout.findViewById<View>(R.id.button_how_to_download)
 				
 				buttonHowToDownload.setOnClickListener {
@@ -175,13 +172,13 @@ class HomeFragment : BaseFragment(), AIOTimer.AIOTimerListener {
 					showView(activeDownloadsContainer, true, 300)
 					if (activeDownloadModels.size != lastCheckedActiveTasksSize) {
 						lastCheckedActiveTasksSize = activeDownloadModels.size
-						val activeDownloadsInfo = layout.findViewById<TextView>(R.id.text_active_downloads_info)
+						val activeDownloadsInfo = layout.findViewById<TextView>(R.id.txt_active_downloads_info)
 						val string = getString(
 							R.string.text_you_have_b_active_downloads_b,
 							activeDownloadModels.size.toString()
 						); activeDownloadsInfo.text = string
 						
-						with(layout.findViewById<View>(R.id.button_open_active_downloads)) {
+						with(layout.findViewById<View>(R.id.btn_open_active_downloads)) {
 							setOnClickListener {
 								safeMotherActivityRef?.downloadFragment?.openActiveTab()?.let {
 									safeMotherActivityRef?.openDownloadsFragment()
@@ -224,62 +221,15 @@ class HomeFragment : BaseFragment(), AIOTimer.AIOTimerListener {
 	}
 	
 	/**
-	 * Sets up the premium subscription card with click listener.
-	 * @param layoutView The fragment's root view
-	 */
-	private fun setupPremiumSubscriptionCard(layoutView: View) {
-		val premiumCard = layoutView.findViewById<View>(R.id.button_upgrade_to_premium)
-		premiumCard.setOnClickListener {
-			safeMotherActivityRef?.let { safeMotherActivityRef ->
-				safeMotherActivityRef.doSomeVibration(50)
-				if (AIOApp.IS_PREMIUM_USER && AIOApp.IS_ULTIMATE_VERSION_UNLOCKED) {
-					MsgDialogUtils.showMessageDialog(
-						baseActivityInf = safeMotherActivityRef,
-						isTitleVisible = true,
-						titleTextViewCustomize = { it.setText(R.string.title_thank_you_so_much) },
-						isNegativeButtonVisible = false,
-						messageTextViewCustomize = {
-							it.setText(R.string.text_thank_you_using_premium_version)
-						},
-						positiveButtonTextCustomize = {
-							it.setText(R.string.title_okay)
-							it.setLeftSideDrawable(R.drawable.ic_button_checked_circle)
-						}
-					)
-				} else {
-					MsgDialogUtils.showMessageDialog(
-						baseActivityInf = safeMotherActivityRef,
-						isTitleVisible = true,
-						titleTextViewCustomize = { it.setText(R.string.title_thank_you_so_much) },
-						isNegativeButtonVisible = false,
-						messageTextViewCustomize = {
-							it.setText(R.string.text_thank_you_taking_interest_in_premium)
-						},
-						positiveButtonTextCustomize = {
-							it.setText(R.string.title_okay)
-							it.setLeftSideDrawable(R.drawable.ic_button_checked_circle)
-						}
-					)
-				}
-			}
-		}
-		
-		if (AIOApp.IS_PREMIUM_USER && AIOApp.IS_ULTIMATE_VERSION_UNLOCKED) {
-			layoutView.findViewById<TextView>(R.id.text_premium_status)?.text =
-				getText(R.string.title_you_are_using_aio_premium)
-		}
-	}
-	
-	/**
 	 * Sets up the URL input editor and download button.
 	 * @param layoutView The fragment's root view
 	 */
 	private fun setupPasteVideoLinkEditor(layoutView: View) {
 		safeMotherActivityRef?.let { safeMotherActivity ->
 			with(layoutView) {
-				val editFiledUrlContainer = findViewById<View>(R.id.edit_field_file_url_container)
-				val editFiledUrl = findViewById<EditText>(R.id.edit_field_file_url)
-				val buttonDownload = findViewById<View>(R.id.button_add_download)
+				val editFiledUrlContainer = findViewById<View>(R.id.edit_url_container)
+				val editFiledUrl = findViewById<EditText>(R.id.edit_url)
+				val buttonDownload = findViewById<View>(R.id.btn_add_download)
 				
 				editFiledUrlContainer.setOnClickListener {
 					editFiledUrl.focusable
@@ -318,8 +268,8 @@ class HomeFragment : BaseFragment(), AIOTimer.AIOTimerListener {
 	 * @param layoutView The fragment's root view
 	 */
 	private fun setupHistoryAndBookmarks(layoutView: View) {
-		val buttonHistory = layoutView.findViewById<View>(R.id.button_open_history)
-		val buttonBookmark = layoutView.findViewById<View>(R.id.button_open_bookmark)
+		val buttonHistory = layoutView.findViewById<View>(R.id.btn_open_history)
+		val buttonBookmark = layoutView.findViewById<View>(R.id.btn_open_bookmark)
 		
 		buttonBookmark.setOnClickListener {
 			safeMotherActivityRef?.let { motherActivity ->
@@ -470,7 +420,7 @@ class HomeFragment : BaseFragment(), AIOTimer.AIOTimerListener {
 			
 			val downloadsModels = downloadSystem.finishedDownloadDataModels
 				.filter { isAudioByName(it.fileName) || isVideoByName(it.fileName) }
-				.take(6)
+				.take(9)
 			val recyclerView = findViewById<RecyclerView>(R.id.recent_downloads_recycle_list)
 			recyclerView.layoutManager = GridLayoutManager(safeMotherActivityRef, 3)
 			recyclerView.adapter = null
@@ -568,23 +518,29 @@ class HomeFragment : BaseFragment(), AIOTimer.AIOTimerListener {
 			}
 			
 			if (loadApkThumbnail(
-					downloadDataModel,
-					thumbnail, defaultThumbDrawable
-				)
-			) return
+					downloadDataModel = downloadDataModel,
+					imageViewHolder = thumbnail,
+					defaultThumbDrawable = defaultThumbDrawable
+				)) return
 			
 			executeInBackground {
 				val cachedThumbPath = downloadDataModel.thumbPath
 				if (cachedThumbPath.isNotEmpty()) {
 					executeOnMainThread {
-						loadBitmapWithGlide(downloadDataModel.thumbPath, defaultThumb)
-					}; return@executeInBackground
+						loadBitmapWithGlide(
+							thumbFilePath = downloadDataModel.thumbPath,
+							defaultThumb = defaultThumb
+						)
+					}
+					return@executeInBackground
 				}
 				
 				val bitmap = getThumbnailFromFile(
-					destinationFile,
-					downloadDataModel.videoInfo?.videoThumbnailUrl, requiredThumbWidth = 420
+					targetFile = destinationFile,
+					thumbnailUrl = downloadDataModel.videoInfo?.videoThumbnailUrl,
+					requiredThumbWidth = 420
 				)
+
 				if (bitmap != null) {
 					val isPortrait = bitmap.height > bitmap.width
 					val rotatedBitmap = if (isPortrait) {

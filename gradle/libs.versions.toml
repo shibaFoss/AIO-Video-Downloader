@@ -13,6 +13,7 @@ appcompat = "1.7.1"           # AppCompat library
 webkit = "1.14.0"             # Android WebView support
 viewpager2 = "1.1.0"          # Modern ViewPager implementation
 cardview = "1.0.0"            # Material CardView
+constraint_layout = "2.2.1"   # Android Layout extension
 lifecycleProcess = "2.9.2"    # Lifecycle-aware components
 
 # Kotlin Coroutines
@@ -56,6 +57,7 @@ kotlin_coroutines_core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-co
 # UI Components
 lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie" }
 circleimageview = { module = "de.hdodenhof:circleimageview", version.ref = "circleimageview" }
+constraint_layout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraint_layout" }
 
 # Media Playback (ExoPlayer)
 media3_exoplayer = { module = "androidx.media3:media3-exoplayer", version.ref = "media3player" }

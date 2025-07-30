@@ -37,12 +37,12 @@
     <!-- =============== APPLICATION CONFIGURATION =============== -->
     <application
         android:name="app.core.AIOApp"
+        android:enableOnBackInvokedCallback="true"
         android:extractNativeLibs="true"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/title_app_name"
         android:requestLegacyExternalStorage="true"
-        android:enableOnBackInvokedCallback="true"
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="false"
         android:theme="@style/style.application"
@@ -60,6 +60,16 @@
             </intent-filter>
         </activity>
 
+
+        <activity
+            android:name="app.ui.others.startup.OpeningActivity"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTop"
+            android:noHistory="true"
+            android:resizeableActivity="true"
+            android:taskAffinity=""
+            android:windowSoftInputMode="adjustResize" />
+
         <!-- Activity for handling shared content (text) -->
         <activity
             android:name="app.ui.others.information.IntentInterceptActivity"
@@ -69,8 +79,8 @@
             android:label="@string/text_empty_string"
             android:launchMode="singleTop"
             android:noHistory="true"
-            android:taskAffinity=""
             android:resizeableActivity="true"
+            android:taskAffinity=""
             android:theme="@style/style.transparent_activity"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>

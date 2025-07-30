@@ -129,6 +129,7 @@ dependencies {
     implementation libs.androidx.cardview        // CardView
     implementation libs.circleimageview          // Circular ImageView
     implementation libs.androidx.webkit          // Android WebView support
+    implementation libs.constraint.layout // Android layout view
 
     // Kotlin and Coroutines
     implementation libs.androidx.core.ktx         // Kotlin extensions for Android
@@ -163,5 +164,5 @@ dependencies {
 
     // Video downloading specific
     implementation libs.ytdlp.library            // YouTube-DL wrapper
-    implementation libs.ytdlp.ffmpeg            // FFmpeg integration
+    implementation libs.ytdlp.ffmpeg             // FFmpeg integration
 }

@@ -472,5 +472,6 @@
     <string name="text_battery_optimization_msg"><b>To ensure downloads are not interrupted</b>, exclude this app from battery optimization.</string>
     <string name="text_couldnt_get_video_title">Server\'s busy, try again later.</string>
     <string name="text_app_splash_credit">Made with ❤️ in India 🇮🇳</string>
+    <string name="title_version">Version</string>
 
 </resources>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_activity">
+
+    <!-- ========================== Center Content ========================== -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
+
+        <!-- App logo image (splash icon) -->
+        <ImageView
+            android:id="@+id/img_opening_splash"
+            android:layout_width="@dimen/_150"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_20"
+            android:layout_marginBottom="@dimen/_10"
+            android:adjustViewBounds="true"
+            android:elevation="@dimen/_2"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_launcher_logo_v4" />
+
+        <!-- App name text below the logo -->
+        <TextView
+            android:id="@+id/txt_opening_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_5"
+            android:fontFamily="@font/font_family_bold"
+            android:gravity="center"
+            android:paddingStart="@dimen/_10"
+            android:paddingTop="@dimen/_2"
+            android:paddingEnd="@dimen/_10"
+            android:paddingBottom="@dimen/_2"
+            android:text="@string/title_aio_video_downloader"
+            android:textColor="@color/color_text_primary"
+            android:textSize="@dimen/title_text_size" />
+
+        <!-- Loading animation (Lottie) -->
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/img_progress_circle"
+            android:layout_width="@dimen/_150"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_marginBottom="-25dp"
+            android:adjustViewBounds="true"
+            android:hardwareAccelerated="true"
+            android:importantForAccessibility="no"
+            android:layerType="hardware"
+            android:visibility="visible"
+            app:lottie_autoPlay="true"
+            app:lottie_enableMergePathsForKitKatAndAbove="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/anim_color_circle_loading"
+            tools:ignore="ImageContrastCheck,VisualLintBounds" />
+
+        <!-- Spacer for visual separation -->
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50" />
+    </LinearLayout>
+
+    <!-- ========================== Footer Content ========================== -->
+
+    <!-- App credit information shown above version -->
+    <TextView
+        android:id="@+id/txt_credit_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txt_version_info"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/font_family_medium"
+        android:text="@string/text_app_splash_credit"
+        android:textColor="@color/color_text_primary"
+        android:textSize="@dimen/normal_text_size_small" />
+
+    <!-- App version text displayed at bottom of the screen -->
+    <TextView
+        android:id="@+id/txt_version_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/_50"
+        android:fontFamily="@font/font_family_light"
+        android:paddingTop="@dimen/_5"
+        android:text="@string/text__"
+        android:textColor="@color/color_text_primary"
+        android:textSize="@dimen/small_text_size" />
+
+</RelativeLayout>

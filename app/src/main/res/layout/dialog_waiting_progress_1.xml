@@ -51,7 +51,7 @@
 
             <!-- Message or status text -->
             <TextView
-                android:id="@+id/text_progress_info"
+                android:id="@+id/txt_progress_info"
                 style="@style/style_dialog.message"
                 android:layout_marginStart="@dimen/_10"
                 android:layout_marginTop="@dimen/_8"

@@ -25,7 +25,7 @@ object ThreadsUtility : CoroutineScope {
 	private val logger = LogHelperUtils.from(javaClass)
 	
 	/** Default timeout duration for background tasks (in milliseconds). */
-	private const val JOB_TIMEOUT = 5000L
+	private const val JOB_TIMEOUT = 500000L
 	
 	/** The root SupervisorJob for the scope, allowing structured concurrency. */
 	private val job = SupervisorJob()
@@ -45,7 +45,7 @@ object ThreadsUtility : CoroutineScope {
 	 */
 	fun executeInBackground(
 		codeBlock: suspend () -> Unit,
-		errorHandler: ((Throwable) -> Unit)? = null
+		errorHandler: ((Throwable) -> Unit)? = null,
 	): Job = launch(Dispatchers.IO) {
 		try {
 			withTimeout(JOB_TIMEOUT) { codeBlock() }

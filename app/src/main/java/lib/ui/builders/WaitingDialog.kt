@@ -69,7 +69,7 @@ class WaitingDialog(
     private fun DialogBuilder.configureDialogContent() {
         view.apply {
             // Set loading message
-            findViewById<TextView>(R.id.text_progress_info).let {
+            findViewById<TextView>(R.id.txt_progress_info).let {
                 it.text = loadingMessage
                 ViewUtility.animateFadInOutAnim(it)
             }

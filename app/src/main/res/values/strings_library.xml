@@ -479,5 +479,6 @@
     <string name="title_redwap">Redwap</string>
     <string name="title_hentaicity">Hentaicity</string>
     <string name="title_xvideos">XVideos</string>
+    <string name="text_loading_downloads_data">Loading downloads data…</string>
 
 </resources>

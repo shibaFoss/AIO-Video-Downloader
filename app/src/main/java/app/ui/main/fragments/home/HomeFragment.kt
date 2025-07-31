@@ -40,6 +40,10 @@ import app.ui.others.media_player.MediaPlayerActivity.Companion.FROM_FINISHED_DO
 import app.ui.others.media_player.MediaPlayerActivity.Companion.PLAY_MEDIA_FILE_PATH
 import app.ui.others.media_player.MediaPlayerActivity.Companion.WHERE_DID_YOU_COME_FROM
 import com.aio.R
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import lib.files.FileSystemUtility.isAudioByName
 import lib.files.FileSystemUtility.isVideo
 import lib.files.FileSystemUtility.isVideoByName
@@ -157,11 +161,9 @@ class HomeFragment : BaseFragment(), AIOTimer.AIOTimerListener {
         val recentContainer = layout.findViewById<View>(R.id.container_recent_downloads)
         val emptyDownloadContainer = layout.findViewById<View>(R.id.container_empty_downloads)
         val buttonHowToDownload = layout.findViewById<View>(R.id.btn_how_to_download)
+        val loadingDownloadsContainer = layout.findViewById<View>(R.id.container_loading_downloads)
 
-        buttonHowToDownload.setOnClickListener {
-            GuidePlatformPicker(safeMotherActivityRef).show()
-        }
-
+        buttonHowToDownload.setOnClickListener { GuidePlatformPicker(safeMotherActivityRef).show() }
         val finishedDownloadModels = downloadSystem.finishedDownloadDataModels
         val activeDownloadModels = downloadSystem.activeDownloadDataModels
 
@@ -169,6 +171,7 @@ class HomeFragment : BaseFragment(), AIOTimer.AIOTimerListener {
             finishedDownloadModels,
             recentContainer,
             emptyDownloadContainer,
+            loadingDownloadsContainer,
             layout
         )
         updateActiveDownloadsUI(activeDownloadModels, activeDownloadsContainer, layout)
@@ -179,24 +182,34 @@ class HomeFragment : BaseFragment(), AIOTimer.AIOTimerListener {
      * @param finishedDownloadModels List of finished download models
      * @param recentContainer View container for recent downloads
      * @param emptyDownloadContainer View container for empty state
+     * @param loadingDownloadsContainer View container for loading state
      * @param fragmentLayout The fragment's root view
      */
     private fun updateFinishedDownloadsUI(
         finishedDownloadModels: List<DownloadDataModel>,
         recentContainer: View,
         emptyDownloadContainer: View,
+        loadingDownloadsContainer: View,
         fragmentLayout: View
     ) {
-        if (finishedDownloadModels.isEmpty()) {
-            lastCheckedFinishedTasksSize = 0
-            hideView(recentContainer, true, 300)
-            showView(emptyDownloadContainer, true, 100)
+        if (downloadSystem.isInitializing && finishedDownloadModels.isEmpty()) {
+            showView(loadingDownloadsContainer, true, 300)
         } else {
-            hideView(emptyDownloadContainer, true, 100)
-            showView(recentContainer, true, 300)
-            if (finishedDownloadModels.size != lastCheckedFinishedTasksSize) {
-                lastCheckedFinishedTasksSize = finishedDownloadModels.size
-                setupRecentDownloadsSitesAdapter(fragmentLayout)
+            CoroutineScope(Dispatchers.Main).launch {
+                hideView(loadingDownloadsContainer, true, 300)
+                delay(300)
+                if (finishedDownloadModels.isEmpty()) {
+                    lastCheckedFinishedTasksSize = 0
+                    hideView(recentContainer, true, 300)
+                    showView(emptyDownloadContainer, true, 100)
+                } else {
+                    hideView(emptyDownloadContainer, true, 100)
+                    showView(recentContainer, true, 300)
+                    if (finishedDownloadModels.size != lastCheckedFinishedTasksSize) {
+                        lastCheckedFinishedTasksSize = finishedDownloadModels.size
+                        setupRecentDownloadsSitesAdapter(fragmentLayout)
+                    }
+                }
             }
         }
     }

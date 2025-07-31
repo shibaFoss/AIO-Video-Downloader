@@ -54,7 +54,7 @@ class HistoryOptionPopup(
 					// Set up click listeners for popup buttons
 					builder.getPopupView().apply {
 						val buttonActions = mapOf(
-							R.id.button_open_history to { close(); openHistoryInBrowser() },
+							R.id.btn_open_history to { close(); openHistoryInBrowser() },
 							R.id.button_share_history to { close(); shareHistoryLink() },
 							R.id.button_copy_history to { close(); copyHistoryToClipboard() },
 							R.id.button_add_to_bookmark to { close(); addHistoryToBookmark() },

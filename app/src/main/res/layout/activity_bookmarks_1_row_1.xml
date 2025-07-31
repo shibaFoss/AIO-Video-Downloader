@@ -45,11 +45,12 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_toStartOf="@+id/bookmark_url_date"
-                android:fontFamily="@font/font_family_medium"
+                android:fontFamily="@font/application_font_family"
                 android:singleLine="true"
                 android:text="@string/text__"
                 android:textColor="@color/color_on_surface"
                 android:textSize="@dimen/message_text_size"
+                android:textStyle="bold"
                 tools:ignore="TextContrastCheck" />
 
             <TextView
@@ -60,7 +61,7 @@
                 android:layout_marginStart="@dimen/_5"
                 android:layout_marginEnd="@dimen/_0"
                 android:layout_toStartOf="@+id/bookmark_url_open_indicator"
-                android:fontFamily="@font/font_family_regular"
+                android:fontFamily="@font/application_font_family"
                 android:gravity="center_vertical"
                 android:singleLine="true"
                 android:text="@string/text__"
@@ -78,7 +79,8 @@
                 android:adjustViewBounds="true"
                 android:importantForAccessibility="no"
                 android:src="@drawable/ic_button_open_small"
-                android:tint="@color/color_secondary" />
+                android:tint="@color/color_secondary"
+                tools:ignore="ImageContrastCheck" />
         </RelativeLayout>
 
         <TextView
@@ -90,11 +92,12 @@
             android:layout_marginEnd="@dimen/_10"
             android:layout_marginBottom="@dimen/_5"
             android:layout_toEndOf="@+id/bookmark_url_favicon_indicator"
-            android:fontFamily="@font/font_family_regular"
+            android:fontFamily="@font/application_font_family"
             android:singleLine="true"
             android:text="@string/text__"
             android:textColor="@color/color_text_hint"
-            android:textSize="@dimen/smaller_text_size" />
+            android:textSize="@dimen/smaller_text_size"
+            tools:ignore="TextContrastCheck" />
     </RelativeLayout>
 
 </RelativeLayout>

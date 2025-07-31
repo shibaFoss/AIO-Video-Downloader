@@ -2,22 +2,22 @@
 <font-family xmlns:android="http://schemas.android.com/apk/res/android">
 
     <font
-        android:font="@font/font_family_light"
+        android:font="@font/font_family_special"
         android:fontStyle="normal"
         android:fontWeight="300" />
 
     <font
-        android:font="@font/font_family_regular"
+        android:font="@font/font_family_special"
         android:fontStyle="normal"
         android:fontWeight="400" />
 
     <font
-        android:font="@font/font_family_medium"
+        android:font="@font/font_family_special"
         android:fontStyle="normal"
         android:fontWeight="500" />
 
     <font
-        android:font="@font/font_family_bold"
+        android:font="@font/font_family_special"
         android:fontStyle="normal"
         android:fontWeight="600" />
 

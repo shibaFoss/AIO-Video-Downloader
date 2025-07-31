@@ -71,11 +71,11 @@ class BrowserFragmentTop(val browserFragment: BrowserFragment) {
 			browserTopTitleSection = layoutView.findViewById(R.id.top_layout_actionbar_section)
 			browserUrlEditFieldContainer = layoutView.findViewById(R.id.top_url_edit_section)
 			browserUrlEditField = layoutView.findViewById(R.id.edit_field_url)
-			webViewReloadButton = layoutView.findViewById(R.id.button_browser_reload)
-			webViewFavicon = layoutView.findViewById(R.id.image_browser_favicon)
+			webViewReloadButton = layoutView.findViewById(R.id.btn_browser_reload)
+			webViewFavicon = layoutView.findViewById(R.id.img_browser_favicon)
 			webviewTitle = layoutView.findViewById(R.id.edit_search_suggestion)
 			webViewProgress = layoutView.findViewById(R.id.webview_progress_bar)
-			webviewOptionPopup = layoutView.findViewById(R.id.button_browser_options)
+			webviewOptionPopup = layoutView.findViewById(R.id.btn_browser_options)
 		}
 	}
 	
@@ -88,13 +88,13 @@ class BrowserFragmentTop(val browserFragment: BrowserFragment) {
 		
 		layoutView?.apply {
 			val clickActions = mapOf(
-				findViewById<View>(R.id.button_actionbar_back) to { invisibleUrlEditSection() },
-				findViewById<View>(R.id.button_clear_url_edit_field) to { clearEditTextField() },
-				findViewById<View>(R.id.button_load_url_to_browser) to { loadUrlToBrowser() },
-				findViewById<View>(R.id.button_open_navigation) to { slideNavigation?.openDrawerNavigation() },
+				findViewById<View>(R.id.btn_actionbar_back) to { invisibleUrlEditSection() },
+				findViewById<View>(R.id.btn_clear_url_edit_field) to { clearEditTextField() },
+				findViewById<View>(R.id.btn_load_url_to_browser) to { loadUrlToBrowser() },
+				findViewById<View>(R.id.btn_open_navigation) to { slideNavigation?.openDrawerNavigation() },
 				findViewById<View>(R.id.container_edit_browser_url) to { visibleUrlEditSection() },
-				findViewById<View>(R.id.button_browser_reload) to { toggleWebviewLoading() },
-				findViewById<View>(R.id.button_browser_options) to { openBrowserPopupOptions() })
+				findViewById<View>(R.id.btn_browser_reload) to { toggleWebviewLoading() },
+				findViewById<View>(R.id.btn_browser_options) to { openBrowserPopupOptions() })
 			
 			clickActions.forEach { (view, clickAction) ->
 				view.setOnClickListener { clickAction() }

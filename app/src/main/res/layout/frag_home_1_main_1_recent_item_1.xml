@@ -8,10 +8,10 @@
     android:background="@drawable/ic_button_negative_selector"
     android:clickable="true"
     android:orientation="vertical"
-    tools:ignore="UseAppTint">
+    tools:ignore="UseAppTint,SpeakableTextPresentCheck">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/image_card_view"
+        android:id="@+id/container_img_thumbnail"
         android:layout_width="@dimen/_95"
         android:layout_height="@dimen/_70"
         android:layout_margin="@dimen/_3"
@@ -20,14 +20,15 @@
         app:cardCornerRadius="@dimen/_5">
 
         <ImageView
-            android:id="@+id/image_file_thumbnail"
+            android:id="@+id/img_file_thumbnail"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_centerVertical="true"
             android:adjustViewBounds="true"
             android:importantForAccessibility="no"
             android:scaleType="centerCrop"
-            android:src="@drawable/image_no_thumb_available" />
+            android:src="@drawable/image_no_thumb_available"
+            tools:ignore="ImageContrastCheck" />
 
         <ImageView
             android:layout_width="@dimen/_20"
@@ -37,7 +38,8 @@
             android:elevation="@dimen/_5"
             android:importantForAccessibility="no"
             android:src="@drawable/ic_button_media_play"
-            android:tint="@color/color_on_secondary" />
+            android:tint="@color/color_on_secondary"
+            tools:ignore="ImageContrastCheck" />
 
     </androidx.cardview.widget.CardView>
 </LinearLayout>

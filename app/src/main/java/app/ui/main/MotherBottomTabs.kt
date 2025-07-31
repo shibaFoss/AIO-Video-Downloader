@@ -28,10 +28,10 @@ class MotherBottomTabs(motherActivity: MotherActivity?) {
 		safeMotherActivityRef?.let { safeActivityRef ->
 			// Map of view IDs to their corresponding navigation actions
 			mapOf(
-				R.id.button_home_tab to { safeActivityRef.openHomeFragment() },
-				R.id.button_browser_tab to { safeActivityRef.openBrowserFragment() },
-				R.id.button_tasks_tab to { safeActivityRef.openDownloadsFragment() },
-				R.id.button_settings_tab to { safeActivityRef.openSettingsFragment() }
+				R.id.btn_home_tab to { safeActivityRef.openHomeFragment() },
+				R.id.btn_browser_tab to { safeActivityRef.openBrowserFragment() },
+				R.id.btn_tasks_tab to { safeActivityRef.openDownloadsFragment() },
+				R.id.btn_settings_tab to { safeActivityRef.openSettingsFragment() }
 			)
 		}
 	}
@@ -60,10 +60,10 @@ class MotherBottomTabs(motherActivity: MotherActivity?) {
 		safeMotherActivityRef?.let { safeActivityRef ->
 			// Mapping of tabs to their associated view IDs (container, icon, text)
 			val buttonTabs = mapOf(
-				Tab.HOME_TAB to listOf(R.id.button_home_tab, R.id.image_home_tab, R.id.text_home_tab),
-				Tab.BROWSER_TAB to listOf(R.id.button_browser_tab, R.id.image_browser_tab, R.id.text_browser_tab),
-				Tab.DOWNLOADS_TAB to listOf(R.id.button_tasks_tab, R.id.image_tasks_tab, R.id.text_task_tab),
-				Tab.SETTINGS_TAB to listOf(R.id.button_settings_tab, R.id.image_settings_tab, R.id.text_settings_tab)
+				Tab.HOME_TAB to listOf(R.id.btn_home_tab, R.id.img_home_tab, R.id.txt_home_tab),
+				Tab.BROWSER_TAB to listOf(R.id.btn_browser_tab, R.id.img_browser_tab, R.id.txt_browser_tab),
+				Tab.DOWNLOADS_TAB to listOf(R.id.btn_tasks_tab, R.id.img_tasks_tab, R.id.txt_task_tab),
+				Tab.SETTINGS_TAB to listOf(R.id.btn_settings_tab, R.id.img_settings_tab, R.id.txt_settings_tab)
 			)
 			
 			// First reset all tabs to inactive state

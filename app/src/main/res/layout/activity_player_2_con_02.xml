@@ -11,18 +11,20 @@
         android:layout_marginTop="@dimen/_0"
         android:layout_marginEnd="@dimen/_10"
         android:layout_marginBottom="@dimen/_0"
+        android:baselineAligned="false"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:weightSum="5">
 
         <RelativeLayout
-            android:id="@+id/button_video_controllers_lock"
+            android:id="@+id/btn_video_controllers_lock"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/ic_button_negative_selector"
             android:clickable="true"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            tools:ignore="SpeakableTextPresentCheck">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -32,17 +34,19 @@
                 android:adjustViewBounds="true"
                 android:importantForAccessibility="no"
                 android:src="@drawable/ic_button_lock"
-                android:tint="@color/color_secondary" />
+                android:tint="@color/color_secondary"
+                tools:ignore="ImageContrastCheck" />
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/button_video_previous"
+            android:id="@+id/btn_video_previous"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/ic_button_negative_selector"
             android:clickable="true"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            tools:ignore="SpeakableTextPresentCheck">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -52,37 +56,41 @@
                 android:adjustViewBounds="true"
                 android:importantForAccessibility="no"
                 android:src="@drawable/ic_button_media_previous"
-                android:tint="@color/color_secondary" />
+                android:tint="@color/color_secondary"
+                tools:ignore="ImageContrastCheck" />
         </RelativeLayout>
 
         <LinearLayout
-            android:id="@+id/button_video_play_pause_toggle"
+            android:id="@+id/btn_video_play_pause_toggle"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/ic_button_negative_selector"
             android:clickable="true"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            tools:ignore="SpeakableTextPresentCheck">
 
             <ImageView
-                android:id="@+id/button_img_video_play_pause_toggle"
+                android:id="@+id/btn_img_video_play_pause_toggle"
                 android:layout_width="@dimen/_40"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:adjustViewBounds="true"
                 android:importantForAccessibility="no"
                 android:src="@drawable/ic_button_media_play"
-                android:tint="@color/color_secondary" />
+                android:tint="@color/color_secondary"
+                tools:ignore="ImageContrastCheck" />
         </LinearLayout>
 
         <RelativeLayout
-            android:id="@+id/button_video_next"
+            android:id="@+id/btn_video_next"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/ic_button_negative_selector"
             android:clickable="true"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            tools:ignore="SpeakableTextPresentCheck">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -92,17 +100,19 @@
                 android:adjustViewBounds="true"
                 android:importantForAccessibility="no"
                 android:src="@drawable/ic_button_media_next"
-                android:tint="@color/color_secondary" />
+                android:tint="@color/color_secondary"
+                tools:ignore="ImageContrastCheck" />
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/button_video_file_share"
+            android:id="@+id/btn_video_file_share"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/ic_button_negative_selector"
             android:clickable="true"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            tools:ignore="SpeakableTextPresentCheck">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -112,7 +122,8 @@
                 android:adjustViewBounds="true"
                 android:importantForAccessibility="no"
                 android:src="@drawable/ic_button_share"
-                android:tint="@color/color_secondary" />
+                android:tint="@color/color_secondary"
+                tools:ignore="ImageContrastCheck" />
         </RelativeLayout>
 
     </LinearLayout>

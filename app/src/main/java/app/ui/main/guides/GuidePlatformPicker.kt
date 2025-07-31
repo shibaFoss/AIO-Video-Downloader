@@ -40,7 +40,7 @@ class GuidePlatformPicker(private val baseActivity: BaseActivity?) {
 			setViewOnClickListener(
 				{ button: View -> this.setupClickEvents(button) },
 				dialogBuilder.view,
-				R.id.button_dialog_positive_container
+				R.id.btn_dialog_positive_container
 			)
 			
 			// Initialize the platform selection grid
@@ -55,7 +55,7 @@ class GuidePlatformPicker(private val baseActivity: BaseActivity?) {
 	 */
 	private fun setupClickEvents(button: View) {
 		when (button.id) {
-			R.id.button_dialog_positive_container -> close()
+			R.id.btn_dialog_positive_container -> close()
 		}
 	}
 	

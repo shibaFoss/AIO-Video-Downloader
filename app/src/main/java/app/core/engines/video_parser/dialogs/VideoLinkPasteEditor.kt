@@ -57,9 +57,9 @@ class VideoLinkPasteEditor(
 			dialogBuilder?.let { builder ->
 				builder.setView(R.layout.dialog_video_link_editor_1)
 				builder.view.apply {
-					buttonDownload = findViewById(R.id.button_dialog_positive_container)
-					editFieldContainer = findViewById(R.id.edit_field_file_url_container)
-					editFieldFileURL = findViewById(R.id.edit_field_file_url)
+					buttonDownload = findViewById(R.id.btn_dialog_positive_container)
+					editFieldContainer = findViewById(R.id.edit_url_container)
+					editFieldFileURL = findViewById(R.id.edit_url)
 					passOnUrl?.let { editFieldFileURL.setText(it) }
 					
 					val clickActions = mapOf(

@@ -38,9 +38,9 @@ class FinishedTasksViewHolder(val layout: View) {
 	
 	// UI components
 	private val container: RelativeLayout by lazy { layout.findViewById(R.id.button_finish_download_row) }
-	private val thumbnail: ImageView by lazy { layout.findViewById(R.id.image_file_thumbnail) }
-	private val title: TextView by lazy { layout.findViewById(R.id.text_file_name) }
-	private val fileInfo: TextView by lazy { layout.findViewById(R.id.text_file_info) }
+	private val thumbnail: ImageView by lazy { layout.findViewById(R.id.img_file_thumbnail) }
+	private val title: TextView by lazy { layout.findViewById(R.id.txt_file_name) }
+	private val fileInfo: TextView by lazy { layout.findViewById(R.id.txt_file_info) }
 	
 	/**
 	 * Binds the download data and sets up click listeners.

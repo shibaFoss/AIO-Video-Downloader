@@ -25,57 +25,62 @@
             android:layout_height="match_parent">
 
             <RelativeLayout
-                android:id="@+id/button_actionbar_back"
+                android:id="@+id/btn_actionbar_back"
                 android:layout_width="@dimen/_50"
                 android:layout_height="match_parent"
                 android:background="@drawable/ic_button_negative_selector"
-                android:clickable="true">
+                android:clickable="true"
+                tools:ignore="SpeakableTextPresentCheck">
 
                 <ImageView
-                    android:id="@+id/button_left_actionbar_img"
+                    android:id="@+id/btn_left_actionbar_img"
                     android:layout_width="@dimen/_30"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:adjustViewBounds="true"
                     android:importantForAccessibility="no"
                     android:src="@drawable/ic_button_actionbar_back"
-                    android:tint="@color/color_secondary" />
+                    android:tint="@color/color_secondary"
+                    tools:ignore="ImageContrastCheck" />
             </RelativeLayout>
 
             <TextView
-                android:id="@+id/text_current_frag_name"
+                android:id="@+id/txt_current_frag_name"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="@dimen/_10"
                 android:layout_marginTop="@dimen/_0"
                 android:layout_marginEnd="@dimen/_10"
                 android:layout_marginBottom="@dimen/_0"
-                android:layout_toStartOf="@id/button_actionbar_add_download"
-                android:layout_toEndOf="@id/button_actionbar_back"
+                android:layout_toStartOf="@id/btn_actionbar_add_download"
+                android:layout_toEndOf="@id/btn_actionbar_back"
                 android:ellipsize="end"
-                android:fontFamily="@font/font_family_bold"
+                android:fontFamily="@font/application_font_family"
                 android:gravity="center_vertical"
                 android:maxLines="1"
                 android:text="@string/title_downloads_manager"
-                android:textSize="@dimen/title_text_size" />
+                android:textSize="@dimen/title_text_size"
+                android:textStyle="bold" />
 
             <RelativeLayout
-                android:id="@+id/button_actionbar_add_download"
+                android:id="@+id/btn_actionbar_add_download"
                 android:layout_width="@dimen/_50"
                 android:layout_height="match_parent"
                 android:layout_alignParentEnd="true"
                 android:background="@drawable/ic_button_negative_selector"
-                android:clickable="true">
+                android:clickable="true"
+                tools:ignore="SpeakableTextPresentCheck">
 
                 <ImageView
-                    android:id="@+id/button_right_actionbar_img"
+                    android:id="@+id/btn_right_actionbar_img"
                     android:layout_width="@dimen/_30"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:adjustViewBounds="true"
                     android:importantForAccessibility="no"
                     android:src="@drawable/ic_button_actionbar_plus"
-                    android:tint="@color/color_secondary" />
+                    android:tint="@color/color_secondary"
+                    tools:ignore="ImageContrastCheck" />
             </RelativeLayout>
 
         </RelativeLayout>

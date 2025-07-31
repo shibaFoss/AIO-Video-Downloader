@@ -34,7 +34,7 @@
                 android:orientation="horizontal">
 
                 <ImageButton
-                    android:id="@+id/button_webpage_back"
+                    android:id="@+id/btn_webpage_back"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -42,10 +42,11 @@
                     android:importantForAccessibility="no"
                     android:padding="@dimen/_5"
                     android:src="@drawable/ic_button_arrow_back"
-                    android:tint="@color/color_secondary" />
+                    android:tint="@color/color_secondary"
+                    tools:ignore="ImageContrastCheck,TouchTargetSizeCheck" />
 
                 <ImageButton
-                    android:id="@+id/button_webpage_forward"
+                    android:id="@+id/btn_webpage_forward"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -53,10 +54,11 @@
                     android:importantForAccessibility="no"
                     android:padding="@dimen/_5"
                     android:src="@drawable/ic_button_arrow_next"
-                    android:tint="@color/color_secondary" />
+                    android:tint="@color/color_secondary"
+                    tools:ignore="ImageContrastCheck,TouchTargetSizeCheck" />
 
                 <ImageButton
-                    android:id="@+id/button_save_bookmark"
+                    android:id="@+id/btn_save_bookmark"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -64,12 +66,13 @@
                     android:importantForAccessibility="no"
                     android:padding="@dimen/_5"
                     android:src="@drawable/ic_button_save_bookmark"
-                    android:tint="@color/color_secondary" />
+                    android:tint="@color/color_secondary"
+                    tools:ignore="ImageContrastCheck,TouchTargetSizeCheck" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/button_share_webpage_url"
+                android:id="@+id/btn_share_webpage_url"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="@dimen/_10"
@@ -78,7 +81,8 @@
                 android:layout_marginBottom="@dimen/_0"
                 android:background="@drawable/ic_button_negative_selector"
                 android:clickable="true"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                tools:ignore="TouchTargetSizeCheck">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -88,7 +92,7 @@
                     android:drawablePadding="@dimen/_5"
                     android:drawableTint="@color/color_secondary"
                     android:ellipsize="end"
-                    android:fontFamily="@font/font_family_regular"
+                    android:fontFamily="@font/application_font_family"
                     android:maxLines="1"
                     android:singleLine="true"
                     android:text="@string/text_share_page_link"
@@ -97,7 +101,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/button_copy_webpage_url"
+                android:id="@+id/btn_copy_webpage_url"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="@dimen/_10"
@@ -106,7 +110,8 @@
                 android:layout_marginBottom="@dimen/_0"
                 android:background="@drawable/ic_button_negative_selector"
                 android:clickable="true"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                tools:ignore="TouchTargetSizeCheck">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -116,7 +121,7 @@
                     android:drawablePadding="@dimen/_5"
                     android:drawableTint="@color/color_secondary"
                     android:ellipsize="end"
-                    android:fontFamily="@font/font_family_regular"
+                    android:fontFamily="@font/application_font_family"
                     android:maxLines="1"
                     android:singleLine="true"
                     android:text="@string/text_copy_site_url"
@@ -125,7 +130,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/button_open_with_system_browser"
+                android:id="@+id/btn_open_with_system_browser"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="@dimen/_10"
@@ -134,7 +139,8 @@
                 android:layout_marginBottom="@dimen/_0"
                 android:background="@drawable/ic_button_negative_selector"
                 android:clickable="true"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                tools:ignore="TouchTargetSizeCheck">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -144,7 +150,7 @@
                     android:drawablePadding="@dimen/_5"
                     android:drawableTint="@color/color_secondary"
                     android:ellipsize="end"
-                    android:fontFamily="@font/font_family_regular"
+                    android:fontFamily="@font/application_font_family"
                     android:maxLines="1"
                     android:singleLine="true"
                     android:text="@string/text_open_in_browser"
@@ -153,7 +159,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/button_add_download_task_editor"
+                android:id="@+id/btn_add_download_task_editor"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="@dimen/_10"
@@ -162,7 +168,8 @@
                 android:layout_marginBottom="@dimen/_0"
                 android:background="@drawable/ic_button_negative_selector"
                 android:clickable="true"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                tools:ignore="TouchTargetSizeCheck">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -172,7 +179,7 @@
                     android:drawablePadding="@dimen/_5"
                     android:drawableTint="@color/color_secondary"
                     android:ellipsize="end"
-                    android:fontFamily="@font/font_family_regular"
+                    android:fontFamily="@font/application_font_family"
                     android:maxLines="1"
                     android:singleLine="true"
                     android:text="@string/text_new_download"
@@ -181,7 +188,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/button_open_bookmark"
+                android:id="@+id/btn_open_bookmark"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="@dimen/_10"
@@ -190,7 +197,8 @@
                 android:layout_marginBottom="@dimen/_0"
                 android:background="@drawable/ic_button_negative_selector"
                 android:clickable="true"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                tools:ignore="TouchTargetSizeCheck">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -200,7 +208,7 @@
                     android:drawablePadding="@dimen/_5"
                     android:drawableTint="@color/color_secondary"
                     android:ellipsize="end"
-                    android:fontFamily="@font/font_family_regular"
+                    android:fontFamily="@font/application_font_family"
                     android:maxLines="1"
                     android:singleLine="true"
                     android:text="@string/text_open_bookmark"
@@ -209,7 +217,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/button_open_history"
+                android:id="@+id/btn_open_history"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="@dimen/_10"
@@ -218,7 +226,8 @@
                 android:layout_marginBottom="@dimen/_0"
                 android:background="@drawable/ic_button_negative_selector"
                 android:clickable="true"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                tools:ignore="TouchTargetSizeCheck">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -228,7 +237,7 @@
                     android:drawablePadding="@dimen/_5"
                     android:drawableTint="@color/color_secondary"
                     android:ellipsize="end"
-                    android:fontFamily="@font/font_family_regular"
+                    android:fontFamily="@font/application_font_family"
                     android:maxLines="1"
                     android:singleLine="true"
                     android:text="@string/text_open_web_history"
@@ -237,7 +246,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/button_how_to_use"
+                android:id="@+id/btn_how_to_use"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="@dimen/_10"
@@ -246,7 +255,8 @@
                 android:layout_marginBottom="@dimen/_0"
                 android:background="@drawable/ic_button_negative_selector"
                 android:clickable="true"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                tools:ignore="TouchTargetSizeCheck">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -256,7 +266,7 @@
                     android:drawablePadding="@dimen/_5"
                     android:drawableTint="@color/color_secondary"
                     android:ellipsize="end"
-                    android:fontFamily="@font/font_family_regular"
+                    android:fontFamily="@font/application_font_family"
                     android:maxLines="1"
                     android:singleLine="true"
                     android:text="@string/text_how_to_download"
@@ -265,7 +275,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/button_open_feedback"
+                android:id="@+id/btn_open_feedback"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="@dimen/_10"
@@ -274,7 +284,8 @@
                 android:layout_marginBottom="@dimen/_8"
                 android:background="@drawable/ic_button_negative_selector"
                 android:clickable="true"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                tools:ignore="TouchTargetSizeCheck">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -284,7 +295,7 @@
                     android:drawablePadding="@dimen/_5"
                     android:drawableTint="@color/color_secondary"
                     android:ellipsize="end"
-                    android:fontFamily="@font/font_family_regular"
+                    android:fontFamily="@font/application_font_family"
                     android:maxLines="1"
                     android:singleLine="true"
                     android:text="@string/text_send_feedback"

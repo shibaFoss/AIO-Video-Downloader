@@ -73,8 +73,8 @@ public class UserFeedbackActivity extends BaseActivity {
      * Binds the XML views with their respective objects in Java.
      */
     private void initializeViews() {
-        buttonBack = findViewById(R.id.button_left_actionbar);
-        buttonSendMessage = findViewById(R.id.button_right_actionbar);
+        buttonBack = findViewById(R.id.btn_left_actionbar);
+        buttonSendMessage = findViewById(R.id.btn_right_actionbar);
         editEmailField = findViewById(R.id.edit_email_field);
         editMessageField = findViewById(R.id.edit_message_field);
         checkBoxNoSound = findViewById(R.id.checkbox_no_sound);

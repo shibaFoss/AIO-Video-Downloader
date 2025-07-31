@@ -57,8 +57,8 @@ open class VideoFormatAdapter(
 		
 		safeBaseActivityRef?.let { safeBaseActivityRef ->
 			val mainLayout = view.findViewById<View>(R.id.main_layout)
-			val resolutionTextView: TextView = view.findViewById(R.id.text_resolution)
-			val fileSizeTextView: TextView = view.findViewById(R.id.text_file_size)
+			val resolutionTextView: TextView = view.findViewById(R.id.txt_resolution)
+			val fileSizeTextView: TextView = view.findViewById(R.id.txt_file_size)
 			
 			val videoFormat = getItem(position)
 			

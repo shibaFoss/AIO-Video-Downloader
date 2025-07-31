@@ -36,43 +36,7 @@ class SettingsOnClickLogic(private val settingsFragment: SettingsFragment) {
 	
 	// Keeps a weak reference to the fragment to avoid memory leaks.
 	private val safeSettingsFragmentRef = WeakReference(settingsFragment).get()
-	
-	/** Show upgrade dialog when user expresses interest in Premium version */
-	fun openApplicationUpgradePage() {
-		safeSettingsFragmentRef?.let { safeSettingsFragmentRef ->
-			safeSettingsFragmentRef.safeMotherActivityRef?.doSomeVibration(50)
-			if (AIOApp.IS_PREMIUM_USER && AIOApp.IS_ULTIMATE_VERSION_UNLOCKED) {
-				MsgDialogUtils.showMessageDialog(
-					baseActivityInf = safeSettingsFragmentRef.safeMotherActivityRef,
-					isTitleVisible = true,
-					titleTextViewCustomize = { it.setText(R.string.title_thank_you_so_much) },
-					isNegativeButtonVisible = false,
-					messageTextViewCustomize = {
-						it.setText(R.string.text_thank_you_using_premium_version)
-					},
-					positiveButtonTextCustomize = {
-						it.setText(R.string.title_okay)
-						it.setLeftSideDrawable(R.drawable.ic_button_checked_circle)
-					}
-				)
-			} else {
-				MsgDialogUtils.showMessageDialog(
-					baseActivityInf = safeSettingsFragmentRef.safeMotherActivityRef,
-					isTitleVisible = true,
-					titleTextViewCustomize = { it.setText(R.string.title_thank_you_so_much) },
-					isNegativeButtonVisible = false,
-					messageTextViewCustomize = {
-						it.setText(R.string.text_thank_you_taking_interest_in_premium)
-					},
-					positiveButtonTextCustomize = {
-						it.setText(R.string.title_okay)
-						it.setLeftSideDrawable(R.drawable.ic_button_checked_circle)
-					}
-				)
-			}
-		}
-	}
-	
+
 	/** Show a dialog to select default download location */
 	fun setDefaultDownloadLocationPicker() {
 		safeSettingsFragmentRef?.safeMotherActivityRef?.let { safeMotherActivity ->
@@ -255,7 +219,7 @@ class SettingsOnClickLogic(private val settingsFragment: SettingsFragment) {
 	/** Constructs the Play Store sharing message */
 	private fun getShareText(context: Context): String {
 		val appName = context.getString(R.string.title_aio_video_downloader)
-		val playStoreUrl = "https://play.google.com/store/apps/details?id="
+		val playStoreUrl = "https://github.com/shibaFoss/VideoMate"
 		val playStoreLink = "$playStoreUrl${context.packageName}"
 		
 		return context.getString(
@@ -275,23 +239,23 @@ class SettingsOnClickLogic(private val settingsFragment: SettingsFragment) {
 		safeSettingsFragmentRef?.safeFragmentLayoutRef?.let { layout ->
 			listOf(
 				SettingViewConfig(
-					viewId = R.id.text_play_notification_sound,
+					viewId = R.id.txt_play_notification_sound,
 					isEnabled = aioSettings.downloadPlayNotificationSound
 				),
 				SettingViewConfig(
-					viewId = R.id.text_wifi_only_downloads,
+					viewId = R.id.txt_wifi_only_downloads,
 					isEnabled = aioSettings.downloadWifiOnly
 				),
 				SettingViewConfig(
-					viewId = R.id.text_hide_task_notifications,
+					viewId = R.id.txt_hide_task_notifications,
 					isEnabled = aioSettings.downloadHideNotification
 				),
 				SettingViewConfig(
-					viewId = R.id.text_enable_video_grabber,
+					viewId = R.id.txt_enable_video_grabber,
 					isEnabled = aioSettings.browserEnableVideoGrabber
 				),
 				SettingViewConfig(
-					viewId = R.id.text_enable_popup_blocker,
+					viewId = R.id.txt_enable_popup_blocker,
 					isEnabled = aioSettings.browserEnablePopupBlocker
 				),
 			).forEach { config ->

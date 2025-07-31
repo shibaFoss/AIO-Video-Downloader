@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -27,7 +26,7 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:id="@+id/button_home_tab"
+                android:id="@+id/btn_home_tab"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_8"
@@ -40,7 +39,7 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/image_home_tab"
+                    android:id="@+id/img_home_tab"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -48,25 +47,27 @@
                     android:adjustViewBounds="true"
                     android:importantForAccessibility="no"
                     android:src="@drawable/ic_button_nav_home"
-                    android:tint="@color/color_secondary" />
+                    android:tint="@color/color_secondary"
+                    tools:ignore="ImageContrastCheck" />
 
                 <TextView
-                    android:id="@+id/text_home_tab"
+                    android:id="@+id/txt_home_tab"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_marginBottom="@dimen/_5"
                     android:ellipsize="end"
-                    android:fontFamily="@font/font_family_bold"
+                    android:fontFamily="@font/application_font_family"
                     android:gravity="center"
                     android:maxLines="1"
                     android:text="@string/title_home"
                     android:textColor="@color/color_text_primary"
-                    android:textSize="@dimen/small_text_size" />
+                    android:textSize="@dimen/small_text_size"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/button_browser_tab"
+                android:id="@+id/btn_browser_tab"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_0"
@@ -79,7 +80,7 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/image_browser_tab"
+                    android:id="@+id/img_browser_tab"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -87,25 +88,27 @@
                     android:adjustViewBounds="true"
                     android:importantForAccessibility="no"
                     android:src="@drawable/ic_button_nav_browser"
-                    android:tint="@color/color_secondary" />
+                    android:tint="@color/color_secondary"
+                    tools:ignore="ImageContrastCheck" />
 
                 <TextView
-                    android:id="@+id/text_browser_tab"
+                    android:id="@+id/txt_browser_tab"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_marginBottom="@dimen/_5"
                     android:ellipsize="end"
-                    android:fontFamily="@font/font_family_bold"
+                    android:fontFamily="@font/application_font_family"
                     android:gravity="center"
                     android:maxLines="1"
                     android:text="@string/title_browser"
                     android:textColor="@color/color_text_primary"
-                    android:textSize="@dimen/small_text_size" />
+                    android:textSize="@dimen/small_text_size"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/button_tasks_tab"
+                android:id="@+id/btn_tasks_tab"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_0"
@@ -118,7 +121,7 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/image_tasks_tab"
+                    android:id="@+id/img_tasks_tab"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -126,25 +129,27 @@
                     android:adjustViewBounds="true"
                     android:importantForAccessibility="no"
                     android:src="@drawable/ic_button_nav_download"
-                    android:tint="@color/color_secondary" />
+                    android:tint="@color/color_secondary"
+                    tools:ignore="ImageContrastCheck" />
 
                 <TextView
-                    android:id="@+id/text_task_tab"
+                    android:id="@+id/txt_task_tab"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_marginBottom="@dimen/_5"
                     android:ellipsize="end"
-                    android:fontFamily="@font/font_family_bold"
+                    android:fontFamily="@font/application_font_family"
                     android:gravity="center"
                     android:maxLines="1"
                     android:text="@string/title_tasks"
                     android:textColor="@color/color_text_primary"
-                    android:textSize="@dimen/small_text_size" />
+                    android:textSize="@dimen/small_text_size"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/button_settings_tab"
+                android:id="@+id/btn_settings_tab"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_0"
@@ -157,7 +162,7 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/image_settings_tab"
+                    android:id="@+id/img_settings_tab"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -165,21 +170,23 @@
                     android:adjustViewBounds="true"
                     android:importantForAccessibility="no"
                     android:src="@drawable/ic_button_nav_settings"
-                    android:tint="@color/color_secondary" />
+                    android:tint="@color/color_secondary"
+                    tools:ignore="ImageContrastCheck" />
 
                 <TextView
-                    android:id="@+id/text_settings_tab"
+                    android:id="@+id/txt_settings_tab"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_marginBottom="@dimen/_5"
                     android:ellipsize="end"
-                    android:fontFamily="@font/font_family_bold"
+                    android:fontFamily="@font/application_font_family"
                     android:gravity="center"
                     android:maxLines="1"
                     android:text="@string/title_settings"
                     android:textColor="@color/color_text_primary"
-                    android:textSize="@dimen/small_text_size" />
+                    android:textSize="@dimen/small_text_size"
+                    android:textStyle="bold" />
             </LinearLayout>
 
         </LinearLayout>

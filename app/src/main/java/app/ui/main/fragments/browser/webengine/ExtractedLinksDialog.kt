@@ -58,7 +58,7 @@ class ExtractedLinksDialog(
 		linkListView = findViewById(R.id.list_extracted_video_urls)
 		
 		val mapOfButtonActions = mapOf(
-			R.id.button_dialog_positive_container to { close() },
+			R.id.btn_dialog_positive_container to { close() },
 			R.id.button_dialog_negative_container to { clearAllExtractedLinks() },
 		)
 		

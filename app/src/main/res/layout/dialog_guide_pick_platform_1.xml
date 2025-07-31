@@ -30,12 +30,12 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/text_dialog_title"
+                    android:id="@+id/txt_dialog_title"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/_10"
                     android:ellipsize="end"
-                    android:fontFamily="@font/font_family_bold"
+                    android:fontFamily="@font/application_font_family"
                     android:gravity="center"
                     android:maxLines="1"
                     android:text="@string/title_what_videos_will_you_download"
@@ -71,7 +71,7 @@
             </ScrollView>
 
             <RelativeLayout
-                android:id="@+id/button_dialog_positive_container"
+                android:id="@+id/btn_dialog_positive_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_15"
@@ -81,10 +81,11 @@
                 android:background="@drawable/ic_button_selector_secondary"
                 android:baselineAligned="true"
                 android:clickable="true"
-                android:elevation="@dimen/_2">
+                android:elevation="@dimen/_2"
+                tools:ignore="TouchTargetSizeCheck">
 
                 <TextView
-                    android:id="@+id/button_dialog_positive"
+                    android:id="@+id/btn_dialog_positive"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
@@ -93,12 +94,13 @@
                     android:drawablePadding="@dimen/_5"
                     android:drawableTint="@color/color_background"
                     android:ellipsize="end"
-                    android:fontFamily="@font/font_family_bold"
+                    android:fontFamily="@font/application_font_family"
                     android:gravity="center"
                     android:maxLines="1"
                     android:text="@string/title_okay"
                     android:textColor="@color/color_on_secondary"
-                    android:textSize="@dimen/normal_text_size" />
+                    android:textSize="@dimen/normal_text_size"
+                    android:textStyle="bold" />
             </RelativeLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>

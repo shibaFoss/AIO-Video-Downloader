@@ -20,7 +20,7 @@
         android:orientation="vertical">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/image_card_view"
+            android:id="@+id/container_img_thumbnail"
             android:layout_width="@dimen/_90"
             android:layout_height="@dimen/_60"
             android:layout_marginStart="@dimen/_5"
@@ -31,14 +31,15 @@
             app:cardCornerRadius="@dimen/_5">
 
             <ImageView
-                android:id="@+id/image_file_thumbnail"
+                android:id="@+id/img_file_thumbnail"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_centerVertical="true"
                 android:adjustViewBounds="true"
                 android:importantForAccessibility="no"
                 android:scaleType="centerCrop"
-                android:src="@drawable/image_no_thumb_available" />
+                android:src="@drawable/image_no_thumb_available"
+                tools:ignore="ImageContrastCheck" />
 
         </androidx.cardview.widget.CardView>
 
@@ -47,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginEnd="@dimen/_8"
-            android:layout_toEndOf="@id/image_card_view"
+            android:layout_toEndOf="@id/container_img_thumbnail"
             android:orientation="vertical">
 
             <RelativeLayout
@@ -55,12 +56,13 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/text_file_name"
+                    android:id="@+id/txt_file_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_toStartOf="@id/image_status_indicator"
+                    android:layout_toStartOf="@id/img_status_indicator"
                     android:ellipsize="end"
-                    android:fontFamily="@font/font_family_medium"
+                    android:fontFamily="@font/application_font_family"
+                    android:textStyle="bold"
                     android:gravity="center_vertical"
                     android:maxLines="2"
                     android:singleLine="false"
@@ -69,7 +71,7 @@
                     android:textSize="@dimen/message_text_size" />
 
                 <ImageView
-                    android:id="@+id/image_status_indicator"
+                    android:id="@+id/img_status_indicator"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -78,7 +80,8 @@
                     android:adjustViewBounds="true"
                     android:importantForAccessibility="no"
                     android:src="@drawable/ic_button_open_v2"
-                    android:tint="@color/color_secondary" />
+                    android:tint="@color/color_secondary"
+                    tools:ignore="ImageContrastCheck" />
 
             </RelativeLayout>
 
@@ -90,7 +93,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/text_download_status"
+                    android:id="@+id/txt_download_status"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
@@ -99,12 +102,13 @@
                     android:layout_marginEnd="@dimen/_5"
                     android:layout_marginBottom="@dimen/_2"
                     android:ellipsize="end"
-                    android:fontFamily="@font/font_family_regular"
+                    android:fontFamily="@font/application_font_family"
                     android:gravity="center_vertical"
                     android:singleLine="true"
                     android:text="@string/text__"
                     android:textColor="@color/color_text_hint"
-                    android:textSize="@dimen/smaller_text_size" />
+                    android:textSize="@dimen/smaller_text_size"
+                    tools:ignore="TextContrastCheck" />
             </RelativeLayout>
 
         </LinearLayout>

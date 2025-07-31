@@ -95,8 +95,8 @@ class ExtractedLinksAdapter(
 	) {
 		private val m3U8InfoExtractor = M3U8InfoExtractor()
 		private var itemClickableContainer: View = layoutView.findViewById(R.id.main_container)
-		private var linkItemUrl: TextView = layoutView.findViewById(R.id.text_video_url)
-		private var linkItemInfo: TextView = layoutView.findViewById(R.id.text_video_info)
+		private var linkItemUrl: TextView = layoutView.findViewById(R.id.txt_video_url)
+		private var linkItemInfo: TextView = layoutView.findViewById(R.id.txt_video_info)
 		private var textLinkItemInfo: String = ""
 		
 		/**

@@ -10,7 +10,7 @@
     android:orientation="vertical">
 
     <ImageView
-        android:id="@+id/image_of_favicon"
+        android:id="@+id/img_site_favicon"
         android:layout_width="@dimen/_40"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -20,14 +20,14 @@
         android:src="@drawable/ic_site_google" />
 
     <TextView
-        android:id="@+id/title_of_favicon"
+        android:id="@+id/txt_favicon_site_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="@dimen/_2"
         android:layout_marginBottom="@dimen/_2"
         android:ellipsize="end"
-        android:fontFamily="@font/font_family_regular"
+        android:fontFamily="@font/application_font_family"
         android:gravity="center_horizontal"
         android:maxLines="1"
         android:text="@string/title_google"

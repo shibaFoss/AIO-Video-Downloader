@@ -74,14 +74,14 @@ class PrivacyPolicyActivity : BaseActivity() {
 	 */
 	private fun initializeViews() {
 		// Set up back button action
-		findViewById<View>(R.id.button_left_actionbar).apply {
+		findViewById<View>(R.id.btn_left_actionbar).apply {
 			setOnClickListener { onBackPressActivity() }
 		}
 		
 		// Load and display the HTML content from raw resources
 		try {
 			val contentHTML = fromHtmlStringToSpanned(getHtmlString(R.raw.msg_privacy_policy))
-			findViewById<TextView>(R.id.text_privacy_policy).text = contentHTML
+			findViewById<TextView>(R.id.txt_privacy_policy).text = contentHTML
 		} catch (error: Exception) {
 			error.printStackTrace()
 		}

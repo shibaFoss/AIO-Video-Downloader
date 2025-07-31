@@ -39,7 +39,7 @@ class NoVideoFoundDialog(
 		// Set up the dialog view logic
 		dialogBuilder.view.apply {
 			// When user clicks the positive action button, open guide
-			findViewById<View>(R.id.button_dialog_positive_container).setOnClickListener {
+			findViewById<View>(R.id.btn_dialog_positive_container).setOnClickListener {
 				close()
 				if (safeBaseActivity == null) return@setOnClickListener
 				GuidePlatformPicker(safeBaseActivity).show()

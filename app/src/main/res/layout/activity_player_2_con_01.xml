@@ -27,7 +27,7 @@
                 android:layout_marginTop="@dimen/_3"
                 android:layout_marginEnd="@dimen/_10"
                 android:layout_marginBottom="@dimen/_3"
-                android:fontFamily="@font/font_family_bold"
+                android:fontFamily="@font/application_font_family"
                 android:text="@string/text_time_representation"
                 android:textColor="@color/color_text_primary"
                 android:textSize="@dimen/message_text_size" />
@@ -63,7 +63,7 @@
                 android:layout_marginTop="@dimen/_3"
                 android:layout_marginEnd="@dimen/_10"
                 android:layout_marginBottom="@dimen/_3"
-                android:fontFamily="@font/font_family_bold"
+                android:fontFamily="@font/application_font_family"
                 android:text="@string/text_time_representation"
                 android:textColor="@color/color_text_primary"
                 android:textSize="@dimen/message_text_size" />

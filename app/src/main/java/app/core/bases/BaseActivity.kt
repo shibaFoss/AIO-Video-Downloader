@@ -56,6 +56,7 @@ import app.core.bases.interfaces.BaseActivityInf
 import app.core.bases.interfaces.PermissionsResult
 import app.core.bases.language.LanguageAwareActivity
 import app.ui.main.MotherActivity
+import app.ui.others.startup.OpeningActivity
 import com.aio.R
 import com.anggrayudi.storage.SimpleStorageHelper
 import com.permissionx.guolindev.PermissionX
@@ -501,6 +502,7 @@ abstract class BaseActivity : LanguageAwareActivity(), BaseActivityInf {
 			if (!isUserPermissionCheckingActive) {
 				delay(1000, object : OnTaskFinishListener {
 					override fun afterDelay() {
+						if (safeActivityRef is OpeningActivity) return
 						val permissions = getRequiredPermissionsBySDKVersion()
 						if (permissions.isNotEmpty() && !isGranted(safeActivityRef, permissions[0]))
 							launchPermissionRequest(getRequiredPermissionsBySDKVersion()) else

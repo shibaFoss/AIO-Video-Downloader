@@ -89,7 +89,7 @@ class BookmarkOptionPopup(
 	 */
 	private fun initializePopupButtons(popupView: View?) {
 		popupView?.apply {
-			findViewById<View>(R.id.button_open_bookmark)
+			findViewById<View>(R.id.btn_open_bookmark)
 				.setOnClickListener { closeAndCleanup { openBookmarkInBrowser() } }
 			findViewById<View>(R.id.button_share_bookmark)
 				.setOnClickListener { closeAndCleanup { shareBookmarkLink() } }

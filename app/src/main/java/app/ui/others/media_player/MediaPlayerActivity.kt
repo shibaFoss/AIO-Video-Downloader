@@ -373,7 +373,7 @@ class MediaPlayerActivity : BaseActivity(), AIOTimerListener, Listener {
 		safeSelfReference?.let { _ ->
 			// Initialize ExoPlayer view and other UI components
 			exoMediaPlayerView = findViewById(id.video_player_view)
-			textQuickInfo = findViewById(id.text_video_quick_info)
+			textQuickInfo = findViewById(id.txt_video_quick_info)
 			invisibleNightModeOverlay = findViewById(id.night_mode_invisible_area)
 			invisibleNightModeOverlay.visibility = GONE
 			invisibleTouchArea = findViewById(id.invisible_touch_area)
@@ -390,13 +390,13 @@ class MediaPlayerActivity : BaseActivity(), AIOTimerListener, Listener {
 			audioAlbumArtHolder = findViewById(id.img_audio_album_art)
 			
 			// Set up action bar buttons
-			buttonBackActionbar = findViewById(id.button_actionbar_back)
+			buttonBackActionbar = findViewById(id.btn_actionbar_back)
 			buttonBackActionbar.apply { setOnClickListener { onBackPressActivity() } }
 			
-			textCurrentVideoName = findViewById(id.text_video_file_name)
+			textCurrentVideoName = findViewById(id.txt_video_file_name)
 			textCurrentVideoName.apply { isSelected = true; text = getDownloadModelFromIntent()?.fileName ?: "" }
 			
-			buttonOptionActionbar = findViewById(id.button_actionbar_option)
+			buttonOptionActionbar = findViewById(id.btn_actionbar_option)
 			buttonOptionActionbar.apply { setOnClickListener { showOptionMenuPopup() } }
 			
 			// Initialize progress display
@@ -407,22 +407,22 @@ class MediaPlayerActivity : BaseActivity(), AIOTimerListener, Listener {
 			textVideoDuration = findViewById(id.text_video_duration)
 			
 			// Initialize control buttons
-			buttonControllerLock = findViewById(id.button_video_controllers_lock)
+			buttonControllerLock = findViewById(id.btn_video_controllers_lock)
 			buttonControllerLock.apply { setOnClickListener { lockEntirePlaybackControllers() } }
 			
-			buttonVideoPlayPrevious = findViewById(id.button_video_previous)
+			buttonVideoPlayPrevious = findViewById(id.btn_video_previous)
 			buttonVideoPlayPrevious.apply { setOnClickListener { playPreviousMedia() } }
 			
-			buttonVideoPlayPauseToggle = findViewById(id.button_video_play_pause_toggle)
+			buttonVideoPlayPauseToggle = findViewById(id.btn_video_play_pause_toggle)
 			buttonVideoPlayPauseToggle.apply { setOnClickListener { toggleVideoPlayback() } }
 			
-			buttonVideoPlayNext = findViewById(id.button_video_next)
+			buttonVideoPlayNext = findViewById(id.btn_video_next)
 			buttonVideoPlayNext.apply { setOnClickListener { playNextMedia() } }
 			
-			buttonShareMediaFile = findViewById(id.button_video_file_share)
+			buttonShareMediaFile = findViewById(id.btn_video_file_share)
 			buttonShareMediaFile.apply { setOnClickListener { shareMediaFile() } }
 			
-			buttonControllerUnlock = findViewById(id.button_video_unlock_overlay)
+			buttonControllerUnlock = findViewById(id.btn_video_unlock_overlay)
 			buttonControllerUnlock.apply { setOnClickListener { unlockEntirePlaybackControllers() } }
 		}
 	}
@@ -1093,7 +1093,7 @@ class MediaPlayerActivity : BaseActivity(), AIOTimerListener, Listener {
 	private fun updateIconOfVideoPlayPauseButton(isPlaying: Boolean) {
 		val iconResId = if (isPlaying) drawable.ic_button_media_pause
 		else drawable.ic_button_media_play
-		val buttonViewId = id.button_img_video_play_pause_toggle
+		val buttonViewId = id.btn_img_video_play_pause_toggle
 		(findViewById<ImageView>(buttonViewId)).setImageResource(iconResId)
 	}
 	

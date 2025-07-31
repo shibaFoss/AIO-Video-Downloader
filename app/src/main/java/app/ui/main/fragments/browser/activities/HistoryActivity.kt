@@ -134,7 +134,7 @@ class HistoryActivity : BaseActivity(),
 		safeHistoryActivityRef?.let {
 			emptyHistoryIndicator = findViewById(R.id.empty_history_indicator)
 			historyList = findViewById(R.id.list_history)
-			buttonLoadMoreHistory = findViewById(R.id.button_load_more_history)
+			buttonLoadMoreHistory = findViewById(R.id.btn_load_more_history)
 			
 			// Set adapter and hide views initially
 			historyList.adapter = historyAdapter
@@ -150,10 +150,10 @@ class HistoryActivity : BaseActivity(),
 	 * Sets up click event listeners for UI elements.
 	 */
 	private fun initializeViewsOnClickEvents() {
-		findViewById<View>(R.id.button_left_actionbar)
+		findViewById<View>(R.id.btn_left_actionbar)
 			.setOnClickListener { onBackPressActivity() }
 		
-		findViewById<View>(R.id.button_right_actionbar)
+		findViewById<View>(R.id.btn_right_actionbar)
 			.setOnClickListener { deleteAllHistory() }
 		
 		buttonLoadMoreHistory.setOnClickListener {

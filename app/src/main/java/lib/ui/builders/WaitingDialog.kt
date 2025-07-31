@@ -75,14 +75,14 @@ class WaitingDialog(
             }
             
             // Configure OK button visibility and click listener
-            findViewById<View>(R.id.button_dialog_positive_container).apply {
+            findViewById<View>(R.id.btn_dialog_positive_container).apply {
                 setOnClickListener { close() }
                 visibility = if (shouldHideOkayButton) GONE else VISIBLE
             }
             
             // Setup animation
-            findViewById<LottieAnimationView>(R.id.image_progress_circle).apply {
-                AIOApp.aioRawFiles.getCircularMotionComposition()?.let {
+            findViewById<LottieAnimationView>(R.id.img_progress_circle).apply {
+                AIOApp.aioRawFiles.getCircleLoadingComposition()?.let {
                     setComposition(it)
                     playAnimation()
                 } ?: run { setAnimation(R.raw.anim_color_circle_loading) }

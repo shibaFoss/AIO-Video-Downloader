@@ -40,12 +40,12 @@
 
                 <!-- Dialog title text -->
                 <TextView
-                    android:id="@+id/text_dialog_title"
+                    android:id="@+id/txt_dialog_title"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/_10"
                     android:ellipsize="end"
-                    android:fontFamily="@font/font_family_bold"
+                    android:fontFamily="@font/application_font_family"
                     android:gravity="center"
                     android:maxLines="1"
                     android:text="@string/text__"
@@ -66,7 +66,7 @@
 
                 <!-- Dialog message text -->
                 <TextView
-                    android:id="@+id/text_dialog_message"
+                    android:id="@+id/txt_dialog_message"
                     style="@style/style_dialog.message"
                     android:layout_marginStart="@dimen/_10"
                     android:layout_marginTop="@dimen/_0"
@@ -110,7 +110,7 @@
                         android:drawablePadding="@dimen/_5"
                         android:drawableTint="@color/color_text_primary"
                         android:ellipsize="end"
-                        android:fontFamily="@font/font_family_regular"
+                        android:fontFamily="@font/application_font_family"
                         android:gravity="center"
                         android:maxLines="1"
                         android:text="@string/title_cancel"
@@ -120,7 +120,7 @@
 
                 <!-- Positive button container -->
                 <RelativeLayout
-                    android:id="@+id/button_dialog_positive_container"
+                    android:id="@+id/btn_dialog_positive_container"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_15"
@@ -135,7 +135,7 @@
 
                     <!-- Positive button text and icon -->
                     <TextView
-                        android:id="@+id/button_dialog_positive"
+                        android:id="@+id/btn_dialog_positive"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
@@ -144,12 +144,13 @@
                         android:drawablePadding="@dimen/_5"
                         android:drawableTint="@color/color_background"
                         android:ellipsize="end"
-                        android:fontFamily="@font/font_family_bold"
+                        android:fontFamily="@font/application_font_family"
                         android:gravity="center"
                         android:maxLines="1"
                         android:text="@string/title_okay"
                         android:textColor="@color/color_on_secondary"
-                        android:textSize="@dimen/normal_text_size" />
+                        android:textSize="@dimen/normal_text_size"
+                        tools:ignore="TextContrastCheck" />
                 </RelativeLayout>
             </LinearLayout>
         </LinearLayout>

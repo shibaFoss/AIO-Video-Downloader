@@ -143,12 +143,12 @@ object MsgDialogUtils {
 				setCancelable(isCancelable)
 				
 				// Component References
-				val titleTextView = view.findViewById<TextView>(R.id.text_dialog_title)
-				val messageTextView = view.findViewById<TextView>(R.id.text_dialog_message)
+				val titleTextView = view.findViewById<TextView>(R.id.txt_dialog_title)
+				val messageTextView = view.findViewById<TextView>(R.id.txt_dialog_message)
 				val btnNegativeTextView = view.findViewById<TextView>(R.id.button_dialog_negative)
 				val btnNegativeContainer = view.findViewById<RelativeLayout>(R.id.button_dialog_negative_container)
-				val btnPositiveTextView = view.findViewById<TextView>(R.id.button_dialog_positive)
-				val btnPositiveContainer = view.findViewById<RelativeLayout>(R.id.button_dialog_positive_container)
+				val btnPositiveTextView = view.findViewById<TextView>(R.id.btn_dialog_positive)
+				val btnPositiveContainer = view.findViewById<RelativeLayout>(R.id.btn_dialog_positive_container)
 				
 				// Set Text Content
 				titleTextView.text = titleText

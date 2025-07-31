@@ -32,18 +32,19 @@
 
             <!-- Lottie animation for progress indicator -->
             <com.airbnb.lottie.LottieAnimationView
-                android:id="@+id/image_progress_circle"
+                android:id="@+id/img_progress_circle"
                 android:layout_width="@dimen/_150"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|center_horizontal"
-                android:layout_marginTop="-20dp"
+                android:layout_marginTop="@dimen/_0"
                 android:layout_marginBottom="-30dp"
                 android:adjustViewBounds="true"
                 android:hardwareAccelerated="true"
                 android:importantForAccessibility="no"
                 android:layerType="hardware"
-                android:visibility="gone"
+                android:visibility="visible"
                 app:lottie_autoPlay="true"
+                app:lottie_rawRes="@raw/anim_color_circle_loading"
                 app:lottie_enableMergePathsForKitKatAndAbove="true"
                 app:lottie_loop="true"
                 tools:ignore="ImageContrastCheck,VisualLintBounds" />
@@ -57,13 +58,13 @@
                 android:layout_marginEnd="@dimen/_10"
                 android:layout_marginBottom="@dimen/_8"
                 android:autoLink="web"
-                android:fontFamily="@font/font_family_regular"
+                android:fontFamily="@font/application_font_family"
                 android:text="@string/title_message_goes_here"
                 android:textSize="@dimen/message_text_size" />
 
             <!-- Cancel button container -->
             <RelativeLayout
-                android:id="@+id/button_dialog_positive_container"
+                android:id="@+id/btn_dialog_positive_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_15"
@@ -77,7 +78,7 @@
 
                 <!-- Cancel button text -->
                 <TextView
-                    android:id="@+id/button_dialog_positive"
+                    android:id="@+id/btn_dialog_positive"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
@@ -86,7 +87,8 @@
                     android:drawablePadding="@dimen/_5"
                     android:drawableTint="@color/color_background"
                     android:ellipsize="end"
-                    android:fontFamily="@font/font_family_bold"
+                    android:fontFamily="@font/application_font_family"
+                    android:textStyle="bold"
                     android:gravity="center"
                     android:maxLines="1"
                     android:text="@string/title_cancel"

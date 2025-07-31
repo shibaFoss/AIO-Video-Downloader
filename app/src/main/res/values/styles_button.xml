@@ -21,7 +21,7 @@
     </style>
 
     <style name="style_text_button.negative" parent="style_text_button">
-        <item name="android:fontFamily">@font/font_family_regular</item>
+        <item name="android:fontFamily">@font/application_font_family</item>
         <item name="android:textColor">@color/color_text_secondary</item>
         <item name="android:background">@drawable/ic_button_negative_selector</item>
     </style>
@@ -29,7 +29,7 @@
     <style name="style_text_button.negative.small" parent="style_text_button.negative">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:fontFamily">@font/font_family_regular</item>
+        <item name="android:fontFamily">@font/application_font_family</item>
         <item name="android:textColor">@color/color_text_secondary</item>
         <item name="android:paddingEnd">@dimen/_10</item>
         <item name="android:background">@drawable/ic_button_negative_selector</item>
@@ -39,14 +39,15 @@
         <item name="android:paddingTop">@dimen/_5</item>
         <item name="android:paddingBottom">@dimen/_5</item>
         <item name="android:textColor">@color/color_text_primary</item>
-        <item name="android:fontFamily">@font/font_family_bold</item>
+        <item name="android:fontFamily">@font/application_font_family</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:paddingEnd">@dimen/_10</item>
         <item name="android:background">@drawable/ic_button_positive_selector</item>
     </style>
 
     <style name="style_text_button.popup" parent="style_text_button.negative">
         <item name="android:textColor">@color/color_text_primary</item>
-        <item name="android:fontFamily">@font/font_family_regular</item>
+        <item name="android:fontFamily">@font/application_font_family</item>
         <item name="android:layout_margin">@dimen/_5</item>
     </style>
 

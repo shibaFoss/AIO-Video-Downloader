@@ -111,8 +111,8 @@ class BrowserFragmentBody(val browserFragment: BrowserFragment) {
 		browserFragment.safeFragmentLayoutRef?.apply {
 			webviewEngine = WebViewEngine(browserFragment)
 			webViewContainer = findViewById(R.id.browser_webview_container)
-			videoGrabberButton = findViewById(R.id.button_video_grabber)
-			quickBrowserInfo = findViewById(R.id.text_browser_quick_info)
+			videoGrabberButton = findViewById(R.id.btn_video_grabber)
+			quickBrowserInfo = findViewById(R.id.txt_browser_quick_info)
 			quickBrowserInfo.visibility = GONE
 		}
 	}

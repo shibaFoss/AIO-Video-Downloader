@@ -5,6 +5,7 @@ import android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP
 import android.content.Intent.FLAG_ACTIVITY_SINGLE_TOP
 import app.core.AIOApp.Companion.aioSettings
 import app.core.bases.BaseActivity
+import app.ui.main.MotherActivity
 import app.ui.others.information.UserFeedbackActivity
 import app.ui.others.information.UserFeedbackActivity.FROM_CRASH_HANDLER
 import app.ui.others.information.UserFeedbackActivity.WHERE_DIS_YOU_COME_FROM
@@ -39,8 +40,7 @@ class LauncherActivity : BaseActivity() {
         if (aioSettings.hasAppCrashedRecently) {
             launchFeedbackActivity()
         } else {
-            openActivity(OpeningActivity::class.java, true)
-            finish()
+            launchMotherActivity()
         }
     }
 
@@ -67,6 +67,26 @@ class LauncherActivity : BaseActivity() {
                 startActivity(this)
                 finish()
                 animActivityFade(context) // Smooth fade animation
+            }
+        }
+    }
+
+    /**
+     * Launches the main activity ([MotherActivity]) after the splash delay.
+     *
+     * Flags used:
+     * - [FLAG_ACTIVITY_CLEAR_TOP]: Clears any existing instances of the main activity.
+     * - [FLAG_ACTIVITY_SINGLE_TOP]: Reuses the existing instance if already at the top.
+     *
+     * Also applies a fade animation when transitioning from the splash screen.
+     */
+    private fun launchMotherActivity() {
+        safeSelfReference?.let { context ->
+            Intent(context, MotherActivity::class.java).apply {
+                flags = FLAG_ACTIVITY_CLEAR_TOP or FLAG_ACTIVITY_SINGLE_TOP
+                startActivity(this)
+                finish() // Close the splash activity
+                animActivityFade(getActivity()) // Apply fade animation during transition
             }
         }
     }

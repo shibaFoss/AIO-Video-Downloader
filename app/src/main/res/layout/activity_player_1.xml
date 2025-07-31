@@ -41,7 +41,8 @@
         android:id="@+id/invisible_touch_area"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:clickable="true" />
+        android:clickable="true"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -52,7 +53,7 @@
         android:background="@drawable/rounded_transparent_black">
 
         <TextView
-            android:id="@+id/text_video_quick_info"
+            android:id="@+id/txt_video_quick_info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
@@ -113,7 +114,7 @@
     </RelativeLayout>
 
     <ImageView
-        android:id="@+id/button_video_unlock_overlay"
+        android:id="@+id/btn_video_unlock_overlay"
         android:layout_width="@dimen/_50"
         android:layout_height="@dimen/_50"
         android:layout_alignParentBottom="true"

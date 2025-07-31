@@ -106,9 +106,9 @@ class ActiveTasksOptions(private val motherActivity: MotherActivity?) {
 	 */
 	private fun updateDialogFileInfo(downloadModel: DownloadDataModel) {
 		dialogBuilder.view.apply {
-			findViewById<TextView>(R.id.text_file_title).apply { isSelected = true; text = downloadModel.fileName }
-			findViewById<TextView>(R.id.text_file_url).apply { text = downloadModel.fileURL }
-			findViewById<ImageView>(R.id.image_file_thumbnail).apply { updateThumbnail(this, downloadModel) }
+			findViewById<TextView>(R.id.txt_file_title).apply { isSelected = true; text = downloadModel.fileName }
+			findViewById<TextView>(R.id.txt_file_url).apply { text = downloadModel.fileURL }
+			findViewById<ImageView>(R.id.img_file_thumbnail).apply { updateThumbnail(this, downloadModel) }
 		}
 	}
 	
@@ -632,16 +632,16 @@ class ActiveTasksOptions(private val motherActivity: MotherActivity?) {
 		dialogBuilder.setView(layout.frag_down_3_active_1_onclick_1).view.apply {
 			// Map of view IDs to their corresponding actions
 			val clickActions = mapOf(
-				R.id.button_file_info_card to { openDownloadReferrerLink() },
-				R.id.button_resume_download to { resumeDownloadTask() },
-				R.id.button_pause_download to { pauseDownloadTask() },
-				R.id.button_clear_download to { removeDownloadTask() },
-				R.id.button_delete_download to { deleteDownloadTask() },
-				R.id.button_rename_download to { renameDownloadTask() },
-				R.id.button_copy_download_url to { copyDownloadFileLink() },
-				R.id.button_share_download_url to { shareDownloadFileLink() },
-				R.id.button_discover_more to { openDownloadReferrerLink() },
-				R.id.button_show_download_information to { openDownloadInfoTracker() }
+				R.id.btn_file_info_card to { openDownloadReferrerLink() },
+				R.id.btn_resume_download to { resumeDownloadTask() },
+				R.id.btn_pause_download to { pauseDownloadTask() },
+				R.id.btn_clear_download to { removeDownloadTask() },
+				R.id.btn_delete_download to { deleteDownloadTask() },
+				R.id.btn_rename_download to { renameDownloadTask() },
+				R.id.btn_copy_download_url to { copyDownloadFileLink() },
+				R.id.btn_share_download_url to { shareDownloadFileLink() },
+				R.id.btn_discover_more to { openDownloadReferrerLink() },
+				R.id.btn_show_download_information to { openDownloadInfoTracker() }
 			)
 			
 			// Set up click listeners for all buttons

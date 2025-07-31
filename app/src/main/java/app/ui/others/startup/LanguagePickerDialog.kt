@@ -125,7 +125,7 @@ class LanguagePickerDialog(private val baseActivity: BaseActivity) {
 	 * Sets up the "Apply" button click listener to save the selected language and close the dialog.
 	 */
 	private fun setButtonOnClickListeners(dialogLayoutView: View) {
-		dialogLayoutView.findViewById<View>(R.id.button_dialog_positive_container).apply {
+		dialogLayoutView.findViewById<View>(R.id.btn_dialog_positive_container).apply {
 			setOnClickListener { applySelectedApplicationLanguage(dialogLayoutView) }
 		}
 	}

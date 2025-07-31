@@ -83,17 +83,17 @@ class BrowserOptionsPopup(val browserFragment: BrowserFragment) {
 	private fun setupClickEvents() {
 		popupBuilder.getPopupView().apply {
 			val clickActions = mapOf(
-				findViewById<View>(R.id.button_webpage_back) to { goToPreviousWebpage() },
-				findViewById<View>(R.id.button_webpage_forward) to { goToNextWebpage() },
-				findViewById<View>(R.id.button_save_bookmark) to { saveCurrentWebpageAsBookmark() },
-				findViewById<View>(R.id.button_share_webpage_url) to { shareCurrentWebpageURL() },
-				findViewById<View>(R.id.button_copy_webpage_url) to { copyCurrentWebpageURL() },
-				findViewById<View>(R.id.button_open_with_system_browser) to { openWebpageInSystemBrowser() },
-				findViewById<View>(R.id.button_add_download_task_editor) to { openNewDownloadTaskEditor() },
-				findViewById<View>(R.id.button_open_bookmark) to { openBookmarkActivity() },
-				findViewById<View>(R.id.button_open_history) to { openHistoryActivity() },
-				findViewById<View>(R.id.button_how_to_use) to { openHowToDownload() },
-				findViewById<View>(R.id.button_open_feedback) to { openFeedbackActivity() }
+				findViewById<View>(R.id.btn_webpage_back) to { goToPreviousWebpage() },
+				findViewById<View>(R.id.btn_webpage_forward) to { goToNextWebpage() },
+				findViewById<View>(R.id.btn_save_bookmark) to { saveCurrentWebpageAsBookmark() },
+				findViewById<View>(R.id.btn_share_webpage_url) to { shareCurrentWebpageURL() },
+				findViewById<View>(R.id.btn_copy_webpage_url) to { copyCurrentWebpageURL() },
+				findViewById<View>(R.id.btn_open_with_system_browser) to { openWebpageInSystemBrowser() },
+				findViewById<View>(R.id.btn_add_download_task_editor) to { openNewDownloadTaskEditor() },
+				findViewById<View>(R.id.btn_open_bookmark) to { openBookmarkActivity() },
+				findViewById<View>(R.id.btn_open_history) to { openHistoryActivity() },
+				findViewById<View>(R.id.btn_how_to_use) to { openHowToDownload() },
+				findViewById<View>(R.id.btn_open_feedback) to { openFeedbackActivity() }
 			)
 			
 			clickActions.forEach { (view, action) ->

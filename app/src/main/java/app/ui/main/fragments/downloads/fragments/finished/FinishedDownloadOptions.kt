@@ -77,14 +77,14 @@ class FinishedDownloadOptions(finishedTasksFragment: FinishedTasksFragment?) : O
 				onClickListener = this,
 				layout = dialogBuilder.view,
 				ids = listOf(
-					R.id.button_file_info_card,
-					R.id.button_open_download_file,
-					R.id.button_share_download_file,
-					R.id.button_clear_download,
-					R.id.button_delete_download,
-					R.id.button_rename_download,
-					R.id.button_discover_more,
-					R.id.button_show_download_information
+					R.id.btn_file_info_card,
+					R.id.btn_open_download_file,
+					R.id.btn_share_download_file,
+					R.id.btn_clear_download,
+					R.id.btn_delete_download,
+					R.id.btn_rename_download,
+					R.id.btn_discover_more,
+					R.id.btn_show_download_information
 				).toIntArray()
 			)
 		}
@@ -131,14 +131,14 @@ class FinishedDownloadOptions(finishedTasksFragment: FinishedTasksFragment?) : O
 	override fun onClick(view: View?) {
 		view?.let {
 			when (view.id) {
-				R.id.button_file_info_card -> playTheMedia()
-				R.id.button_open_download_file -> openFile()
-				R.id.button_share_download_file -> shareFile()
-				R.id.button_clear_download -> clearFromList()
-				R.id.button_delete_download -> deleteFile()
-				R.id.button_rename_download -> renameFile()
-				R.id.button_discover_more -> discoverMore()
-				R.id.button_show_download_information -> downloadInfo()
+				R.id.btn_file_info_card -> playTheMedia()
+				R.id.btn_open_download_file -> openFile()
+				R.id.btn_share_download_file -> shareFile()
+				R.id.btn_clear_download -> clearFromList()
+				R.id.btn_delete_download -> deleteFile()
+				R.id.btn_rename_download -> renameFile()
+				R.id.btn_discover_more -> discoverMore()
+				R.id.btn_show_download_information -> downloadInfo()
 			}
 		}
 	}
@@ -150,16 +150,16 @@ class FinishedDownloadOptions(finishedTasksFragment: FinishedTasksFragment?) : O
 	private fun updateTitleAndThumbnails(downloadModel: DownloadDataModel) {
 		dialogBuilder?.let { dialogBuilder ->
 			dialogBuilder.view.apply {
-				findViewById<TextView>(R.id.text_file_url).apply {
+				findViewById<TextView>(R.id.txt_file_url).apply {
 					text = downloadModel.fileURL
 				}
 				
-				findViewById<TextView>(R.id.text_file_title).apply {
+				findViewById<TextView>(R.id.txt_file_title).apply {
 					isSelected = true
 					text = downloadModel.fileName
 				}
 				
-				findViewById<ImageView>(R.id.image_file_thumbnail).apply {
+				findViewById<ImageView>(R.id.img_file_thumbnail).apply {
 					updateThumbnail(this, downloadModel)
 				}
 			}

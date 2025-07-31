@@ -190,7 +190,7 @@ public class DialogBuilder {
      */
     @NonNull
     public View getPositiveButtonView() {
-        return getView().findViewById(R.id.button_dialog_positive_container);
+        return getView().findViewById(R.id.btn_dialog_positive_container);
     }
 
     /**

@@ -26,7 +26,7 @@
             android:layout_height="match_parent">
 
             <RelativeLayout
-                android:id="@+id/button_left_actionbar"
+                android:id="@+id/btn_left_actionbar"
                 android:layout_width="@dimen/_50"
                 android:layout_height="match_parent"
                 android:background="@drawable/ic_button_negative_selector"
@@ -34,7 +34,7 @@
                 tools:ignore="SpeakableTextPresentCheck">
 
                 <ImageView
-                    android:id="@+id/button_left_actionbar_img"
+                    android:id="@+id/btn_left_actionbar_img"
                     android:layout_width="@dimen/_30"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
@@ -53,17 +53,18 @@
                 android:layout_marginTop="@dimen/_0"
                 android:layout_marginEnd="@dimen/_10"
                 android:layout_marginBottom="@dimen/_0"
-                android:layout_toStartOf="@id/button_right_actionbar"
-                android:layout_toEndOf="@id/button_left_actionbar"
+                android:layout_toStartOf="@id/btn_right_actionbar"
+                android:layout_toEndOf="@id/btn_left_actionbar"
                 android:ellipsize="end"
-                android:fontFamily="@font/font_family_bold"
+                android:fontFamily="@font/application_font_family"
                 android:gravity="center_vertical"
                 android:maxLines="1"
                 android:text="@string/title_share_feedback"
-                android:textSize="@dimen/title_text_size" />
+                android:textSize="@dimen/title_text_size"
+                android:textStyle="bold" />
 
             <RelativeLayout
-                android:id="@+id/button_right_actionbar"
+                android:id="@+id/btn_right_actionbar"
                 android:layout_width="@dimen/_50"
                 android:layout_height="match_parent"
                 android:layout_alignParentEnd="true"
@@ -72,7 +73,7 @@
                 tools:ignore="SpeakableTextPresentCheck">
 
                 <ImageView
-                    android:id="@+id/button_right_actionbar_img"
+                    android:id="@+id/btn_right_actionbar_img"
                     android:layout_width="@dimen/_30"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
@@ -120,7 +121,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:autoLink="web"
-                        android:fontFamily="@font/font_family_regular"
+                        android:fontFamily="@font/application_font_family"
                         android:gravity="center"
                         android:text="@string/text_feedback_message"
                         android:textColor="@color/color_text_primary"
@@ -159,12 +160,12 @@
                         android:drawableStart="@drawable/ic_button_radio_selector"
                         android:drawablePadding="@dimen/_10"
                         android:drawableTint="@color/color_secondary"
-                        android:fontFamily="@font/font_family_regular"
+                        android:fontFamily="@font/application_font_family"
                         android:gravity="center_vertical"
                         android:text="@string/text_no_sound"
                         android:textColor="@color/color_text_primary"
                         android:textSize="@dimen/normal_text_size"
-                        tools:ignore="TouchTargetSizeCheck" />
+                        tools:ignore="TouchTargetSizeCheck,VisualLintButtonSize" />
 
                     <CheckBox
                         android:id="@+id/checkbox_incomplete_video"
@@ -176,12 +177,12 @@
                         android:drawableStart="@drawable/ic_button_radio_selector"
                         android:drawablePadding="@dimen/_10"
                         android:drawableTint="@color/color_secondary"
-                        android:fontFamily="@font/font_family_regular"
+                        android:fontFamily="@font/application_font_family"
                         android:gravity="center_vertical"
                         android:text="@string/text_incomplete_video"
                         android:textColor="@color/color_text_primary"
                         android:textSize="@dimen/normal_text_size"
-                        tools:ignore="TouchTargetSizeCheck" />
+                        tools:ignore="TouchTargetSizeCheck,VisualLintButtonSize" />
 
                     <CheckBox
                         android:id="@+id/checkbox_app_crashed"
@@ -193,12 +194,12 @@
                         android:drawableStart="@drawable/ic_button_radio_selector"
                         android:drawablePadding="@dimen/_10"
                         android:drawableTint="@color/color_secondary"
-                        android:fontFamily="@font/font_family_regular"
+                        android:fontFamily="@font/application_font_family"
                         android:gravity="center_vertical"
                         android:text="@string/text_app_crashed"
                         android:textColor="@color/color_text_primary"
                         android:textSize="@dimen/normal_text_size"
-                        tools:ignore="TouchTargetSizeCheck" />
+                        tools:ignore="TouchTargetSizeCheck,VisualLintButtonSize" />
 
                     <CheckBox
                         android:id="@+id/checkbox_glitch_in_video"
@@ -210,12 +211,12 @@
                         android:drawableStart="@drawable/ic_button_radio_selector"
                         android:drawablePadding="@dimen/_10"
                         android:drawableTint="@color/color_secondary"
-                        android:fontFamily="@font/font_family_regular"
+                        android:fontFamily="@font/application_font_family"
                         android:gravity="center_vertical"
                         android:text="@string/text_glitch_in_video"
                         android:textColor="@color/color_text_primary"
                         android:textSize="@dimen/normal_text_size"
-                        tools:ignore="TouchTargetSizeCheck" />
+                        tools:ignore="TouchTargetSizeCheck,VisualLintButtonSize" />
 
                     <CheckBox
                         android:id="@+id/checkbox_showing_too_many_ads"
@@ -227,12 +228,12 @@
                         android:drawableStart="@drawable/ic_button_radio_selector"
                         android:drawablePadding="@dimen/_10"
                         android:drawableTint="@color/color_secondary"
-                        android:fontFamily="@font/font_family_regular"
+                        android:fontFamily="@font/application_font_family"
                         android:gravity="center_vertical"
                         android:text="@string/text_showing_many_ads"
                         android:textColor="@color/color_text_primary"
                         android:textSize="@dimen/normal_text_size"
-                        tools:ignore="TouchTargetSizeCheck" />
+                        tools:ignore="TouchTargetSizeCheck,VisualLintButtonSize" />
 
                     <CheckBox
                         android:id="@+id/checkbox_other_problem"
@@ -244,12 +245,12 @@
                         android:drawableStart="@drawable/ic_button_radio_selector"
                         android:drawablePadding="@dimen/_10"
                         android:drawableTint="@color/color_secondary"
-                        android:fontFamily="@font/font_family_regular"
+                        android:fontFamily="@font/application_font_family"
                         android:gravity="center_vertical"
                         android:text="@string/text_other_problems"
                         android:textColor="@color/color_text_primary"
                         android:textSize="@dimen/normal_text_size"
-                        tools:ignore="TouchTargetSizeCheck" />
+                        tools:ignore="TouchTargetSizeCheck,VisualLintButtonSize" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -299,7 +300,7 @@
                             android:textColorHint="@color/color_text_hint"
                             android:textSize="@dimen/normal_text_size"
                             android:textStyle="normal"
-                            tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
+                            tools:ignore="TextContrastCheck,TouchTargetSizeCheck,VisualLintTextFieldSize" />
 
                     </LinearLayout>
 
@@ -329,7 +330,7 @@
                             android:textColorHint="@color/color_text_hint"
                             android:textSize="@dimen/normal_text_size"
                             android:textStyle="normal"
-                            tools:ignore="TextContrastCheck" />
+                            tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
                     </LinearLayout>
 
                 </LinearLayout>

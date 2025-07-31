@@ -44,10 +44,10 @@ class DownloaderRowUI(private val rowLayout: View) {
 	
 	// Lazy-initialized view references
 	private val mainLayoutRowContainer: View by lazy { rowLayout.findViewById(R.id.container_running_info) }
-	private val thumbImageView: ImageView by lazy { rowLayout.findViewById(R.id.image_file_thumbnail) }
-	private val statusIndicationImageView: ImageView by lazy { rowLayout.findViewById(R.id.image_status_indicator) }
-	private val fileNameTextView: TextView by lazy { rowLayout.findViewById(R.id.text_file_name) }
-	private val statusInfo: TextView by lazy { rowLayout.findViewById(R.id.text_download_status) }
+	private val thumbImageView: ImageView by lazy { rowLayout.findViewById(R.id.img_file_thumbnail) }
+	private val statusIndicationImageView: ImageView by lazy { rowLayout.findViewById(R.id.img_status_indicator) }
+	private val fileNameTextView: TextView by lazy { rowLayout.findViewById(R.id.txt_file_name) }
+	private val statusInfo: TextView by lazy { rowLayout.findViewById(R.id.txt_download_status) }
 	
 	/**
 	 * Main update method that refreshes all UI elements for a download item.

@@ -114,7 +114,7 @@ class SingleResolutionPrompter(
      * @param layout The parent view containing title TextView
      */
     private fun showVideoTitleFromURL(layout: View) {
-        val videoTitleView = layout.findViewById<TextView>(R.id.text_video_title)
+        val videoTitleView = layout.findViewById<TextView>(R.id.txt_video_title)
 
         // Use provided title if available
         if (!videoTitle.isNullOrEmpty()) {
@@ -214,7 +214,7 @@ class SingleResolutionPrompter(
      * @receiver The dialog content view
      */
     private fun View.setupCardInfoButton() {
-        val buttonCardInfo = findViewById<View>(R.id.button_file_info_card)
+        val buttonCardInfo = findViewById<View>(R.id.btn_file_info_card)
         buttonCardInfo.setOnClickListener { openVideoUrlInBrowser() }
     }
 
@@ -225,7 +225,7 @@ class SingleResolutionPrompter(
      * @receiver The dialog content view
      */
     private fun View.setupDownloadButton() {
-        val buttonDownload = findViewById<View>(R.id.button_dialog_positive_container)
+        val buttonDownload = findViewById<View>(R.id.btn_dialog_positive_container)
         buttonDownload.setOnClickListener { addVideoFormatToDownloadSystem() }
 
         // Check if user exceeded free download limit
@@ -234,7 +234,7 @@ class SingleResolutionPrompter(
         if (numberOfDownloadsUserDid >= maxDownloadThreshold) {
             if (!IS_PREMIUM_USER && !IS_ULTIMATE_VERSION_UNLOCKED) {
                 // Show "Watch Ad to Download" for free users over limit
-                val btnDownloadText = findViewById<TextView>(R.id.button_dialog_positive)
+                val btnDownloadText = findViewById<TextView>(R.id.btn_dialog_positive)
                 btnDownloadText.let {
                     it.setLeftSideDrawable(R.drawable.ic_button_video)
                     it.setText(R.string.text_watch_ad_to_download)

@@ -68,14 +68,14 @@ class TermsConditionsActivity : BaseActivity() {
 	 */
 	private fun initializeViews() {
 		// Configure back button behavior
-		findViewById<View>(R.id.button_left_actionbar).apply {
+		findViewById<View>(R.id.btn_left_actionbar).apply {
 			setOnClickListener { onBackPressActivity() }
 		}
 		
 		// Render HTML content into TextView
 		try {
 			val contentHTML = fromHtmlStringToSpanned(getHtmlString(R.raw.msg_terms_condition))
-			findViewById<TextView>(R.id.text_terms_policy).text = contentHTML
+			findViewById<TextView>(R.id.txt_terms_policy).text = contentHTML
 		} catch (error: Exception) {
 			error.printStackTrace()
 		}

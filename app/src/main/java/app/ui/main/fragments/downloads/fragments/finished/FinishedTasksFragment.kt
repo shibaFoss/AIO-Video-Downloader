@@ -43,7 +43,6 @@ open class FinishedTasksFragment : BaseFragment(), FinishedTasksClickEvents, AIO
 	private val finishTaskOptions by lazy { FinishedDownloadOptions(safeFinishTasksFragment) }
 	
 	private lateinit var emptyDownloadContainer: View
-	private lateinit var emptyDownloadAnim: LottieAnimationView
 	private lateinit var buttonOpenActiveTasks: View
 	private lateinit var openActiveTasksAnim: LottieAnimationView
 	private lateinit var buttonHowToDownload: View
@@ -114,17 +113,15 @@ open class FinishedTasksFragment : BaseFragment(), FinishedTasksClickEvents, AIO
 	/** Initializes all views and sets up the finished downloads list adapter. */
 	private fun initializeViewsAndListAdapter(layoutView: View) {
 		safeFinishTasksFragment?.let { safeFragmentRef ->
-			emptyDownloadContainer = layoutView.findViewById(R.id.empty_downloads_container)
-			emptyDownloadAnim = layoutView.findViewById(R.id.image_empty_downloads)
-			loadEmptyDownloadAnimation()
+			emptyDownloadContainer = layoutView.findViewById(R.id.container_empty_downloads)
 			
-			buttonHowToDownload = layoutView.findViewById(R.id.button_how_to_download)
+			buttonHowToDownload = layoutView.findViewById(R.id.btn_how_to_download)
 			buttonHowToDownload.setOnClickListener { GuidePlatformPicker(safeMotherActivityRef).show() }
 			
-			buttonOpenActiveTasks = layoutView.findViewById(R.id.button_open_active_downloads)
+			buttonOpenActiveTasks = layoutView.findViewById(R.id.btn_open_active_downloads)
 			buttonOpenActiveTasks.setOnClickListener { openActiveTasksFragment() }
 			
-			openActiveTasksAnim = layoutView.findViewById(R.id.image_open_active_downloads)
+			openActiveTasksAnim = layoutView.findViewById(R.id.img_open_active_downloads)
 			loadOpenActiveTasksAnimation()
 			
 			taskListView = layoutView.findViewById(R.id.container_download_tasks_finished)
@@ -179,7 +176,7 @@ open class FinishedTasksFragment : BaseFragment(), FinishedTasksClickEvents, AIO
 			val downloadFragment = parentFragment as? DownloadsFragment
 			downloadFragment?.finishedTasksFragment = safeFinishedDownloadFragmentRef
 			downloadFragment?.safeFragmentLayoutRef?.let {
-				val title = it.findViewById<TextView>(R.id.text_current_frag_name)
+				val title = it.findViewById<TextView>(R.id.txt_current_frag_name)
 				title?.setText(R.string.title_downloaded_files)
 			}
 		}
@@ -191,22 +188,6 @@ open class FinishedTasksFragment : BaseFragment(), FinishedTasksClickEvents, AIO
 	private fun selfReferenceRegisterIntoDownloadSystem() {
 		safeFinishTasksFragment?.let { safeFinishedDownloadFragmentRef ->
 			downloadSystem.downloadsUIManager.finishedTasksFragment = safeFinishedDownloadFragmentRef
-		}
-	}
-	
-	/**
-	 * Loads the Lottie animation for empty downloads view.
-	 */
-	private fun loadEmptyDownloadAnimation() {
-		emptyDownloadAnim.apply {
-			clipToCompositionBounds = false
-			setScaleType(ImageView.ScaleType.FIT_XY)
-			aioRawFiles.getEmptyBoxAnimComposition()?.let {
-				setComposition(it)
-				playAnimation()
-			} ?: run {
-				setAnimation(R.raw.animation_empty_box)
-			}; showView(this, true, 100)
 		}
 	}
 	

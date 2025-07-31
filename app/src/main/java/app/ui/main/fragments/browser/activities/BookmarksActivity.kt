@@ -130,7 +130,7 @@ class BookmarksActivity : BaseActivity(),
 		safeBookmarksActivityRef?.let {
 			emptyBookmarksIndicator = findViewById(R.id.empty_bookmarks_indicator)
 			bookmarkListView = findViewById(R.id.list_bookmarks)
-			buttonLoadMoreBookmarks = findViewById(R.id.button_load_more_bookmarks)
+			buttonLoadMoreBookmarks = findViewById(R.id.btn_load_more_bookmarks)
 			
 			// Set adapter and hide views initially
 			bookmarkListView.adapter = bookmarksAdapter
@@ -144,10 +144,10 @@ class BookmarksActivity : BaseActivity(),
 	
 	/** Sets up click listeners for buttons. */
 	private fun initializeViewsOnClickEvents() {
-		findViewById<View>(R.id.button_left_actionbar)
+		findViewById<View>(R.id.btn_left_actionbar)
 			.setOnClickListener { onBackPressActivity() }
 		
-		findViewById<View>(R.id.button_right_actionbar)
+		findViewById<View>(R.id.btn_right_actionbar)
 			.setOnClickListener { deleteAllBookmarks() }
 		
 		buttonLoadMoreBookmarks.setOnClickListener {

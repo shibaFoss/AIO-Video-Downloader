@@ -127,7 +127,7 @@ class VideoResolutionPicker(
 	 * @param layout The root view containing title TextView
 	 */
 	private fun showVideoTitleFromURL(layout: View) {
-		videoTitleView = layout.findViewById(R.id.text_video_title)
+		videoTitleView = layout.findViewById(R.id.txt_video_title)
 		if (!videoInfo.videoTitle.isNullOrEmpty()) {
 			// Use title from video info if available
 			videoTitleView.isSelected = true
@@ -190,7 +190,7 @@ class VideoResolutionPicker(
 	 * @param layout The root view containing URL TextView
 	 */
 	private fun showVideoURL(layout: View) {
-		layout.findViewById<TextView>(R.id.text_video_url).apply {
+		layout.findViewById<TextView>(R.id.txt_video_url).apply {
 			isSelected = true
 			text = videoInfo.videoUrl
 		}
@@ -204,7 +204,7 @@ class VideoResolutionPicker(
 		safeBaseActivityRef?.let { safeBaseActivityRef ->
 			formatsGridView = layout.findViewById(R.id.video_format_container)
 			videoFormatAdapter = VideoFormatAdapter(safeBaseActivityRef, videoInfo, videoInfo.videoFormats) {
-				val videoTitleView = layout.findViewById<TextView>(R.id.text_video_title)
+				val videoTitleView = layout.findViewById<TextView>(R.id.txt_video_title)
 				updateTitleByFormatId(videoTitleView)
 			}; formatsGridView.adapter = videoFormatAdapter
 		}
@@ -253,7 +253,7 @@ class VideoResolutionPicker(
 		if (numberOfDownloadsUserDid >= maxDownloadThreshold) {
 			if (!IS_PREMIUM_USER && !IS_ULTIMATE_VERSION_UNLOCKED) {
 				// Show "watch ad to download" for non-premium users over threshold
-				val btnDownload = dialogLayout.findViewById<TextView>(R.id.button_dialog_positive)
+				val btnDownload = dialogLayout.findViewById<TextView>(R.id.btn_dialog_positive)
 				btnDownload.let {
 					it.setLeftSideDrawable(R.drawable.ic_button_video)
 					it.setText(R.string.text_watch_ad_to_download)
@@ -263,8 +263,8 @@ class VideoResolutionPicker(
 
 		// Set click listeners for buttons
 		listOf(
-			R.id.button_file_info_card to { openVideoUrlInBrowser() },
-			R.id.button_dialog_positive_container to { downloadSelectedVideoFormat() })
+			R.id.btn_file_info_card to { openVideoUrlInBrowser() },
+			R.id.btn_dialog_positive_container to { downloadSelectedVideoFormat() })
 			.forEach { (id, action) -> findViewById<View>(id).setOnClickListener { action() } }
 	}
 

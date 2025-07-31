@@ -13,7 +13,8 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:textSize">@dimen/sub_heading_text_size</item>
         <item name="android:textColor">@color/color_text_primary</item>
-        <item name="android:fontFamily">@font/font_family_bold</item>
+        <item name="android:fontFamily">@font/font_family_special</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_gravity">center</item>
     </style>
@@ -25,7 +26,7 @@
         <item name="android:textSize">@dimen/normal_text_size</item>
         <item name="android:textColor">@color/color_text_primary</item>
         <item name="android:textColorLink">@color/color_secondary</item>
-        <item name="android:lineSpacingMultiplier">1</item>
+        <item name="android:lineSpacingMultiplier">1.1</item>
     </style>
 
     <style name="style_dialog.positive_button" parent="style_text_button.positive" />

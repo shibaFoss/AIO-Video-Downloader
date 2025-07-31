@@ -123,12 +123,12 @@ open class DownloadsFragment : BaseFragment() {
 	 */
 	private fun initializeOnClickEvents(layoutView: View) {
 		val clickActionsMap = mapOf(
-			layoutView.findViewById<View>(R.id.button_actionbar_back) to {
+			layoutView.findViewById<View>(R.id.btn_actionbar_back) to {
 				if (fragmentViewPager.currentItem == 1) openFinishedTab()
 				else navigateToBrowserFragment()
 			},
 			
-			layoutView.findViewById<View>(R.id.button_actionbar_add_download) to {
+			layoutView.findViewById<View>(R.id.btn_actionbar_add_download) to {
 				showDownloadTaskEditorDialog()
 			}
 		)

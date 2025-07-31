@@ -148,7 +148,7 @@ open class ActiveTasksFragment : BaseFragment(), AIOTimerListener {
 		downloadFragment?.activeTasksFragment = safeActiveTasksFragmentRef
 		// Update title in parent fragment
 		downloadFragment?.safeFragmentLayoutRef?.let {
-			val title = it.findViewById<TextView>(R.id.text_current_frag_name)
+			val title = it.findViewById<TextView>(R.id.txt_current_frag_name)
 			title?.setText(R.string.title_active_downloads)
 		}
 	}

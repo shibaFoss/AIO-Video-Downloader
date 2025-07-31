@@ -328,7 +328,7 @@
     <string name="text_content_policy">Content policy</string>
     <string name="text_your_send_feedback">Send your feedback</string>
     <string name="text_send_feedback">Send feedback</string>
-    <string name="text_special_support_thank_you">The app was made possible with the support of many incredible people.<b> <u>Thank you Goutam</u> for being part of this journey!</b></string>
+    <string name="text_special_support_thank_you">The app was made possible with the support of many incredible people. <b>Thank you for being part of this journey!</b></string>
     <string name="text_share_with_friends">Share with friends</string>
     <string name="text_download_location">Downloads location</string>
     <string name="text_browser_homepage">Browser homepage</string>
@@ -391,7 +391,7 @@
     <string name="title_copied_link">Copied Link</string>
     <string name="title_open_the_link">Open The Link</string>
     <string name="title_youtube">Youtube</string>
-    <string name="title_duckduckgo">Duckduckgo</string>
+    <string name="title_duckduckgo">DuckGo</string>
     <string name="text_instagram_isnt_installed">Instagram is not installed.</string>
     <string name="text_facebook_isnt_installed">Facebook is not installed.</string>
     <string name="text_youtube_isnt_installed">YouTube is not installed.</string>
@@ -473,5 +473,6 @@
     <string name="text_couldnt_get_video_title">Server\'s busy, try again later.</string>
     <string name="text_app_splash_credit">Made with ❤️ in India 🇮🇳</string>
     <string name="title_version">Version</string>
+    <string name="txt_you_using_latest_version">You\'re using the latest version.</string>
 
 </resources>

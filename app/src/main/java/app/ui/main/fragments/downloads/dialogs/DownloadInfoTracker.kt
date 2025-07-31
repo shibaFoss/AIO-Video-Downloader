@@ -84,7 +84,7 @@ class DownloadInfoTracker(motherActivity: MotherActivity?) {
         downloadModel: DownloadDataModel
     ) {
         dialogBuilder.view.apply {
-            val infoTextView = findViewById<TextView>(R.id.text_dialog_message)
+            val infoTextView = findViewById<TextView>(R.id.txt_dialog_message)
             
             // Generate HTML-formatted download info
             val htmlText = buildDownloadInfoHtmlString(downloadModel)

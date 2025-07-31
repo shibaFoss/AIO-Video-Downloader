@@ -66,7 +66,7 @@ class ContentPolicyActivity : BaseActivity() {
 	 */
 	private fun initViewElements() {
 		// Set listener for the left action bar back button
-		findViewById<View>(R.id.button_left_actionbar).apply {
+		findViewById<View>(R.id.btn_left_actionbar).apply {
 			setOnClickListener { onBackPressActivity() }
 		}
 		

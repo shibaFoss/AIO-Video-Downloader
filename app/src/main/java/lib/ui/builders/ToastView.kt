@@ -33,7 +33,7 @@ class ToastView(context: Context) : Toast(context) {
 	 * @param iconResId The resource ID of the drawable to use as the icon.
 	 */
 	fun setIcon(iconResId: Int) {
-		view?.findViewById<ImageView>(id.image_toast_app_icon)
+		view?.findViewById<ImageView>(id.img_toast_app_icon)
 			?.apply { setImageResource(iconResId) }
 	}
 	
@@ -107,7 +107,7 @@ class ToastView(context: Context) : Toast(context) {
 			return ToastView(context).apply {
 				val inflater = context.getSystemService(LAYOUT_INFLATER_SERVICE) as LayoutInflater
 				val toastView = inflater.inflate(layout.lay_custom_toast_view_1, null)
-				toastView.findViewById<TextView>(id.text_toast_message).text = message
+				toastView.findViewById<TextView>(id.txt_toast_message).text = message
 				view = toastView
 				setDuration(duration)
 			}

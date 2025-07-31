@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Main container layout for the media item -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -10,15 +11,17 @@
     android:orientation="vertical"
     tools:ignore="UseAppTint,SpeakableTextPresentCheck">
 
+    <!-- CardView container for the media thumbnail -->
     <androidx.cardview.widget.CardView
         android:id="@+id/container_img_thumbnail"
         android:layout_width="@dimen/_95"
-        android:layout_height="@dimen/_70"
+        android:layout_height="@dimen/_75"
         android:layout_margin="@dimen/_3"
         android:outlineAmbientShadowColor="@color/color_secondary"
         app:cardBackgroundColor="@color/color_background"
         app:cardCornerRadius="@dimen/_5">
 
+        <!-- Main thumbnail image view -->
         <ImageView
             android:id="@+id/img_file_thumbnail"
             android:layout_width="match_parent"
@@ -30,6 +33,7 @@
             android:src="@drawable/image_no_thumb_available"
             tools:ignore="ImageContrastCheck" />
 
+        <!-- Play button overlay on the thumbnail -->
         <ImageView
             android:layout_width="@dimen/_20"
             android:layout_height="wrap_content"
@@ -37,9 +41,40 @@
             android:adjustViewBounds="true"
             android:elevation="@dimen/_5"
             android:importantForAccessibility="no"
-            android:src="@drawable/ic_button_media_play"
-            android:tint="@color/color_on_secondary"
+            android:alpha="0.7"
+            android:src="@drawable/image_media_play"
+            android:tint="@color/color_on_primary"
             tools:ignore="ImageContrastCheck" />
+
+        <!-- Container for media duration text -->
+        <LinearLayout
+            android:layout_gravity="end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5"
+            android:layout_marginTop="@dimen/_5"
+            android:layout_marginEnd="@dimen/_5"
+            android:layout_marginBottom="@dimen/_5"
+            android:background="@drawable/rounded_transparent_black"
+            android:orientation="vertical">
+
+            <!-- Text view showing media duration -->
+            <TextView
+                android:id="@+id/txt_media_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_1"
+                android:layout_marginTop="@dimen/_0"
+                android:layout_marginEnd="@dimen/_1"
+                android:layout_marginBottom="@dimen/_0"
+                android:fontFamily="@font/application_font_family"
+                android:text="@string/text_time_representation"
+                android:textColor="@color/transparent_white"
+                android:textSize="@dimen/small_text_size"
+                android:textStyle="normal"
+                tools:ignore="TextContrastCheck" />
+
+        </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 </LinearLayout>

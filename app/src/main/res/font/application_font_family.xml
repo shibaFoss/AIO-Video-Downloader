@@ -2,23 +2,43 @@
 <font-family xmlns:android="http://schemas.android.com/apk/res/android">
 
     <font
-        android:font="@font/font_family_special"
+        android:font="@font/font_family_light"
         android:fontStyle="normal"
         android:fontWeight="300" />
 
     <font
-        android:font="@font/font_family_special"
+        android:font="@font/font_family_regular"
         android:fontStyle="normal"
         android:fontWeight="400" />
 
     <font
-        android:font="@font/font_family_special"
+        android:font="@font/font_family_medium"
         android:fontStyle="normal"
         android:fontWeight="500" />
 
     <font
-        android:font="@font/font_family_special"
+        android:font="@font/font_family_semibold"
         android:fontStyle="normal"
+        android:fontWeight="600" />
+
+    <font
+        android:font="@font/font_family_lightitalic"
+        android:fontStyle="italic"
+        android:fontWeight="300" />
+
+    <font
+        android:font="@font/font_family_italic"
+        android:fontStyle="italic"
+        android:fontWeight="400" />
+
+    <font
+        android:font="@font/font_family_mediumitalic"
+        android:fontStyle="italic"
+        android:fontWeight="500" />
+
+    <font
+        android:font="@font/font_family_semibolditalic"
+        android:fontStyle="italic"
         android:fontWeight="600" />
 
 </font-family>

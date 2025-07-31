@@ -75,20 +75,6 @@ android {
         // Legacy packaging for JNI libraries (for compatibility)
         jniLibs {
             useLegacyPackaging = true
-            excludes += ['**/libmetalang.so']
-        }
-    }
-
-    // Android App Bundle configuration
-    bundle {
-        // Density splits configuration
-        density {
-            enableSplit = true  // Generate separate APKs for different screen densities
-        }
-
-        // ABI splits configuration
-        abi {
-            enableSplit = true  // Generate separate APKs for different CPU architectures
         }
     }
 
@@ -115,6 +101,10 @@ android {
     dependenciesInfo {
         includeInBundle = false  // Exclude dependency info from bundles
         includeInApk = false    // Exclude dependency info from APKs
+    }
+
+    lint {
+        baseline = file("lint-baseline.xml")
     }
 }
 

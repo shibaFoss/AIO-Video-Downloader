@@ -15,7 +15,7 @@
     <string name="title_home">Home</string>
     <string name="title_browser">Browser</string>
     <string name="title_check_new_update">Check New Update</string>
-    <string name="text_search_or_enter_url">Search or enter URL</string>
+    <string name="text_search_or_enter_url">Search or enter URL…</string>
     <string name="title_browser_history">Browsing History</string>
     <string name="text_delete_browsing_history_confirmation">Deleting history is permanent and cannot be undone. <b>Are you sure you want to proceed?</b></string>
 
@@ -391,7 +391,7 @@
     <string name="title_copied_link">Copied Link</string>
     <string name="title_open_the_link">Open The Link</string>
     <string name="title_youtube">Youtube</string>
-    <string name="title_duckduckgo">DuckGo</string>
+    <string name="title_duckduckgo">DuckDuckGo</string>
     <string name="text_instagram_isnt_installed">Instagram is not installed.</string>
     <string name="text_facebook_isnt_installed">Facebook is not installed.</string>
     <string name="text_youtube_isnt_installed">YouTube is not installed.</string>
@@ -474,5 +474,10 @@
     <string name="text_app_splash_credit">Made with ❤️ in India 🇮🇳</string>
     <string name="title_version">Version</string>
     <string name="txt_you_using_latest_version">You\'re using the latest version.</string>
+    <string name="text_other_advance_settings">Other advance settings</string>
+    <string name="title_xhamster">Xhamster</string>
+    <string name="title_redwap">Redwap</string>
+    <string name="title_hentaicity">Hentaicity</string>
+    <string name="title_xvideos">XVideos</string>
 
 </resources>

@@ -57,9 +57,10 @@ open class AIOLanguage {
 		baseActivityInf?.getActivity()?.let { safeActivityRef ->
 			this.finishActivityOnResume = false
 			val languageCode = aioSettings.userSelectedUILanguage
+			val locale = Locale.forLanguageTag(languageCode)
 			LocaleAwareManager(safeActivityRef).setNewLocale(safeActivityRef, languageCode)
 			LocaleAwareManager(INSTANCE).setNewLocale(INSTANCE, languageCode)
-			LocalizationHelper.setAppLocale(INSTANCE, Locale(languageCode))
+			LocalizationHelper.setAppLocale(INSTANCE, locale)
 			onComplete()
 		}
 	}

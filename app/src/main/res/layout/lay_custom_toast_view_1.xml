@@ -13,14 +13,16 @@
     app:cardCornerRadius="@dimen/_10"
     app:cardElevation="@dimen/_5">
 
+    <!-- Root layout that holds the toast content horizontally -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/color_background"
         android:orientation="horizontal">
 
+        <!-- App icon shown in the toast message -->
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/image_toast_app_icon"
+            android:id="@+id/img_toast_app_icon"
             android:layout_width="@dimen/_30"
             android:layout_height="@dimen/_30"
             android:layout_gravity="center_vertical"
@@ -32,8 +34,9 @@
             android:importantForAccessibility="no"
             android:src="@mipmap/ic_launcher" />
 
+        <!-- Text message displayed in the toast -->
         <TextView
-            android:id="@+id/text_toast_message"
+            android:id="@+id/txt_toast_message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -41,9 +44,9 @@
             android:layout_marginTop="@dimen/_5"
             android:layout_marginEnd="@dimen/_10"
             android:layout_marginBottom="@dimen/_5"
-            android:fontFamily="@font/font_family_special"
+            android:fontFamily="@font/application_font_family"
             android:gravity="center_vertical"
-            android:text="@string/text__"
+            android:text="@string/text_100_percentage"
             android:textColor="@color/color_text_primary"
             android:textSize="@dimen/message_text_size" />
     </LinearLayout>

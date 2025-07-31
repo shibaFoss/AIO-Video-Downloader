@@ -247,7 +247,7 @@ class VideoDownloader(override val downloadDataModel: DownloadDataModel) : Downl
 		val videoInfo = downloadDataModel.videoInfo!!
 		val videoFormat = downloadDataModel.videoFormat!!
 		val formatResolution = videoFormat.formatResolution.lowercase()
-		val fileExtension: String = (if (formatResolution.contains("audio only")) "mp3" else "mp4")
+		val fileExtension: String = (if (formatResolution.contains("audio", false)) "mp3" else "mp4")
 		
 		if (videoInfo.videoTitle.isNullOrEmpty()) {
 			val titleFromURL = getVideoTitleFromURL(videoInfo.videoUrl)

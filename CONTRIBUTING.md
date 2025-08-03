@@ -1,6 +1,6 @@
 # Contributing
 
-Thank you for considering contributing to **VideoMate** — a free, open-source, and ad-free video/audio downloader for Android, powered by [`yt-dlp`](https://github.com/yt-dlp/yt-dlp). This project aims to make downloading content from 1000+ websites easy and accessible through a clean Android interface.
+Thank you for considering contributing to **AIO Video Downloader** — a free, open-source, and ad-free video/audio downloader for Android, powered by [`yt-dlp`](https://github.com/yt-dlp/yt-dlp). This project aims to make downloading content from 1000+ websites easy and accessible through a clean Android interface.
 
 ---
 
@@ -24,11 +24,11 @@ Issues missing essential information may be closed without investigation.
 
 ## 💡 Feature Requests
 
-VideoMate is designed to be a **simple and user-friendly interface** for yt-dlp, providing essential functionality without exposing the full command-line interface.
+AIO Video Downloader is designed to be a **simple and user-friendly interface** for yt-dlp, providing essential functionality without exposing the full command-line interface.
 
 You're welcome to request features that improve usability, download flexibility, or integration with Android features.
 
-> Note: Since VideoMate does not aim to support all yt-dlp CLI features, highly advanced options may not be considered.
+> Note: Since AIO Video Downloader does not aim to support all yt-dlp CLI features, highly advanced options may not be considered.
 
 ---
 
@@ -60,14 +60,14 @@ To build and run the app locally on your development machine, follow the steps b
 
 ### 1. Fork the Repository
 
-Create your own copy of the repository by clicking the **Fork** button on the top-right corner of the [VideoMate GitHub page](https://github.com/shibafoss/VideoMate). This allows you to freely experiment with changes without affecting the original project.
+Create your own copy of the repository by clicking the **Fork** button on the top-right corner of the [AIO Video Downloader GitHub page](https://github.com/shibafoss/AIO-Video-Downloader). This allows you to freely experiment with changes without affecting the original project.
 
 ### 2. Clone the Repository
 
 After forking, clone the repository to your local machine using the following Git command:
 
 ```bash
-git clone https://github.com/shibafoss/VideoMate.git
+git clone https://github.com/shibafoss/AIO-Video-Downloader.git
 ```
 
 Replace `shibafoss` with your GitHub username. This creates a local copy of the project on your machine.
@@ -115,7 +115,7 @@ Now that the app is running, you're all set to:
 
 ## 📜 Contributor Guidelines
 
-VideoMate is a project built with simplicity and clarity in mind. To maintain consistency across the codebase, please follow these contributor guidelines:
+AIO Video Downloader is a project built with simplicity and clarity in mind. To maintain consistency across the codebase, please follow these contributor guidelines:
 
 ### 🔧 Coding Style
 
@@ -158,9 +158,8 @@ By contributing with these principles in mind, you help maintain a codebase that
 
 For questions, ideas, or support:
 
-- **GitHub Issues**: [Open an issue](https://github.com/shibafoss/VideoMate/issues)
+- **GitHub Issues**: [Open an issue](https://github.com/shibafoss/AIO-Video-Downloader/issues)
 - **Email**: shiba.spj@hotmail.com
-- **Telegram Group**: [Join our community](https://t.me/VideoMateApp)
 
 ---
 

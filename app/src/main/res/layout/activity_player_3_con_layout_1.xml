@@ -1,19 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    ExoPlayer Video Content Layout (Merge Layout)
+    Core component for media playback display in ExoPlayer
+    Contains all visual elements for video/audio presentation
+    Designed to be included in parent player layouts
+-->
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <!--
+        Aspect Ratio Frame Layout (Root Container)
+        - Maintains correct aspect ratio for video content
+        - Centers content both vertically and horizontally
+        - Contains all visual playback elements
+    -->
     <androidx.media3.ui.AspectRatioFrameLayout
         android:id="@id/exo_content_frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center">
 
+        <!--
+            Shutter View (Background)
+            - Shown before video frames are available
+            - Prevents flickering during initialization
+            - Uses primary color as background
+        -->
         <View
             android:id="@id/exo_shutter"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/color_primary" />
 
+        <!--
+            Artwork Display (For Audio)
+            - Full-screen image for audio-only content
+            - Scales to fill entire view (fitXY)
+            - Accessibility ignored (decorative)
+        -->
         <ImageView
             android:id="@id/exo_artwork"
             android:layout_width="match_parent"
@@ -21,11 +45,23 @@
             android:importantForAccessibility="no"
             android:scaleType="fitXY" />
 
+        <!--
+            Subtitle View
+            - Renders closed captions and subtitles
+            - Full-screen overlay for text positioning
+            - Styled according to user preferences
+        -->
         <androidx.media3.ui.SubtitleView
             android:id="@+id/exo_subtitles"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
+        <!--
+            Buffering Indicator
+            - Shown during network loading
+            - Centered indeterminate progress bar
+            - Custom buffering color (yellow accent)
+        -->
         <ProgressBar
             android:id="@id/exo_buffering"
             android:layout_width="wrap_content"
@@ -34,6 +70,12 @@
             android:indeterminate="true"
             app:buffered_color="@color/color_yellow_accent" />
 
+        <!--
+            Error Message Display
+            - Shown when playback fails
+            - Dark semi-transparent overlay
+            - Centered white text with padding
+        -->
         <TextView
             android:id="@id/exo_error_message"
             android:layout_width="match_parent"

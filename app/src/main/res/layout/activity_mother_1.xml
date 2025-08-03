@@ -1,16 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+MAIN ACTIVITY CONTAINER LAYOUT
+Serves as the root container for the app's main interface with:
+1. Primary content area (fragment container)
+2. Bottom navigation tabs
+3. Hidden navigation drawer (initially not visible)
+
+Structure:
+- RelativeLayout as root container
+- Three included sub-layouts:
+  • Fragment container (main content)
+  • Bottom tab navigation
+  • Left navigation drawer
+-->
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_surface"
     android:orientation="vertical">
 
+    <!--
+    PRIMARY CONTENT CONTAINER
+    Hosts the main fragment content of the activity
+    Features:
+    - Takes up all available space above bottom navigation
+    - References external layout (@layout/activity_mother_2_frag_holder_1)
+    - Matches parent width/height while staying above bottom tabs
+    -->
     <include
         layout="@layout/activity_mother_2_frag_holder_1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/bottom_tab_navigation" />
 
+    <!--
+    BOTTOM TAB NAVIGATION
+    Persistent navigation tabs at screen bottom
+    Features:
+    - Fixed to bottom of screen (layout_alignParentBottom)
+    - Wrap content height (auto-sizes to tab content)
+    - References external layout (@layout/activity_mother_1_frag_tabs_1)
+    - Visible by default
+    -->
     <include
         android:id="@+id/bottom_tab_navigation"
         layout="@layout/activity_mother_1_frag_tabs_1"
@@ -18,6 +50,15 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true" />
 
+    <!--
+    LEFT NAVIGATION DRAWER
+    Hidden side navigation panel
+    Features:
+    - Initially hidden (visibility="gone")
+    - References external layout (@layout/activity_mother_3_left_nav)
+    - Typically revealed by swiping or menu button
+    - Position controlled programmatically (not specified in XML)
+    -->
     <include
         android:id="@+id/navigation_drawer"
         layout="@layout/activity_mother_3_left_nav"

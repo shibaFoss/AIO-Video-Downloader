@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Root layout for a custom dialog with tab management functionality
+    Applies a dialog style (@style/style_dialog) for consistent appearance
+    Uses LinearLayout as container with match_parent width and wrap_content height
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,6 +12,12 @@
     android:layout_height="wrap_content"
     tools:ignore="UseAppTint,UseCompatTextViewDrawableXml,VisualLintBounds">
 
+    <!--
+        CardView container that gives the dialog its elevated card appearance
+        - Custom background color and corner radius
+        - Margins provide spacing from screen edges
+        - Elevation creates shadow effect
+    -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,13 +29,24 @@
         app:cardCornerRadius="@dimen/_10"
         app:cardElevation="@dimen/_5">
 
+        <!--
+            Vertical LinearLayout organizes dialog content:
+            1. "New Tab" button at top
+            2. ListView showing existing tabs below
+        -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <!--
+                "Create New Tab" button container
+                - Uses RelativeLayout for centered positioning
+                - Has pressed state selector (@drawable/ic_button_selector_secondary)
+                - Includes elevation for depth
+            -->
             <RelativeLayout
-                android:id="@+id/button_create_new_tab"
+                android:id="@+id/btn_create_new_tab"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_15"
@@ -36,6 +58,12 @@
                 android:elevation="@dimen/_2"
                 tools:ignore="TouchTargetSizeCheck">
 
+                <!--
+                    "New Tab" button text with plus icon
+                    - Icon is drawn to the start of text
+                    - Custom font and styling applied
+                    - Centered within RelativeLayout
+                -->
                 <TextView
                     android:id="@+id/btn_dialog_positive"
                     android:layout_width="wrap_content"
@@ -53,6 +81,12 @@
                     android:textStyle="bold" />
             </RelativeLayout>
 
+            <!--
+                ListView displaying existing browser tabs
+                - Takes remaining space below the button
+                - Transparent divider between items
+                - Margins provide spacing from edges
+            -->
             <ListView
                 android:id="@+id/list_browser_tabs"
                 android:layout_width="match_parent"

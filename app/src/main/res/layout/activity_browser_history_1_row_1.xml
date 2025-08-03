@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+HISTORY ITEM LAYOUT
+A single row item representing a browser history entry in a list
+Structure:
+1. Root container with clickable background
+2. Favicon indicator (left side)
+3. Title and date section (middle)
+4. Open indicator (right side)
+5. URL display (bottom)
+-->
+
+<!-- Root layout for the history item row -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/button_finish_download_row"
@@ -7,6 +19,13 @@
     android:clickable="true"
     tools:ignore="UseAppTint, UselessParent">
 
+    <!--
+    MAIN CONTENT CONTAINER
+    Wrapper with visual styling:
+    - Standard margins (15dp sides, 3dp top, 5dp bottom)
+    - Pressable background selector
+    - Slight elevation (1dp) for depth
+    -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,6 +37,15 @@
         android:elevation="@dimen/_1"
         android:orientation="vertical">
 
+        <!--
+        FAVICON INDICATOR
+        Displays the website favicon or default icon:
+        - Fixed width (24dp)
+        - Centered vertically
+        - 10dp margins on sides
+        - Visible by default
+        - Uses information icon as fallback
+        -->
         <ImageView
             android:id="@+id/history_url_favicon_indicator"
             android:layout_width="@dimen/_24"
@@ -31,6 +59,13 @@
             android:src="@drawable/ic_button_information"
             android:visibility="visible" />
 
+        <!--
+        TITLE AND DATE CONTAINER
+        Horizontal container for:
+        - History title (left)
+        - Visit date (middle)
+        - Open indicator (right)
+        -->
         <RelativeLayout
             android:id="@+id/history_url_title_container"
             android:layout_width="match_parent"
@@ -39,6 +74,13 @@
             android:layout_marginBottom="@dimen/_0"
             android:layout_toEndOf="@+id/history_url_favicon_indicator">
 
+            <!--
+            HISTORY TITLE
+            - Bold text in message text size (typically 14sp)
+            - Single line with ellipsis
+            - Takes available space between favicon and date
+            - Uses on_surface color for visibility
+            -->
             <TextView
                 android:id="@+id/history_url_title"
                 android:layout_width="match_parent"
@@ -53,6 +95,14 @@
                 android:textStyle="bold"
                 tools:ignore="TextContrastCheck" />
 
+            <!--
+            VISIT DATE
+            - Smaller text than title (small_text_size)
+            - Right-aligned before open indicator
+            - Single line
+            - Uses on_surface color
+            - 5dp margin from title
+            -->
             <TextView
                 android:id="@+id/history_url_date"
                 android:layout_width="wrap_content"
@@ -68,6 +118,14 @@
                 android:textColor="@color/color_on_surface"
                 android:textSize="@dimen/small_text_size" />
 
+            <!--
+            OPEN INDICATOR
+            Small arrow icon indicating tappable area:
+            - Right-aligned in container
+            - Secondary color tint
+            - 10dp end margin
+            - 5dp margin from date
+            -->
             <ImageView
                 android:id="@+id/history_url_open_indicator"
                 android:layout_width="wrap_content"
@@ -83,6 +141,16 @@
                 tools:ignore="ImageContrastCheck" />
         </RelativeLayout>
 
+        <!--
+        HISTORY URL
+        Displayed below the title/date section:
+        - Smaller text (smaller_text_size)
+        - Hint-colored text for less prominence
+        - Single line with ellipsis
+        - Aligned with title (right of favicon)
+        - 5dp bottom margin
+        - 10dp end margin
+        -->
         <TextView
             android:id="@+id/history_url"
             android:layout_width="match_parent"
@@ -99,5 +167,4 @@
             android:textSize="@dimen/smaller_text_size"
             tools:ignore="TextContrastCheck" />
     </RelativeLayout>
-
 </RelativeLayout>

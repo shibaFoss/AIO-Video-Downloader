@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Main container for the BookmarksActivity layout
+    Uses a vertical LinearLayout as the root view
+    Sets the background color and context for the layout
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,6 +14,11 @@
     tools:context="app.ui.main.fragments.browser.activities.BookmarksActivity"
     tools:ignore="UseCompatTextViewDrawableXml,UseAppTint">
 
+    <!--
+        CardView container for the navigation tabs
+        Has rounded corners and a background color
+        Contains margin on all sides for spacing
+    -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,12 +29,22 @@
         app:cardBackgroundColor="@color/color_background"
         app:cardCornerRadius="@dimen/_10">
 
+        <!--
+            Horizontal LinearLayout to arrange navigation tabs side by side
+            baselineAligned="false" prevents uneven alignment of child views
+        -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:baselineAligned="false"
             android:orientation="horizontal">
 
+            <!--
+                Home Tab Button
+                Contains an icon and text label
+                Uses weight to distribute width evenly among tabs
+                Has a selector for click effects
+            -->
             <LinearLayout
                 android:id="@+id/btn_home_tab"
                 android:layout_width="0dp"
@@ -38,6 +58,7 @@
                 android:clickable="true"
                 android:orientation="vertical">
 
+                <!-- Home icon with tint color -->
                 <ImageView
                     android:id="@+id/img_home_tab"
                     android:layout_width="wrap_content"
@@ -50,6 +71,7 @@
                     android:tint="@color/color_secondary"
                     tools:ignore="ImageContrastCheck" />
 
+                <!-- Home label text -->
                 <TextView
                     android:id="@+id/txt_home_tab"
                     android:layout_width="match_parent"
@@ -66,6 +88,10 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
+            <!--
+                Browser Tab Button
+                Similar structure to Home tab but with different icon and text
+            -->
             <LinearLayout
                 android:id="@+id/btn_browser_tab"
                 android:layout_width="0dp"
@@ -79,6 +105,7 @@
                 android:clickable="true"
                 android:orientation="vertical">
 
+                <!-- Browser icon -->
                 <ImageView
                     android:id="@+id/img_browser_tab"
                     android:layout_width="wrap_content"
@@ -91,6 +118,7 @@
                     android:tint="@color/color_secondary"
                     tools:ignore="ImageContrastCheck" />
 
+                <!-- Browser label text -->
                 <TextView
                     android:id="@+id/txt_browser_tab"
                     android:layout_width="match_parent"
@@ -107,6 +135,10 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
+            <!--
+                Tasks Tab Button
+                Contains download/transfer related icon and label
+            -->
             <LinearLayout
                 android:id="@+id/btn_tasks_tab"
                 android:layout_width="0dp"
@@ -120,6 +152,7 @@
                 android:clickable="true"
                 android:orientation="vertical">
 
+                <!-- Tasks/Downloads icon -->
                 <ImageView
                     android:id="@+id/img_tasks_tab"
                     android:layout_width="wrap_content"
@@ -132,6 +165,7 @@
                     android:tint="@color/color_secondary"
                     tools:ignore="ImageContrastCheck" />
 
+                <!-- Tasks label text -->
                 <TextView
                     android:id="@+id/txt_task_tab"
                     android:layout_width="match_parent"
@@ -148,6 +182,11 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
+            <!--
+                Settings Tab Button
+                Contains settings icon and label
+                Has right margin instead of left margin
+            -->
             <LinearLayout
                 android:id="@+id/btn_settings_tab"
                 android:layout_width="0dp"
@@ -161,6 +200,7 @@
                 android:clickable="true"
                 android:orientation="vertical">
 
+                <!-- Settings icon -->
                 <ImageView
                     android:id="@+id/img_settings_tab"
                     android:layout_width="wrap_content"
@@ -173,6 +213,7 @@
                     android:tint="@color/color_secondary"
                     tools:ignore="ImageContrastCheck" />
 
+                <!-- Settings label text -->
                 <TextView
                     android:id="@+id/txt_settings_tab"
                     android:layout_width="match_parent"

@@ -1,3 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+    Custom Action Bar Layout
+    Reusable card-based action bar with back button, title, and options menu
+    Uses RelativeLayout as root for flexible positioning
+-->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,6 +12,12 @@
     android:orientation="vertical"
     tools:ignore="UseCompatTextViewDrawableXml,UseAppTint">
 
+    <!--
+        Action Bar Card Container
+        - Elevated card with rounded corners
+        - Fixed height (50dp) with horizontal margins
+        - Background color matches app theme
+    -->
     <androidx.cardview.widget.CardView
         android:id="@+id/top_layout_actionbar_section"
         android:layout_width="match_parent"
@@ -18,11 +29,18 @@
         app:cardBackgroundColor="@color/color_background"
         app:cardCornerRadius="@dimen/_10">
 
+        <!-- Main container for action bar elements -->
         <RelativeLayout
             android:id="@+id/container_actionbar_top"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <!--
+                Back Button Container
+                - Fixed width (50dp) matching card height
+                - Pressed state selector for visual feedback
+                - Contains back arrow icon
+            -->
             <RelativeLayout
                 android:id="@+id/btn_actionbar_back"
                 android:layout_width="@dimen/_50"
@@ -31,6 +49,12 @@
                 android:clickable="true"
                 tools:ignore="SpeakableTextPresentCheck">
 
+                <!--
+                    Back Button Icon
+                    - Centered arrow icon (30dp width)
+                    - Secondary color tint
+                    - Accessibility ignored (handled by parent)
+                -->
                 <ImageView
                     android:id="@+id/btn_actionbar_back_img"
                     android:layout_width="@dimen/_30"
@@ -43,6 +67,13 @@
                     tools:ignore="ImageContrastCheck" />
             </RelativeLayout>
 
+            <!--
+                Title Text
+                - Marquee-scrolling text for long titles
+                - Centered vertically between buttons
+                - Bold text with application font
+                - Takes remaining space between buttons
+            -->
             <TextView
                 android:id="@+id/txt_video_file_name"
                 android:layout_width="match_parent"
@@ -66,6 +97,13 @@
                 android:textSize="@dimen/normal_text_size"
                 android:textStyle="bold" />
 
+            <!--
+                Options Menu Button
+                - Fixed width (50dp) matching card height
+                - Pressed state selector for visual feedback
+                - Contains menu/dots icon
+                - Right-aligned in action bar
+            -->
             <RelativeLayout
                 android:id="@+id/btn_actionbar_option"
                 android:layout_width="@dimen/_50"
@@ -75,6 +113,12 @@
                 android:clickable="true"
                 tools:ignore="SpeakableTextPresentCheck">
 
+                <!--
+                    Menu Button Icon
+                    - Centered menu icon (30dp width)
+                    - Secondary color tint
+                    - Accessibility ignored (handled by parent)
+                -->
                 <ImageView
                     android:id="@+id/btn_actionbar_option_img"
                     android:layout_width="@dimen/_30"

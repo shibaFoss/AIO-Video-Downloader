@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    This layout defines a clickable video item component, typically used in a list.
+    It displays video information including a type indicator icon, URL, and metadata.
+    The entire item is clickable with visual feedback (selector background).
+-->
+
+<!-- Main container using RelativeLayout for flexible positioning -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -6,6 +13,10 @@
     android:orientation="vertical"
     tools:ignore="UseAppTint">
 
+    <!--
+        Primary clickable container for the video item
+        Has margin, elevation, and a selector background for visual feedback
+    -->
     <RelativeLayout
         android:id="@+id/main_container"
         android:layout_width="match_parent"
@@ -19,6 +30,10 @@
         android:elevation="@dimen/_1"
         tools:ignore="UselessParent">
 
+        <!--
+            Video type indicator icon (left side)
+            Shows different icons for different video types
+        -->
         <ImageView
             android:id="@+id/img_video_type_indicator"
             android:layout_width="wrap_content"
@@ -34,6 +49,7 @@
             android:visibility="visible"
             tools:ignore="ImageContrastCheck" />
 
+        <!-- Container for the URL and open indicator -->
         <RelativeLayout
             android:id="@+id/video_info_container"
             android:layout_width="match_parent"
@@ -41,6 +57,11 @@
             android:layout_marginTop="@dimen/_5"
             android:layout_toEndOf="@+id/img_video_type_indicator">
 
+            <!--
+                Video URL text view
+                Single line with ellipsis for long URLs
+                Uses hint color as it's secondary information
+            -->
             <TextView
                 android:id="@+id/txt_video_url"
                 android:layout_width="match_parent"
@@ -54,6 +75,10 @@
                 android:textSize="@dimen/small_text_size"
                 tools:ignore="TextContrastCheck" />
 
+            <!--
+                Open link indicator icon (right side)
+                Shows an arrow/indicator that this item is clickable
+            -->
             <ImageView
                 android:id="@+id/img_link_open_indicator"
                 android:layout_width="@dimen/_24"
@@ -69,12 +94,17 @@
                 tools:ignore="ImageContrastCheck" />
         </RelativeLayout>
 
+        <!--
+            Primary video information text
+            Bold text for the main description/title of the video
+            Positioned below the URL information
+        -->
         <TextView
             android:id="@+id/txt_video_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/video_info_container"
-            android:layout_marginTop="@dimen/_2"
+            android:layout_marginTop="@dimen/_0"
             android:layout_marginBottom="@dimen/_5"
             android:layout_toEndOf="@+id/img_video_type_indicator"
             android:fontFamily="@font/application_font_family"

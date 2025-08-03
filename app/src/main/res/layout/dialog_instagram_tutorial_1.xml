@@ -1,4 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    INSTAGRAM REELS INSTRUCTIONAL GUIDE DIALOG
+    ==========================================
+    Purpose: Displays a visual step-by-step guide for downloading Instagram Reels
+    Features:
+    - Material Design card layout with elevation and rounded corners
+    - Title header with contrasting background
+    - Scrollable content area containing:
+      * Three instructional image cards
+      * Corresponding descriptive text for each step
+    - Confirmation button with checkmark icon
+    Behavior:
+    - Presents 3 clearly illustrated steps
+    - Allows vertical scrolling for longer content
+    - Provides visual feedback on button press
+    Accessibility:
+    - Text uses proper contrast ratios
+    - Font family ensures readability
+    - Images marked unimportant for accessibility (should have content descriptions)
+-->
+
+<!-- ROOT DIALOG CONTAINER -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,6 +29,15 @@
     android:layout_height="wrap_content"
     tools:ignore="UseAppTint,UseCompatTextViewDrawableXml">
 
+    <!--
+        PRIMARY CARD CONTAINER
+        Attributes:
+        - 5dp horizontal margins
+        - 10dp vertical margins
+        - Background color from theme
+        - 10dp rounded corners
+        - 5dp elevation for shadow
+    -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,17 +49,32 @@
         app:cardCornerRadius="@dimen/_10"
         app:cardElevation="@dimen/_5">
 
+        <!-- VERTICAL CONTENT ORGANIZATION -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <!--
+                DIALOG HEADER SECTION
+                - Surface color background for contrast
+                - Contains only the title text
+            -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/color_surface"
                 android:orientation="vertical">
 
+                <!--
+                    DIALOG TITLE
+                    Styling:
+                    - Centered bold text
+                    - Single line with ellipsis
+                    - 10dp margins
+                    - Primary text color
+                    - Standard font family
+                -->
                 <TextView
                     android:id="@+id/txt_dialog_title"
                     android:layout_width="match_parent"
@@ -42,14 +88,19 @@
                     android:textColor="@color/color_text_primary"
                     android:textSize="@dimen/normal_text_size"
                     android:textStyle="bold" />
-
             </LinearLayout>
 
+            <!--
+                SCROLLABLE CONTENT AREA
+                - Takes remaining space (weight=1)
+                - Contains all instructional steps
+            -->
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1">
 
+                <!-- STEPS CONTAINER -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -59,7 +110,13 @@
                     android:orientation="vertical"
                     tools:ignore="UseCompoundDrawables">
 
-
+                    <!--
+                        STEP 1: IMAGE AND INSTRUCTIONS
+                        Layout:
+                        - Card with 5dp margin
+                        - 10dp corner radius
+                        - Background matching dialog
+                    -->
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -67,26 +124,31 @@
                         app:cardBackgroundColor="@color/color_background"
                         app:cardCornerRadius="@dimen/_10">
 
+                        <!-- Step 1 visual illustration -->
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:adjustViewBounds="true"
                             android:importantForAccessibility="no"
                             android:src="@drawable/ic_inst_how_to_guide_1" />
-
                     </androidx.cardview.widget.CardView>
 
+                    <!-- Step 1 description -->
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
+                        android:layout_margin="@dimen/_2"
                         android:fontFamily="@font/application_font_family"
                         android:gravity="center"
-                        android:layout_margin="@dimen/_2"
                         android:text="@string/text_inst_how_to_guide_1"
                         android:textColor="@color/color_text_primary"
                         android:textSize="@dimen/message_text_size" />
 
+                    <!--
+                        STEP 2: IMAGE AND INSTRUCTIONS
+                        Same styling as Step 1
+                    -->
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -100,20 +162,25 @@
                             android:adjustViewBounds="true"
                             android:importantForAccessibility="no"
                             android:src="@drawable/ic_inst_how_to_guide_2" />
-
                     </androidx.cardview.widget.CardView>
 
+                    <!-- Step 2 description -->
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
+                        android:layout_margin="@dimen/_2"
                         android:fontFamily="@font/application_font_family"
                         android:gravity="center"
-                        android:layout_margin="@dimen/_2"
                         android:text="@string/text_inst_how_to_guide_2"
                         android:textColor="@color/color_text_primary"
                         android:textSize="@dimen/message_text_size" />
 
+                    <!--
+                        STEP 3: IMAGE AND INSTRUCTIONS
+                        - Larger bottom margin (8dp)
+                        - Otherwise same styling
+                    -->
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -130,23 +197,31 @@
                             android:adjustViewBounds="true"
                             android:importantForAccessibility="no"
                             android:src="@drawable/ic_inst_how_to_guide_3" />
-
                     </androidx.cardview.widget.CardView>
 
+                    <!-- Step 3 description -->
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
+                        android:layout_margin="@dimen/_2"
                         android:fontFamily="@font/application_font_family"
                         android:gravity="center"
-                        android:layout_margin="@dimen/_2"
                         android:text="@string/text_inst_how_to_guide_3"
                         android:textColor="@color/color_text_primary"
                         android:textSize="@dimen/message_text_size" />
-
                 </LinearLayout>
             </ScrollView>
 
+            <!--
+                CONFIRMATION BUTTON
+                Attributes:
+                - 15dp horizontal margins
+                - 8dp vertical margins
+                - Secondary button styling
+                - 2dp elevation
+                - Press state selector
+            -->
             <RelativeLayout
                 android:id="@+id/btn_dialog_positive_container"
                 android:layout_width="match_parent"
@@ -160,6 +235,15 @@
                 android:elevation="@dimen/_2"
                 tools:ignore="TouchTargetSizeCheck">
 
+                <!--
+                    BUTTON WITH CHECKMARK ICON
+                    Features:
+                    - Centered text with icon
+                    - 5dp icon padding
+                    - Bold "OKAY" text
+                    - On-secondary text color
+                    - Standard font family
+                -->
                 <TextView
                     android:id="@+id/btn_dialog_positive"
                     android:layout_width="wrap_content"
@@ -176,7 +260,6 @@
                     android:textSize="@dimen/normal_text_size"
                     android:textStyle="bold" />
             </RelativeLayout>
-
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </LinearLayout>

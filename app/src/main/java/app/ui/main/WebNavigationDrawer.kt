@@ -49,7 +49,7 @@ class WebNavigationDrawer(motherActivity: MotherActivity?) {
 			safeMotherActivityRef.apply {
 				// Initialize UI components
 				sideNavigationDrawer = findViewById(R.id.navigation_drawer)
-				buttonAddNewTab = findViewById(R.id.button_create_new_tab)
+				buttonAddNewTab = findViewById(R.id.btn_create_new_tab)
 				browserTabsListView = findViewById(R.id.list_browser_tabs)
 				
 				// Set up event listeners

@@ -1,7 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!--
+    Video Progress Control Component (Merge Layout)
+    Reusable component for displaying and controlling video playback progress
+    Contains time indicators and a custom seek bar
+    Designed to be included in other layouts
+-->
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <!--
+        Main Progress Container
+        - Fixed height (42dp) with horizontal margins
+        - Contains three horizontally aligned elements:
+          1. Current time (left)
+          2. Progress bar (center)
+          3. Duration (right)
+    -->
     <RelativeLayout
         android:id="@+id/progress_container"
         android:layout_width="match_parent"
@@ -11,16 +24,28 @@
         android:layout_marginEnd="@dimen/_10"
         android:visibility="visible">
 
+        <!--
+            Current Time Container (Left)
+            - Rounded background matching surface color
+            - Contains text view for elapsed time display
+        -->
         <LinearLayout
-            android:id="@+id/text_video_progress_timer_container_left"
+            android:id="@+id/txt_video_progress_timer_container_left"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             android:background="@drawable/rounded_surface_color">
 
+            <!--
+                Elapsed Time Text
+                - Shows current playback position (00:00 format)
+                - Uses application font with bold style
+                - Primary text color for visibility
+                - Padding for visual comfort
+            -->
             <TextView
-                android:id="@+id/text_video_progress_timer"
+                android:id="@+id/txt_video_progress_timer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_10"
@@ -30,16 +55,27 @@
                 android:fontFamily="@font/application_font_family"
                 android:text="@string/text_time_representation"
                 android:textColor="@color/color_text_primary"
-                android:textSize="@dimen/message_text_size" />
+                android:textSize="@dimen/message_text_size"
+                android:textStyle="bold" />
         </LinearLayout>
 
+        <!--
+            Custom Progress Bar (Center)
+            - Custom RoundedTimeBar implementation
+            - Takes all available width between time indicators
+            - Three colored segments:
+              * Played (primary variant)
+              * Buffered (yellow accent)
+              * Unplayed (secondary)
+            - Custom scrubber drawable for thumb
+        -->
         <lib.ui.RoundedTimeBar
             android:id="@+id/video_progress_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_toStartOf="@+id/text_video_duration_container_right"
-            android:layout_toEndOf="@+id/text_video_progress_timer_container_left"
+            android:layout_toStartOf="@+id/txt_video_duration_container_right"
+            android:layout_toEndOf="@+id/txt_video_progress_timer_container_left"
             app:bar_height="@dimen/_5"
             app:buffered_color="@color/color_yellow_accent_variant"
             app:played_color="@color/color_primary_variant"
@@ -47,16 +83,27 @@
             app:show_buffering="always"
             app:unplayed_color="@color/color_secondary" />
 
+        <!--
+            Duration Container (Right)
+            - Rounded background matching surface color
+            - Contains text view for total duration
+        -->
         <LinearLayout
-            android:id="@+id/text_video_duration_container_right"
+            android:id="@+id/txt_video_duration_container_right"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:background="@drawable/rounded_surface_color">
 
+            <!--
+                Duration Text
+                - Shows total video length (00:00 format)
+                - Mirrors styling of elapsed time text
+                - Same padding for consistency
+            -->
             <TextView
-                android:id="@+id/text_video_duration"
+                android:id="@+id/txt_video_duration"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_10"
@@ -66,7 +113,8 @@
                 android:fontFamily="@font/application_font_family"
                 android:text="@string/text_time_representation"
                 android:textColor="@color/color_text_primary"
-                android:textSize="@dimen/message_text_size" />
+                android:textSize="@dimen/message_text_size"
+                android:textStyle="bold" />
         </LinearLayout>
 
     </RelativeLayout>

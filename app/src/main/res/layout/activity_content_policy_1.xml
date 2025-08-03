@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+CONTENT POLICY ACTIVITY LAYOUT
+Displays the app's content policy information with:
+1. Action bar with back button and title
+2. Scrollable content area for policy text
+-->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,6 +16,15 @@
     tools:context="app.ui.others.information.ContentPolicyActivity"
     tools:ignore="UseCompatTextViewDrawableXml,UseAppTint">
 
+    <!--
+    TOP ACTION BAR SECTION
+    Contains back button and title
+    Features:
+    - Fixed height of 50dp
+    - Rounded corners (10dp radius)
+    - Standard margins (15dp sides, 10dp top)
+    - Background color matching app theme
+    -->
     <androidx.cardview.widget.CardView
         android:id="@+id/top_layout_actionbar_section"
         android:layout_width="match_parent"
@@ -25,6 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <!-- Back button (left side) -->
             <RelativeLayout
                 android:id="@+id/btn_left_actionbar"
                 android:layout_width="@dimen/_50"
@@ -33,6 +50,7 @@
                 android:clickable="true"
                 tools:ignore="SpeakableTextPresentCheck">
 
+                <!-- Back arrow icon -->
                 <ImageView
                     android:id="@+id/btn_left_actionbar_img"
                     android:layout_width="@dimen/_30"
@@ -45,6 +63,7 @@
                     tools:ignore="ImageContrastCheck" />
             </RelativeLayout>
 
+            <!-- Activity title -->
             <TextView
                 android:id="@+id/title_actionbar"
                 android:layout_width="match_parent"
@@ -65,6 +84,15 @@
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
+    <!--
+    POLICY CONTENT SECTION
+    CardView container for scrollable policy text
+    Features:
+    - Takes remaining vertical space (layout_weight="1")
+    - Standard margins (15dp sides, 8dp top/bottom)
+    - Rounded corners (10dp radius)
+    - Background color matching app theme
+    -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -77,16 +105,30 @@
         app:cardBackgroundColor="@color/color_background"
         app:cardCornerRadius="@dimen/_10">
 
+        <!-- Scrollable container for policy text -->
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <!--
+            POLICY TEXT CONTENT
+            Displays the actual policy text with:
+            - Small text size (14sp)
+            - Primary text color
+            - Secondary color for links
+            - Automatic web link detection
+            - Standard margins (10dp sides, 8dp top/bottom)
+            - Application font family
+            -->
             <TextView
-                android:id="@+id/text_content_policy"
+                android:id="@+id/txt_content_policy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_8"
+                android:layout_marginStart="@dimen/_10"
+                android:layout_marginTop="@dimen/_8"
+                android:layout_marginEnd="@dimen/_10"
+                android:layout_marginBottom="@dimen/_8"
                 android:autoLink="web"
                 android:fontFamily="@font/application_font_family"
                 android:text="@string/text__"

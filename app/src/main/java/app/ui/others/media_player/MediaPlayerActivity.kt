@@ -206,8 +206,8 @@ class MediaPlayerActivity : BaseActivity(), AIOTimerListener, Listener {
             showQuickPlayerInfo(quickInfoText); return
         }; stopAndReleasePlayer()
 
-        hideView(exoMediaPlayerView, true, 1000).let {
-            delay(500, object : OnTaskFinishListener {
+        hideView(exoMediaPlayerView, true, 300).let {
+            delay(200, object : OnTaskFinishListener {
                 override fun afterDelay() {
                     closeActivityWithFadeAnimation(true)
                 }
@@ -409,11 +409,11 @@ class MediaPlayerActivity : BaseActivity(), AIOTimerListener, Listener {
             buttonOptionActionbar.apply { setOnClickListener { showOptionMenuPopup() } }
 
             // Initialize progress display
-            textProgressTimer = findViewById(id.text_video_progress_timer)
+            textProgressTimer = findViewById(id.txt_video_progress_timer)
             videoProgressBar = findViewById(id.video_progress_bar)
             videoProgressBar.apply { addListener(generateOnScrubberListener()) }
 
-            textVideoDuration = findViewById(id.text_video_duration)
+            textVideoDuration = findViewById(id.txt_video_duration)
 
             // Initialize control buttons
             buttonControllerLock = findViewById(id.btn_video_controllers_lock)

@@ -1,31 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--
+    BUTTON STYLE DEFINITIONS
+    This file contains all text button style definitions for the application.
+    Styles follow a hierarchical structure with a base style and specialized variants.
+    -->
 
+    <!--
+    Base text button style that all other button styles inherit from.
+    Default appearance:
+    - Fixed height of 42dp with wrap_content width
+    - Single line text with no all-caps transformation
+    - Standard margins (5dp) on all sides
+    - Normal text style with slight letter spacing (0.025)
+    - Negative selector background by default
+    - Centered vertical text alignment
+    -->
     <style name="style_text_button">
+        <!-- Layout dimensions -->
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">@dimen/_42</item>
+
+        <!-- Text constraints -->
         <item name="android:singleLine">true</item>
         <item name="android:maxLines">1</item>
+
+        <!-- Margins -->
         <item name="android:layout_marginTop">@dimen/_5</item>
         <item name="android:layout_marginBottom">@dimen/_5</item>
         <item name="android:layout_marginStart">@dimen/_5</item>
         <item name="android:layout_marginEnd">@dimen/_5</item>
+
+        <!-- Text appearance -->
         <item name="android:gravity">center_vertical</item>
         <item name="android:letterSpacing">0.025</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:textSize">@dimen/normal_text_size</item>
         <item name="android:textStyle">normal</item>
         <item name="android:drawablePadding">@dimen/_5</item>
+
+        <!-- Interaction -->
         <item name="android:background">@drawable/ic_button_negative_selector</item>
         <item name="android:clickable">true</item>
     </style>
 
+    <!--
+    Negative action button style (cancel/destructive actions)
+    Inherits from base button style and adds:
+    - Secondary text color
+    - Application font family
+    - Negative selector background (same as base)
+    -->
     <style name="style_text_button.negative" parent="style_text_button">
         <item name="android:fontFamily">@font/application_font_family</item>
         <item name="android:textColor">@color/color_text_secondary</item>
         <item name="android:background">@drawable/ic_button_negative_selector</item>
     </style>
 
+    <!--
+    Small negative action button variant
+    Modifications from parent negative style:
+    - Match parent width instead of wrap_content
+    - Wrap content height instead of fixed 42dp
+    - Additional end padding (10dp)
+    Typical use: Secondary actions in constrained spaces
+    -->
     <style name="style_text_button.negative.small" parent="style_text_button.negative">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -35,6 +74,16 @@
         <item name="android:background">@drawable/ic_button_negative_selector</item>
     </style>
 
+    <!--
+    Positive action button style (confirm/primary actions)
+    Modifications from base style:
+    - Bold text style
+    - Primary text color
+    - Additional vertical padding (5dp)
+    - End padding (10dp)
+    - Positive selector background
+    - Application font family
+    -->
     <style name="style_text_button.positive" parent="style_text_button">
         <item name="android:paddingTop">@dimen/_5</item>
         <item name="android:paddingBottom">@dimen/_5</item>
@@ -45,6 +94,14 @@
         <item name="android:background">@drawable/ic_button_positive_selector</item>
     </style>
 
+    <!--
+    Popup menu button style
+    Based on negative button style with modifications:
+    - Primary text color instead of secondary
+    - Uniform 5dp margin on all sides
+    - Application font family
+    Typical use: Menu items and popup dialog actions
+    -->
     <style name="style_text_button.popup" parent="style_text_button.negative">
         <item name="android:textColor">@color/color_text_primary</item>
         <item name="android:fontFamily">@font/application_font_family</item>

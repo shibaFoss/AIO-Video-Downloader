@@ -91,11 +91,11 @@ class MediaOptionsPopup(private val mediaPlayerActivity: MediaPlayerActivity?) {
             with(popupBuilder.getPopupView()) {
                 // Map of view IDs to their corresponding actions
                 mapOf(
-                    R.id.button_delete_file to { close(); deleteFile() },
-                    R.id.button_convert_to_audio to { close(); convertAudio() },
-                    R.id.button_open_in_another to { close(); openMediaFile() },
-                    R.id.button_media_info to { close(); openMediaFileInfo() },
-                    R.id.button_discover_video to { close(); discoverMore() }
+                    R.id.btn_delete_file to { close(); deleteFile() },
+                    R.id.btn_convert_to_audio to { close(); convertAudio() },
+                    R.id.btn_open_in_another to { close(); openMediaFile() },
+                    R.id.btn_media_info to { close(); openMediaFileInfo() },
+                    R.id.btn_discover_video to { close(); discoverMore() }
                 ).forEach { (id, action) ->
                     setClickListener(id) { action() }
                 }

@@ -1,4 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    FACEBOOK REELS INSTRUCTIONAL GUIDE DIALOG
+    =========================================
+    Purpose: Displays a step-by-step visual guide for using Facebook Reels features
+    Features:
+    - Card-based Material Design layout with elevation
+    - Header with bold title
+    - Scrollable content area for multiple steps
+    - Each step contains:
+      * Card-view image illustration
+      * Descriptive text explanation
+    - Confirmation button at bottom
+    Behavior:
+    - Presents 3 instructional steps
+    - Allows vertical scrolling if content exceeds screen height
+    - Provides visual feedback on button press
+    Accessibility:
+    - Images marked as unimportant for accessibility (should have content descriptions set programmatically)
+    - Text uses appropriate contrast ratios
+-->
+
+<!-- MAIN DIALOG CONTAINER -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,6 +29,15 @@
     android:layout_height="wrap_content"
     tools:ignore="UseAppTint,UseCompatTextViewDrawableXml">
 
+    <!--
+        PRIMARY CARD CONTAINER
+        Attributes:
+        - Uniform 5dp margins on sides
+        - 10dp top/bottom margins for breathing room
+        - Background color from theme
+        - 10dp corner radius for rounded look
+        - 5dp elevation for shadow depth
+    -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,17 +49,32 @@
         app:cardCornerRadius="@dimen/_10"
         app:cardElevation="@dimen/_5">
 
+        <!-- VERTICAL CONTENT ORGANIZATION -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <!--
+                DIALOG HEADER SECTION
+                - Contrasting surface color background
+                - Contains only the title text
+            -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/color_surface"
                 android:orientation="vertical">
 
+                <!--
+                    DIALOG TITLE
+                    Styling:
+                    - Centered, bold text
+                    - Single line with ellipsis if overflow
+                    - 10dp margin on all sides
+                    - Primary text color for visibility
+                    - Standard font family
+                -->
                 <TextView
                     android:id="@+id/txt_dialog_title"
                     android:layout_width="match_parent"
@@ -45,11 +91,17 @@
 
             </LinearLayout>
 
+            <!--
+                SCROLLABLE CONTENT AREA
+                - Takes remaining space (weight=1)
+                - Contains all instructional steps
+            -->
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1">
 
+                <!-- STEPS CONTAINER -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -59,8 +111,13 @@
                     android:orientation="vertical"
                     tools:ignore="UseCompoundDrawables">
 
-
-
+                    <!--
+                        STEP 1: IMAGE AND DESCRIPTION
+                        Layout:
+                        - Card with 5dp margin
+                        - 10dp corner radius
+                        - Background color matching dialog
+                    -->
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -68,6 +125,7 @@
                         app:cardBackgroundColor="@color/color_background"
                         app:cardCornerRadius="@dimen/_10">
 
+                        <!-- Step 1 visual illustration -->
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -77,17 +135,19 @@
 
                     </androidx.cardview.widget.CardView>
 
+                    <!-- Step 1 descriptive text -->
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
+                        android:layout_margin="@dimen/_5"
                         android:fontFamily="@font/application_font_family"
                         android:gravity="center"
-                        android:layout_margin="@dimen/_5"
                         android:text="@string/text_fb_how_to_guide_1"
                         android:textColor="@color/color_text_primary"
                         android:textSize="@dimen/message_text_size" />
 
+                    <!-- STEP 2: IMAGE AND DESCRIPTION -->
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -104,17 +164,19 @@
 
                     </androidx.cardview.widget.CardView>
 
+                    <!-- Step 2 descriptive text (smaller margin) -->
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
+                        android:layout_margin="@dimen/_2"
                         android:fontFamily="@font/application_font_family"
                         android:gravity="center"
-                        android:layout_margin="@dimen/_2"
                         android:text="@string/text_fb_how_to_guide_2"
                         android:textColor="@color/color_text_primary"
                         android:textSize="@dimen/message_text_size" />
 
+                    <!-- STEP 3: IMAGE AND DESCRIPTION -->
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -134,13 +196,14 @@
 
                     </androidx.cardview.widget.CardView>
 
+                    <!-- Step 3 descriptive text -->
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
+                        android:layout_margin="@dimen/_2"
                         android:fontFamily="@font/application_font_family"
                         android:gravity="center"
-                        android:layout_margin="@dimen/_2"
                         android:text="@string/text_fb_how_to_guide_3"
                         android:textColor="@color/color_text_primary"
                         android:textSize="@dimen/message_text_size" />
@@ -148,6 +211,15 @@
                 </LinearLayout>
             </ScrollView>
 
+            <!--
+                CONFIRMATION BUTTON
+                Attributes:
+                - 15dp side margins
+                - 8dp top/bottom margins
+                - Secondary button styling
+                - 2dp elevation
+                - Press state selector
+            -->
             <RelativeLayout
                 android:id="@+id/btn_dialog_positive_container"
                 android:layout_width="match_parent"
@@ -161,6 +233,15 @@
                 android:elevation="@dimen/_2"
                 tools:ignore="TouchTargetSizeCheck">
 
+                <!--
+                    BUTTON TEXT WITH ICON
+                    Features:
+                    - Centered in container
+                    - Checkmark icon start
+                    - 5dp padding between icon and text
+                    - Bold "OKAY" text
+                    - On-secondary color for contrast
+                -->
                 <TextView
                     android:id="@+id/btn_dialog_positive"
                     android:layout_width="wrap_content"

@@ -73,7 +73,7 @@ class ContentPolicyActivity : BaseActivity() {
 		// Load and display the content policy text in HTML format
 		try {
 			val contentHTML = fromHtmlStringToSpanned(getHtmlString(R.raw.msg_content_policy))
-			findViewById<TextView>(R.id.text_content_policy).text = contentHTML
+			findViewById<TextView>(R.id.txt_content_policy).text = contentHTML
 		} catch (error: Exception) {
 			error.printStackTrace()
 		}

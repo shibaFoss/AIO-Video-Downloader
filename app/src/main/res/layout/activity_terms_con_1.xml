@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Terms and Conditions Activity Layout
+    Displays scrollable legal terms in a card-based layout
+    Features a back-button action bar and content area
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,6 +14,13 @@
     tools:context="app.ui.others.information.ContentPolicyActivity"
     tools:ignore="UseCompatTextViewDrawableXml,UseAppTint">
 
+    <!--
+        Top Action Bar Card
+        - Fixed height: 50dp
+        - Horizontal margins: 15dp
+        - Rounded corners: 10dp radius
+        - Background matches app theme
+    -->
     <androidx.cardview.widget.CardView
         android:id="@+id/top_layout_actionbar_section"
         android:layout_width="match_parent"
@@ -25,6 +37,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <!--
+                Back Button Container
+                - Fixed width: 50dp (matches action bar height)
+                - Press state visual feedback
+                - Contains back arrow icon (30dp width)
+                - Secondary color tint
+            -->
             <RelativeLayout
                 android:id="@+id/btn_left_actionbar"
                 android:layout_width="@dimen/_50"
@@ -45,6 +64,14 @@
                     tools:ignore="ImageContrastCheck" />
             </RelativeLayout>
 
+            <!--
+                Title Text
+                - Takes remaining horizontal space
+                - Single line with ellipsis for overflow
+                - Bold title text size
+                - Centered vertically
+                - Uses app font family
+            -->
             <TextView
                 android:id="@+id/title_actionbar"
                 android:layout_width="match_parent"
@@ -65,6 +92,14 @@
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
+    <!--
+        Terms Content Card
+        - Takes remaining vertical space (layout_weight="1")
+        - Horizontal margins: 15dp
+        - Vertical margins: 8dp
+        - Rounded corners: 10dp radius
+        - Background matches action bar
+    -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -77,16 +112,33 @@
         app:cardBackgroundColor="@color/color_background"
         app:cardCornerRadius="@dimen/_10">
 
+        <!--
+            Scrollable Content Area
+            - Enables vertical scrolling for long text
+            - Contains the terms and conditions text
+        -->
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <!--
+                Terms Text View
+                - Auto-links web URLs
+                - Small text size for dense content
+                - Primary text color with secondary for links
+                - Internal margins: 10dp horizontal, 8dp vertical
+                - Uses app font family
+                - Initially empty (populated programmatically)
+            -->
             <TextView
                 android:id="@+id/txt_terms_policy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_8"
+                android:layout_marginStart="@dimen/_10"
+                android:layout_marginTop="@dimen/_8"
+                android:layout_marginEnd="@dimen/_10"
+                android:layout_marginBottom="@dimen/_8"
                 android:autoLink="web"
                 android:fontFamily="@font/application_font_family"
                 android:text="@string/text__"
@@ -95,7 +147,6 @@
                 android:textSize="@dimen/small_text_size" />
 
         </ScrollView>
-
     </androidx.cardview.widget.CardView>
 
 </LinearLayout>

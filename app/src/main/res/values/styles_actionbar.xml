@@ -1,44 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--
+    ACTIONBAR STYLE DEFINITIONS
+    This file contains all dimension and style definitions related to the application's ActionBar.
+    Includes styles for the root container, title text, and action buttons.
+    -->
 
+    <!--
+    ACTIONBAR DIMENSIONS
+    Standard measurements used throughout ActionBar components
+    -->
+    <!-- Standard height of the ActionBar (65dp) -->
     <dimen name="actionbar_height_size">@dimen/_65</dimen>
+    <!-- Standard width for ActionBar buttons (50dp) -->
     <dimen name="actionbar_button_width_size">@dimen/_50</dimen>
 
+    <!--
+    Root container style for the ActionBar.
+    Features:
+    - Fixed height matching actionbar_height_size
+    - Dialog-style background with elevation
+    - Rounded corners (10dp radius)
+    - Standard margins (10dp horizontal, 5dp top)
+    -->
     <style name="style_actionbar_root_layout_container">
+        <!-- Layout dimensions -->
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/actionbar_height_size</item>
+
+        <!-- Visual appearance -->
         <item name="android:background">@drawable/ic_dialog_bg</item>
-        <item name="android:orientation">vertical</item>
         <item name="android:elevation">@dimen/_5</item>
+        <item name="cardCornerRadius">@dimen/_10</item>
+
+        <!-- Positioning -->
+        <item name="android:orientation">vertical</item>
         <item name="android:layout_marginTop">@dimen/_5</item>
         <item name="android:layout_marginStart">@dimen/_10</item>
         <item name="android:layout_marginEnd">@dimen/_10</item>
-        <item name="cardCornerRadius">@dimen/_10</item>
     </style>
 
+    <!--
+    Style for ActionBar title text.
+    Appearance:
+    - Single line of primary color text
+    - Custom text size from dimensions
+    - Centered vertically
+    - Standard horizontal margins (10dp)
+    - Disabled all-caps transformation
+    -->
     <style name="style_actionbar_title">
+        <!-- Layout dimensions -->
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
+
+        <!-- Text constraints -->
         <item name="android:maxLines">1</item>
+        <item name="android:textAllCaps">false</item>
+
+        <!-- Text appearance -->
         <item name="android:textSize">@dimen/actionbar_text_size</item>
         <item name="android:textColor">@color/color_text_primary</item>
+
+        <!-- Positioning -->
         <item name="android:layout_centerVertical">true</item>
-        <item name="android:textAllCaps">false</item>
         <item name="android:layout_marginStart">@dimen/_10</item>
         <item name="android:layout_marginEnd">@dimen/_10</item>
     </style>
 
+    <!--
+    Base style for ActionBar buttons.
+    Features:
+    - Fixed width (50dp) and matches ActionBar height
+    - Negative selector background (press effect)
+    -->
     <style name="style_actionbar_button">
+        <!-- Layout dimensions -->
         <item name="android:layout_width">@dimen/actionbar_button_width_size</item>
         <item name="android:layout_height">match_parent</item>
+
+        <!-- Visual appearance -->
         <item name="android:background">@drawable/ic_button_negative_selector</item>
     </style>
 
+    <!--
+    Style for ImageView icons within ActionBar buttons.
+    Modifications from regular buttons:
+    - Fixed width (30dp) with wrap_content height
+    - Centered both horizontally and vertically
+    - Transparent background
+    - Secondary color tint
+    - Adjusts view bounds to maintain aspect ratio
+    -->
     <style name="style_actionbar_button.imageview">
+        <!-- Layout dimensions -->
         <item name="android:layout_width">@dimen/_30</item>
         <item name="android:layout_height">wrap_content</item>
+
+        <!-- Positioning -->
         <item name="android:layout_centerHorizontal">true</item>
         <item name="android:layout_centerVertical">true</item>
+
+        <!-- Image properties -->
         <item name="android:adjustViewBounds">true</item>
         <item name="android:background">@color/transparent</item>
         <item name="tint">@color/color_secondary</item>

@@ -106,10 +106,10 @@ class WebTabListAdapter(
 	) {
 		
 		var itemClickableContainer: View = layoutView.findViewById(R.id.browser_tab_info)
-		var browserFavicon: ImageView = layoutView.findViewById(R.id.browser_tab_favicon)
+		var browserFavicon: ImageView = layoutView.findViewById(R.id.btn_tab_favicon)
 		var browserTabTitle: TextView = layoutView.findViewById(R.id.browser_tab_title)
 		var browserTabUrl: TextView = layoutView.findViewById(R.id.browser_tab_url)
-		var browserTabCloseButton: View = layoutView.findViewById(R.id.browser_tab_close_button)
+		var browserTabCloseButton: View = layoutView.findViewById(R.id.btn_browser_tab_close)
 		
 		/**
 		 * Updates the tab view contents based on the given [WebView].

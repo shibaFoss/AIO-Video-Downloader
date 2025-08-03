@@ -46,9 +46,9 @@ class DownloadLocation(private val baseActivity: BaseActivity) {
 			
 			view.apply {
 				val privateBtn = findViewById<View>(R.id.button_app_private_folder)
-				val galleryBtn = findViewById<View>(R.id.button_system_gallery)
+				val galleryBtn = findViewById<View>(R.id.btn_system_gallery)
 				val applyBtn = findViewById<View>(R.id.btn_dialog_positive_container)
-				val privateRadio = findViewById<ImageView>(R.id.button_app_private_folder_radio)
+				val privateRadio = findViewById<ImageView>(R.id.btn_app_private_folder_radio)
 				val galleryRadio = findViewById<ImageView>(R.id.button_system_gallery_radio)
 				
 				updateRadioButtons(privateRadio, galleryRadio)

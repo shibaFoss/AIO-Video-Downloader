@@ -1,4 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!--
+    DIALOG LAYOUT FOR EXTRACTED VIDEO URLS
+    Purpose: Displays a list of grabbed video URLs in a styled dialog with action button
+    Features:
+    - Card-based design with elevation and rounded corners
+    - Title header section
+    - Scrollable list of URLs
+    - Primary action button
+    - Helper information text
+    Behavior:
+    - User can view all extracted video URLs
+    - Clicking the button dismisses the dialog
+    - Helper text directs user to next steps
+-->
+
+<!-- Root container applying custom dialog styling -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,6 +22,14 @@
     android:layout_height="wrap_content"
     tools:ignore="UseAppTint,UseCompatTextViewDrawableXml,VisualLintBounds">
 
+    <!--
+        CARD VIEW CONTAINER
+        Provides Material Design card appearance with:
+        - Margins for visual separation
+        - Background color
+        - Rounded corners (10dp radius)
+        - Elevation for shadow effect
+    -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,17 +41,28 @@
         app:cardCornerRadius="@dimen/_10"
         app:cardElevation="@dimen/_5">
 
+        <!-- Vertical linear layout for dialog content organization -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <!--
+                DIALOG HEADER SECTION
+                Contains the title with contrasting background
+            -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/color_surface"
                 android:orientation="vertical">
 
+                <!--
+                    DIALOG TITLE
+                    - Centered, bold text
+                    - Single line with ellipsis for long text
+                    - Primary text color for visibility
+                -->
                 <TextView
                     android:id="@+id/txt_dialog_title"
                     android:layout_width="match_parent"
@@ -45,6 +79,12 @@
 
             </LinearLayout>
 
+            <!--
+                VIDEO URL LIST VIEW
+                - Takes remaining vertical space (weight=1)
+                - No visible divider between items
+                - Scrollable when content exceeds available space
+            -->
             <ListView
                 android:id="@+id/list_extracted_video_urls"
                 android:layout_width="match_parent"
@@ -52,6 +92,12 @@
                 android:layout_weight="1"
                 android:divider="@color/transparent" />
 
+            <!--
+                PRIMARY ACTION BUTTON CONTAINER
+                - Has pressed state selector for visual feedback
+                - Elevated for depth
+                - Fixed margins for consistent placement
+            -->
             <RelativeLayout
                 android:id="@+id/btn_dialog_positive_container"
                 android:layout_width="match_parent"
@@ -66,6 +112,14 @@
                 android:elevation="@dimen/_2"
                 tools:ignore="TouchTargetSizeCheck">
 
+                <!--
+                    ACTION BUTTON (CLOSE)
+                    - Centered text with icon
+                    - Icon tinted for contrast
+                    - Bold text for emphasis
+                    - Single line with ellipsis
+                    - Uses secondary color scheme
+                -->
                 <TextView
                     android:id="@+id/btn_dialog_positive"
                     android:layout_width="wrap_content"
@@ -85,6 +139,14 @@
                     android:textStyle="bold" />
             </RelativeLayout>
 
+            <!--
+                HELPER INFORMATION TEXT
+                - Secondary importance text
+                - Smaller size than main content
+                - Centered below button
+                - Limited to 2 lines with ellipsis
+                - Uses secondary text color
+            -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

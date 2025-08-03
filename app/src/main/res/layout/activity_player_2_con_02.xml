@@ -1,10 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!--
+    Media Playback Controls Component (Merge Layout)
+    Reusable component containing player control buttons
+    Designed for both video and audio playback
+    Uses weight distribution for responsive button sizing
+-->
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="UseAppTint">
 
+    <!--
+        Main Control Bar Container
+        - Fixed height (50dp) with horizontal margins
+        - Horizontal layout with 5 equally weighted sections
+        - Baseline alignment disabled for precise control
+    -->
     <LinearLayout
-        android:id="@+id/button_container_main_playback"
+        android:id="@+id/btn_container_main_playback"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_50"
         android:layout_marginStart="@dimen/_10"
@@ -16,6 +27,12 @@
         android:orientation="horizontal"
         android:weightSum="5">
 
+        <!--
+            Lock Controls Button
+            - First in sequence (leftmost)
+            - Press state selector for visual feedback
+            - Contains lock icon with secondary color
+        -->
         <RelativeLayout
             android:id="@+id/btn_video_controllers_lock"
             android:layout_width="wrap_content"
@@ -38,6 +55,12 @@
                 tools:ignore="ImageContrastCheck" />
         </RelativeLayout>
 
+        <!--
+            Previous Track Button
+            - Second in sequence
+            - Press state selector
+            - Previous track icon with secondary color
+        -->
         <RelativeLayout
             android:id="@+id/btn_video_previous"
             android:layout_width="wrap_content"
@@ -60,6 +83,12 @@
                 tools:ignore="ImageContrastCheck" />
         </RelativeLayout>
 
+        <!--
+            Play/Pause Toggle Button (Primary Control)
+            - Center position for emphasis
+            - Larger click target (40dp width)
+            - Dynamic icon changes between play/pause states
+        -->
         <LinearLayout
             android:id="@+id/btn_video_play_pause_toggle"
             android:layout_width="wrap_content"
@@ -82,6 +111,12 @@
                 tools:ignore="ImageContrastCheck" />
         </LinearLayout>
 
+        <!--
+            Next Track Button
+            - Fourth in sequence
+            - Press state selector
+            - Next track icon with secondary color
+        -->
         <RelativeLayout
             android:id="@+id/btn_video_next"
             android:layout_width="wrap_content"
@@ -104,6 +139,12 @@
                 tools:ignore="ImageContrastCheck" />
         </RelativeLayout>
 
+        <!--
+            Share Button
+            - Rightmost control
+            - Press state selector
+            - Share icon with secondary color
+        -->
         <RelativeLayout
             android:id="@+id/btn_video_file_share"
             android:layout_width="wrap_content"

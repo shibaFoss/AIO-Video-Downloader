@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+BOOKMARK ITEM LAYOUT
+A single row item representing a saved bookmark in a list
+Structure:
+1. Root container with clickable background
+2. Favicon indicator (left side)
+3. Title and date section (middle)
+4. Open indicator (right side)
+5. URL display (bottom)
+-->
+
+<!-- Root layout for the bookmark item row -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/button_finish_download_row"
@@ -7,6 +19,13 @@
     android:clickable="true"
     tools:ignore="UseAppTint, UselessParent">
 
+    <!--
+    MAIN CONTENT CONTAINER
+    Wrapper with visual styling:
+    - Standard margins (15dp sides, 3dp top, 5dp bottom)
+    - Pressable background selector
+    - Slight elevation (1dp)
+    -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,6 +37,14 @@
         android:elevation="@dimen/_1"
         android:orientation="vertical">
 
+        <!--
+        FAVICON INDICATOR
+        Displays the website favicon or default icon:
+        - Fixed width (24dp)
+        - Centered vertically
+        - 10dp margins on sides
+        - Visible by default
+        -->
         <ImageView
             android:id="@+id/bookmark_url_favicon_indicator"
             android:layout_width="@dimen/_24"
@@ -31,6 +58,13 @@
             android:src="@drawable/ic_button_information"
             android:visibility="visible" />
 
+        <!--
+        TITLE AND DATE CONTAINER
+        Horizontal container for:
+        - Bookmark title (left)
+        - Creation date (middle)
+        - Open indicator (right)
+        -->
         <RelativeLayout
             android:id="@+id/bookmark_url_title_container"
             android:layout_width="match_parent"
@@ -39,6 +73,13 @@
             android:layout_marginBottom="@dimen/_0"
             android:layout_toEndOf="@+id/bookmark_url_favicon_indicator">
 
+            <!--
+            BOOKMARK TITLE
+            - Bold text in message text size
+            - Single line with ellipsis
+            - Takes available space between favicon and date
+            - Uses on_surface color for visibility
+            -->
             <TextView
                 android:id="@+id/bookmark_url_title"
                 android:layout_width="match_parent"
@@ -53,6 +94,13 @@
                 android:textStyle="bold"
                 tools:ignore="TextContrastCheck" />
 
+            <!--
+            BOOKMARK DATE
+            - Smaller text than title
+            - Right-aligned before open indicator
+            - Single line
+            - Uses on_surface color
+            -->
             <TextView
                 android:id="@+id/bookmark_url_date"
                 android:layout_width="wrap_content"
@@ -68,6 +116,13 @@
                 android:textColor="@color/color_on_surface"
                 android:textSize="@dimen/small_text_size" />
 
+            <!--
+            OPEN INDICATOR
+            Small arrow icon indicating this is tappable:
+            - Right-aligned in container
+            - Secondary color tint
+            - 10dp end margin
+            -->
             <ImageView
                 android:id="@+id/bookmark_url_open_indicator"
                 android:layout_width="wrap_content"
@@ -83,6 +138,14 @@
                 tools:ignore="ImageContrastCheck" />
         </RelativeLayout>
 
+        <!--
+        BOOKMARK URL
+        Displayed below the title/date section:
+        - Smaller, hint-colored text
+        - Single line with ellipsis
+        - Aligned with title (right of favicon)
+        - 5dp bottom margin
+        -->
         <TextView
             android:id="@+id/bookmark_url"
             android:layout_width="match_parent"
@@ -99,5 +162,4 @@
             android:textSize="@dimen/smaller_text_size"
             tools:ignore="TextContrastCheck" />
     </RelativeLayout>
-
 </RelativeLayout>

@@ -1,4 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!--
+    Splash Screen Layout
+    Displays app branding, loading animation, and version information
+    Uses RelativeLayout as root for flexible element positioning
+-->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,7 +10,11 @@
     android:layout_height="match_parent"
     android:background="@color/color_surface">
 
-    <!-- ========================== Center Content ========================== -->
+    <!--
+        Main content container centered vertically and horizontally
+        Contains app logo, name, and loading animation
+        Uses vertical LinearLayout for sequential element arrangement
+    -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,7 +22,13 @@
         android:orientation="vertical"
         tools:ignore="UselessParent">
 
-        <!-- App logo image (splash icon) -->
+        <!--
+            App Logo Image
+            - Fixed width (150dp) with aspect-ratio preserved
+            - Centered horizontally with top/bottom margins
+            - Has subtle elevation for depth
+            - Accessibility ignored (decorative image)
+        -->
         <ImageView
             android:id="@+id/img_opening_splash"
             android:layout_width="@dimen/_150"
@@ -27,7 +41,13 @@
             android:importantForAccessibility="no"
             android:src="@drawable/ic_launcher_logo_v4" />
 
-        <!-- App name text below the logo -->
+        <!--
+            App Name Text
+            - Centered below the logo
+            - Uses application font family with bold style
+            - Extra large text size for prominence
+            - Small padding for visual comfort
+        -->
         <TextView
             android:id="@+id/txt_opening_subtitle"
             android:layout_width="wrap_content"
@@ -45,7 +65,14 @@
             android:textSize="@dimen/extra_large_text_size"
             android:textStyle="bold" />
 
-        <!-- Loading animation (Lottie) -->
+        <!--
+            Loading Animation (Lottie)
+            - Circular progress animation
+            - Auto-playing, looping animation
+            - Hardware accelerated for smooth performance
+            - Negative bottom margin for visual overlap
+            - Uses merge paths for better rendering
+        -->
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/img_progress_circle"
             android:layout_width="@dimen/_150"
@@ -63,15 +90,22 @@
             app:lottie_rawRes="@raw/anim_color_circle_loading"
             tools:ignore="ImageContrastCheck,VisualLintBounds" />
 
-        <!-- Spacer for visual separation -->
+        <!--
+            Spacer for Visual Separation
+            - Creates breathing room between center content and footer
+            - Fixed height of 50dp
+        -->
         <Space
             android:layout_width="match_parent"
             android:layout_height="@dimen/_50" />
     </LinearLayout>
 
-    <!-- ========================== Footer Content ========================== -->
-
-    <!-- App credit information shown above version -->
+    <!--
+        Credit Information Text
+        - Positioned above version text
+        - Centered horizontally
+        - Normal/small text size for secondary information
+    -->
     <TextView
         android:id="@+id/txt_credit_info"
         android:layout_width="wrap_content"
@@ -83,7 +117,13 @@
         android:textColor="@color/color_text_primary"
         android:textSize="@dimen/normal_text_size_small" />
 
-    <!-- App version text displayed at bottom of the screen -->
+    <!--
+        Version Information Text
+        - Fixed at screen bottom with margin
+        - Centered horizontally
+        - Small text size for discreet display
+        - Initially empty (populated programmatically)
+    -->
     <TextView
         android:id="@+id/txt_version_info"
         android:layout_width="wrap_content"

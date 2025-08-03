@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+BOOKMARKS ACTIVITY LAYOUT
+Root layout for displaying and managing user bookmarks
+Structure:
+1. Top ActionBar section
+2. Empty state indicator (shown when no bookmarks)
+3. ListView for displaying bookmarks
+4. Bottom "Load More" button section
+-->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,6 +18,14 @@
     tools:context="app.ui.main.fragments.browser.activities.BookmarksActivity"
     tools:ignore="UseCompatTextViewDrawableXml,UseAppTint,VisualLintBounds">
 
+    <!--
+    TOP ACTION BAR SECTION
+    CardView container with back button, title, and clear button
+    Features:
+    - Fixed height of 50dp
+    - Rounded corners (10dp radius)
+    - Standard margins (15dp horizontal, 10dp top)
+    -->
     <androidx.cardview.widget.CardView
         android:id="@+id/top_layout_actionbar_section"
         android:layout_width="match_parent"
@@ -26,6 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <!-- Back button (left side) -->
             <RelativeLayout
                 android:id="@+id/btn_left_actionbar"
                 android:layout_width="@dimen/_50"
@@ -34,6 +52,7 @@
                 android:clickable="true"
                 tools:ignore="SpeakableTextPresentCheck">
 
+                <!-- Back arrow icon -->
                 <ImageView
                     android:id="@+id/btn_left_actionbar_img"
                     android:layout_width="@dimen/_30"
@@ -46,6 +65,7 @@
                     tools:ignore="ImageContrastCheck" />
             </RelativeLayout>
 
+            <!-- Center title text -->
             <TextView
                 android:id="@+id/title_actionbar"
                 android:layout_width="match_parent"
@@ -64,6 +84,7 @@
                 android:textSize="@dimen/title_text_size"
                 android:textStyle="bold" />
 
+            <!-- Clear button (right side) -->
             <RelativeLayout
                 android:id="@+id/btn_right_actionbar"
                 android:layout_width="@dimen/_50"
@@ -73,6 +94,7 @@
                 android:clickable="true"
                 tools:ignore="SpeakableTextPresentCheck">
 
+                <!-- Clear/X icon -->
                 <ImageView
                     android:id="@+id/btn_right_actionbar_img"
                     android:layout_width="@dimen/_30"
@@ -88,6 +110,15 @@
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
+    <!--
+    EMPTY STATE INDICATOR
+    Shown when there are no bookmarks available
+    Features:
+    - Centered in parent
+    - Empty box illustration
+    - Informational text
+    - Rounded corners (10dp radius)
+    -->
     <androidx.cardview.widget.CardView
         android:id="@+id/empty_bookmarks_indicator"
         android:layout_width="match_parent"
@@ -108,6 +139,7 @@
             android:orientation="vertical"
             tools:ignore="UseCompoundDrawables">
 
+            <!-- Empty box illustration -->
             <ImageView
                 android:id="@+id/img_empty_box"
                 android:layout_width="wrap_content"
@@ -119,6 +151,7 @@
                 android:importantForAccessibility="no"
                 android:src="@drawable/image_empty_box" />
 
+            <!-- Empty state message -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -136,6 +169,14 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
+    <!--
+    BOOKMARKS LIST VIEW
+    Primary content area for displaying saved bookmarks
+    Features:
+    - Takes up remaining space between action bar and bottom section
+    - 8dp margin top/bottom
+    - Transparent divider between items
+    -->
     <ListView
         android:id="@+id/list_bookmarks"
         android:layout_width="match_parent"
@@ -149,6 +190,15 @@
         android:divider="@color/transparent"
         android:visibility="visible" />
 
+    <!--
+    BOTTOM SECTION
+    Contains the "Load More" action button
+    Features:
+    - Fixed to bottom of screen
+    - Secondary colored button with plus icon
+    - Standard margins (15dp horizontal, 10dp bottom)
+    - Elevation for depth
+    -->
     <LinearLayout
         android:id="@+id/bottom_section"
         android:layout_width="match_parent"
@@ -156,6 +206,7 @@
         android:layout_alignParentBottom="true"
         android:orientation="vertical">
 
+        <!-- Load More button -->
         <RelativeLayout
             android:id="@+id/btn_load_more_bookmarks"
             android:layout_width="match_parent"
@@ -169,6 +220,7 @@
             android:elevation="@dimen/_2"
             tools:ignore="UselessParent,TouchTargetSizeCheck">
 
+            <!-- Button label with plus icon -->
             <TextView
                 android:id="@+id/btn_dialog_positive"
                 android:layout_width="wrap_content"

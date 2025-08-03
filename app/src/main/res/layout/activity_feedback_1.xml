@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+USER FEEDBACK ACTIVITY LAYOUT
+Allows users to submit feedback about the app with:
+1. Action bar with back and send buttons
+2. Informational message about feedback
+3. Common issue checkboxes
+4. Email input field
+5. Detailed message input
+-->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,6 +19,15 @@
     tools:context="app.ui.others.information.UserFeedbackActivity"
     tools:ignore="UseCompatTextViewDrawableXml,UseAppTint">
 
+    <!--
+    ACTION BAR SECTION
+    Contains back button, title, and send button
+    Features:
+    - Fixed height of 50dp
+    - Rounded corners (10dp radius)
+    - Standard margins (15dp sides, 10dp top, 5dp bottom)
+    - Background color matching app theme
+    -->
     <androidx.cardview.widget.CardView
         android:id="@+id/top_layout_actionbar_section"
         android:layout_width="match_parent"
@@ -25,6 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <!-- Back button (left side) -->
             <RelativeLayout
                 android:id="@+id/btn_left_actionbar"
                 android:layout_width="@dimen/_50"
@@ -45,6 +65,7 @@
                     tools:ignore="ImageContrastCheck" />
             </RelativeLayout>
 
+            <!-- Activity title -->
             <TextView
                 android:id="@+id/title_actionbar"
                 android:layout_width="match_parent"
@@ -63,6 +84,7 @@
                 android:textSize="@dimen/title_text_size"
                 android:textStyle="bold" />
 
+            <!-- Send feedback button (right side) -->
             <RelativeLayout
                 android:id="@+id/btn_right_actionbar"
                 android:layout_width="@dimen/_50"
@@ -83,10 +105,14 @@
                     android:tint="@color/color_secondary"
                     tools:ignore="ImageContrastCheck" />
             </RelativeLayout>
-
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
+    <!--
+    SCROLLABLE CONTENT AREA
+    Takes remaining vertical space (layout_weight="1")
+    Contains all feedback input components
+    -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -97,6 +123,15 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <!--
+            FEEDBACK MESSAGE CARD
+            Displays informational text about feedback process
+            Features:
+            - Standard margins (15dp sides, 5dp top, 10dp bottom)
+            - Rounded corners (10dp radius)
+            - 10dp inner padding
+            - Centered text with web links
+            -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -126,10 +161,19 @@
                         android:text="@string/text_feedback_message"
                         android:textColor="@color/color_text_primary"
                         android:textSize="@dimen/message_text_size" />
-
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+            <!--
+            COMMON ISSUES CARD
+            Radio-style checkboxes for common problems
+            Features:
+            - Standard margins (15dp sides, 10dp bottom)
+            - Rounded corners (10dp radius)
+            - 10dp inner padding
+            - Custom-styled checkboxes with radio button appearance
+            - Fixed height (36dp) for each option
+            -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -150,6 +194,7 @@
                     android:layout_marginBottom="@dimen/_10"
                     android:orientation="vertical">
 
+                    <!-- Custom-styled checkboxes for common issues -->
                     <CheckBox
                         android:id="@+id/checkbox_no_sound"
                         android:layout_width="match_parent"
@@ -167,6 +212,7 @@
                         android:textSize="@dimen/normal_text_size"
                         tools:ignore="TouchTargetSizeCheck,VisualLintButtonSize" />
 
+                    <!-- Additional checkboxes follow same pattern -->
                     <CheckBox
                         android:id="@+id/checkbox_incomplete_video"
                         android:layout_width="match_parent"
@@ -251,10 +297,18 @@
                         android:textColor="@color/color_text_primary"
                         android:textSize="@dimen/normal_text_size"
                         tools:ignore="TouchTargetSizeCheck,VisualLintButtonSize" />
-
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+            <!--
+            USER INPUT CARD
+            Contains email and detailed message fields
+            Features:
+            - Standard margins (15dp sides, 10dp bottom)
+            - Rounded corners (10dp radius)
+            - 5dp inner padding
+            - Styled input fields with rounded backgrounds
+            -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -275,6 +329,7 @@
                     android:layout_marginBottom="@dimen/_5"
                     android:orientation="vertical">
 
+                    <!-- Email input field -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -301,9 +356,9 @@
                             android:textSize="@dimen/normal_text_size"
                             android:textStyle="normal"
                             tools:ignore="TextContrastCheck,TouchTargetSizeCheck,VisualLintTextFieldSize" />
-
                     </LinearLayout>
 
+                    <!-- Detailed message input -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -332,7 +387,6 @@
                             android:textStyle="normal"
                             tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
                     </LinearLayout>
-
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
         </LinearLayout>

@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    VIDEO SOURCE SELECTION DIALOG
+    ============================
+    Purpose: Allows users to select video sources/download options from a grid of favicons
+    Features:
+    - Card-based Material Design layout with elevation
+    - Header with bold title
+    - Scrollable grid of favicon options (4-column layout)
+    - Confirmation button at bottom
+    Behavior:
+    - Displays available video sources as favicon grid
+    - Allows selection of multiple sources
+    - Confirms selection with "Okay" button
+    Accessibility:
+    - Uses standard font family for readability
+    - Proper text contrast ratios
+    - Grid layout for easy navigation
+-->
+
+<!-- MAIN DIALOG CONTAINER -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,6 +27,15 @@
     android:layout_height="wrap_content"
     tools:ignore="UseAppTint,UseCompatTextViewDrawableXml">
 
+    <!--
+        PRIMARY CARD CONTAINER
+        Attributes:
+        - 5dp side margins for visual separation
+        - 10dp top/bottom margins
+        - Background color from theme
+        - 10dp corner radius for rounded corners
+        - 5dp elevation for shadow effect
+    -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,17 +47,32 @@
         app:cardCornerRadius="@dimen/_10"
         app:cardElevation="@dimen/_5">
 
+        <!-- VERTICAL CONTENT ORGANIZATION -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <!--
+                DIALOG HEADER SECTION
+                - Contrasting surface color background
+                - Contains only the title text
+            -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/color_surface"
                 android:orientation="vertical">
 
+                <!--
+                    DIALOG TITLE
+                    Styling:
+                    - Centered, bold text
+                    - Single line with ellipsis if overflow
+                    - 10dp margin on all sides
+                    - Primary text color for visibility
+                    - Standard font family
+                -->
                 <TextView
                     android:id="@+id/txt_dialog_title"
                     android:layout_width="match_parent"
@@ -42,14 +86,19 @@
                     android:textColor="@color/color_text_primary"
                     android:textSize="@dimen/normal_text_size"
                     android:textStyle="bold" />
-
             </LinearLayout>
 
+            <!--
+                SCROLLABLE CONTENT AREA
+                - Takes remaining space (weight=1)
+                - Contains the favicon selection grid
+            -->
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1">
 
+                <!-- GRID CONTAINER -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -58,6 +107,14 @@
                     android:layout_marginEnd="@dimen/_10"
                     android:orientation="vertical">
 
+                    <!--
+                        FAVICON SELECTION GRID
+                        Layout:
+                        - 4-column grid layout
+                        - 5dp padding around items
+                        - Disables clipping to allow padding
+                        - Uses custom item layout (frag_home_1_main_1_fav_item_1)
+                    -->
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/favicons_recycler_list"
                         android:layout_width="match_parent"
@@ -70,6 +127,16 @@
                 </LinearLayout>
             </ScrollView>
 
+            <!--
+                CONFIRMATION BUTTON
+                Attributes:
+                - 15dp side margins
+                - 5dp top margin
+                - 8dp bottom margin
+                - Secondary button styling
+                - 2dp elevation
+                - Press state selector
+            -->
             <RelativeLayout
                 android:id="@+id/btn_dialog_positive_container"
                 android:layout_width="match_parent"
@@ -84,6 +151,16 @@
                 android:elevation="@dimen/_2"
                 tools:ignore="TouchTargetSizeCheck">
 
+                <!--
+                    BUTTON TEXT WITH ICON
+                    Features:
+                    - Centered in container
+                    - Checkmark icon start
+                    - 5dp padding between icon and text
+                    - Bold "OKAY" text
+                    - On-secondary color for contrast
+                    - Single line with ellipsis
+                -->
                 <TextView
                     android:id="@+id/btn_dialog_positive"
                     android:layout_width="wrap_content"

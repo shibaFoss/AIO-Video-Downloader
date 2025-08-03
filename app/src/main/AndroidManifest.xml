@@ -173,25 +173,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
-
-        <!-- =============== METADATA =============== -->
-        <!-- Back4App (Parse server) configuration -->
-        <meta-data
-            android:name="com.parse.SERVER_URL"
-            android:value="@string/text_back4app_server_url" />
-
-        <meta-data
-            android:name="com.parse.APPLICATION_ID"
-            android:value="@string/text_back4app_app_id" />
-
-        <meta-data
-            android:name="com.parse.CLIENT_KEY"
-            android:value="@string/text_back4app_client_key" />
-
-        <!-- Google AdMob configuration -->
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="@string/admob_application_id" />
     </application>
 
     <!-- =============== QUERIES =============== -->

@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Transparent Overlay Layout
+    Simple full-screen transparent view used as:
+    - Touch interceptor layer
+    - Dimming overlay
+    - Visual effect background
+    - Base container for other overlays
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <!--
+        Full-Screen Transparent View
+        - Matches parent dimensions exactly
+        - Uses transparent color (@color/transparent)
+        - Can serve multiple purposes:
+          1. Blocks touch events to underlying views
+          2. Provides dimming effect when semi-transparent
+          3. Serves as container for other overlay elements
+          4. Creates visual separation layer
+    -->
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"

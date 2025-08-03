@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.viewpager2.widget.ViewPager2 xmlns:android="http://schemas.android.com/apk/res/android"
+<!--
+    ViewPager2 layout for swipeable fragments/screens
+    Part of a larger layout that includes bottom navigation (referenced via layout_above)
+    Typically used with FragmentStateAdapter to manage multiple fragments
+-->
+<androidx.viewpager2.widget.ViewPager2
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/fragment_viewpager"
     android:layout_width="match_parent"
     android:layout_height="match_parent"

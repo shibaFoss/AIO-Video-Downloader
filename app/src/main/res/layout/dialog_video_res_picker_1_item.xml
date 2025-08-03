@@ -37,7 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_5"
-            android:layout_marginTop="@dimen/_2"
+            android:layout_marginTop="@dimen/_0"
             android:layout_marginEnd="@dimen/_5"
             android:layout_marginBottom="@dimen/_8"
             android:alpha="0.5"
@@ -46,7 +46,7 @@
             android:maxLines="1"
             android:text="@string/text__"
             android:textColor="@color/color_text_secondary"
-            android:textSize="@dimen/smaller_text_size"
+            android:textSize="@dimen/message_text_size"
             tools:ignore="TextContrastCheck" />
     </LinearLayout>
 </RelativeLayout>

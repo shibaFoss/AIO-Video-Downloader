@@ -86,7 +86,7 @@ class SettingsOnClickLogic(private val settingsFragment: SettingsFragment) {
 					R.string.text_current_homepage, aioSettings.browserDefaultHomepage
 				)
 				
-				dialogLayout.findViewById<TextView>(R.id.text_current_homepage).text =
+				dialogLayout.findViewById<TextView>(R.id.txt_current_homepage).text =
 					currentBrowserHomepageString
 				
 				val editTextURL = dialogLayout.findViewById<EditText>(R.id.edit_field_url)

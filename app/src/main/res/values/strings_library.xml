@@ -48,7 +48,7 @@
     <string name="text_file_url_has_been_copied">URL has been copied to clipboard.</string>
     <string name="text_cant_rename_on_active_download">You cannot rename the file while the download is in progress. <b>Please pause it first.</b></string>
     <string name="title_delete_file">Delete File</string>
-    <string name="text_delete_file">Delete files</string>
+    <string name="text_delete_file">Delete file</string>
     <string name="text_are_you_sure_about_delete">Are you sure you want to permanently delete this file? <b>Once deleted, it cannot be undone.</b></string>
     <string name="text_cant_delete_on_active_download">You cannot delete the file while the download is in progress. <b>Please pause it first.</b></string>
     <string name="title_clear_from_list">Clear Fom List</string>
@@ -339,9 +339,9 @@
     <string name="title_tasks">Tasks</string>
     <string name="title_build_version">Build Version:</string>
     <string name="title_version_number">Version Number:</string>
-    <string name="text_not_visible_in_system_gallery">Not visible in system gallery, secure and private.</string>
+    <string name="text_not_visible_in_system_gallery">Not visible in system gallery, secure and private.\n<b>Default folder:</b> <u>/data/app/com.aio/files/</u></string>
     <string name="title_system_gallery">System Gallery</string>
-    <string name="text_visible_in_system_gallery">Visible in system gallery, easy but not private.</string>
+    <string name="text_visible_in_system_gallery">Visible in system gallery, easy but not private.\n<b>Default folder:</b> <u>/Downloads/AIO Downloads/</u></string>
     <string name="text_changes_will_apply_on_next_download">Changes will apply to your next download.</string>
     <string name="title_apply_changes">Apply Changes</string>
 

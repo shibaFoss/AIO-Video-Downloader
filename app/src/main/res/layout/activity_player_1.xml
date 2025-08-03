@@ -1,4 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!--
+    Media Player Activity Layout
+    Full-screen video/audio player with custom controls
+    Uses RelativeLayout as root for layered components
+    Black background for optimal media viewing
+-->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,6 +14,15 @@
     tools:context="app.ui.others.media_player.MediaPlayerActivity"
     tools:ignore="UseAppTint">
 
+    <!--
+        Primary Video Player View (ExoPlayer)
+        - Full-screen surface for video playback
+        - Custom layout for controls (@layout/activity_player_3_con_layout_1)
+        - Fit resize mode maintains aspect ratio
+        - Black shutter background prevents flickering
+        - SurfaceView for better performance
+        - Controller disabled (using custom controls)
+    -->
     <androidx.media3.ui.PlayerView
         android:id="@+id/video_player_view"
         android:layout_width="match_parent"
@@ -22,6 +36,12 @@
         app:surface_type="surface_view"
         app:use_controller="false" />
 
+    <!--
+        Audio Album Art Placeholder
+        - Shown for audio-only playback (visibility="gone" by default)
+        - Full-screen image with black fallback
+        - Accessibility ignored (decorative)
+    -->
     <ImageView
         android:id="@+id/img_audio_album_art"
         android:layout_width="match_parent"
@@ -31,12 +51,22 @@
         android:src="@drawable/image_audio_thumb"
         android:visibility="gone" />
 
+    <!--
+        Night Mode Overlay
+        - Semi-transparent dark layer for reduced brightness
+        - Covers entire screen when active
+    -->
     <View
         android:id="@+id/night_mode_invisible_area"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/transparent_dark" />
 
+    <!--
+        Invisible Touch Area
+        - Captures touch events for showing/hiding controls
+        - Full-screen clickable surface
+    -->
     <View
         android:id="@+id/invisible_touch_area"
         android:layout_width="match_parent"
@@ -44,6 +74,12 @@
         android:clickable="true"
         tools:ignore="SpeakableTextPresentCheck" />
 
+    <!--
+        Quick Info Toast Container
+        - Centered message display (e.g., "Zoomed In")
+        - Rounded transparent background
+        - Initially hidden (visibility="gone")
+    -->
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -66,11 +102,21 @@
             android:visibility="gone" />
     </RelativeLayout>
 
+    <!--
+        Player Controls Container
+        - Houses action bar and bottom controls
+        - Layered above video but below touch overlay
+    -->
     <RelativeLayout
         android:id="@+id/container_player_controller"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <!--
+            Device Cutout Padding
+            - Accounts for notch/status bar area
+            - Height determined programmatically
+        -->
         <View
             android:id="@+id/device_cutout_padding_view"
             android:layout_width="match_parent"
@@ -78,6 +124,11 @@
             android:layout_alignParentTop="true"
             android:background="@color/pure_black" />
 
+        <!--
+            Action Bar (Included Layout)
+            - Contains back button, title, and other actions
+            - Standard action bar height
+        -->
         <include
             android:id="@+id/action_bar"
             layout="@layout/activity_player_1_ab"
@@ -85,6 +136,12 @@
             android:layout_height="@dimen/actionbar_height_size"
             android:layout_below="@id/device_cutout_padding_view" />
 
+        <!--
+            Bottom Controls Container (CardView)
+            - Elevated card with rounded corners
+            - Contains two included control layouts
+            - Positioned above bottom margin (30dp)
+        -->
         <androidx.cardview.widget.CardView
             android:id="@+id/player_controller_container"
             android:layout_width="match_parent"
@@ -105,14 +162,23 @@
                 android:layout_marginBottom="@dimen/_8"
                 android:orientation="vertical">
 
+                <!-- Included: Top controls (playback, timeline etc.) -->
                 <include layout="@layout/activity_player_2_con_01" />
 
+                <!-- Included: Bottom controls (quality, speed etc.) -->
                 <include layout="@layout/activity_player_2_con_02" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </RelativeLayout>
 
+    <!--
+        Unlock Overlay Button
+        - Centered unlock button (hidden by default)
+        - Circular button with pressed state
+        - Secondary color tint
+        - Positioned slightly above bottom controls
+    -->
     <ImageView
         android:id="@+id/btn_video_unlock_overlay"
         android:layout_width="@dimen/_50"

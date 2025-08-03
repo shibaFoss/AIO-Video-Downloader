@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    LANGUAGE SELECTION DIALOG
+    ========================
+    Purpose: Allows users to select application language from available options
+    Features:
+    - Card-based Material Design layout with elevation
+    - Scrollable list of language options (as radio buttons)
+    - Apply changes button with settings icon
+    - Information text about app restart requirement
+    Behavior:
+    - Presents language options in RadioGroup
+    - Confirms selection with "Apply Changes" button
+    - Informs user that restart will be required
+    Accessibility:
+    - Uses standard font family for readability
+    - Proper text contrast ratios
+    - Clear visual hierarchy
+-->
+
+<!-- MAIN DIALOG CONTAINER -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,6 +27,15 @@
     android:layout_height="wrap_content"
     tools:ignore="UseAppTint,UseCompatTextViewDrawableXml">
 
+    <!--
+        PRIMARY CARD CONTAINER
+        Attributes:
+        - 5dp horizontal margins for visual separation
+        - 10dp vertical margins
+        - Background color from theme
+        - 10dp corner radius for rounded corners
+        - 5dp elevation for shadow effect
+    -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,22 +47,38 @@
         app:cardCornerRadius="@dimen/_10"
         app:cardElevation="@dimen/_5">
 
+        <!-- VERTICAL CONTENT ORGANIZATION -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <!--
+                LANGUAGE OPTIONS SCROLL AREA
+                - Takes remaining space (weight=1)
+                - Contains the radio group for language selection
+            -->
             <ScrollView
                 android:id="@+id/middle_languages_section"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1">
 
+                <!-- LANGUAGE OPTIONS CONTAINER -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
+                    <!--
+                        LANGUAGE RADIO GROUP
+                        Attributes:
+                        - 15dp side margins
+                        - 10dp top margin
+                        - 5dp bottom margin
+                        - Negative button selector for visual feedback
+                        - Vertical orientation for list
+                    -->
                     <RadioGroup
                         android:id="@+id/language_options_container"
                         android:layout_width="match_parent"
@@ -48,6 +93,15 @@
                 </LinearLayout>
             </ScrollView>
 
+            <!--
+                APPLY BUTTON CONTAINER
+                Attributes:
+                - 15dp horizontal margins
+                - 5dp vertical margins
+                - Secondary button styling
+                - 2dp elevation
+                - Press state selector
+            -->
             <RelativeLayout
                 android:id="@+id/btn_dialog_positive_container"
                 android:layout_width="match_parent"
@@ -61,6 +115,15 @@
                 android:elevation="@dimen/_2"
                 tools:ignore="TouchTargetSizeCheck">
 
+                <!--
+                    APPLY CHANGES BUTTON
+                    Features:
+                    - Centered text with settings icon
+                    - 5dp icon padding
+                    - Bold text
+                    - On-secondary text color
+                    - Standard font family
+                -->
                 <TextView
                     android:id="@+id/btn_dialog_positive"
                     android:layout_width="wrap_content"
@@ -78,6 +141,17 @@
                     android:textStyle="bold" />
             </RelativeLayout>
 
+            <!--
+                RESTART NOTIFICATION TEXT
+                Attributes:
+                - Centered horizontally
+                - 15dp side margins
+                - 2dp top margin
+                - 8dp bottom margin
+                - Secondary text color
+                - Small text size
+                - Informs user about restart requirement
+            -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

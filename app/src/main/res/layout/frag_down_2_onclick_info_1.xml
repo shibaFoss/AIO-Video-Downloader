@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    LAYOUT: Download Information Dialog
+    PURPOSE: Displays detailed information about a download task
+    FEATURES:
+    - Title header with surface background
+    - Scrollable content area for detailed information
+    - Confirmation button at bottom
+    STYLE: Inherits from @style/style_dialog
+    BEHAVIOR:
+    - Shows non-editable information text
+    - Allows text selection for copying details
+    - Scrollable when content exceeds available space
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,6 +20,13 @@
     android:layout_height="wrap_content"
     tools:ignore="UseAppTint,UseCompatTextViewDrawableXml,UselessParent">
 
+    <!--
+        PRIMARY CONTAINER: Material CardView
+        - 5dp side margins, 10dp top/bottom margins
+        - Background color from @color/color_background
+        - 10dp corner radius for rounded corners
+        - 5dp elevation for shadow effect
+    -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,11 +38,19 @@
         app:cardCornerRadius="@dimen/_10"
         app:cardElevation="@dimen/_5">
 
+        <!-- Main content layout -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <!--
+                TITLE SECTION
+                - Surface color background
+                - Centered bold text
+                - 10dp margin all sides
+                - Single line with ellipsis for long titles
+            -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -42,9 +70,14 @@
                     android:textColor="@color/color_text_primary"
                     android:textSize="@dimen/normal_text_size"
                     android:textStyle="bold" />
-
             </LinearLayout>
 
+            <!--
+                CONTENT SCROLLVIEW
+                - Takes remaining space (layout_weight=1)
+                - 10dp side margins, 10dp top, 8dp bottom
+                - Contains selectable text view for information display
+            -->
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -54,6 +87,14 @@
                 android:layout_marginBottom="@dimen/_8"
                 android:layout_weight="1">
 
+                <!--
+                    INFORMATION TEXTVIEW
+                    - Inherits style from @style/style_dialog.message
+                    - 10dp side margins
+                    - Text is selectable for copying
+                    - Left-aligned text
+                    - Message text size from dimens
+                -->
                 <TextView
                     android:id="@+id/txt_dialog_message"
                     style="@style/style_dialog.message"
@@ -65,9 +106,14 @@
                     android:text="@string/title_message_goes_here"
                     android:textIsSelectable="true"
                     android:textSize="@dimen/message_text_size" />
-
             </ScrollView>
 
+            <!--
+                BUTTON CONTAINER
+                - Horizontal layout for action buttons
+                - Baseline aligned for consistent button heights
+                - 5dp bottom margin
+            -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -75,6 +121,14 @@
                 android:baselineAligned="true"
                 android:orientation="horizontal">
 
+                <!--
+                    OKAY BUTTON
+                    - Secondary button selector background
+                    - 15dp side margins, 5dp vertical
+                    - Equal weight distribution (for multiple buttons)
+                    - 2dp elevation
+                    - Contains checkmark icon and text
+                -->
                 <RelativeLayout
                     android:id="@+id/btn_dialog_positive_container"
                     android:layout_width="0dp"

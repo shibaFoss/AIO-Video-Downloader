@@ -144,7 +144,8 @@ open class FinishedTasksFragment : BaseFragment(), FinishedTasksClickEvents, AIO
 	 */
 	private fun toggleOpenActiveTasksButtonVisibility(buttonOpenActiveTasks: View?) {
 		buttonOpenActiveTasks?.let {
-			if (downloadSystem.activeDownloadDataModels.size > 0) {
+			val activeDownloadDataModels = downloadSystem.activeDownloadDataModels
+			if (activeDownloadDataModels.isNotEmpty()) {
 				if (!it.isVisible) showView(it, true, 300)
 			} else {
 				if (it.isVisible) hideView(it, true, 300)

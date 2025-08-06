@@ -36,6 +36,7 @@
     <string name="title_unknown">Unknown</string>
     <string name="title_cancel">Cancel</string>
     <string name="title_yes">Yes</string>
+    <string name="text_delete_the_file">Delete the file</string>
     <string name="text_title_goes_here">Title goes here</string>
     <string name="title_message_goes_here">Message goes here</string>
     <string name="title_download_information">Download Information</string>

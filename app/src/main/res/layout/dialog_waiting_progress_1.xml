@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-    Layout: Custom Progress Dialog
-    Description: Dialog layout showing a Lottie animation, a message, and a single cancel button.
-    Style: Applies @style/style_dialog
+    LAYOUT: Custom Progress Dialog
+    PURPOSE: Displays an animated progress indicator with status message and cancel action
+    FEATURES:
+    - Centered Lottie animation for visual progress indication
+    - Configurable status message text
+    - Single cancel button with icon
+    - Material CardView container with rounded corners and elevation
+    STYLE: Inherits from @style/style_dialog
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -12,7 +17,14 @@
     android:layout_height="wrap_content"
     tools:ignore="UseAppTint,UseCompatTextViewDrawableXml">
 
-    <!-- Card container for dialog content -->
+    <!--
+        PRIMARY CONTAINER: Material CardView
+        - Applies consistent dialog styling
+        - 5dp side margins, 10dp top/bottom margins
+        - Custom background color from resources
+        - 10dp corner radius for rounded corners
+        - 5dp elevation for material shadow effect
+    -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -24,13 +36,29 @@
         app:cardCornerRadius="@dimen/_10"
         app:cardElevation="@dimen/_5">
 
-        <!-- Main vertical layout inside the card -->
+        <!--
+            CONTENT LAYOUT: Vertical LinearLayout
+            - Organizes child views in a single column
+            - Contains animation view, message text, and action button
+        -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Lottie animation for progress indicator -->
+            <!--
+                PROGRESS ANIMATION: LottieAnimationView
+                - Displays a circular loading animation
+                - Fixed width of 150dp, height adjusts to maintain aspect ratio
+                - Centered horizontally and vertically
+                - Negative bottom margin (-30dp) to overlap with text for compact layout
+                - Hardware accelerated for smooth animation
+                - Auto-plays the embedded animation resource
+                - Loops continuously until stopped
+                RESOURCES:
+                - Animation: @raw/anim_color_circle_loading
+                - Dimensions: @dimen/_150 for width
+            -->
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/img_progress_circle"
                 android:layout_width="@dimen/_150"
@@ -49,7 +77,16 @@
                 app:lottie_loop="true"
                 tools:ignore="ImageContrastCheck,VisualLintBounds" />
 
-            <!-- Message or status text -->
+            <!--
+                STATUS MESSAGE: TextView
+                - Displays progress information or instructions
+                - 10dp horizontal margins, 8dp vertical margins
+                - Inherits style from @style/style_dialog.message
+                - Supports web links in text (autoLink="web")
+                - Custom application font family
+                - Text size from @dimen/message_text_size
+                DEFAULT TEXT: @string/title_message_goes_here
+            -->
             <TextView
                 android:id="@+id/txt_progress_info"
                 style="@style/style_dialog.message"
@@ -62,7 +99,14 @@
                 android:text="@string/title_message_goes_here"
                 android:textSize="@dimen/message_text_size" />
 
-            <!-- Cancel button container -->
+            <!--
+                ACTION BUTTON: Cancel Button Container
+                - RelativeLayout provides clickable surface
+                - 15dp horizontal margins, 5dp top, 10dp bottom margins
+                - Secondary button selector background for touch feedback
+                - 2dp elevation for material effect
+                - Contains icon and text label
+            -->
             <RelativeLayout
                 android:id="@+id/btn_dialog_positive_container"
                 android:layout_width="match_parent"
@@ -76,7 +120,18 @@
                 android:elevation="@dimen/_2"
                 tools:ignore="TouchTargetSizeCheck">
 
-                <!-- Cancel button text -->
+                <!--
+                    BUTTON LABEL: TextView with icon
+                    - Centered in container with 7dp margin
+                    - Cancel icon (@drawable/ic_button_cancel) at start
+                    - 5dp padding between icon and text
+                    - Bold text style
+                    - Single line with ellipsis for long text
+                    - Custom application font family
+                    - Text color: @color/color_on_secondary
+                    - Text size: @dimen/normal_text_size
+                    DEFAULT TEXT: @string/title_cancel
+                -->
                 <TextView
                     android:id="@+id/btn_dialog_positive"
                     android:layout_width="wrap_content"

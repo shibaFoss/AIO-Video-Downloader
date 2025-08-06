@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    URL Input Dialog Layout:
+    - A dialog for pasting video URLs with download functionality
+    - Contains a title section, URL input field, and download button
+    - Includes status information text at the bottom
+    - Uses Material CardView for the container with rounded corners
+-->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,6 +15,13 @@
     android:layout_height="wrap_content"
     tools:ignore="UseAppTint,UseCompatTextViewDrawableXml">
 
+    <!--
+        Main CardView container:
+        - Matches parent width with margin
+        - Custom background color from resources
+        - Rounded corners (10dp radius)
+        - Elevation for shadow effect (5dp)
+    -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,17 +33,30 @@
         app:cardCornerRadius="@dimen/_10"
         app:cardElevation="@dimen/_5">
 
+        <!-- Vertical LinearLayout to arrange all child views in a column -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <!--
+                Title container LinearLayout:
+                - Surface color background
+                - Contains the dialog title text
+            -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/color_surface"
                 android:orientation="vertical">
 
+                <!--
+                    Dialog title TextView:
+                    - Centered text with 10dp margin
+                    - Bold style with primary text color
+                    - Single line with ellipsis for long text
+                    - Custom font family
+                -->
                 <TextView
                     android:id="@+id/txt_dialog_title"
                     android:layout_width="match_parent"
@@ -45,6 +73,12 @@
 
             </LinearLayout>
 
+            <!--
+                URL input container LinearLayout:
+                - Rounded background with surface color
+                - 15dp horizontal margin, 10dp top margin
+                - Clickable container for the EditText
+            -->
             <LinearLayout
                 android:id="@+id/edit_url_container"
                 android:layout_width="match_parent"
@@ -58,6 +92,15 @@
                 android:orientation="vertical"
                 tools:ignore="TouchTargetSizeCheck">
 
+                <!--
+                    URL input EditText:
+                    - Transparent background to show container's rounded background
+                    - URI input type for URL formatting
+                    - Single line input
+                    - Hint text when empty
+                    - Normal text style (non-bold)
+                    - 8dp margin all around
+                -->
                 <EditText
                     android:id="@+id/edit_url"
                     style="@style/style_dialog.message"
@@ -78,6 +121,13 @@
 
             </LinearLayout>
 
+            <!--
+                Download button container RelativeLayout:
+                - Secondary button selector background
+                - 15dp horizontal margin, 5dp vertical margin
+                - Elevation for shadow effect (2dp)
+                - Clickable container for the button text
+            -->
             <RelativeLayout
                 android:id="@+id/btn_dialog_positive_container"
                 android:layout_width="match_parent"
@@ -91,6 +141,14 @@
                 android:elevation="@dimen/_2"
                 tools:ignore="TouchTargetSizeCheck">
 
+                <!--
+                    Download button TextView:
+                    - Centered in parent with 7dp margin
+                    - Download icon at start with 5dp padding
+                    - Bold text style
+                    - Custom font family
+                    - Secondary color for text
+                -->
                 <TextView
                     android:id="@+id/btn_dialog_positive"
                     android:layout_width="wrap_content"
@@ -108,6 +166,15 @@
                     android:textStyle="bold" />
             </RelativeLayout>
 
+            <!--
+                Status information TextView:
+                - Centered horizontally
+                - Secondary text color
+                - Small text size
+                - Maximum 2 lines with ellipsis
+                - 15dp horizontal margin, 8dp bottom margin
+                - Custom font family
+            -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

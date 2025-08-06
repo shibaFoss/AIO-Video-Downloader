@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    LAYOUT: Web Video Guide Dialog
+    PURPOSE: Displays a step-by-step visual guide for web video downloading
+    FEATURES:
+    - Title header with surface background
+    - Scrollable content area for multiple guide steps
+    - Each step contains an image card and descriptive text
+    - Confirmation button at bottom
+    STYLE: Inherits from @style/style_dialog
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,6 +17,14 @@
     android:layout_height="wrap_content"
     tools:ignore="UseAppTint,UseCompatTextViewDrawableXml">
 
+    <!--
+        PRIMARY CONTAINER: Material CardView
+        - Applies consistent dialog styling
+        - 5dp side margins, 10dp top/bottom margins
+        - Custom background color (@color/color_background)
+        - 10dp corner radius for rounded corners
+        - 5dp elevation for material shadow effect
+    -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,17 +36,33 @@
         app:cardCornerRadius="@dimen/_10"
         app:cardElevation="@dimen/_5">
 
+        <!-- MAIN CONTENT: Vertical LinearLayout -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <!--
+                TITLE SECTION: Surface Background
+                - Uses @color/color_surface for distinct header area
+                - Contains single centered title text
+            -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/color_surface"
                 android:orientation="vertical">
 
+                <!--
+                    DIALOG TITLE: TextView
+                    - Centered bold text
+                    - 10dp margin on all sides
+                    - Single line with ellipsis for long text
+                    - Custom application font family
+                    - Primary text color
+                    - Normal text size
+                    DEFAULT TEXT: @string/title_guide_for_web_videos
+                -->
                 <TextView
                     android:id="@+id/txt_dialog_title"
                     android:layout_width="match_parent"
@@ -45,11 +79,17 @@
 
             </LinearLayout>
 
+            <!--
+                GUIDE CONTENT: ScrollView
+                - Takes remaining space (layout_weight=1)
+                - Contains multiple guide steps (image + text pairs)
+            -->
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1">
 
+                <!-- Guide steps container -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -59,6 +99,12 @@
                     android:orientation="vertical"
                     tools:ignore="UseCompoundDrawables">
 
+                    <!--
+                        GUIDE STEP 1: Image Card + Text
+                        - CardView with 5dp margin and 10dp corner radius
+                        - ImageView with adjustViewBounds to maintain aspect ratio
+                        - Descriptive text below with 2dp margin
+                    -->
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -86,6 +132,11 @@
                         android:textColor="@color/color_text_primary"
                         android:textSize="@dimen/message_text_size" />
 
+                    <!--
+                        GUIDE STEP 2: Image Card + Text
+                        - Same structure as Step 1
+                        - Different image and text resources
+                    -->
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -113,6 +164,12 @@
                         android:textColor="@color/color_text_primary"
                         android:textSize="@dimen/message_text_size" />
 
+                    <!--
+                        GUIDE STEP 3: Image Card + Text
+                        - Same structure with different margins
+                        - 5dp side margins, 5dp top, 8dp bottom
+                        - Different image and text resources
+                    -->
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -146,6 +203,14 @@
                 </LinearLayout>
             </ScrollView>
 
+            <!--
+                CONFIRMATION BUTTON: "Okay" Action
+                - RelativeLayout provides clickable surface
+                - 15dp horizontal margins, 8dp vertical margins
+                - Secondary button selector background
+                - 2dp elevation for material effect
+                - Contains checkmark icon and text
+            -->
             <RelativeLayout
                 android:id="@+id/btn_dialog_positive_container"
                 android:layout_width="match_parent"
@@ -159,6 +224,17 @@
                 android:elevation="@dimen/_2"
                 tools:ignore="TouchTargetSizeCheck">
 
+                <!--
+                    BUTTON LABEL: TextView with icon
+                    - Centered in container with 7dp margin
+                    - Checkmark icon (@drawable/ic_button_checked_circle)
+                    - 5dp padding between icon and text
+                    - Bold text style
+                    - Custom application font family
+                    - Text color: @color/color_on_secondary
+                    - Text size: @dimen/normal_text_size
+                    DEFAULT TEXT: @string/title_okay
+                -->
                 <TextView
                     android:id="@+id/btn_dialog_positive"
                     android:layout_width="wrap_content"

@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    LAYOUT: Download Manager Screen
+    PURPOSE: Provides the main interface for managing downloads with:
+    - Action bar with navigation and add buttons
+    - ViewPager2 for swipeable content sections
+    FEATURES:
+    - Material CardView action bar with rounded corners
+    - Back navigation button
+    - Screen title display
+    - Add download action button
+    - Swipeable content area using ViewPager2
+    STYLING:
+    - Uses surface color for background
+    - Consistent corner radius (10dp)
+    - Standard text sizes from dimens
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,6 +24,13 @@
     android:orientation="vertical"
     tools:ignore="UseCompatTextViewDrawableXml,UseAppTint">
 
+    <!--
+        ACTION BAR CARDVIEW
+        - Fixed height of 50dp
+        - 15dp side margins, 10dp top, 5dp bottom margins
+        - Background color from resources
+        - 10dp corner radius
+    -->
     <androidx.cardview.widget.CardView
         android:id="@+id/top_layout_actionbar_section"
         android:layout_width="match_parent"
@@ -24,6 +47,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <!--
+                BACK BUTTON
+                - Fixed width of 50dp
+                - Negative selector background for touch feedback
+                - Contains back arrow icon (30dp)
+                - Secondary color tint
+            -->
             <RelativeLayout
                 android:id="@+id/btn_actionbar_back"
                 android:layout_width="@dimen/_50"
@@ -44,6 +74,15 @@
                     tools:ignore="ImageContrastCheck" />
             </RelativeLayout>
 
+            <!--
+                SCREEN TITLE
+                - Takes remaining space between back and add buttons
+                - Centered vertically
+                - Bold text style
+                - Single line with ellipsis
+                - Title text size from dimens
+                DEFAULT TEXT: @string/title_downloads_manager
+            -->
             <TextView
                 android:id="@+id/txt_current_frag_name"
                 android:layout_width="match_parent"
@@ -62,6 +101,13 @@
                 android:textSize="@dimen/title_text_size"
                 android:textStyle="bold" />
 
+            <!--
+                ADD DOWNLOAD BUTTON
+                - Fixed width of 50dp
+                - Right-aligned
+                - Negative selector background
+                - Plus icon (30dp) with secondary color
+            -->
             <RelativeLayout
                 android:id="@+id/btn_actionbar_add_download"
                 android:layout_width="@dimen/_50"
@@ -86,10 +132,22 @@
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
+    <!--
+        MAIN CONTENT AREA
+        - Takes remaining space below action bar
+        - Contains NonSwappableViewPager for fragments
+    -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <!--
+            NonSwappableViewPager CONTAINER
+            - Full width/height
+            - Transparent background
+            - Will contain multiple fragments for different download states
+            (e.g., active, completed, failed)
+        -->
         <lib.ui.builders.NonSwappableViewPager
             android:id="@+id/fragment_viewpager"
             android:layout_width="match_parent"

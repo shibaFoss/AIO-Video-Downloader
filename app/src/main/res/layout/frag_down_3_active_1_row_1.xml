@@ -87,7 +87,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_5"
+                android:layout_marginTop="@dimen/_2"
                 android:background="@drawable/rounded_surface_color"
                 android:orientation="horizontal">
 

@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    LAYOUT: WebView Container
+    PURPOSE: Provides a full-screen web browsing component
+    FEATURES:
+    - Displays web content in native WebView component
+    - Full screen implementation (matches parent dimensions)
+    - Vertical orientation by default
+    USAGE:
+    - Typically used as the main content area in browser applications
+    - Can load both remote URLs and local HTML content
+    - Supports JavaScript, zoom controls, and other web features
+    NOTE:
+    - Additional WebView settings should be configured programmatically
+    - Requires INTERNET permission in AndroidManifest.xml for web access
+-->
 <WebView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"

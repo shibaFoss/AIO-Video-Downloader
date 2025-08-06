@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    LAYOUT: File Rename Dialog
+    PURPOSE: Provides interface for renaming downloaded files
+    FEATURES:
+    - Title header with surface background
+    - Text input field for new filename
+    - Apply changes action button
+    - Informational hint text
+    STYLE: Inherits from @style/style_dialog
+    BEHAVIOR:
+    - Shows current filename in editable field
+    - Validates new filename before applying
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,6 +20,13 @@
     android:layout_height="wrap_content"
     tools:ignore="UseAppTint,UseCompatTextViewDrawableXml">
 
+    <!--
+        PRIMARY CONTAINER: Material CardView
+        - 5dp side margins, 10dp top/bottom margins
+        - Background color from @color/color_background
+        - 10dp corner radius
+        - 5dp elevation for shadow effect
+    -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,11 +38,18 @@
         app:cardCornerRadius="@dimen/_10"
         app:cardElevation="@dimen/_5">
 
+        <!-- Main content layout -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <!--
+                TITLE SECTION
+                - Surface color background
+                - Centered bold text
+                - 10dp margin all sides
+            -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -42,9 +69,14 @@
                     android:textColor="@color/color_text_primary"
                     android:textSize="@dimen/normal_text_size"
                     android:textStyle="bold" />
-
             </LinearLayout>
 
+            <!--
+                FILENAME INPUT CONTAINER
+                - 15dp side margins, 10dp top, 5dp bottom
+                - Rounded surface background
+                - Contains single-line EditText
+            -->
             <LinearLayout
                 android:id="@+id/edit_field_file_name_container"
                 android:layout_width="match_parent"
@@ -56,6 +88,14 @@
                 android:background="@drawable/rounded_surface_color"
                 android:orientation="vertical">
 
+                <!--
+                    FILENAME INPUT FIELD
+                    - 8dp margin all sides
+                    - Transparent background
+                    - URI input type for filename validation
+                    - Hint text when empty
+                    - Single line input
+                -->
                 <EditText
                     android:id="@+id/edit_field_file_name"
                     style="@style/style_dialog.message"
@@ -72,9 +112,15 @@
                     android:textSize="@dimen/normal_text_size"
                     android:textStyle="normal"
                     tools:ignore="TextContrastCheck,TouchTargetSizeCheck,VisualLintTextFieldSize" />
-
             </LinearLayout>
 
+            <!--
+                APPLY BUTTON
+                - Secondary button selector background
+                - 15dp side margins, 5dp vertical
+                - 2dp elevation
+                - Contains rename icon and action text
+            -->
             <RelativeLayout
                 android:id="@+id/btn_dialog_positive_container"
                 android:layout_width="match_parent"
@@ -107,6 +153,13 @@
                     android:textStyle="bold" />
             </RelativeLayout>
 
+            <!--
+                INFORMATIONAL HINT
+                - Centered hint text
+                - Secondary text color
+                - Small text size
+                - Max 2 lines with ellipsis
+            -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    This layout defines a custom dialog with:
+    - A card view container with rounded corners and elevation
+    - An image view for displaying an illustration
+    - A text view for displaying information message
+    - A button for positive action
+-->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,6 +15,13 @@
     android:layout_height="wrap_content"
     tools:ignore="UseAppTint,UseCompatTextViewDrawableXml">
 
+    <!--
+        CardView container that provides material design card styling:
+        - Background color from resources
+        - Rounded corners with radius defined in resources
+        - Elevation for shadow effect
+        - Margin around the card
+    -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,13 +33,21 @@
         app:cardCornerRadius="@dimen/_10"
         app:cardElevation="@dimen/_5">
 
+        <!-- Vertical LinearLayout to arrange child views in a column -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <!--
+                ImageView to display an illustration:
+                - Fixed width of 200dp
+                - Centered horizontally and vertically within parent
+                - Adjusts bounds to maintain aspect ratio
+                - Image source from drawable resources
+            -->
             <ImageView
-                android:id="@+id/image_no_video_found"
+                android:id="@+id/img_no_video_found"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|center_horizontal"
@@ -33,6 +56,15 @@
                 android:importantForAccessibility="no"
                 android:src="@drawable/image_no_video_found" />
 
+            <!--
+                TextView for displaying informational message:
+                - Centered horizontally and vertically
+                - Horizontal margin from resources
+                - Font family from resources
+                - Auto-link for web URLs in text
+                - Text size from resources
+                - Style from predefined style resource
+            -->
             <TextView
                 android:id="@+id/txt_info"
                 style="@style/style_dialog.message"
@@ -46,6 +78,13 @@
                 android:text="@string/text_no_video_resources_found"
                 android:textSize="@dimen/message_text_size" />
 
+            <!--
+                RelativeLayout container for the positive action button:
+                - Has margin from resources
+                - Background selector for click effects
+                - Elevation for shadow
+                - Clickable and acts as button container
+            -->
             <RelativeLayout
                 android:id="@+id/btn_dialog_positive_container"
                 android:layout_width="match_parent"
@@ -59,6 +98,16 @@
                 android:elevation="@dimen/_2"
                 tools:ignore="TouchTargetSizeCheck">
 
+                <!--
+                    TextView that serves as the actual button:
+                    - Centered in parent
+                    - Has an icon at the start
+                    - Custom font family
+                    - Bold text style
+                    - Text color from resources
+                    - Text size from resources
+                    - Margin from resources
+                -->
                 <TextView
                     android:id="@+id/btn_dialog_positive"
                     android:layout_width="wrap_content"

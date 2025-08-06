@@ -1,10 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    LAYOUT: Download Tasks Queue Container
+    PURPOSE: Provides scrollable container for displaying queued download tasks
+    FEATURES:
+    - Full-screen scrollable container
+    - Vertical layout for task items
+    - Surface color background
+    - Supports dynamic addition of task items
+    BEHAVIOR:
+    - Automatically scrolls when content exceeds screen height
+    - Maintains smooth scrolling performance
+    - Preserves task item order (FIFO by default)
+-->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_surface"
     android:orientation="vertical">
 
+    <!--
+        TASKS CONTAINER: LinearLayout
+        - Vertical orientation for stacked task items
+        - Match parent width, wrap content height
+        - No side margins (full width)
+        - Transparent divider between items
+        - Will be populated programmatically with task views
+    -->
     <LinearLayout
         android:id="@+id/container_download_tasks_queue"
         android:layout_width="match_parent"

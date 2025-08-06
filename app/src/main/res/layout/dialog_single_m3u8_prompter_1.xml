@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    This layout defines a custom dialog for video file information with:
+    - A card view container with rounded corners and elevation
+    - A thumbnail section with video preview
+    - Video title and resolution information
+    - A download action button
+    - Status information text
+-->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,6 +16,13 @@
     android:layout_height="wrap_content"
     tools:ignore="UseAppTint,UseCompatTextViewDrawableXml">
 
+    <!--
+        Main CardView container with material design styling:
+        - Background color from resources
+        - Rounded corners with radius defined in resources
+        - Elevation for shadow effect
+        - Margin around the card
+    -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,11 +34,19 @@
         app:cardCornerRadius="@dimen/_10"
         app:cardElevation="@dimen/_5">
 
+        <!-- Vertical LinearLayout to arrange all child views in a column -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <!--
+                RelativeLayout container for the video info card:
+                - Acts as a clickable container
+                - Has margin from resources
+                - Background selector for click effects
+                - Elevation for shadow
+            -->
             <RelativeLayout
                 android:id="@+id/btn_file_info_card"
                 android:layout_width="match_parent"
@@ -36,6 +60,12 @@
                 android:elevation="@dimen/_2"
                 tools:ignore="DuplicateSpeakableTextCheck">
 
+                <!--
+                    CardView container for the video thumbnail:
+                    - Fixed width and height from resources
+                    - Rounded corners
+                    - Margin around the thumbnail
+                -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/thumbnail_container"
                     android:layout_width="@dimen/_85"
@@ -47,6 +77,12 @@
                     app:cardBackgroundColor="@color/color_background"
                     app:cardCornerRadius="@dimen/_5">
 
+                    <!--
+                        ImageView for video thumbnail:
+                        - Scales and crops image to fit
+                        - Default placeholder image
+                        - Accessibility optimized (no importance for accessibility)
+                    -->
                     <ImageView
                         android:id="@+id/image_video_thumbnail"
                         android:layout_width="match_parent"
@@ -60,6 +96,11 @@
 
                 </androidx.cardview.widget.CardView>
 
+                <!--
+                    RelativeLayout container for video metadata:
+                    - Positioned to the right of thumbnail
+                    - Contains title, resolution info, and favicon
+                -->
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -69,6 +110,13 @@
                     android:layout_toEndOf="@+id/thumbnail_container"
                     android:orientation="vertical">
 
+                    <!--
+                        TextView for video title:
+                        - Marquee effect for long text
+                        - Bold style
+                        - Custom font family
+                        - Single line with ellipsis
+                    -->
                     <TextView
                         android:id="@+id/txt_video_title"
                         android:layout_width="match_parent"
@@ -88,6 +136,11 @@
                         android:textSize="@dimen/normal_text_size"
                         android:textStyle="bold" />
 
+                    <!--
+                        LinearLayout container for resolution info:
+                        - Semi-transparent background
+                        - Positioned below title
+                    -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -97,6 +150,12 @@
                         android:background="@drawable/rounded_transparent_white_f5"
                         android:orientation="vertical">
 
+                        <!--
+                            TextView for video resolution:
+                            - Small text size
+                            - Single line with ellipsis
+                            - Custom font family
+                        -->
                         <TextView
                             android:id="@+id/text_video_resolution"
                             android:layout_width="match_parent"
@@ -115,6 +174,13 @@
                             tools:ignore="TextContrastCheck" />
                     </LinearLayout>
 
+                    <!--
+                        ImageView for favicon/action icon:
+                        - Fixed size from resources
+                        - Centered vertically
+                        - Aligned to parent end
+                        - Tint color from resources
+                    -->
                     <ImageView
                         android:id="@+id/img_url_favicon"
                         android:layout_width="@dimen/_30"
@@ -134,6 +200,12 @@
                 </RelativeLayout>
             </RelativeLayout>
 
+            <!--
+                RelativeLayout container for download button:
+                - Clickable container with selector background
+                - Elevation for shadow
+                - Margin from resources
+            -->
             <RelativeLayout
                 android:id="@+id/btn_dialog_positive_container"
                 android:layout_width="match_parent"
@@ -147,6 +219,14 @@
                 android:elevation="@dimen/_2"
                 tools:ignore="TouchTargetSizeCheck">
 
+                <!--
+                    TextView acting as download button:
+                    - Centered in parent
+                    - Download icon at start
+                    - Bold text style
+                    - Single line with ellipsis
+                    - Custom font family
+                -->
                 <TextView
                     android:id="@+id/btn_dialog_positive"
                     android:layout_width="wrap_content"
@@ -166,6 +246,14 @@
                     android:textStyle="bold" />
             </RelativeLayout>
 
+            <!--
+                TextView for status information:
+                - Centered horizontally
+                - Small text size
+                - Secondary text color
+                - Maximum 2 lines with ellipsis
+                - Custom font family
+            -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

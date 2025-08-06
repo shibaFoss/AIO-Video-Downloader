@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Video Format Selection Dialog Layout:
+    - Displays video thumbnail, title, and URL information
+    - Shows available formats in a grid view
+    - Includes download action button
+    - Shows progress information text
+    - Uses Material CardView with rounded corners and elevation
+-->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,6 +16,14 @@
     android:layout_height="wrap_content"
     tools:ignore="UseAppTint,UseCompatTextViewDrawableXml">
 
+    <!--
+        Main CardView container:
+        - Matches parent width with 5dp side margins
+        - 10dp top and bottom margins
+        - Custom background color from resources
+        - 10dp corner radius
+        - 5dp elevation for shadow effect
+    -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,11 +35,19 @@
         app:cardCornerRadius="@dimen/_10"
         app:cardElevation="@dimen/_5">
 
+        <!-- Vertical LinearLayout containing all dialog content -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <!--
+                Video info card container:
+                - Clickable RelativeLayout with selector background
+                - 8dp margins around
+                - 2dp elevation
+                - Contains thumbnail and metadata
+            -->
             <RelativeLayout
                 android:id="@+id/btn_file_info_card"
                 android:layout_width="match_parent"
@@ -36,6 +61,13 @@
                 android:elevation="@dimen/_2"
                 tools:ignore="DuplicateSpeakableTextCheck">
 
+                <!--
+                    Thumbnail CardView:
+                    - Fixed size (85x55dp from resources)
+                    - 5dp margins (except right)
+                    - 5dp corner radius
+                    - Background color from resources
+                -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/thumbnail_container"
                     android:layout_width="@dimen/_85"
@@ -47,6 +79,12 @@
                     app:cardBackgroundColor="@color/color_background"
                     app:cardCornerRadius="@dimen/_5">
 
+                    <!--
+                        Thumbnail ImageView:
+                        - Center-cropped to fill container
+                        - Default "no thumbnail" image
+                        - Accessibility optimized (not important for accessibility)
+                    -->
                     <ImageView
                         android:id="@+id/image_video_thumbnail"
                         android:layout_width="match_parent"
@@ -60,6 +98,11 @@
 
                 </androidx.cardview.widget.CardView>
 
+                <!--
+                    Metadata container:
+                    - Positioned to right of thumbnail
+                    - Contains title, URL, and action icon
+                -->
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -69,6 +112,14 @@
                     android:layout_toEndOf="@+id/thumbnail_container"
                     android:orientation="vertical">
 
+                    <!--
+                        Video title TextView:
+                        - Marquee scrolling for long text
+                        - Bold style
+                        - Single line with ellipsis
+                        - Custom font family
+                        - Positioned to left of favicon
+                    -->
                     <TextView
                         android:id="@+id/txt_video_title"
                         android:layout_width="match_parent"
@@ -88,6 +139,12 @@
                         android:textSize="@dimen/normal_text_size"
                         android:textStyle="bold" />
 
+                    <!--
+                        URL container:
+                        - Semi-transparent background
+                        - Positioned below title
+                        - Left-aligned before favicon
+                    -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -97,6 +154,13 @@
                         android:background="@drawable/rounded_transparent_white_f5"
                         android:orientation="vertical">
 
+                        <!--
+                            URL TextView:
+                            - Small text size
+                            - Single line with ellipsis
+                            - 5dp horizontal margins
+                            - Custom font family
+                        -->
                         <TextView
                             android:id="@+id/txt_video_url"
                             android:layout_width="match_parent"
@@ -115,6 +179,13 @@
                             tools:ignore="TextContrastCheck" />
                     </LinearLayout>
 
+                    <!--
+                        Action icon ImageView:
+                        - Fixed size (30x30dp)
+                        - Aligned to parent end
+                        - Centered vertically
+                        - Tinted with secondary color
+                    -->
                     <ImageView
                         android:id="@+id/img_url_favicon"
                         android:layout_width="@dimen/_30"
@@ -134,6 +205,14 @@
                 </RelativeLayout>
             </RelativeLayout>
 
+            <!--
+                Video formats GridView:
+                - Takes remaining space (layout_weight=1)
+                - 10dp horizontal margins
+                - 3 columns with 120dp width each
+                - 5dp spacing between items
+                - Stretches to fill column width
+            -->
             <GridView
                 android:id="@+id/video_format_container"
                 android:layout_width="match_parent"
@@ -151,6 +230,14 @@
                 android:verticalSpacing="@dimen/_5"
                 android:visibility="visible" />
 
+            <!--
+                Download button container:
+                - Secondary button selector background
+                - 15dp horizontal margins
+                - 5dp vertical margins
+                - 2dp elevation
+                - Clickable container
+            -->
             <RelativeLayout
                 android:id="@+id/btn_dialog_positive_container"
                 android:layout_width="match_parent"
@@ -164,6 +251,14 @@
                 android:elevation="@dimen/_2"
                 tools:ignore="TouchTargetSizeCheck">
 
+                <!--
+                    Download button TextView:
+                    - Centered in container
+                    - Download icon at start with 5dp padding
+                    - Bold text style
+                    - Single line with ellipsis
+                    - Custom font family
+                -->
                 <TextView
                     android:id="@+id/btn_dialog_positive"
                     android:layout_width="wrap_content"
@@ -183,6 +278,15 @@
                     android:textStyle="bold" />
             </RelativeLayout>
 
+            <!--
+                Progress info TextView:
+                - Centered horizontally
+                - Small secondary text
+                - 15dp horizontal margins
+                - 8dp bottom margin
+                - Max 2 lines with ellipsis
+                - Custom font family
+            -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

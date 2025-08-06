@@ -29,10 +29,10 @@ android {
         targetSdk 36
 
         // Version code (integer used for version comparison)
-        versionCode 68
+        versionCode 69
 
         // User-visible version name
-        versionName '20250801'
+        versionName '2025.08.01'
 
         // Enable vector drawable support for older Android versions
         vectorDrawables {

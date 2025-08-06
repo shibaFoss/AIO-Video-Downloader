@@ -1,4 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!--
+    Main container layout for displaying running/download information
+    This is a clickable container that wraps all other elements
+-->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,6 +11,10 @@
     android:clickable="true"
     tools:ignore="UseAppTint, UselessParent">
 
+    <!--
+        Inner RelativeLayout that provides margin and background styling
+        This serves as the visual container for the content card
+    -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,6 +26,10 @@
         android:elevation="@dimen/_1"
         android:orientation="vertical">
 
+        <!--
+            CardView container for the thumbnail image
+            Provides rounded corners and elevation for visual hierarchy
+        -->
         <androidx.cardview.widget.CardView
             android:id="@+id/container_img_thumbnail"
             android:layout_width="@dimen/_90"
@@ -30,6 +41,11 @@
             app:cardBackgroundColor="@color/color_background"
             app:cardCornerRadius="@dimen/_5">
 
+            <!--
+                ImageView to display the file thumbnail
+                Uses centerCrop to maintain aspect ratio while filling the space
+                Shows a default image when no thumbnail is available
+            -->
             <ImageView
                 android:id="@+id/img_file_thumbnail"
                 android:layout_width="match_parent"
@@ -43,6 +59,11 @@
 
         </androidx.cardview.widget.CardView>
 
+        <!--
+            LinearLayout container for text information
+            Positioned to the right of the thumbnail image
+            Contains file name and download status information
+        -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -51,10 +72,19 @@
             android:layout_toEndOf="@id/container_img_thumbnail"
             android:orientation="vertical">
 
+            <!--
+                RelativeLayout for the file name and status indicator
+                Ensures proper alignment of text and icon
+            -->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+                <!--
+                    TextView to display the file name
+                    Supports multi-line (max 2 lines) with ellipsis for overflow
+                    Uses custom font family for consistent typography
+                -->
                 <TextView
                     android:id="@+id/txt_file_name"
                     android:layout_width="match_parent"
@@ -69,6 +99,11 @@
                     android:textColor="@color/color_text_primary"
                     android:textSize="@dimen/normal_text_size_small" />
 
+                <!--
+                    ImageView for status indicator (e.g., open/play button)
+                    Positioned at the end of the file name text
+                    Uses tint color for consistent theming
+                -->
                 <ImageView
                     android:id="@+id/img_status_indicator"
                     android:layout_width="wrap_content"
@@ -84,6 +119,10 @@
 
             </RelativeLayout>
 
+            <!--
+                RelativeLayout container for download status information
+                Has a rounded background for visual separation
+            -->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -91,6 +130,11 @@
                 android:background="@drawable/rounded_surface_color"
                 android:orientation="horizontal">
 
+                <!--
+                    TextView to display download/transfer status
+                    Single line with ellipsis for long text
+                    Uses hint color for secondary information
+                -->
                 <TextView
                     android:id="@+id/txt_download_status"
                     android:layout_width="match_parent"

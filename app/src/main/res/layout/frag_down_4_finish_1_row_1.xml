@@ -1,4 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!--
+    Root layout for a completed download list item
+    Clickable container that shows file information and actions
+    Uses RelativeLayout as the base for flexible positioning
+-->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,6 +12,10 @@
     android:clickable="true"
     tools:ignore="UseAppTint, UselessParent">
 
+    <!--
+        Inner container with margins and visual styling
+        Provides the card-like appearance with elevation and selector background
+    -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,6 +27,11 @@
         android:elevation="@dimen/_1"
         android:orientation="vertical">
 
+        <!--
+            Thumbnail container using CardView
+            Provides rounded corners and elevation for the image
+            Fixed dimensions with consistent margins
+        -->
         <androidx.cardview.widget.CardView
             android:id="@+id/container_img_thumbnail"
             android:layout_width="@dimen/_90"
@@ -30,6 +43,12 @@
             app:cardBackgroundColor="@color/color_background"
             app:cardCornerRadius="@dimen/_5">
 
+            <!--
+                Thumbnail image view
+                Uses centerCrop to maintain aspect ratio while filling space
+                Shows default image when no thumbnail is available
+                Marked as unimportant for accessibility (decorative)
+            -->
             <ImageView
                 android:id="@+id/img_file_thumbnail"
                 android:layout_width="match_parent"
@@ -43,6 +62,11 @@
 
         </androidx.cardview.widget.CardView>
 
+        <!--
+            Text information container
+            Positioned to the right of the thumbnail
+            Contains file name and metadata in vertical layout
+        -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -51,10 +75,20 @@
             android:layout_toEndOf="@id/container_img_thumbnail"
             android:orientation="vertical">
 
+            <!--
+                File name and action button container
+                Uses RelativeLayout for precise positioning
+            -->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+                <!--
+                    File name text view
+                    Supports multi-line (max 2 lines) with ellipsis
+                    Uses custom font family and primary text color
+                    Positioned to leave space for the action button
+                -->
                 <TextView
                     android:id="@+id/txt_file_name"
                     android:layout_width="match_parent"
@@ -67,8 +101,14 @@
                     android:singleLine="false"
                     android:text="@string/text_sample_video_file_name"
                     android:textColor="@color/color_text_primary"
-                    android:textSize="@dimen/normal_text_size_small"/>
+                    android:textSize="@dimen/normal_text_size_small" />
 
+                <!--
+                    Open file action button
+                    Positioned at the end of the row
+                    Uses tint color for consistent theming
+                    Marked as unimportant for accessibility (action is handled by parent)
+                -->
                 <ImageView
                     android:id="@+id/btn_open_download_file"
                     android:layout_width="wrap_content"
@@ -84,6 +124,11 @@
 
             </RelativeLayout>
 
+            <!--
+                File metadata container
+                Has rounded background for visual separation
+                Contains single line of additional information
+            -->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -91,16 +136,21 @@
                 android:background="@drawable/rounded_surface_color"
                 android:orientation="horizontal">
 
+                <!--
+                    File information text (size, date, etc.)
+                    Single line with ellipsis for overflow
+                    Uses hint color for secondary information
+                -->
                 <TextView
                     android:id="@+id/txt_file_info"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
-                    android:ellipsize="end"
                     android:layout_marginStart="@dimen/_5"
                     android:layout_marginTop="@dimen/_2"
                     android:layout_marginEnd="@dimen/_5"
                     android:layout_marginBottom="@dimen/_2"
+                    android:ellipsize="end"
                     android:fontFamily="@font/application_font_family"
                     android:gravity="center_vertical"
                     android:singleLine="true"

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
     URL Input Dialog Layout:
     - A dialog for pasting video URLs with download functionality
     - Contains a title section, URL input field, and download button

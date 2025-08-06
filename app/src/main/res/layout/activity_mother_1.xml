@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
 MAIN ACTIVITY CONTAINER LAYOUT
 Serves as the root container for the app's main interface with:
 1. Primary content area (fragment container)

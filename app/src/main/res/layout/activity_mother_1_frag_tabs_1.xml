@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
     Main container for the BookmarksActivity layout
     Uses a vertical LinearLayout as the root view
     Sets the background color and context for the layout

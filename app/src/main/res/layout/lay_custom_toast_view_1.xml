@@ -1,4 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!--
+    Custom toast layout designed for consistency with app branding and theme.
+    Uses CardView for a modern, elevated appearance that visually separates
+    the toast from the background.
+-->
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/custom_toast_layout"
@@ -13,14 +17,22 @@
     app:cardCornerRadius="@dimen/_10"
     app:cardElevation="@dimen/_5">
 
-    <!-- Root layout that holds the toast content horizontally -->
+    <!--
+        Ensures icon and text are horizontally aligned, preserving a clean and
+        compact toast design. Background is repeated here to maintain visual
+        consistency inside the CardView.
+    -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/color_background"
         android:orientation="horizontal">
 
-        <!-- App icon shown in the toast message -->
+        <!--
+            Adds branding identity through icon while ensuring it doesn't distract
+            screen readers. Rounded icon enhances visual cohesion with the toast
+            card’s rounded corners.
+        -->
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/img_toast_app_icon"
             android:layout_width="@dimen/_30"
@@ -34,7 +46,11 @@
             android:importantForAccessibility="no"
             android:src="@mipmap/ic_launcher" />
 
-        <!-- Text message displayed in the toast -->
+        <!--
+            Provides a short, readable message styled to match the app’s typography
+            and color palette. Vertically aligned to icon for balance, with enough
+            spacing to ensure legibility and avoid visual clutter.
+        -->
         <TextView
             android:id="@+id/txt_toast_message"
             android:layout_width="wrap_content"

@@ -1,4 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!--
+    Main container layout for download tasks screen
+    Uses RelativeLayout as root container to layer different views
+-->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,6 +10,11 @@
     android:orientation="vertical"
     tools:ignore="UseCompatTextViewDrawableXml">
 
+    <!--
+        ListView to display completed download tasks
+        Initially hidden (visibility="gone") and shown when there are downloads
+        Transparent divider removes default line separators between items
+    -->
     <ListView
         android:id="@+id/container_download_tasks_finished"
         android:layout_width="match_parent"
@@ -18,6 +26,11 @@
         android:divider="@color/transparent"
         android:visibility="gone" />
 
+    <!--
+        CardView to show when there are no downloads (empty state)
+        Centered in parent with rounded corners and background color
+        Initially visible (visibility="visible") and hidden when downloads exist
+    -->
     <androidx.cardview.widget.CardView
         android:id="@+id/container_empty_downloads"
         android:layout_width="match_parent"
@@ -32,11 +45,17 @@
         app:cardBackgroundColor="@color/color_background"
         app:cardCornerRadius="@dimen/_10">
 
+        <!-- LinearLayout container for empty state content -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <!--
+                Empty state illustration image
+                Centered horizontally and vertically with margin
+                Hardware accelerated for better performance
+            -->
             <ImageView
                 android:id="@+id/img_empty_downloads"
                 android:layout_width="wrap_content"
@@ -48,6 +67,11 @@
                 android:importantForAccessibility="no"
                 android:src="@drawable/image_empty_box" />
 
+            <!--
+                Empty state message text
+                Centered with horizontal margins
+                Uses custom font family and primary text color
+            -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -56,12 +80,17 @@
                 android:layout_marginTop="@dimen/_10"
                 android:layout_marginEnd="@dimen/_25"
                 android:layout_marginBottom="@dimen/_8"
-                android:gravity="center"
                 android:fontFamily="@font/application_font_family"
+                android:gravity="center"
                 android:text="@string/text_you_dont_have_any_downloads"
                 android:textColor="@color/color_text_primary"
                 android:textSize="@dimen/message_text_size" />
 
+            <!--
+                "How to download" button
+                Clickable RelativeLayout with elevation and selector background
+                Has horizontal margins and bottom margin
+            -->
             <RelativeLayout
                 android:id="@+id/btn_how_to_download"
                 android:layout_width="match_parent"
@@ -75,6 +104,11 @@
                 android:elevation="@dimen/_2"
                 tools:ignore="TouchTargetSizeCheck">
 
+                <!--
+                    Button text with question mark icon
+                    Icon is tinted to match background
+                    Uses bold text style and centered in parent
+                -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -94,6 +128,12 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
+    <!--
+        Floating action button for active downloads
+        Positioned at bottom-right of screen with elevation
+        Initially hidden (visibility="gone") and shown when active downloads exist
+        Uses Lottie animation for visual appeal
+    -->
     <LinearLayout
         android:id="@+id/btn_open_active_downloads"
         android:layout_width="wrap_content"
@@ -109,6 +149,11 @@
         android:orientation="vertical"
         android:visibility="gone">
 
+        <!--
+            Lottie animation view for the FAB
+            Auto-playing, looping animation
+            Hardware accelerated and optimized for performance
+        -->
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/img_open_active_downloads"
             android:layout_width="@dimen/_50"

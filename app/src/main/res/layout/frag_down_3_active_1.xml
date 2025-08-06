@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
     LAYOUT: Download Tasks Queue Container
     PURPOSE: Provides scrollable container for displaying queued download tasks
     FEATURES:

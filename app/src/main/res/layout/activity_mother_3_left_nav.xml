@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
     Root layout for a custom dialog with tab management functionality
     Applies a dialog style (@style/style_dialog) for consistent appearance
     Uses LinearLayout as container with match_parent width and wrap_content height

@@ -1,5 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Main container layout for the media item -->
+<?xml version="1.0" encoding="utf-8"?><!--
+    Media Thumbnail Item Layout
+    Displays a media item (video/audio) with thumbnail, play button, and duration
+    Used in grids/lists of media content with interactive elements
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -11,7 +14,16 @@
     android:orientation="vertical"
     tools:ignore="UseAppTint,SpeakableTextPresentCheck">
 
-    <!-- CardView container for the media thumbnail -->
+    <!--
+        Thumbnail Card Container
+        - Fixed dimensions (95x75dp) with small margin
+        - Rounded corners (5dp radius)
+        - Background color and subtle shadow
+        - Contains three layered elements:
+          1. Main thumbnail image
+          2. Play button overlay
+          3. Duration indicator
+    -->
     <androidx.cardview.widget.CardView
         android:id="@+id/container_img_thumbnail"
         android:layout_width="@dimen/_95"
@@ -21,7 +33,13 @@
         app:cardBackgroundColor="@color/color_background"
         app:cardCornerRadius="@dimen/_5">
 
-        <!-- Main thumbnail image view -->
+        <!--
+            Primary Thumbnail Image
+            - Fills the CardView (match_parent)
+            - CenterCrop scaling maintains aspect ratio while filling space
+            - Default placeholder when no thumbnail available
+            - Accessibility optimized (decorative image)
+        -->
         <ImageView
             android:id="@+id/img_file_thumbnail"
             android:layout_width="match_parent"
@@ -33,24 +51,36 @@
             android:src="@drawable/image_no_thumb_available"
             tools:ignore="ImageContrastCheck" />
 
-        <!-- Play button overlay on the thumbnail -->
+        <!--
+            Play Button Overlay
+            - Centered on top of thumbnail
+            - Semi-transparent (alpha 0.7)
+            - Elevation for visual separation
+            - Tinted with onPrimary color
+            - Fixed width with proportional height
+        -->
         <ImageView
             android:layout_width="@dimen/_20"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:adjustViewBounds="true"
+            android:alpha="0.7"
             android:elevation="@dimen/_5"
             android:importantForAccessibility="no"
-            android:alpha="0.7"
             android:src="@drawable/image_media_play"
             android:tint="@color/color_on_primary"
             tools:ignore="ImageContrastCheck" />
 
-        <!-- Container for media duration text -->
+        <!--
+            Duration Indicator Container
+            - Positioned at bottom-end corner
+            - Semi-transparent black rounded background
+            - Small padding around text
+        -->
         <LinearLayout
-            android:layout_gravity="end"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="end"
             android:layout_marginStart="@dimen/_5"
             android:layout_marginTop="@dimen/_5"
             android:layout_marginEnd="@dimen/_5"
@@ -58,7 +88,13 @@
             android:background="@drawable/rounded_transparent_black"
             android:orientation="vertical">
 
-            <!-- Text view showing media duration -->
+            <!--
+                Duration Text
+                - Small text size for compact display
+                - Semi-transparent white color
+                - Uses application font family
+                - Minimal margins for tight layout
+            -->
             <TextView
                 android:id="@+id/txt_media_duration"
                 android:layout_width="wrap_content"

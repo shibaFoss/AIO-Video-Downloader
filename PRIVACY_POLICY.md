@@ -1,44 +1,96 @@
-# Privacy Policy for Video Downloader
+# Privacy Policy for AIO Video Downloader
 
-**Effective Date**: 17/07/2025
+**Last Updated**: 17/07/2025  
+**Project Repository**: [AIO Video Downloader on GitHub](https://github.com/shibaFoss/AIO-Video-Downloader)  
+**License**: [AGPL-3](https://www.gnu.org/licenses/agpl-3.0.en.html)  
+**Contact**: shiba.spj@hotmail.com
 
-At AIO Video Downloader, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by AIO Video Downloader and how we use it.
+## 🔍 Open-Source Transparency
 
-If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.
+As an AGPL-3 licensed open-source project:
+- All code is publicly auditable at [our GitHub repository](https://github.com/shibaFoss/AIO-Video-Downloader)
+- Community contributions are governed by the project's CONTRIBUTING guidelines
+- No hidden data collection mechanisms exist in the codebase
 
-## Log Files
+## 📦 Data Collection Principles
 
-AIO Video Downloader follows a standard procedure of using log files. These files log visitors when they use app. The information collected by log files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the app, tracking users' movement on the app, and gathering demographic information.
+We practice minimal data collection by design:
+- **No user accounts or registration**
+- **No mandatory personal data collection**
+- All core features work without sensitive permissions
 
-## Our Advertising Partners
+## 🚫 What We Don't Collect
 
-Some of advertisers in our app may use cookies and web beacons. Our advertising partners are listed below. Each of our advertising partners has their own Privacy Policy for their policies on user data. For easier access, we hyperlinked to their Privacy Policies below.
+The application explicitly does not collect or transmit:
+- Downloaded video content or metadata
+- Device identifiers (IMEI, MEID, etc.)
+- Contact lists, messages, or call logs
+- Precise location data (GPS, network-based)
+- Payment or financial information
 
-- Google  
-  [https://policies.google.com/technologies/ads](https://policies.google.com/technologies/ads)
+## ⚙️ Technical Data Handling
 
-## Privacy Policies
+### Local Storage
+- Download history stored only in device storage (non-synced)
+- Preferences saved using Android's SharedPreferences API
+- All storage uses Android's sandboxed storage system
 
-You may consult this list to find the Privacy Policy for each of the advertising partners of AIO Video Downloader.
+### Network Operations
+- Video URL analysis performed locally on device
+- Direct peer-to-server downloads (no proxy servers)
+- No intermediate processing of your downloads
 
-Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or Beacons that are used in their respective advertisements and links that appear on AIO Video Downloader. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on this app or other apps or websites.
+## 📢 Advertising (Optional Module)
 
-Note that AIO Video Downloader has no access to or control over these cookies that are used by third-party advertisers.
+For ad-supported builds:
+- Uses Android's resettable Advertising ID
+- Network requests limited to ad providers only
+- Ad implementation code is in separate verifiable module
 
-## Third Party Privacy Policies
+## 🔐 Permissions Breakdown
 
-AIO Video Downloader's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options.
+| Permission | Purpose | Required | User Control |
+|------------|---------|----------|--------------|
+| `INTERNET` | Download videos | Yes | N/A |
+| `WRITE_EXTERNAL_STORAGE` | Save files to storage | Optional | Revocable |
+| `FOREGROUND_SERVICE` | Download notifications | Optional | Disable in settings |
 
-## Children's Information
+## 🛡️ Security Measures
 
-Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.
+- Implements certificate pinning for supported platforms
+- Uses Android's Network Security Configuration
+- Regular security audits documented in GitHub issues
+- All dependencies tracked in build.gradle
 
-AIO Video Downloader does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our App, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.
+## 👶 Children's Privacy
 
-## Online Privacy Policy Only
+Compliant with global standards:
+- COPPA (US) compliant by design
+- GDPR (EU) compliant data practices
+- No features specifically targeting minors
 
-This Privacy Policy applies only to our online activities and is valid for visitors to our App with regards to the information that they shared and/or collect in AIO Video Downloader. This policy is not applicable to any information collected offline or via channels other than this app. Our Privacy Policy was created with the help of the [App Privacy Policy Generator from App-Privacy-Policy.com](https://www.app-privacy-policy.com/app-privacy-policy-generator/)
+## ♻️ User Control Options
 
-## Consent
+You can:
+1. Inspect all network requests via Android Studio
+2. Review all data storage locations in `/data/data/[package]`
+3. Build your own ad-free version from source
+4. Disable all analytics in Settings > Privacy
 
-By using our app, you hereby consent to our Privacy Policy and agree to its Terms and Conditions.
+## 🔄 Policy Updates
+
+Changes will be:
+1. Versioned in the repository's `/docs` folder
+2. Announced in GitHub Releases
+3. Never reduce existing privacy protections retroactively
+
+## 📬 Contact & Contributions
+
+For privacy concerns or improvements:
+- Open an issue: [GitHub Issues](https://github.com/shibaFoss/AIO-Video-Downloader/issues)
+- Email: [shiba.spj@hotmail.com](mailto:shiba.spj@hotmail.com)
+- Submit PRs to: `docs/privacy_policy.md`
+
+---
+
+*This policy is valid as of the last updated date above. The AGPL-3 license guarantees your right to verify these claims by inspecting the source code.*

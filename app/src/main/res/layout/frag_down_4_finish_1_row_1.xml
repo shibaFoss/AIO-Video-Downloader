@@ -35,7 +35,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/container_img_thumbnail"
             android:layout_width="@dimen/_90"
-            android:layout_height="@dimen/_60"
+            android:layout_height="@dimen/_65"
             android:layout_marginStart="@dimen/_5"
             android:layout_marginTop="@dimen/_5"
             android:layout_marginEnd="@dimen/_5"

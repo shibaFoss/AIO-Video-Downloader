@@ -134,19 +134,6 @@
             android:launchMode="singleTop"
             android:windowSoftInputMode="adjustPan" />
 
-        <!-- More activities with standard configuration -->
-        <activity
-            android:name="app.ui.others.information.PrivacyPolicyActivity"
-            android:launchMode="singleTop" />
-
-        <activity
-            android:name="app.ui.others.information.ContentPolicyActivity"
-            android:launchMode="singleTop" />
-
-        <activity
-            android:name="app.ui.others.information.TermsConditionsActivity"
-            android:launchMode="singleTop" />
-
         <!-- =============== SERVICES =============== -->
         <!-- Foreground service for ongoing operations -->
 

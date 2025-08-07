@@ -12,81 +12,55 @@ import app.ui.others.information.UserFeedbackActivity.WHERE_DIS_YOU_COME_FROM
 import lib.ui.ActivityAnimator.animActivityFade
 import java.lang.ref.WeakReference
 
-/**
- * LauncherActivity serves as the entry point of the application.
- * It determines whether the app should launch the main interface or direct the user
- * to a feedback screen in case of a recent crash.
- *
- * This activity doesn't render any UI layout.
- */
 class LauncherActivity : BaseActivity() {
+    private val safeLauncherActivityRef = WeakReference(this).get()
 
-    // A weak reference to avoid memory leaks and hold a reference to this activity safely
-    private val safeSelfReference = WeakReference(this).get()
-
-    /**
-     * This activity doesn't need a UI, so we return -1 to skip layout inflation.
-     * @return -1 indicating no layout should be rendered
-     */
     override fun onRenderingLayout(): Int {
         return -1
     }
 
-    /**
-     * This method is called right after the layout would have been rendered.
-     * Since there's no layout here, we use this opportunity to perform conditional navigation.
-     */
     override fun onAfterLayoutRender() {
-        if (aioSettings.hasAppCrashedRecently) {
-            launchFeedbackActivity()
-        } else {
-            launchMotherActivity()
-        }
+        if (aioSettings.hasAppCrashedRecently) launchFeedbackActivity()
+        else launchOpeningActivity()
     }
 
-    /**
-     * Defines behavior for the back button. In this case,
-     * it exits the app only on double press for safety.
-     */
     override fun onBackPressActivity() {
         exitActivityOnDoubleBackPress()
     }
 
-    /**
-     * Launches the UserFeedbackActivity to collect crash-related feedback.
-     * Resets the crash flag and applies a fade animation on transition.
-     */
     private fun launchFeedbackActivity() {
-        safeSelfReference?.let { context ->
-            aioSettings.hasAppCrashedRecently = false // Clear crash flag
-            aioSettings.updateInStorage() // Persist updated settings
+        safeLauncherActivityRef?.let { context ->
+            aioSettings.hasAppCrashedRecently = false
+            aioSettings.updateInStorage()
 
             Intent(context, UserFeedbackActivity::class.java).apply {
                 flags = FLAG_ACTIVITY_CLEAR_TOP or FLAG_ACTIVITY_SINGLE_TOP
                 putExtra(WHERE_DIS_YOU_COME_FROM, FROM_CRASH_HANDLER)
                 startActivity(this)
                 finish()
-                animActivityFade(context) // Smooth fade animation
+                animActivityFade(context)
             }
         }
     }
 
-    /**
-     * Launches the main activity ([MotherActivity]) after the splash delay.
-     *
-     * Flags used:
-     * - [FLAG_ACTIVITY_CLEAR_TOP]: Clears any existing instances of the main activity.
-     * - [FLAG_ACTIVITY_SINGLE_TOP]: Reuses the existing instance if already at the top.
-     *
-     * Also applies a fade animation when transitioning from the splash screen.
-     */
     private fun launchMotherActivity() {
-        safeSelfReference?.let { context ->
+        safeLauncherActivityRef?.let { context ->
             Intent(context, MotherActivity::class.java).apply {
                 flags = FLAG_ACTIVITY_CLEAR_TOP or FLAG_ACTIVITY_SINGLE_TOP
                 startActivity(this)
-                finish() // Close the splash activity
-                animActivityFade(getActivity()) // Apply fade animation during transition
+                finish()
+                animActivityFade(getActivity())
+            }
+        }
+    }
+
+    private fun launchOpeningActivity() {
+        safeLauncherActivityRef?.let { context ->
+            Intent(context, OpeningActivity::class.java).apply {
+                flags = FLAG_ACTIVITY_CLEAR_TOP or FLAG_ACTIVITY_SINGLE_TOP
+                startActivity(this)
+                finish()
+                animActivityFade(getActivity())
             }
         }
     }

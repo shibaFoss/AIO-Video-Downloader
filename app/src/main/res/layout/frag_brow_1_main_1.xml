@@ -443,6 +443,6 @@
             app:lottie_autoPlay="true"
             app:lottie_enableMergePathsForKitKatAndAbove="true"
             app:lottie_loop="true"
-            app:lottie_rawRes="@raw/animation_infinite_loop" />
+            app:lottie_rawRes="@raw/animation_circle_loading" />
     </androidx.cardview.widget.CardView>
 </RelativeLayout>

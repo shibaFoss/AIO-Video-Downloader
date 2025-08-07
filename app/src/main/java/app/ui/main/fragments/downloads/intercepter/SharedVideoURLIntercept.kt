@@ -10,7 +10,6 @@ import app.core.engines.video_parser.parsers.VideoFormatsUtils.VideoFormat
 import app.core.engines.video_parser.parsers.VideoFormatsUtils.VideoInfo
 import app.core.engines.video_parser.parsers.VideoParserUtility.getYtdlpVideoFormatsListWithRetry
 import app.ui.main.MotherActivity
-import app.ui.others.information.ContentPolicyActivity
 import com.aio.R
 import lib.device.IntentUtility.openLinkInSystemBrowser
 import lib.networks.URLUtility.isValidURL
@@ -276,8 +275,7 @@ class SharedVideoURLIntercept(
 							)?.apply {
 								setOnClickForPositiveButton {
 									close()
-									val classToOpen = ContentPolicyActivity::class.java
-									safeBaseActivityRef?.openActivity(classToOpen)
+									//Todo: open terms and condition url
 								}
 							}
 						}

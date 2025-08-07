@@ -155,7 +155,7 @@ object WebVideoParser {
 		videoGrabberButton: LottieAnimationView?,
 		webviewEngine: WebViewEngine?
 	) {
-		videoGrabberButton?.setAnimation(R.raw.animation_video_parsing)
+		videoGrabberButton?.setAnimation(R.raw.animation_circle_loading)
 		videoGrabberButton?.setOnClickListener { webviewEngine?.let { showHowToInfoDialog(it) } }
 	}
 	

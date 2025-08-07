@@ -9,9 +9,6 @@ import androidx.core.content.ContextCompat.getDrawable
 import app.core.AIOApp
 import app.core.AIOApp.Companion.aioSettings
 import app.ui.main.fragments.settings.dialogs.DownloadLocation
-import app.ui.others.information.ContentPolicyActivity
-import app.ui.others.information.PrivacyPolicyActivity
-import app.ui.others.information.TermsConditionsActivity
 import app.ui.others.information.UserFeedbackActivity
 import app.ui.others.startup.LanguagePickerDialog
 import com.aio.R
@@ -176,23 +173,17 @@ class SettingsOnClickLogic(private val settingsFragment: SettingsFragment) {
 	
 	/** Navigate to Terms & Conditions screen */
 	fun showTermsConditionActivity() {
-		safeSettingsFragmentRef?.safeMotherActivityRef?.openActivity(
-			TermsConditionsActivity::class.java, shouldAnimate = false
-		)
+
 	}
 	
 	/** Navigate to Privacy Policy screen */
 	fun showPrivacyPolicyActivity() {
-		safeSettingsFragmentRef?.safeMotherActivityRef?.openActivity(
-			PrivacyPolicyActivity::class.java, shouldAnimate = false
-		)
+
 	}
 	
 	/** Navigate to Content Policy screen */
 	fun showContentPolicyActivity() {
-		safeSettingsFragmentRef?.safeMotherActivityRef?.openActivity(
-			ContentPolicyActivity::class.java, shouldAnimate = false
-		)
+
 	}
 	
 	/** Navigate to user feedback screen */

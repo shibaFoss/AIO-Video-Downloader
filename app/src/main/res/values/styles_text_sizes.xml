@@ -1,89 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--
-    TEXT SIZE DIMENSIONS
-    This file defines all standard text sizes used throughout the application.
-    Sizes follow a typographic scale for visual hierarchy and consistency.
-    All values are in scalable pixels (sp) for proper text scaling.
-
-    Hierarchy:
-    1. Smallest - For secondary metadata and captions
-    2. Smaller - For helper text and footnotes
-    3. Small - For minor text elements
-    4. Message - Standard paragraph text
-    5. Normal - Primary content text
-    6. Sub-heading - Section titles
-    7. Title - Major headings
-    8. Extra Large - Prominent display text
-    -->
-
-    <!--
-    EXTRA SMALL TEXT (8sp)
-    Usage: Tiny captions, metadata, or secondary information
-    Example: Timestamps, tags, or copyright info
-    -->
     <dimen name="smallest_text_size">8sp</dimen>
-
-    <!--
-    SMALLER TEXT (10sp)
-    Usage: Secondary text that should be less prominent
-    Example: Helper text, footnotes, or form labels
-    -->
     <dimen name="smaller_text_size">10sp</dimen>
-
-    <!--
-    SMALL TEXT (12sp)
-    Usage: Supporting content that should be readable but not dominant
-    Example: Sidebar content, card metadata, or button labels
-    -->
     <dimen name="small_text_size">12sp</dimen>
-
-    <!--
-    MESSAGE TEXT (14sp)
-    Usage: Standard paragraph text and body content
-    Example: Dialog messages, descriptions, or list items
-    -->
     <dimen name="message_text_size">14sp</dimen>
-
-    <!--
-    NORMAL TEXT SMALL (15sp)
-    Usage: Slightly larger than standard message text
-    Example: Important content that needs subtle emphasis
-    -->
     <dimen name="normal_text_size_small">15sp</dimen>
-
-    <!--
-    NORMAL TEXT (16sp)
-    Usage: Primary content text size for most reading
-    Example: Article body, main content paragraphs
-    -->
     <dimen name="normal_text_size">16sp</dimen>
-
-    <!--
-    SUB-HEADING (18sp)
-    Usage: Section titles and medium importance headings
-    Example: Card titles, form section headers
-    -->
     <dimen name="sub_heading_text_size">18sp</dimen>
-
-    <!--
-    TITLE TEXT (19sp)
-    Usage: Main headings and important titles
-    Example: Page titles, dialog headings
-    -->
     <dimen name="title_text_size">19sp</dimen>
-
-    <!--
-    ACTIONBAR TEXT (19sp)
-    Usage: Specifically for ActionBar titles
-    Matches title_text_size for consistency
-    -->
     <dimen name="actionbar_text_size">19sp</dimen>
-
-    <!--
-    EXTRA LARGE TEXT (22sp)
-    Usage: Prominent display text for emphasis
-    Example: Hero sections, important notices
-    -->
     <dimen name="extra_large_text_size">22sp</dimen>
 </resources>

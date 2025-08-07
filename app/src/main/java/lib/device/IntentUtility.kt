@@ -26,20 +26,19 @@ object IntentUtility {
 	 *
 	 * @throws IllegalStateException If no application is available to handle the intent.
 	 */
-	@JvmStatic
+	@Throws(IllegalStateException::class)
+    @JvmStatic
 	fun openUrlInBrowser(context: Context?, url: String) {
 		if (url.isEmpty()) return
-		
-		WeakReference(context).get()?.let { safeContextRef ->
-			val webpage = url.toUri()
-			val intent = Intent(ACTION_VIEW, webpage)
-			if (intent.resolveActivity(safeContextRef.packageManager) != null) {
-				safeContextRef.startActivity(intent)
-			} else {
-				throw IllegalStateException(
-					"No application can handle this request. Please install a web browser."
-				)
-			}
+
+		val contextRef = WeakReference(context).get() ?: return
+		val webpage = url.toUri()
+		val intent = Intent(ACTION_VIEW, webpage)
+
+		if (intent.resolveActivity(contextRef.packageManager) != null) {
+			contextRef.startActivity(intent)
+		} else {
+			throw IllegalStateException("No application can handle this request. Please install a web browser.")
 		}
 	}
 	
@@ -52,17 +51,15 @@ object IntentUtility {
 	 */
 	@JvmStatic
 	fun getIntentDataURI(activity: Activity?): String? {
-		WeakReference(activity).get()?.let { safeContextRef ->
-			val intent = safeContextRef.intent
-			val action = intent.action
-			
-			val dataURI = when (action) {
-				ACTION_SEND -> intent.getStringExtra(EXTRA_TEXT)
-				ACTION_VIEW -> intent.dataString
-				else -> null
-			}
-			return dataURI
-		} ?: run { return null }
+		val safeContext = WeakReference(activity).get() ?: return null
+		val intent = safeContext.intent
+		val action = intent.action
+
+		return when (action) {
+			ACTION_SEND -> intent.getStringExtra(EXTRA_TEXT)
+			ACTION_VIEW -> intent.dataString
+			else -> null
+		}
 	}
 	
 	/**

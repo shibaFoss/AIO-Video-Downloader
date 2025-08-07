@@ -1,32 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-    File Provider paths configuration file
-    Defines the directories that can be shared with other apps via FileProvider
-
-    File location: typically in res/xml/ (e.g., file_paths.xml)
-    Used in AndroidManifest.xml with:
-    <provider android:name="androidx.core.content.FileProvider"
-              android:authorities="com.example.app.fileprovider"
-              android:exported="false"
-              android:grantUriPermissions="true">
-        <meta-data android:name="android.support.FILE_PROVIDER_PATHS"
-                   android:resource="@xml/file_paths"/>
-    </provider>
--->
 <paths>
-    <!--
-        external-path: Represents files in the root of external storage
-        Attributes:
-        - name: A unique identifier for this path (used in content URIs)
-        - path: The subdirectory to share ("." means root of this location)
-
-        This configuration allows sharing files from:
-        - External storage root (Environment.getExternalStorageDirectory())
-        Equivalent to /storage/emulated/0/ on most devices
-
-        Security Note: Be careful when sharing external storage paths as this
-        may expose sensitive files. Consider using more specific subdirectories.
-    -->
     <external-path
         name="external_files"
         path="." />

@@ -33,9 +33,9 @@ import java.lang.ref.WeakReference
  * Class responsible for handling logic when interacting with Settings options.
  */
 class SettingsOnClickLogic(private val settingsFragment: SettingsFragment) {
-	
-	// Keeps a weak reference to the fragment to avoid memory leaks.
-	private val safeSettingsFragmentRef = WeakReference(settingsFragment).get()
+
+    // Keeps a weak reference to the fragment to avoid memory leaks.
+    private val safeSettingsFragmentRef = WeakReference(settingsFragment).get()
 
 	/** Show a dialog to select default download location */
 	fun setDefaultDownloadLocationPicker() {
@@ -219,14 +219,9 @@ class SettingsOnClickLogic(private val settingsFragment: SettingsFragment) {
 	/** Constructs the Play Store sharing message */
 	private fun getShareText(context: Context): String {
 		val appName = context.getString(R.string.title_aio_video_downloader)
-		val playStoreUrl = "https://github.com/shibaFoss/VideoMate"
-		val playStoreLink = "$playStoreUrl${context.packageName}"
-		
-		return context.getString(
-			R.string.text_sharing_app_msg,
-			appName,
-			playStoreLink
-		).trimIndent()
+		val githubOfficialPage = context.getString(R.string.text_aio_github_official_page_url)
+		return context.getString(R.string.text_sharing_app_msg, appName, githubOfficialPage)
+			.trimIndent()
 	}
 	
 	/** Open app page on Play Store */
@@ -311,5 +306,5 @@ class SettingsOnClickLogic(private val settingsFragment: SettingsFragment) {
 	}
 	
 	/** Data class representing a view ID and whether the setting is enabled */
-	data class SettingViewConfig(@IdRes val viewId: Int, val isEnabled: Boolean)
+	data class SettingViewConfig(@field:IdRes val viewId: Int, val isEnabled: Boolean)
 }

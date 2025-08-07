@@ -89,7 +89,6 @@ Changes will be:
 For privacy concerns or improvements:
 - Open an issue: [GitHub Issues](https://github.com/shibaFoss/AIO-Video-Downloader/issues)
 - Email: [shiba.spj@hotmail.com](mailto:shiba.spj@hotmail.com)
-- Submit PRs to: `docs/privacy_policy.md`
 
 ---
 

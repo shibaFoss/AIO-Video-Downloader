@@ -1,103 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--
-    DIALOG STYLE DEFINITIONS
-    This file contains all style definitions related to application dialogs.
-    Styles are organized hierarchically with a base dialog style and specialized variants.
-    -->
-
-    <!--
-    Base dialog style that all other dialog styles inherit from.
-    Features:
-    - Transparent background
-    - Floating window behavior
-    - Translucent appearance
-    - Background dimming effect
-    -->
     <style name="style_dialog" parent="Theme.AppCompat.DayNight.Dialog.MinWidth">
-        <!-- Transparent window background -->
         <item name="android:windowBackground">@color/transparent</item>
-        <!-- Dialog floats above activity -->
         <item name="android:windowIsFloating">true</item>
-        <!-- Allows content behind dialog to be partially visible -->
         <item name="android:windowIsTranslucent">true</item>
-        <!-- Dims the background when dialog is shown -->
         <item name="android:backgroundDimEnabled">true</item>
     </style>
 
-    <!--
-    Style for dialog title text views.
-    Appearance:
-    - Bold sub-heading text size
-    - Primary text color
-    - Centered both horizontally and vertically
-    - Uses application's custom font family
-    -->
     <style name="style_dialog.title">
-        <!-- Layout dimensions -->
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
-
-        <!-- Text appearance -->
         <item name="android:textSize">@dimen/sub_heading_text_size</item>
         <item name="android:textColor">@color/color_text_primary</item>
         <item name="android:fontFamily">@font/application_font_family</item>
         <item name="android:textStyle">bold</item>
-
-        <!-- Positioning -->
         <item name="android:gravity">center</item>
         <item name="android:layout_gravity">center</item>
     </style>
 
-    <!--
-    Style for dialog message/content text views.
-    Features:
-    - Normal text size with slightly compact line spacing (0.9 multiplier)
-    - Primary text color with secondary color for links
-    - Centered text alignment
-    - Automatic link coloring
-    -->
     <style name="style_dialog.message">
-        <!-- Layout dimensions -->
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-
-        <!-- Text positioning -->
         <item name="android:gravity">center</item>
-
-        <!-- Text appearance -->
         <item name="android:textSize">@dimen/normal_text_size</item>
         <item name="android:textColor">@color/color_text_primary</item>
         <item name="android:textColorLink">@color/color_secondary</item>
-
-        <!-- Line spacing (90% of normal) -->
         <item name="android:lineSpacingMultiplier">0.9</item>
     </style>
 
-    <!--
-    Positive action button style for dialogs.
-    Inherits from the global positive button style definition.
-    Typically used for confirmation/accept actions.
-    -->
     <style name="style_dialog.positive_button" parent="style_text_button.positive" />
-
-    <!--
-    Negative action button style for dialogs.
-    Inherits from the global negative button style definition.
-    Typically used for cancellation/dismissal actions.
-    -->
     <style name="style_dialog.negative_button" parent="style_text_button.negative" />
 
-    <!--
-    Animation style for dialog entrance and exit.
-    Applies slide animations:
-    - Enter: Slides up from bottom
-    - Exit: Slides down to bottom
-    -->
     <style name="style_dialog.animation">
-        <!-- Entrance animation -->
         <item name="android:windowEnterAnimation">@anim/anim_slide_up_enter</item>
-        <!-- Exit animation -->
         <item name="android:windowExitAnimation">@anim/anim_slide_down_exit</item>
     </style>
 </resources>

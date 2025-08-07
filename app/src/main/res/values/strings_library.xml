@@ -11,6 +11,7 @@
     <string name="title_aio_programs" translatable="false">AIO Programs</string>
     <string name="title_aio_archives" translatable="false">AIO Archives</string>
     <string name="title_aio_others" translatable="false">AIO Others</string>
+    <string name="text_aio_github_official_page_url" translatable="false">https://github.com/shibaFoss/AIO-Video-Downloader</string>
 
     <string name="title_home">Home</string>
     <string name="title_browser">Browser</string>
@@ -481,5 +482,6 @@
     <string name="title_hentaicity">Hentaicity</string>
     <string name="title_xvideos">XVideos</string>
     <string name="text_loading_downloads_data">Loading downloads data…</string>
+    <string name="text_aio_github_privacy_policy">https://github.com/shibaFoss/AIO-Video-Downloader/blob/master/PRIVACY_POLICY.md</string>
 
 </resources>

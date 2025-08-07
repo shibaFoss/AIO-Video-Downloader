@@ -470,6 +470,7 @@
                     android:layout_marginBottom="@dimen/_0"
                     android:background="@drawable/ic_button_negative_selector"
                     android:clickable="true"
+                    android:visibility="gone"
                     android:orientation="vertical"
                     tools:ignore="TouchTargetSizeCheck">
 

@@ -119,12 +119,12 @@ dependencies {
     implementation libs.androidx.cardview        // CardView
     implementation libs.circleimageview          // Circular ImageView
     implementation libs.androidx.webkit          // Android WebView support
-    implementation libs.constraint.layout // Android layout view
+    implementation libs.constraint.layout        // Android layout view
 
     // Kotlin and Coroutines
     implementation libs.androidx.core.ktx         // Kotlin extensions for Android
-    implementation libs.kotlin.coroutines.core   // Kotlin Coroutines core
-    implementation libs.kotlin.coroutines        // Kotlin Coroutines Android
+    implementation libs.kotlin.coroutines.core    // Kotlin Coroutines core
+    implementation libs.kotlin.coroutines         // Kotlin Coroutines Android
     implementation libs.androidx.lifecycle.process // Lifecycle-aware components
 
     // Media playback (ExoPlayer)
@@ -137,7 +137,7 @@ dependencies {
 
     // Data processing
     implementation libs.gson                     // JSON serialization/deserialization
-    implementation libs.jsoup                   // HTML parsing library
+    implementation libs.jsoup                    // HTML parsing library
 
     // Networking
     implementation libs.okhttp                   // HTTP client

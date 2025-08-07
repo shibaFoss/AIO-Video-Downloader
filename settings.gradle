@@ -1,42 +1,29 @@
-// Plugin management block - controls how plugins are resolved for the entire project
 pluginManagement {
-    // Defines where to look for plugins
     repositories {
-        // Google's Maven repository for Android-related plugins
         google {
-            // Filters to only include Android/Google-related groups
             content {
-                includeGroupByRegex("com\\.android.*")  // All com.android packages
-                includeGroupByRegex("com\\.google.*")  // All com.google packages
-                includeGroupByRegex("androidx.*")       // All AndroidX packages
+                includeGroupByRegex("com\\.android.*")
+                includeGroupByRegex("com\\.google.*")
+                includeGroupByRegex("androidx.*")
             }
         }
-        // Maven Central for other plugins
         mavenCentral()
-        // Gradle's own plugin portal as a fallback
         gradlePluginPortal()
     }
 }
 
-// Plugin declaration block - applies a plugin globally to support JDK toolchain resolution
 plugins {
     id 'org.gradle.toolchains.foojay-resolver-convention' version '1.0.0'
 }
 
-// Dependency resolution management - controls how app dependencies are resolved
 dependencyResolutionManagement {
-    // Sets repository mode to fail if any project declares its own repositories
-    // This ensures centralized dependency management
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-
-    // Defines where to look for project dependencies
     repositories {
-        google()  // Google's Maven repository (no filters here - all groups included)
-        mavenCentral()  // Standard Maven Central repository
-        maven { url "https://jitpack.io" }  // JitPack for GitHub-hosted libraries
+        google()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
     }
 }
 
-// Project configuration
-rootProject.name = "AIO - Video Downloader"  // Sets the root project name
-include ':app'                  // Includes the app module in the build
+rootProject.name = "AIO - Video Downloader"
+include ':app'

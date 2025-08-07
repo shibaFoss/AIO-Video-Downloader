@@ -1,158 +1,97 @@
-// Project plugins configuration
 plugins {
-    // Android Application plugin - enables Android app development capabilities
     alias(libs.plugins.android.application)
-    // Kotlin Android plugin - adds Kotlin support for Android
     alias(libs.plugins.kotlin.android)
 }
 
-// Android application configuration block
 android {
-    // Unique namespace for your application (reverse domain notation)
     namespace 'com.aio'
-
-    // Target Android SDK version for compilation
-    compileSdk 36
-
-    // Specific NDK version being used
+    compileSdkVersion 36
     ndkVersion '28.0.12916984 rc3'
 
-    // Default configuration for all build variants
     defaultConfig {
-        // Application ID (package name)
         applicationId "com.aio.video_downloader"
-
-        // Minimum Android version supported
         minSdk 28
-
-        // Target Android version for optimization
         targetSdk 36
-
-        // Version code (integer used for version comparison)
         versionCode 69
-
-        // User-visible version name
         versionName '2025.08.01'
 
-        // Enable vector drawable support for older Android versions
-        vectorDrawables {
-            useSupportLibrary = true
-        }
-
-        // Native code configuration (ABI filters)
-        ndk {
-            abiFilters.add("x86")          // 32-bit x86
-            abiFilters.add("x86_64")       // 64-bit x86
-            abiFilters.add("armeabi-v7a")  // 32-bit ARM
-            abiFilters.add("arm64-v8a")    // 64-bit ARM
-        }
-
-        // Enable multi-dex support (for apps with many methods)
+        vectorDrawables.useSupportLibrary = true
         multiDexEnabled true
-    }
 
-    // Build type configurations
-    buildTypes {
-        // Release build configuration
-        release {
-            minifyEnabled false       // Disables code shrinking
-            shrinkResources false     // Disables resource shrinking
-            multiDexEnabled true      // Keep multi-dex enabled for release
-            debuggable false          // Production builds shouldn't be debuggable
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        ndk {
+            abiFilters "x86", "x86_64", "armeabi-v7a", "arm64-v8a"
         }
     }
 
-    // NDK debug symbols level for release builds
-    android.buildTypes.release.ndk.debugSymbolLevel "FULL"
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
+                    'proguard-rules.pro'
+        }
+    }
 
-    // Packaging options configuration
+    buildTypes.release.ndk.debugSymbolLevel = "FULL"
+
     packagingOptions {
-        // Exclude these metadata files to prevent conflicts
         exclude 'META-INF/LICENSE'
         exclude 'META-INF/NOTICE'
+        exclude 'META-INF/*.kotlin_module'
 
-        // Legacy packaging for JNI libraries (for compatibility)
-        jniLibs {
-            useLegacyPackaging = true
+        jniLibs.useLegacyPackaging = true
+    }
+
+    splits {
+        abi {
+            enable true
+            reset()
+            include 'x86', 'x86_64', 'armeabi-v7a', 'arm64-v8a'
+            universalApk true
         }
     }
 
-    // Explicit ABI splits configuration (alternative to bundle configuration)
-    splits.abi {
-        enable true       // Enable ABI splits
-        reset()          // Clear any default ABIs
-        include 'x86', 'x86_64', 'armeabi-v7a', 'arm64-v8a'  // Specific ABIs to include
-        universalApk true  // Also generate a universal APK containing all ABIs
-    }
-
-    // Java compatibility settings
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11  // Java 11 source compatibility
-        targetCompatibility JavaVersion.VERSION_11  // Java 11 bytecode target
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 
-    // Kotlin compiler configuration
     kotlin {
-        jvmToolchain(11)  // Use JDK 11 for Kotlin compilation
+        jvmToolchain(11)
     }
 
-    // Dependency metadata configuration
     dependenciesInfo {
-        includeInBundle = false  // Exclude dependency info from bundles
-        includeInApk = false    // Exclude dependency info from APKs
-    }
-
-    lint {
-        baseline = file("lint-baseline.xml")
+        includeInBundle false
+        includeInApk false
     }
 }
 
-// Application dependencies
 dependencies {
-    // Local JAR file dependencies
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-
-    // AndroidX UI components
-    implementation libs.androidx.appcompat       // AppCompat library
-    implementation libs.androidx.viewpager2      // ViewPager2
-    implementation libs.androidx.cardview        // CardView
-    implementation libs.circleimageview          // Circular ImageView
-    implementation libs.androidx.webkit          // Android WebView support
-    implementation libs.constraint.layout        // Android layout view
-
-    // Kotlin and Coroutines
-    implementation libs.androidx.core.ktx         // Kotlin extensions for Android
-    implementation libs.kotlin.coroutines.core    // Kotlin Coroutines core
-    implementation libs.kotlin.coroutines         // Kotlin Coroutines Android
-    implementation libs.androidx.lifecycle.process // Lifecycle-aware components
-
-    // Media playback (ExoPlayer)
-    implementation libs.media3.exoplayer         // Core ExoPlayer
-    implementation libs.media3.exoplayer.hls     // HLS streaming support
-    implementation libs.media3.exoplayer.dash    // DASH streaming support
-    implementation libs.media3.datasource        // Data source components
-    implementation libs.media3.ui                // UI components
-    implementation libs.media3.session           // Media session support
-
-    // Data processing
-    implementation libs.gson                     // JSON serialization/deserialization
-    implementation libs.jsoup                    // HTML parsing library
-
-    // Networking
-    implementation libs.okhttp                   // HTTP client
-
-    // Animation
-    implementation libs.lottie                   // Lottie animations
-
-    // Image loading
-    implementation libs.glide                    // Image loading library
-
-    // Permissions and storage
-    implementation libs.permissionx              // Runtime permissions helper
-    implementation libs.saf.storage              // Storage Access Framework helper
-
-    // Video downloading specific
-    implementation libs.ytdlp.library            // YouTube-DL wrapper
-    implementation libs.ytdlp.ffmpeg             // FFmpeg integration
+    implementation libs.androidx.appcompat
+    implementation libs.androidx.viewpager2
+    implementation libs.androidx.cardview
+    implementation libs.circleimageview
+    implementation libs.androidx.webkit
+    implementation libs.constraint.layout
+    implementation libs.androidx.core.ktx
+    implementation libs.kotlin.coroutines.core
+    implementation libs.kotlin.coroutines
+    implementation libs.androidx.lifecycle.process
+    implementation libs.media3.exoplayer
+    implementation libs.media3.exoplayer.hls
+    implementation libs.media3.exoplayer.dash
+    implementation libs.media3.datasource
+    implementation libs.media3.ui
+    implementation libs.media3.session
+    implementation libs.gson
+    implementation libs.jsoup
+    implementation libs.okhttp
+    implementation libs.lottie
+    implementation libs.glide
+    implementation libs.permissionx
+    implementation libs.saf.storage
+    implementation libs.ytdlp.library
+    implementation libs.ytdlp.ffmpeg
 }

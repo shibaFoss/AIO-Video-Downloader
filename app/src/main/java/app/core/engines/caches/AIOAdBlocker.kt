@@ -19,7 +19,8 @@ class AIOAdBlocker {
 	companion object {
 		// Remote URL containing ad-block hostnames (one per line)
 		private const val GITHUB_RAW_URL =
-			"https://github.com/shibaFoss/aio_version/raw/main/adblock_host"
+			"https://github.com/shibaFoss/AIO-Video-Downloader/raw/refs/" +
+					"heads/master/others/adblock_host.txt"
 	}
 	
 	// Set of hostnames currently used for ad blocking

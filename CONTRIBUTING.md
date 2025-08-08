@@ -9,7 +9,8 @@ This project was born out of a simple frustration many of us share — you find 
 audio clip, but when you want to save it for offline use, the **`download`** button is mysteriously
 missing (or buried under endless pop-ups). We decided to fix that.
 
-With support for **1,000+ websites** and a clean, minimal Android interface, [AIO Video Downloader](https://github.com/shibaFoss/AIO-Video-Downloader/)
+With support for **1,000+ websites** and a clean, minimal Android
+interface, [AIO Video Downloader](https://github.com/shibaFoss/AIO-Video-Downloader/)
 aims to make grabbing your favorite content as easy as saving a photo from your gallery. Think of it
 as your pocket-sized **`save button`** for the internet.
 
@@ -47,10 +48,9 @@ You're welcome to request features that improve usability, download flexibility,
 Android features.
 
 > **Note:** AIO Video Downloader focuses on being a simple, effective download solution — not a
-> feature-packed toolbox.  
-> We intentionally avoid complex, advanced options from `yt-dlp` to keep the experience clean and
-> confusion-free.  
-> The goal: you never have to think twice about how to use the app.
+> feature-packed toolbox. We intentionally avoid complex, advanced options from `yt-dlp` to keep the
+> experience clean and confusion-free. The goal: you never have to think twice about how to use the
+> app.
 
 ---
 

@@ -75,7 +75,7 @@ New to open source? Awesome — you’re in the right place!
 
 ## ⚙️ Building From Source
 
-This section is for anyone who wants to run AIO Video Downloader on their own computer and maybe
+This section is for anyone who wants to build AIO Video Downloader on their own computer and maybe
 even make changes to it. If you’ve used **Git** and **Android Studio** before, you’ll feel right at
 home. If not — no worries! You can still try, and you’re welcome to ask for help from the community.
 

@@ -103,7 +103,7 @@ machine.
 - Select **"Open an Existing Project"** from the welcome screen.
 - Navigate to the folder where you cloned the repository and select it.
 
-> ✅ It is recommended to use the latest **Android Studio Canary** version for the best compatibility
+> ✅ It is recommended to use the latest **Android Studio** version for the best compatibility
 > with modern Android features and build tools.
 
 ### 4. Sync the Gradle Project

@@ -14,10 +14,6 @@ interface, [AIO Video Downloader](https://github.com/shibaFoss/AIO-Video-Downloa
 aims to make grabbing your favorite content as easy as saving a photo from your gallery. Think of it
 as your pocket-sized **`save button`** for the internet.
 
-Whether you’re downloading a tutorial to watch on a long train ride with no signal, or archiving a
-nostalgic piece of internet history before it disappears, this tool is here to help — without ads,
-paywalls, or strings attached.
-
 ---
 
 ## 🐞 Bug Reports

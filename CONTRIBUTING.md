@@ -9,8 +9,7 @@ This project was born out of a simple frustration many of us share — you find 
 audio clip, but when you want to save it for offline use, the **`download`** button is mysteriously
 missing (or buried under endless pop-ups). We decided to fix that.
 
-With support for **1,000+ websites** and a clean, minimal Android interface, *
-*_[AIO Video Downloader](https://github.com/shibaFoss/AIO-Video-Downloader/)_**
+With support for **1,000+ websites** and a clean, minimal Android interface, **_[AIO Video Downloader](https://github.com/shibaFoss/AIO-Video-Downloader/)_**
 aims to make grabbing your favorite content as easy as saving a photo from your gallery. Think of it
 as your pocket-sized **`save button`** for the internet.
 

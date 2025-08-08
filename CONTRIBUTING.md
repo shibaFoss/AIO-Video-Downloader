@@ -1,66 +1,95 @@
 # Contributing
 
-Thank you for considering contributing to **AIO Video Downloader** — a free, open-source, and ad-free video/audio downloader for Android, powered by [`yt-dlp`](https://github.com/yt-dlp/yt-dlp). This project aims to make downloading content from 1000+ websites easy and accessible through a clean Android interface.
+Thank you for considering contributing to **AIO Video Downloader** — a free, open-source, and
+ad-free video/audio downloader for Android. It’s powered by the magic of [
+`yt-dlp`](https://github.com/yt-dlp/yt-dlp) and brought to life on
+mobile with the help of [youtubedl-android](https://github.com/yausername/youtubedl-android).
+
+This project was born out of a simple frustration many of us share — you find the perfect video or
+audio clip, but when you want to save it for offline use, the **`download`** button is mysteriously
+missing (or buried under endless pop-ups). We decided to fix that.
+
+With support for **1,000+ websites** and a clean, minimal Android interface, *
+*_[AIO Video Downloader](https://github.com/shibaFoss/AIO-Video-Downloader/)_**
+aims to make grabbing your favorite content as easy as saving a photo from your gallery. Think of it
+as your pocket-sized **`save button`** for the internet.
+
+Whether you’re downloading a tutorial to watch on a long train ride with no signal, or archiving a
+nostalgic piece of internet history before it disappears, this tool is here to help — without ads,
+paywalls, or strings attached.
 
 ---
 
 ## 🐞 Bug Reports
 
-Before submitting a bug report:
+Before reporting a bug:
 
-- **Search existing issues**, including closed ones, to avoid duplicates.
-- Use the **bug report template** and include clear, actionable details.
+- **Check existing issues** (open and closed) to avoid duplicates.
+- Use the **bug report template** with clear, useful details.
 
-Please make sure to provide:
+Include:
 
-- Steps to reproduce the issue.
-- The video/audio URL (if applicable).
-- Your device model and Android version.
-- Screenshots or logs, if possible.
+- **What you did before the bug happened** — step-by-step so we can try it too.
+- **The video or audio link** (if the bug happens with a specific file).
+- **Your phone model and Android version** — e.g., "Samsung Galaxy A52, Android 13".
+- **Pictures or error messages** — a screenshot or log helps us see what you see.
 
-Issues missing essential information may be closed without investigation.
+Without these details, it’s much harder to fix the problem, and your report might be closed.
 
 ---
 
 ## 💡 Feature Requests
 
-AIO Video Downloader is designed to be a **simple and user-friendly interface** for yt-dlp, providing essential functionality without exposing the full command-line interface.
+**AIO Video Downloader** is designed to be a **simple and user-friendly interface** for
+_[yt-dlp](https://github.com/yt-dlp/yt-dlp)_, providing essential functionality without exposing the
+full command-line interface.
 
-You're welcome to request features that improve usability, download flexibility, or integration with Android features.
+You're welcome to request features that improve usability, download flexibility, or integration with
+Android features.
 
-> Note: Since AIO Video Downloader does not aim to support all yt-dlp CLI features, highly advanced options may not be considered.
+> **Note:** AIO Video Downloader focuses on being a simple, effective download solution — not a
+> feature-packed toolbox.  
+> We intentionally avoid complex, advanced options from `yt-dlp` to keep the experience clean and
+> confusion-free.  
+> The goal: you never have to think twice about how to use the app.
 
 ---
 
 ## 📦 Pull Requests
 
-We gladly welcome code contributions! Before submitting a pull request:
+We’re happy to have your help! If you want to add or improve something:
 
-1. Comment under the relevant issue or open a new one to describe your changes.
-2. Mention that you're working on it to avoid duplicate efforts.
-3. Follow coding conventions and test your changes thoroughly.
+1. **Talk to us first** — comment on an existing issue or open a new one to explain your idea.
+2. **Say you’re working on it** so no one else does the same thing.
+3. **Keep it clean and tested** — follow the project’s coding style and make sure your changes work
+   well.
 
-Small, focused contributions are appreciated and easier to review.
+Small, focused changes are best — they’re easier to review and get merged faster.
 
 ---
 
 ## 👋 New Contributors
 
-New to open source? Great!
+New to open source? Awesome — you’re in the right place!
 
-- Look for issues labeled `good first issue`.
-- Feel free to ask questions or request clarification.
-- We’re happy to help you get started.
+- Start with issues marked **`good first issue`** — they’re beginner-friendly.
+- Not sure about something? Just ask — no question is too small.
+- We’re here to help you get started and feel confident contributing.
 
 ---
 
 ## ⚙️ Building From Source
 
-To build and run the app locally on your development machine, follow the steps below. This guide assumes you have basic knowledge of Git and Android Studio. If you're new to either, feel free to ask for help in the community!
+This section is for anyone who wants to run AIO Video Downloader on their own computer and maybe
+even make changes to it. If you’ve used **Git** and **Android Studio** before, you’ll feel right at
+home. If not — no worries! You can still try, and you’re welcome to ask for help from the community.
 
 ### 1. Fork the Repository
 
-Create your own copy of the repository by clicking the **Fork** button on the top-right corner of the [AIO Video Downloader GitHub page](https://github.com/shibafoss/AIO-Video-Downloader). This allows you to freely experiment with changes without affecting the original project.
+Think of “forking” as making your own personal copy of the project on GitHub.  
+Click the **Fork** button (top-right of
+the [project page](https://github.com/shibafoss/AIO-Video-Downloader)), and now you can play around,
+make edits, and test changes — all without touching the original version.
 
 ### 2. Clone the Repository
 
@@ -70,7 +99,8 @@ After forking, clone the repository to your local machine using the following Gi
 git clone https://github.com/shibafoss/AIO-Video-Downloader.git
 ```
 
-Replace `shibafoss` with your GitHub username. This creates a local copy of the project on your machine.
+Replace `shibafoss` with your GitHub username. This creates a local copy of the project on your
+machine.
 
 ### 3. Open the Project in Android Studio
 
@@ -78,11 +108,13 @@ Replace `shibafoss` with your GitHub username. This creates a local copy of the 
 - Select **"Open an Existing Project"** from the welcome screen.
 - Navigate to the folder where you cloned the repository and select it.
 
-> ✅ It is recommended to use the latest **Android Studio Canary** version for the best compatibility with modern Android features and build tools.
+> ✅ It is recommended to use the latest **Android Studio Canary** version for the best compatibility
+> with modern Android features and build tools.
 
 ### 4. Sync the Gradle Project
 
-Once the project is open, Android Studio will attempt to sync all Gradle files automatically. If not prompted:
+Once the project is open, Android Studio will attempt to sync all Gradle files automatically. If not
+prompted:
 
 - Click **File > Sync Project with Gradle Files**.
 - Make sure you have an active internet connection, as dependencies may need to be downloaded.
@@ -109,18 +141,22 @@ Now that the app is running, you're all set to:
 - Test features.
 - Submit pull requests!
 
-> 💡 Tip: If you're unfamiliar with how to use Git branches, commits, or pull requests, many guides are available on GitHub Docs or reach out in the community chat.
+> 💡 Tip: If you're unfamiliar with how to use Git branches, commits, or pull requests, many guides
+> are available on GitHub Docs or reach out in the community chat.
 
 ---
 
 ## 📜 Contributor Guidelines
 
-AIO Video Downloader is a project built with simplicity and clarity in mind. To maintain consistency across the codebase, please follow these contributor guidelines:
+**AIO Video Downloader** is a project built with simplicity and clarity in mind. To maintain
+consistency
+across the codebase, please follow these contributor guidelines:
 
 ### 🔧 Coding Style
 
 - Use **simple and clean Kotlin or Java code**. Avoid complex patterns unless absolutely necessary.
-- Follow basic Android coding practices — stick to core SDK components (e.g., Activities, Services, BroadcastReceivers, etc.).
+- Follow basic Android coding practices — stick to core SDK components (e.g., Activities, Services,
+  BroadcastReceivers, etc.).
 - Avoid frameworks or tools that add unnecessary abstraction or complexity, such as:
     - Dependency Injection (Dagger, Hilt)
     - Reactive frameworks (RxJava, Flow)
@@ -129,7 +165,8 @@ AIO Video Downloader is a project built with simplicity and clarity in mind. To 
 
 ### 🧩 Architecture
 
-- Keep the architecture **minimal and intuitive**. There's no formal architecture enforced — just organized, modular, and readable code.
+- Keep the architecture **minimal and intuitive**. There's no formal architecture enforced — just
+  organized, modular, and readable code.
 - Group related files together logically (e.g., UI, service, utils).
 - Avoid over-abstracting features into multiple unnecessary layers.
 
@@ -149,10 +186,14 @@ AIO Video Downloader is a project built with simplicity and clarity in mind. To 
 
 ### 🤝 Contribution Spirit
 
-- This project is also intended for learning Android development, so keeping it simple helps everyone understand and contribute.
-- Always aim for code that a beginner could read and learn from.
+This is one of my personal passion projects, and part of the goal is to make it a space where anyone
+can learn Android development.  
+Keeping things simple isn’t just a choice — it’s how we make sure everyone can follow along,
+understand, and contribute.
 
-By contributing with these principles in mind, you help maintain a codebase that is beginner-friendly, stable, and easy to evolve over time.
+Please aim to write code that even a beginner could read and learn from.  
+By contributing with this spirit, you’re helping keep the project beginner-friendly, stable, and
+easy to grow over time — just the way I dreamed it would be.
 
 ## 🗨️ Community & Support
 
@@ -160,9 +201,3 @@ For questions, ideas, or support:
 
 - **GitHub Issues**: [Open an issue](https://github.com/shibafoss/AIO-Video-Downloader/issues)
 - **Email**: shiba.spj@hotmail.com
-
----
-
-## ⚠️ Disclaimer
-
-This project is a personal learning initiative centered around Android development. While it is fully functional and continuously improved, it may not adhere to all industry best practices or architectural standards. Contributors and users are encouraged to approach with an open mind, and you're very welcome to contribute toward refining and enhancing it over time.

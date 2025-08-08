@@ -182,13 +182,12 @@ across the codebase, please follow these contributor guidelines:
 ### 🤝 Contribution Spirit
 
 This is one of my personal passion projects, and part of the goal is to make it a space where anyone
-can learn Android development.  
-Keeping things simple isn’t just a choice — it’s how we make sure everyone can follow along,
-understand, and contribute.
+can learn Android development. Keeping things simple isn’t just a choice — it’s how we make sure
+everyone can follow along, understand, and contribute.
 
-Please aim to write code that even a beginner could read and learn from.  
-By contributing with this spirit, you’re helping keep the project beginner-friendly, stable, and
-easy to grow over time — just the way I dreamed it would be.
+Please aim to write code that even a beginner could read and learn from. By contributing with this
+spirit, you’re helping keep the project beginner-friendly, stable, and easy to grow over time — just
+the way I dreamed it would be.
 
 ## 🗨️ Community & Support
 

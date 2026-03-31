@@ -1,3 +1,35 @@
+
+<div align="right">
+  <details>
+    <summary >🌐 Language</summary>
+    <div>
+      <div align="center">
+        <a href="https://openaitx.github.io/view.html?user=shibaFoss&project=AIO-Video-Downloader&lang=en">English</a>
+        | <a href="https://openaitx.github.io/view.html?user=shibaFoss&project=AIO-Video-Downloader&lang=zh-CN">简体中文</a>
+        | <a href="https://openaitx.github.io/view.html?user=shibaFoss&project=AIO-Video-Downloader&lang=zh-TW">繁體中文</a>
+        | <a href="https://openaitx.github.io/view.html?user=shibaFoss&project=AIO-Video-Downloader&lang=ja">日本語</a>
+        | <a href="https://openaitx.github.io/view.html?user=shibaFoss&project=AIO-Video-Downloader&lang=ko">한국어</a>
+        | <a href="https://openaitx.github.io/view.html?user=shibaFoss&project=AIO-Video-Downloader&lang=hi">हिन्दी</a>
+        | <a href="https://openaitx.github.io/view.html?user=shibaFoss&project=AIO-Video-Downloader&lang=th">ไทย</a>
+        | <a href="https://openaitx.github.io/view.html?user=shibaFoss&project=AIO-Video-Downloader&lang=fr">Français</a>
+        | <a href="https://openaitx.github.io/view.html?user=shibaFoss&project=AIO-Video-Downloader&lang=de">Deutsch</a>
+        | <a href="https://openaitx.github.io/view.html?user=shibaFoss&project=AIO-Video-Downloader&lang=es">Español</a>
+        | <a href="https://openaitx.github.io/view.html?user=shibaFoss&project=AIO-Video-Downloader&lang=it">Italiano</a>
+        | <a href="https://openaitx.github.io/view.html?user=shibaFoss&project=AIO-Video-Downloader&lang=ru">Русский</a>
+        | <a href="https://openaitx.github.io/view.html?user=shibaFoss&project=AIO-Video-Downloader&lang=pt">Português</a>
+        | <a href="https://openaitx.github.io/view.html?user=shibaFoss&project=AIO-Video-Downloader&lang=nl">Nederlands</a>
+        | <a href="https://openaitx.github.io/view.html?user=shibaFoss&project=AIO-Video-Downloader&lang=pl">Polski</a>
+        | <a href="https://openaitx.github.io/view.html?user=shibaFoss&project=AIO-Video-Downloader&lang=ar">العربية</a>
+        | <a href="https://openaitx.github.io/view.html?user=shibaFoss&project=AIO-Video-Downloader&lang=fa">فارسی</a>
+        | <a href="https://openaitx.github.io/view.html?user=shibaFoss&project=AIO-Video-Downloader&lang=tr">Türkçe</a>
+        | <a href="https://openaitx.github.io/view.html?user=shibaFoss&project=AIO-Video-Downloader&lang=vi">Tiếng Việt</a>
+        | <a href="https://openaitx.github.io/view.html?user=shibaFoss&project=AIO-Video-Downloader&lang=id">Bahasa Indonesia</a>
+        | <a href="https://openaitx.github.io/view.html?user=shibaFoss&project=AIO-Video-Downloader&lang=as">অসমীয়া</
+      </div>
+    </div>
+  </details>
+</div>
+
 <div align="center">
 <img src="app/src/main/res/drawable/ic_launcher_logo_v4.png" width=200 height=200 align="center" alt="AIO Video Downloader Logo">
 

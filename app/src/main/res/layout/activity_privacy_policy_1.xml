@@ -33,5 +33,14 @@
       android:layout_marginTop="10dp"
       android:layout_marginRight="10dp" />
 
+    <include
+      android:id="@+id/safetyBadges2"
+      layout="@layout/activity_privacy_policy_1_p3"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="10dp"
+      android:layout_marginTop="10dp"
+      android:layout_marginRight="10dp" />
+
   </LinearLayout>
 </LinearLayout>

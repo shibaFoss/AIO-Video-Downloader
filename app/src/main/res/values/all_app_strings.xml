@@ -249,4 +249,9 @@
   <string name="label_provide_customer_support">Provide customer support</string>
   <string name="label_fix_bug_and_crashes">Fix bugs and crashes</string>
   <string name="label_deliver_updates_securely">Deliver updates securely</string>
+  <string name="label_security">Security</string>
+  <string name="label_we_take_security_seriously">We take security seriously</string>
+  <string name="label_no_password_collection">No password collection</string>
+  <string name="label_end_encrypted_storage">End-to-end encrypted storage</string>
+  <string name="label_secure_https_connections">Secure HTTP connections</string>
 </resources>

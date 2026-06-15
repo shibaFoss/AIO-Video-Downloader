@@ -1,4 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2024 TubeAIO. All rights reserved.
+  ~
+  ~ Main layout for the Privacy Policy screen with scrollable content.
+  ~ This activity displays privacy and data collection information to the user,
+  ~ including configurable privacy settings, safety badges, and action buttons.
+  ~
+  ~ Layout structure:
+  ~   - Top bar with back button and title
+  ~   - Scrollable content area containing:
+  ~       * Privacy configuration options
+  ~       * Safety badges (first row)
+  ~       * Additional safety badges (second row)
+  ~   - Bottom action buttons (Accept, Decline, or Continue)
+  ~
+  ~ The layout uses a FrameLayout root with a top-aligned LinearLayout,
+  ~ ensuring the action buttons remain at the bottom of the screen while
+  ~ content scrolls independently. Fits system windows for insets handling.
+  -->
 <FrameLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="match_parent"
@@ -8,49 +27,66 @@
   android:orientation="vertical">
 
   <LinearLayout
-    android:layout_gravity="top"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_gravity="top"
     android:orientation="vertical">
 
+    <!-- Scrollable content area with weight to push buttons to bottom -->
     <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="0dp"
       android:layout_weight="1"
       android:orientation="vertical">
 
+      <!-- Top app bar with back button and title -->
       <include
         android:id="@+id/topBar"
         layout="@layout/activity_privacy_policy_1_p0" />
 
-      <include
-        android:id="@+id/configurations"
-        layout="@layout/activity_privacy_policy_1_p1"
+      <!-- Scrollable privacy settings content -->
+      <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp" />
+        android:layout_height="wrap_content">
 
-      <include
-        android:id="@+id/safetyBadges"
-        layout="@layout/activity_privacy_policy_1_p2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp" />
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical">
 
-      <include
-        android:id="@+id/safetyBadges2"
-        layout="@layout/activity_privacy_policy_1_p3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp" />
+          <!-- Privacy configuration options -->
+          <include
+            android:id="@+id/configurations"
+            layout="@layout/activity_privacy_policy_1_p1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" />
 
+          <!-- Safety badges (first row) -->
+          <include
+            android:id="@+id/safetyBadges"
+            layout="@layout/activity_privacy_policy_1_p2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp" />
+
+          <!-- Safety badges (second row) -->
+          <include
+            android:id="@+id/safetyBadges2"
+            layout="@layout/activity_privacy_policy_1_p3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp" />
+        </LinearLayout>
+      </ScrollView>
     </LinearLayout>
 
+    <!-- Bottom action buttons -->
     <include
       android:id="@+id/actionButtons"
       layout="@layout/activity_privacy_policy_1_p4"

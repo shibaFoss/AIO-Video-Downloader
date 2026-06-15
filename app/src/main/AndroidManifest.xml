@@ -71,6 +71,7 @@
         <activity android:name="userInterface.openingSplash.OpeningActivity" />
         <activity android:name="userInterface.languagePicker.LanguageActivity" />
         <activity android:name="userInterface.termsConsPolicy.TermsPolicyActivity" />
+      <activity android:name="userInterface.userPrivacy.PrivacyPolicyActivity" />
         <activity android:name="userInterface.userFeedback.FeedbackActivity" />
         <activity android:name="userInterface.appUpdater.AppUpdaterActivity" />
         <activity android:name="userInterface.appCrashed.AppCrashedActivity" />

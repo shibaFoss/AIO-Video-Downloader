@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical">
+<!--
+  ~ Copyright (c) 2024 TubeAIO. All rights reserved.
+  ~
+  ~ Layout for the action button section in the Privacy Policy screen.
+  ~ This component provides a single primary action button that allows users
+  ~ to review the full privacy policy document.
+  ~
+  ~ The button uses a filled Material 3 style with a policy/document icon
+  ~ positioned at the start (left) of the button text. The icon includes
+  ~ padding for proper spacing between the icon and text.
+  -->
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical">
 
   <com.google.android.material.button.MaterialButton
     android:id="@+id/btnOpenPrivacyPolicy"

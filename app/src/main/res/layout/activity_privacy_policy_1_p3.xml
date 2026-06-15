@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2024 TubeAIO. All rights reserved.
+  ~
+  ~ Layout for the security badges section in the Privacy Policy screen.
+  ~ This component displays security-related assurances to users, including:
+  ~   - Header with shield icon and title ("Security")
+  ~   - Description text ("We take security seriously")
+  ~   - Three security badges in a horizontal row:
+  ~       * End-to-end encrypted storage
+  ~       * No password collection
+  ~       * Secure HTTPS connections
+  ~
+  ~ Each badge includes an icon and descriptive text explaining the security
+  ~ measure implemented by the application. The layout uses a MaterialCardView
+  ~ container with rounded corners and a subtle stroke.
+  -->
 <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -24,6 +40,7 @@
       android:padding="10dp"
       tools:ignore="UselessLeaf">
 
+      <!-- Header row with shield icon and title -->
       <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -49,6 +66,7 @@
           android:layout_marginRight="10dp"
           android:orientation="vertical">
 
+          <!-- Title: Security -->
           <com.google.android.material.textview.MaterialTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -58,6 +76,7 @@
             android:textSize="@dimen/normal_text_size"
             tools:ignore="SpUsage,TextSizeCheck" />
 
+          <!-- Description text -->
           <com.google.android.material.textview.MaterialTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -69,6 +88,7 @@
         </LinearLayout>
       </LinearLayout>
 
+      <!-- Three security badges row -->
       <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -78,6 +98,7 @@
         android:baselineAligned="false"
         android:orientation="horizontal">
 
+        <!-- Badge 1: End-to-end encrypted storage -->
         <LinearLayout
           android:layout_width="0dp"
           android:layout_height="wrap_content"
@@ -116,6 +137,7 @@
           </LinearLayout>
         </LinearLayout>
 
+        <!-- Badge 2: No password collection -->
         <LinearLayout
           android:layout_width="0dp"
           android:layout_height="wrap_content"
@@ -154,6 +176,7 @@
           </LinearLayout>
         </LinearLayout>
 
+        <!-- Badge 3: Secure HTTPS connections -->
         <LinearLayout
           android:layout_width="0dp"
           android:layout_height="wrap_content"

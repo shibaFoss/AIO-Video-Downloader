@@ -1,4 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2024 TubeAIO. All rights reserved.
+  ~
+  ~ Layout for the safety badges / data usage information section in the
+  ~ Privacy Policy screen. This component explains how the app uses user data
+  ~ and displays assurance badges about data handling practices.
+  ~
+  ~ The layout includes:
+  ~   - Header icon and title ("How We Use Your Data")
+  ~   - Description text explaining data usage purpose
+  ~   - Table layout with two columns listing data usage purposes:
+  ~       * Improve app performance
+  ~       * Provide customer support
+  ~       * Fix bugs and crashes
+  ~       * Deliver updates securely
+  ~
+  ~ Each list item includes a checkmark icon for visual consistency.
+  -->
 <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -24,6 +42,7 @@
       android:layout_marginBottom="3dp"
       tools:ignore="UselessLeaf">
 
+      <!-- Header row with icon and title -->
       <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -49,6 +68,7 @@
           android:layout_marginRight="10dp"
           android:orientation="vertical">
 
+          <!-- Title: How We Use Your Data -->
           <com.google.android.material.textview.MaterialTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -58,6 +78,7 @@
             android:textSize="@dimen/normal_text_size"
             tools:ignore="SpUsage,TextSizeCheck" />
 
+          <!-- Description text -->
           <com.google.android.material.textview.MaterialTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -69,13 +90,15 @@
         </LinearLayout>
       </LinearLayout>
 
+      <!-- Table layout with two columns of usage purposes -->
       <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:stretchColumns="1">
 
-        <TableRow>
+        <!-- Row 1: Improve app performance / Provide customer support -->
+        <TableRow android:layout_marginBottom="3dp">
 
           <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
@@ -118,6 +141,7 @@
             tools:ignore="SpUsage,TextSizeCheck" />
         </TableRow>
 
+        <!-- Row 2: Fix bugs and crashes / Deliver updates securely -->
         <TableRow>
 
           <com.google.android.material.textview.MaterialTextView

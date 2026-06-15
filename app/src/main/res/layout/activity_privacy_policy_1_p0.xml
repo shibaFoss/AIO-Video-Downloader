@@ -9,9 +9,6 @@
   ~
   ~ The title is displayed in bold font, single line, with ellipsis for long text.
   ~ The back button uses a negative button background for touch feedback.
-  ~
-  ~ @see PrivacyPolicyActivity
-  ~ @see R.id#btnBack
   -->
 <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"

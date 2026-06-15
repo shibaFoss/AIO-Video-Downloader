@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2024 TubeAIO. All rights reserved.
+  ~
+  ~ Layout for the privacy policy configuration options section.
+  ~ This component displays three toggle-able settings that users can enable
+  ~ or disable to control their privacy preferences:
+  ~   - Crash Reporting: Send crash logs to help improve app stability.
+  ~   - Analytics: Share usage data for feature improvement.
+  ~   - Personalized Recommendations: Receive tailored content suggestions.
+  ~
+  ~ Each setting is presented as a clickable row with an icon, title, description,
+  ~ and a checkbox-style indicator (checked/unchecked). The layout uses a
+  ~ MaterialCardView as the container with rounded corners and subtle stroke.
+  -->
 <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -22,10 +36,11 @@
       android:padding="10dp"
       tools:ignore="UselessLeaf">
 
+      <!-- Crash Report toggle row -->
       <LinearLayout
         android:id="@+id/btnEnableCrashReport"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="42dp"
         android:background="@drawable/bg_button_negative"
         android:clickable="true"
         android:orientation="horizontal"
@@ -86,6 +101,7 @@
           tools:ignore="UseAppTint" />
       </LinearLayout>
 
+      <!-- Divider -->
       <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -93,10 +109,11 @@
         android:layout_marginBottom="5dp"
         android:background="@color/style_color_divider" />
 
+      <!-- Analytics toggle row -->
       <LinearLayout
         android:id="@+id/btnEnableAnalytics"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="42dp"
         android:background="@drawable/bg_button_negative"
         android:clickable="true"
         android:orientation="horizontal"
@@ -157,6 +174,7 @@
           tools:ignore="UseAppTint" />
       </LinearLayout>
 
+      <!-- Divider -->
       <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -164,10 +182,11 @@
         android:layout_marginBottom="5dp"
         android:background="@color/style_color_divider" />
 
+      <!-- Personalized Recommendations toggle row -->
       <LinearLayout
         android:id="@+id/btnRecommendations"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="42dp"
         android:background="@drawable/bg_button_negative"
         android:clickable="true"
         android:orientation="horizontal"

@@ -14,13 +14,15 @@ import com.nextgen.databinding.ActivityPrivacyPolicy1Binding;
 import java.util.function.Consumer;
 
 import coreUtils.base.BaseActivity;
+import coreUtils.library.process.LoggerUtils;
 import coreUtils.library.views.ActivityAnimator;
 import dataRepo.appConfigs.AppConfigs;
 import dataRepo.appConfigs.AppConfigsRepo;
 
 public class PrivacyPolicyActivity extends BaseActivity<ActivityPrivacyPolicy1Binding> {
 	
-	private AppConfigs config;
+	private final LoggerUtils logger = LoggerUtils.from(getClass());
+	private AppConfigs appconfig;
 	
 	@Override
 	protected ActivityPrivacyPolicy1Binding inflateBinding(LayoutInflater inflater) {
@@ -34,7 +36,10 @@ public class PrivacyPolicyActivity extends BaseActivity<ActivityPrivacyPolicy1Bi
 	
 	@Override
 	protected void onLoadedLayout() {
-		config = AppConfigsRepo.getConfig();
+		appconfig = AppConfigsRepo.getConfig();
+		logger.debug("Privacy config loaded: crash=" + appconfig.isCrashReportingEnabled
+			+ " analytics=" + appconfig.isAnalyticsEnabled
+			+ " recommendations=" + appconfig.isPersonalizedRecommendationsEnabled);
 		setupBackButton();
 		setupConfigToggles();
 		setupPrivacyPolicyButton();
@@ -42,6 +47,7 @@ public class PrivacyPolicyActivity extends BaseActivity<ActivityPrivacyPolicy1Bi
 
 	private void setupBackButton() {
 		binding.topBar.btnBack.setOnClickListener(view -> {
+			logger.debug("Back button pressed, finishing activity");
 			ActivityAnimator.animActivityFade(PrivacyPolicyActivity.this);
 			finish();
 		});
@@ -50,16 +56,16 @@ public class PrivacyPolicyActivity extends BaseActivity<ActivityPrivacyPolicy1Bi
 	private void setupConfigToggles() {
 		setupToggle(binding.configurations.btnEnableCrashReport,
 			binding.configurations.ivCrashReport,
-			config.isCrashReportingEnabled,
-			enabled -> config.isCrashReportingEnabled = enabled);
+			appconfig.isCrashReportingEnabled,
+			enabled -> appconfig.isCrashReportingEnabled = enabled);
 		setupToggle(binding.configurations.btnEnableAnalytics,
 			binding.configurations.ivEnableAnalytics,
-			config.isAnalyticsEnabled,
-			enabled -> config.isAnalyticsEnabled = enabled);
+			appconfig.isAnalyticsEnabled,
+			enabled -> appconfig.isAnalyticsEnabled = enabled);
 		setupToggle(binding.configurations.btnRecommendations,
 			binding.configurations.ivRecommendations,
-			config.isPersonalizedRecommendationsEnabled,
-			enabled -> config.isPersonalizedRecommendationsEnabled = enabled);
+			appconfig.isPersonalizedRecommendationsEnabled,
+			enabled -> appconfig.isPersonalizedRecommendationsEnabled = enabled);
 	}
 	
 	private void setupToggle(View row, @NonNull ImageView icon,
@@ -72,15 +78,27 @@ public class PrivacyPolicyActivity extends BaseActivity<ActivityPrivacyPolicy1Bi
 			icon.setImageResource(state[0]
 				? R.drawable.ic_check_box : R.drawable.ic_uncheck_box);
 			setter.accept(state[0]);
-			config.save();
+			appconfig.save();
+			logger.debug("Privacy toggle changed: " + getToggleLabel(row)
+				+ " -> " + state[0]);
 		});
 	}
 	
 	private void setupPrivacyPolicyButton() {
 		binding.actionButtons.btnOpenPrivacyPolicy.setOnClickListener(v -> {
+			logger.debug("Opening privacy policy URL: https://privacy.tubeaio.com/");
 			Intent intent = new Intent(Intent.ACTION_VIEW,
 				Uri.parse("https://privacy.tubeaio.com/"));
 			startActivity(intent);
 		});
+	}
+
+	@NonNull
+	private String getToggleLabel(View row) {
+		int id = row.getId();
+		if (id == R.id.btnEnableCrashReport) return "crash_report";
+		if (id == R.id.btnEnableAnalytics) return "analytics";
+		if (id == R.id.btnRecommendations) return "recommendations";
+		return "unknown";
 	}
 }

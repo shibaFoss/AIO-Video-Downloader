@@ -824,7 +824,7 @@
     },
     {
       "id": "9:1686675606944043669",
-      "lastPropertyId": "57:954931989610131739",
+      "lastPropertyId": "58:5744083826053873073",
       "name": "AppConfigs",
       "properties": [
         {
@@ -1111,6 +1111,11 @@
         {
           "id": "57:954931989610131739",
           "name": "isNewPipeUnavailable",
+          "type": 1
+        },
+        {
+          "id": "58:5744083826053873073",
+          "name": "isUserNeedToRemindForAppUpdate",
           "type": 1
         }
       ],

@@ -824,7 +824,7 @@
     },
     {
       "id": "9:1686675606944043669",
-      "lastPropertyId": "58:5744083826053873073",
+      "lastPropertyId": "61:7334416376896882578",
       "name": "AppConfigs",
       "properties": [
         {
@@ -1116,6 +1116,21 @@
         {
           "id": "58:5744083826053873073",
           "name": "isUserNeedToRemindForAppUpdate",
+          "type": 1
+        },
+        {
+          "id": "59:7331375167404057840",
+          "name": "isCrashReportingEnabled",
+          "type": 1
+        },
+        {
+          "id": "60:6694729062135242384",
+          "name": "isAnalyticsEnabled",
+          "type": 1
+        },
+        {
+          "id": "61:7334416376896882578",
+          "name": "isPersonalizedRecommendationsEnabled",
           "type": 1
         }
       ],

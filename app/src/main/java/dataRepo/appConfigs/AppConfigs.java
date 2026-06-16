@@ -54,6 +54,11 @@ import io.objectbox.annotation.Id;
 	public String selectedRegionCode = "IN";
 	public int completedDownloadsSortOrder = SORT_DATE_NEWEST_FIRST;
 	public int activeDownloadsSortOrder = SORT_DATE_NEWEST_FIRST;
+	
+	public boolean isCrashReportingEnabled = false;
+	public boolean isAnalyticsEnabled = false;
+	public boolean isPersonalizedRecommendationsEnabled = false;
+
 	public boolean isDailySuggestionsEnabled = true;
 	public boolean useYtdlpAsDefaultDownloader = true;
 	public boolean isNewPipeUnavailable = false;

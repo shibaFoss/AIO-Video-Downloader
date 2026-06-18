@@ -87,10 +87,10 @@
   <string name="hint_sending_feedback">Sending Feedback</string>
   <string name="hint_please_give_subject">Please give your feedback a subject</string>
   <string name="hint_failed_to_submit_feedback">Failed to submit feedback</string>
-  <string name="title_terms_conditions"><![CDATA[Terms & Conditions]]></string>
+  <string name="label_terms_conditions"><![CDATA[Terms & Conditions]]></string>
   <string name="subtitle_terms_conditions">Please read these terms carefully</string>
   <string name="label_last_updated">Last updated: </string>
-  <string name="text_last_updated_date">April 28, 2026</string>
+  <string name="label_last_updated_date">April 28, 2026</string>
   <string name="text_terms_intro">Welcome to Tube AIO - NextGen. By using our app, you agree to comply with and be bound by the following terms.</string>
   <string name="title_acceptance_terms">Acceptance of Terms</string>
   <string name="desc_acceptance_terms">By accessing or using Tube AIO - NextGen, you agree to be bound by these Terms &amp; Conditions and our Privacy Policy.</string>

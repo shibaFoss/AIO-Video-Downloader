@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:background="@drawable/ic_rd_bg_secondary_color"
+  android:gravity="center_vertical"
+  android:orientation="horizontal"
+  android:padding="10dp">
+
+  <ImageView
+    android:layout_width="20dp"
+    android:layout_height="20dp"
+    android:layout_marginEnd="10dp"
+    android:importantForAccessibility="no"
+    android:src="@drawable/ic_calender"
+    android:tint="@color/style_color_icon"
+    tools:ignore="UseAppTint" />
+
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="5dp"
+    android:fontFamily="@font/font_family_medium"
+    android:text="@string/label_last_updated"
+    android:textColor="@color/style_color_text_primary"
+    android:textSize="@dimen/normal_text_size"
+    tools:ignore="SpUsage,TextSizeCheck" />
+
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:fontFamily="@font/font_family_bold"
+    android:text="@string/label_last_updated_date"
+    android:textColor="@color/style_color_text_link"
+    android:textSize="@dimen/normal_text_size"
+    tools:ignore="SpUsage,TextSizeCheck,TextContrastCheck" />
+</LinearLayout>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TubeAIO-MextGen · Terms of Service</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #f4f7fc;
+      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+      padding: 2rem 1.5rem;
+      display: flex;
+      justify-content: center;
+    }
+    .terms-card {
+      max-width: 1100px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 36px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      padding: 2.8rem 3rem;
+      transition: 0.2s;
+    }
+    @media (max-width: 650px) {
+      body { padding: 1rem; }
+      .terms-card { padding: 1.8rem 1.2rem; }
+    }
+    .header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #eef2f6;
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .brand h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #0b1a33;
+      letter-spacing: -0.5px;
+    }
+    .brand h1 span {
+      background: linear-gradient(145deg, #2563eb, #7c3aed);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .brand .tag {
+      font-size: 0.9rem;
+      color: #475569;
+      margin-top: 4px;
+      font-weight: 400;
+      letter-spacing: 0.3px;
+    }
+    .badge {
+      background: #eef2ff;
+      padding: 0.5rem 1.4rem;
+      border-radius: 60px;
+      color: #1e40af;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border: 1px solid #c7d2fe;
+    }
+    .badge i {
+      font-style: normal;
+      display: inline-block;
+      margin-right: 6px;
+    }
+    .last-update {
+      background: #f8fafc;
+      padding: 0.4rem 1.2rem;
+      border-radius: 60px;
+      font-size: 0.8rem;
+      color: #334155;
+      border: 1px solid #e2e8f0;
+    }
+    h2 {
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: #0f172a;
+      margin: 2rem 0 1rem 0;
+      letter-spacing: -0.3px;
+    }
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin: 1.8rem 0 0.7rem 0;
+    }
+    p, li {
+      color: #1e293b;
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+    .terms-list {
+      list-style: none;
+      padding-left: 0;
+    }
+    .terms-list li {
+      padding: 0.6rem 0 0.6rem 2rem;
+      position: relative;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .terms-list li::before {
+      content: "▹";
+      position: absolute;
+      left: 0.2rem;
+      color: #2563eb;
+      font-weight: 700;
+    }
+    .highlight-box {
+      background: #f1f5f9;
+      padding: 1.5rem 2rem;
+      border-radius: 24px;
+      margin: 1.8rem 0;
+      border-left: 6px solid #2563eb;
+    }
+    .highlight-box strong {
+      color: #0f172a;
+    }
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      background: #f8fafc;
+      padding: 1.2rem 2rem;
+      border-radius: 60px;
+      margin: 2rem 0 0.5rem 0;
+      border: 1px solid #e2e8f0;
+    }
+    .contact-row a {
+      color: #1e40af;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: 0.2s;
+    }
+    .contact-row a:hover {
+      border-bottom-color: #2563eb;
+    }
+    .footer-note {
+      margin-top: 2.5rem;
+      font-size: 0.9rem;
+      color: #64748b;
+      text-align: center;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 2rem;
+    }
+    .badge-pill {
+      background: #dbeafe;
+      padding: 0.2rem 0.9rem;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #1e40af;
+      display: inline-block;
+      margin-left: 6px;
+    }
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem 2rem;
+      margin: 1rem 0 0.5rem 0;
+    }
+    @media (max-width: 600px) {
+      .grid-2col { grid-template-columns: 1fr; }
+    }
+    .grid-2col div {
+      background: #fafcff;
+      padding: 0.8rem 1.2rem;
+      border-radius: 20px;
+      border: 1px solid #eef2f6;
+    }
+    .grid-2col div strong {
+      display: block;
+      color: #0b1a33;
+      margin-bottom: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="terms-card">
+    <!-- header -->
+    <div class="header">
+      <div class="brand">
+        <h1>Tube<span>AIO</span>·MextGen</h1>
+        <div class="tag">Ultimate video & music downloader · v2026.05.28</div>
+      </div>
+      <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+        <span class="badge">⚡ 5 Lakh+ users</span>
+        <span class="last-update">📅 18 June 2026</span>
+      </div>
+    </div>
+
+    <!-- introduction -->
+    <p style="font-size: 1.1rem; font-weight: 400; margin-bottom: 1.2rem;">
+      <strong>Welcome to TubeAIO-MextGen</strong> – the #1 premium downloader trusted globally. 
+      By using our website (<a href="https://tubeaio.com" target="_blank" style="color: #1e40af; font-weight: 500;">tubeaio.com</a>) 
+      and the TubeAIO Android application, you agree to the following Terms & Conditions. 
+      Please read them carefully.
+    </p>
+
+    <!-- 1. Acceptance -->
+    <h2>1. Acceptance of Terms</h2>
+    <p>By accessing, downloading, or using TubeAIO-MextGen (“the App”, “our Service”), you confirm that you have read, understood, and agree to be bound by these Terms. If you do not agree, you must not use the App or any associated services.</p>
+
+    <!-- 2. License & Use -->
+    <h2>2. License &amp; Permitted Use</h2>
+    <ul class="terms-list">
+      <li><strong>Personal, non‑commercial license:</strong> TubeAIO grants you a limited, revocable, non‑exclusive license to use the App for your personal, lawful purposes.</li>
+      <li><strong>Downloading content:</strong> You may download videos, audio, and media only for private, offline viewing or listening. You must respect the copyrights and intellectual property of third‑party platforms.</li>
+      <li><strong>Prohibited actions:</strong> You shall not reverse‑engineer, redistribute, resell, or use the App for any illegal or unauthorised purpose, including mass downloading, scraping, or bypassing content protection mechanisms in violation of applicable laws.</li>
+      <li>TubeAIO does not host or store any copyrighted content; all downloads are initiated and stored on your device.</li>
+    </ul>
+
+    <!-- 3. User Responsibilities -->
+    <h2>3. User Responsibilities &amp; Content</h2>
+    <ul class="terms-list">
+      <li><strong>Lawful use:</strong> You are solely responsible for the content you download and how you use it. Ensure that your usage complies with local laws and the terms of service of the source websites.</li>
+      <li><strong>Account &amp; device security:</strong> You are responsible for maintaining the security of your device and any data associated with the App.</li>
+      <li><strong>No unauthorised access:</strong> You agree not to use TubeAIO to access, download, or distribute content that you do not have explicit rights to.</li>
+    </ul>
+
+    <!-- 4. Intellectual Property -->
+    <h2>4. Intellectual Property</h2>
+    <p>All rights, titles, and interest in the TubeAIO-MextGen software, design, code, trademarks (including “TubeAIO”), and associated materials are the exclusive property of TubeAIO. You are granted no rights to use our trademarks or branding without prior written consent.</p>
+
+    <!-- 5. Privacy & Data -->
+    <h2>5. Privacy &amp; Data Handling</h2>
+    <p>Your privacy is important to us. TubeAIO does <strong>not</strong> collect, store, or share your personal data or download history. No account registration is required. We do not track your downloads or browser activity. However, third‑party websites you visit via the in‑app browser may collect data according to their own policies – we recommend reviewing their privacy notices.</p>
+    <div class="highlight-box">
+      <strong>🔒 Zero‑tracking commitment:</strong> We never sell or share your data. The App operates locally on your device. No analytics, no adware, no intrusive popups – as certified in our ‘Safe‑Play’ pledge.
+    </div>
+
+    <!-- 6. Third-Party Services -->
+    <h2>6. Third‑Party Services &amp; Plugins</h2>
+    <p>TubeAIO integrates with numerous third‑party platforms (e.g., YouTube, Netflix, Prime, HBO, Disney+, and 100+ plugins). We do not own or control these services. Access to content from these platforms is subject to their respective terms and conditions. TubeAIO provides technical capabilities only; we are not responsible for the availability, legality, or quality of third‑party content.</p>
+
+    <!-- 7. Disclaimer -->
+    <h2>7. Disclaimer of Warranties</h2>
+    <ul class="terms-list">
+      <li>TubeAIO is provided <strong>“as is”</strong> and <strong>“as available”</strong>, without any warranties of any kind, either express or implied, including but not limited to merchantability, fitness for a particular purpose, or non‑infringement.</li>
+      <li>We do not warrant that the App will be error‑free, uninterrupted, secure, or that any defects will be corrected.</li>
+      <li>Download speeds, 4K/8K quality, and geo‑bypass features depend on your device, network, and the source service – we cannot guarantee specific performance.</li>
+    </ul>
+
+    <!-- 8. Limitation of Liability -->
+    <h2>8. Limitation of Liability</h2>
+    <ul class="terms-list">
+      <li>To the fullest extent permitted by law, TubeAIO and its developers shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of data, profits, or goodwill, arising from your use of the App.</li>
+      <li>In no event shall our total liability exceed the amount you paid (if any) for the App. Since TubeAIO is free, this liability is capped at <strong>₹0 (zero)</strong>.</li>
+    </ul>
+
+    <!-- 9. Indemnification -->
+    <h2>9. Indemnification</h2>
+    <p>You agree to defend, indemnify, and hold harmless TubeAIO, its affiliates, and partners from any claims, liabilities, damages, losses, and expenses (including legal fees) arising out of your misuse of the App, violation of these Terms, or infringement of any third‑party rights.</p>
+
+    <!-- 10. Termination -->
+    <h2>10. Termination</h2>
+    <p>We reserve the right to suspend or terminate your access to TubeAIO at any time, with or without cause, and without prior notice, especially if you violate these Terms. Upon termination, you must cease all use of the App and delete all copies.</p>
+
+    <!-- 11. Modifications -->
+    <h2>11. Changes to Terms</h2>
+    <p>TubeAIO may update these Terms from time to time. The current version will always be available on our website at <a href="https://tubeaio.com" target="_blank" style="color: #1e40af;">tubeaio.com</a>. Your continued use after changes constitutes acceptance of the revised Terms.</p>
+
+    <!-- 12. Governing Law -->
+    <h2>12. Governing Law &amp; Disputes</h2>
+    <p>These Terms shall be governed by and construed in accordance with the laws of India, without regard to conflict of law principles. Any disputes arising from these Terms or your use of TubeAIO shall be subject to the exclusive jurisdiction of the courts in Mumbai, India.</p>
+
+    <!-- 13. Contact -->
+    <h2>13. Contact &amp; Support</h2>
+    <div class="contact-row">
+      <span style="font-weight: 500;">📧 For questions, support, or legal inquiries:</span>
+      <a href="mailto:contact@tubeaio.com">contact@tubeaio.com</a>
+    </div>
+    <p style="margin-top: 0.8rem; font-size: 0.95rem;">We aim to respond to all inquiries within 48 hours. For urgent matters, please include “URGENT” in the subject line.</p>
+
+    <!-- quick summary grid -->
+    <div style="margin: 2rem 0 0.5rem 0;">
+      <h3 style="margin: 0 0 0.8rem 0;">📌 Quick reference — key points</h3>
+      <div class="grid-2col">
+        <div><strong>✅ Allowed</strong> Personal downloads, offline viewing, background audio, PiP.</div>
+        <div><strong>⛔ Not allowed</strong> Commercial redistribution, illegal content, reverse‑engineering.</div>
+        <div><strong>🔐 Privacy</strong> No data collection, no tracking, no ads.</div>
+        <div><strong>⚖️ Liability</strong> Use at your own risk; no warranty.</div>
+        <div><strong>🌐 Third‑party</strong> Respect terms of source platforms.</div>
+        <div><strong>🇮🇳 Governing law</strong> India, Mumbai jurisdiction.</div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer-note">
+      <p>© 2026 TubeAIO-MextGen · Made in India 🇮🇳 · Trusted by 5 Lakh+ users worldwide.<br>
+      <span style="opacity: 0.7;">This document is effective as of 18 June 2026. Visit <a href="https://tubeaio.com" target="_blank" style="color: #2563eb;">tubeaio.com</a> for the latest version.</span></p>
+    </div>
+  </div>
+</body>
+</html>

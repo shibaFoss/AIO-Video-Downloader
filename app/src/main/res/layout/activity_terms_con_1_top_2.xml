@@ -651,7 +651,7 @@
             android:shadowDx="1"
             android:shadowDy="1"
             android:shadowRadius=".1"
-            android:text="@string/btn_agree_continue"
+            android:text="@string/label_agree_continue"
             android:textColor="@color/color_surface"
             android:textSize="@dimen/message_text_size"
             tools:ignore="RelativeOverlap,SpUsage,UseCompatTextViewDrawableXml,

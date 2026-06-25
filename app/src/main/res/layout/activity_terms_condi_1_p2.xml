@@ -1,87 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
-  android:layout_height="match_parent">
+  android:layout_height="match_parent"
+  android:orientation="vertical">
 
-
-  <LinearLayout
+  <com.google.android.material.button.MaterialButton
+    android:id="@+id/btnAgreeContinue"
+    style="@style/Widget.Material3.Button.IconButton.Filled"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
-
-    <View
-      android:layout_width="match_parent"
-      android:layout_height="1dp"
-      android:background="@color/color_divider" />
-
-    <LinearLayout
-      android:id="@+id/btnAcceptTermsCheck"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="@dimen/_15"
-      android:background="@drawable/bg_button_negative"
-      android:clickable="true"
-      android:gravity="center_vertical"
-      android:orientation="horizontal"
-      android:paddingLeft="@dimen/_5"
-      android:paddingRight="@dimen/_5"
-      tools:ignore="TouchTargetSizeCheck">
-
-      <CheckBox
-        android:id="@+id/cbAgreeTerms"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="@dimen/_5"
-        android:button="@drawable/bg_button_radio"
-        android:buttonTint="@color/color_primary"
-        android:clickable="false" />
-
-      <TextView
-        style="@style/style_textviews"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_0"
-        android:fontFamily="@font/font_family_medium"
-        android:maxLines="2"
-        android:singleLine="false"
-        android:text="@string/label_agree_terms"
-        android:textColor="@color/color_text_secondary"
-        android:textSize="@dimen/small_text_size"
-        tools:ignore="SpUsage,TextSizeCheck,TextContrastCheck" />
-    </LinearLayout>
-
-    <RelativeLayout
-      android:id="@+id/btnAgreeContinue"
-      android:layout_width="match_parent"
-      android:layout_height="@dimen/_40"
-      android:layout_marginLeft="@dimen/_20"
-      android:layout_marginTop="@dimen/_15"
-      android:layout_marginRight="@dimen/_20"
-      android:layout_marginBottom="@dimen/_5"
-      android:background="@drawable/bg_button_gradient"
-      android:clickable="true"
-      android:elevation="@dimen/_2"
-      android:focusable="true"
-      tools:ignore="TouchTargetSizeCheck">
-
-      <TextView
-        android:id="@+id/tvAgreeContinue"
-        style="@style/style_textviews"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:fontFamily="@font/font_family_bold"
-        android:gravity="center"
-        android:shadowColor="@color/color_primary"
-        android:shadowDx="1"
-        android:shadowDy="1"
-        android:shadowRadius=".1"
-        android:text="@string/btn_agree_continue"
-        android:textColor="@color/color_surface"
-        android:textSize="@dimen/message_text_size"
-        tools:ignore="RelativeOverlap,SpUsage,UseCompatTextViewDrawableXml,
-          TextSizeCheck,TextContrastCheck" />
-    </RelativeLayout>
-  </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    android:layout_height="52dp"
+    android:fontFamily="@font/font_family_medium"
+    android:text="@string/label_agree_continue"
+    android:textAllCaps="false"
+    android:textSize="@dimen/normal_text_size"
+    app:backgroundTint="@color/style_color_button_primary"
+    app:cornerRadius="5dp"
+    app:icon="@drawable/ic_okay_check"
+    app:iconGravity="textStart"
+    app:iconPadding="10dp"
+    app:iconSize="24dp"
+    tools:ignore="SpUsage,VisualLintButtonSize,TextSizeCheck" />
+</LinearLayout>

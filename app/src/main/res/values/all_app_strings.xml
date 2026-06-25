@@ -111,7 +111,7 @@
   <string name="desc_changes_to_terms">We may change these rules sometimes. If you keep using the app, it means you agree to the new rules.</string>
   <string name="extra_changes_to_terms">We reserve the right, at our sole discretion, to modify or replace these terms at any time. If a revision is material, we will try to provide at least 30 days\' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</string>
   <string name="label_agree_terms">I have read and agree to the Terms &amp; Conditions</string>
-  <string name="btn_agree_continue"><![CDATA[Agree & Continue]]></string>
+  <string name="label_agree_continue"><![CDATA[Agree & Continue]]></string>
   <string name="hint_you_must_accept_the_terms">You must accept the terms</string>
   <string name="label_update_available">Update Available</string>
   <string name="subtitle_update_available">We\'ve made TubeAIO even better</string>

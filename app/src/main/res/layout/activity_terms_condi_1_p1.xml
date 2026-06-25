@@ -235,7 +235,7 @@
       android:textColor="@color/style_color_text_tertiary"
       android:textSize="@dimen/small_text_size"
       android:visibility="visible"
-      tools:ignore="SpUsage,TextSizeCheck,VisualLintLongText" />
+      tools:ignore="SpUsage,TextSizeCheck,VisualLintLongText,TextContrastCheck" />
   </LinearLayout>
 
   <LinearLayout
@@ -271,16 +271,13 @@
         android:orientation="vertical">
 
         <TextView
-          style="@style/style_textviews"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_marginLeft="@dimen/_0"
-          android:layout_marginRight="@dimen/_0"
-          android:layout_marginBottom="@dimen/_5"
+          android:layout_marginBottom="5dp"
           android:fontFamily="@font/font_family_medium"
           android:text="@string/title_prohibited_activities"
-          android:textColor="@color/color_primary"
-          android:textSize="@dimen/message_text_size"
+          android:textColor="@color/style_color_text_primary"
+          android:textSize="@dimen/normal_text_size"
           tools:ignore="SpUsage,TextSizeCheck" />
 
         <TextView
@@ -288,8 +285,8 @@
           android:layout_height="wrap_content"
           android:fontFamily="@font/font_family_regular"
           android:text="@string/desc_prohibited_activities"
-          android:textColor="@color/color_text_secondary"
-          android:textSize="@dimen/small_text_size"
+          android:textColor="@color/style_color_text_secondary"
+          android:textSize="@dimen/message_text_size"
           tools:ignore="SpUsage,TextSizeCheck" />
       </LinearLayout>
 
@@ -307,15 +304,15 @@
       android:id="@+id/extraProhibited"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_marginLeft="@dimen/_52"
-      android:layout_marginTop="@dimen/_5"
-      android:layout_marginRight="@dimen/_5"
-      android:fontFamily="@font/font_family_light"
+      android:layout_marginLeft="52dp"
+      android:layout_marginTop="5dp"
+      android:layout_marginRight="5dp"
+      android:fontFamily="@font/font_family_regular"
       android:text="@string/extra_prohibited_activities"
-      android:textColor="@color/color_text_secondary"
-      android:textSize="@dimen/smaller_text_size"
+      android:textColor="@color/style_color_text_tertiary"
+      android:textSize="@dimen/small_text_size"
       android:visibility="visible"
-      tools:ignore="SpUsage,TextSizeCheck,VisualLintLongText" />
+      tools:ignore="SpUsage,VisualLintLongText,TextSizeCheck,TextContrastCheck" />
   </LinearLayout>
 
   <LinearLayout
@@ -325,7 +322,7 @@
     android:clickable="true"
     android:focusable="true"
     android:orientation="vertical"
-    android:paddingVertical="@dimen/_10">
+    android:paddingBottom="10dp">
 
     <LinearLayout
       android:layout_width="match_parent"
@@ -334,13 +331,14 @@
       android:orientation="horizontal">
 
       <ImageView
-        android:layout_width="@dimen/_40"
-        android:layout_height="@dimen/_40"
-        android:layout_marginEnd="@dimen/_12"
-        android:background="@drawable/ic_rd_background_color"
-        android:padding="@dimen/_5"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="top"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/ic_rd_bg_secondary_color"
+        android:padding="5dp"
         android:src="@drawable/img_warranty"
-        android:tint="@color/color_primary"
+        android:tint="@color/style_color_icon"
         tools:ignore="ContentDescription,UseAppTint" />
 
       <LinearLayout
@@ -350,16 +348,13 @@
         android:orientation="vertical">
 
         <TextView
-          style="@style/style_textviews"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_marginLeft="@dimen/_0"
-          android:layout_marginRight="@dimen/_0"
-          android:layout_marginBottom="@dimen/_5"
+          android:layout_marginBottom="5dp"
           android:fontFamily="@font/font_family_medium"
           android:text="@string/title_limitation_liability"
-          android:textColor="@color/color_primary"
-          android:textSize="@dimen/message_text_size"
+          android:textColor="@color/style_color_text_primary"
+          android:textSize="@dimen/normal_text_size"
           tools:ignore="SpUsage,TextSizeCheck" />
 
         <TextView
@@ -367,34 +362,34 @@
           android:layout_height="wrap_content"
           android:fontFamily="@font/font_family_regular"
           android:text="@string/desc_limitation_liability"
-          android:textColor="@color/color_text_secondary"
-          android:textSize="@dimen/small_text_size"
+          android:textColor="@color/style_color_text_secondary"
+          android:textSize="@dimen/message_text_size"
           tools:ignore="SpUsage,TextSizeCheck" />
       </LinearLayout>
 
       <ImageView
-        android:layout_width="@dimen/_20"
-        android:layout_height="@dimen/_20"
-        android:layout_marginLeft="@dimen/_10"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="10dp"
         android:adjustViewBounds="true"
-        android:src="@drawable/ic_arrow_down"
-        android:tint="@color/color_text_secondary"
-        tools:ignore="ContentDescription,UseAppTint" />
+        android:src="@drawable/ic_arrow_right"
+        android:tint="@color/style_color_icon_hint"
+        tools:ignore="ContentDescription,UseAppTint,ImageContrastCheck" />
     </LinearLayout>
 
     <TextView
       android:id="@+id/extraLimitation"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_marginLeft="@dimen/_52"
-      android:layout_marginTop="@dimen/_5"
-      android:layout_marginRight="@dimen/_5"
-      android:fontFamily="@font/font_family_light"
+      android:layout_marginLeft="52dp"
+      android:layout_marginTop="5dp"
+      android:layout_marginRight="5dp"
+      android:fontFamily="@font/font_family_regular"
       android:text="@string/extra_limitation_liability"
-      android:textColor="@color/color_text_secondary"
-      android:textSize="@dimen/smaller_text_size"
+      android:textColor="@color/style_color_text_tertiary"
+      android:textSize="@dimen/small_text_size"
       android:visibility="visible"
-      tools:ignore="SpUsage,TextSizeCheck,VisualLintLongText" />
+      tools:ignore="SpUsage,VisualLintLongText,TextSizeCheck,TextContrastCheck" />
   </LinearLayout>
 
   <LinearLayout
@@ -404,7 +399,7 @@
     android:clickable="true"
     android:focusable="true"
     android:orientation="vertical"
-    android:paddingVertical="@dimen/_10">
+    android:paddingBottom="10dp">
 
     <LinearLayout
       android:layout_width="match_parent"
@@ -413,13 +408,14 @@
       android:orientation="horizontal">
 
       <ImageView
-        android:layout_width="@dimen/_40"
-        android:layout_height="@dimen/_40"
-        android:layout_marginEnd="@dimen/_12"
-        android:background="@drawable/ic_rd_background_color"
-        android:padding="@dimen/_5"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="top"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/ic_rd_bg_secondary_color"
+        android:padding="5dp"
         android:src="@drawable/img_law_terms"
-        android:tint="@color/color_primary"
+        android:tint="@color/style_color_icon"
         tools:ignore="ContentDescription,UseAppTint" />
 
       <LinearLayout
@@ -429,16 +425,13 @@
         android:orientation="vertical">
 
         <TextView
-          style="@style/style_textviews"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_marginLeft="@dimen/_0"
-          android:layout_marginRight="@dimen/_0"
-          android:layout_marginBottom="@dimen/_5"
+          android:layout_marginBottom="5dp"
           android:fontFamily="@font/font_family_medium"
           android:text="@string/title_changes_to_terms"
-          android:textColor="@color/color_primary"
-          android:textSize="@dimen/message_text_size"
+          android:textColor="@color/style_color_text_primary"
+          android:textSize="@dimen/normal_text_size"
           tools:ignore="SpUsage,TextSizeCheck" />
 
         <TextView
@@ -446,33 +439,33 @@
           android:layout_height="wrap_content"
           android:fontFamily="@font/font_family_regular"
           android:text="@string/desc_changes_to_terms"
-          android:textColor="@color/color_text_secondary"
-          android:textSize="@dimen/small_text_size"
+          android:textColor="@color/style_color_text_secondary"
+          android:textSize="@dimen/message_text_size"
           tools:ignore="SpUsage,TextSizeCheck" />
       </LinearLayout>
 
       <ImageView
-        android:layout_width="@dimen/_20"
-        android:layout_height="@dimen/_20"
-        android:layout_marginLeft="@dimen/_10"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="10dp"
         android:adjustViewBounds="true"
-        android:src="@drawable/ic_arrow_down"
-        android:tint="@color/color_text_secondary"
-        tools:ignore="ContentDescription,UseAppTint" />
+        android:src="@drawable/ic_arrow_right"
+        android:tint="@color/style_color_icon_hint"
+        tools:ignore="ContentDescription,UseAppTint,ImageContrastCheck" />
     </LinearLayout>
 
     <TextView
       android:id="@+id/extraChanges"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_marginLeft="@dimen/_52"
-      android:layout_marginTop="@dimen/_5"
-      android:layout_marginRight="@dimen/_5"
-      android:fontFamily="@font/font_family_light"
+      android:layout_marginLeft="52dp"
+      android:layout_marginTop="5dp"
+      android:layout_marginRight="5dp"
+      android:fontFamily="@font/font_family_regular"
       android:text="@string/extra_changes_to_terms"
-      android:textColor="@color/color_text_secondary"
-      android:textSize="@dimen/smaller_text_size"
+      android:textColor="@color/style_color_text_tertiary"
+      android:textSize="@dimen/small_text_size"
       android:visibility="visible"
-      tools:ignore="SpUsage,TextSizeCheck,VisualLintLongText" />
+      tools:ignore="SpUsage,VisualLintLongText,TextSizeCheck,TextContrastCheck" />
   </LinearLayout>
-  </LinearLayout>
+</LinearLayout>

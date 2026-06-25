@@ -166,7 +166,7 @@ public final class GlobalCrashedHandler implements Thread.UncaughtExceptionHandl
 		crashedInfo.setAndroidVersion(getAndroidVersion());
 		crashedInfo.setStackStraceInfo(stackTrace);
 		crashedInfo.setDetailedInfo(DeviceInfoUtils.getDeviceInformation());
-		crashedInfo.setCrashedTimelog(getCurrentFormattedTimestamp());
+		crashedInfo.setCrashTimestamp(getCurrentFormattedTimestamp());
 		
 		return crashedInfo;
 	}

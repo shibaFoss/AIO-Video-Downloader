@@ -109,7 +109,7 @@ public final class AppCrashedPocketbase extends PocketBaseClient {
         payload.put(FIELD_USER_COUNTRY, crashInfo.getUserCountry());
         payload.put(FIELD_STACKTRACE, crashInfo.getStackStraceInfo());
         payload.put(FIELD_USER_MESSAGE, crashInfo.getUserGivenMessage());
-        payload.put(FIELD_CRASH_TIMESTAMP, crashInfo.getCrashedTimelog());
+        payload.put(FIELD_CRASH_TIMESTAMP, crashInfo.getCrashTimestamp());
         payload.put(FIELD_DETAILED_INFO, crashInfo.getDetailedInfo());
         return post(payload, crashInfo.getDeviceId());
     }

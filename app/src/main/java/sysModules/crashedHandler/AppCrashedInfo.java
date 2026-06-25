@@ -38,7 +38,7 @@ public final class AppCrashedInfo implements Serializable {
     private String androidVersion;
     private String userCountry;
     private String userGivenMessage;
-    private String crashedTimelog;
+    private String crashTimestamp;
     private String applicationVersion;
     private String stackStraceInfo;
     private String detailedInfo;
@@ -257,8 +257,8 @@ public final class AppCrashedInfo implements Serializable {
      *
      * @return the formatted crash timestamp string, or {@code null} if not set
      */
-    public String getCrashedTimelog() {
-        return crashedTimelog;
+    public String getCrashTimestamp() {
+        return crashTimestamp;
     }
 
     /**
@@ -270,12 +270,12 @@ public final class AppCrashedInfo implements Serializable {
      * other crash metadata for chronological sorting and correlation.
      * </p>
      *
-     * @param crashedTimelog the formatted crash timestamp string (e.g.,
+     * @param crashTimestamp the formatted crash timestamp string (e.g.,
      *                       "11th Jun 2026 | 12:12:05 AM"); may be
      *                       {@code null} if the time could not be obtained
      */
-    public void setCrashedTimelog(String crashedTimelog) {
-        this.crashedTimelog = crashedTimelog;
+    public void setCrashTimestamp(String crashTimestamp) {
+        this.crashTimestamp = crashTimestamp;
     }
 
     /**

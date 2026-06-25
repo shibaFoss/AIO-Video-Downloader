@@ -1,4 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2024 TubeAIO. All rights reserved.
+  ~
+  ~ Layout for the Terms and Conditions content with expandable sections.
+  ~ This component displays six clickable sections that expand to reveal
+  ~ detailed legal text when tapped:
+  ~   - Acceptance of Terms
+  ~   - Use of App
+  ~   - Intellectual Property
+  ~   - Prohibited Activities
+  ~   - Limitation of Liability
+  ~   - Changes to Terms
+  ~
+  ~ Each section includes:
+  ~   - An icon representing the section topic
+  ~   - A title (bold) and brief description (regular)
+  ~   - A right arrow indicator
+  ~   - An expandable detailed text view (initially visible but can be toggled)
+  ~
+  ~ The layout is designed to be fully scrollable and uses clickable LinearLayout
+  ~ containers for each section to handle expansion/collapse logic.
+  ~
+  ~ @see TermsPolicyActivity
+  ~ @see R.id#itemAcceptance
+  ~ @see R.id#itemUseOfApp
+  ~ @see R.id#itemIntellectual
+  ~ @see R.id#itemProhibited
+  ~ @see R.id#itemLimitation
+  ~ @see R.id#itemChanges
+  ~ @see R.id#extraAcceptance
+  ~ @see R.id#extraUseOfApp
+  ~ @see R.id#extraIntellectual
+  ~ @see R.id#extraProhibited
+  ~ @see R.id#extraLimitation
+  ~ @see R.id#extraChanges
+  -->
 <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools"
@@ -6,6 +42,7 @@
   android:layout_height="match_parent"
   android:orientation="vertical">
 
+  <!-- Section 1: Acceptance of Terms -->
   <LinearLayout
     android:id="@+id/itemAcceptance"
     android:layout_width="match_parent"
@@ -84,6 +121,7 @@
       tools:ignore="SpUsage,VisualLintLongText,TextSizeCheck,TextContrastCheck" />
   </LinearLayout>
 
+  <!-- Section 2: Use of App -->
   <LinearLayout
     android:id="@+id/itemUseOfApp"
     android:layout_width="match_parent"
@@ -161,6 +199,7 @@
       tools:ignore="SpUsage,VisualLintLongText,TextSizeCheck,TextContrastCheck" />
   </LinearLayout>
 
+  <!-- Section 3: Intellectual Property -->
   <LinearLayout
     android:id="@+id/itemIntellectual"
     android:layout_width="match_parent"
@@ -238,6 +277,7 @@
       tools:ignore="SpUsage,TextSizeCheck,VisualLintLongText,TextContrastCheck" />
   </LinearLayout>
 
+  <!-- Section 4: Prohibited Activities -->
   <LinearLayout
     android:id="@+id/itemProhibited"
     android:layout_width="match_parent"
@@ -315,6 +355,7 @@
       tools:ignore="SpUsage,VisualLintLongText,TextSizeCheck,TextContrastCheck" />
   </LinearLayout>
 
+  <!-- Section 5: Limitation of Liability -->
   <LinearLayout
     android:id="@+id/itemLimitation"
     android:layout_width="match_parent"
@@ -392,6 +433,7 @@
       tools:ignore="SpUsage,VisualLintLongText,TextSizeCheck,TextContrastCheck" />
   </LinearLayout>
 
+  <!-- Section 6: Changes to Terms -->
   <LinearLayout
     android:id="@+id/itemChanges"
     android:layout_width="match_parent"

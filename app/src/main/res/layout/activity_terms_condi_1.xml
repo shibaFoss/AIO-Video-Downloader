@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2024 TubeAIO. All rights reserved.
+  ~
+  ~ Main layout for the Terms and Conditions screen. This activity displays
+  ~ the legal terms that users must agree to before using the application.
+  ~
+  ~ Layout structure:
+  ~   - Top bar with back button and title
+  ~   - Terms introduction / header section
+  ~   - Scrollable terms content (with expandable sections)
+  ~   - Bottom action buttons (Agree, Decline)
+  ~
+  ~ The layout uses a FrameLayout root with a top-aligned LinearLayout,
+  ~ ensuring the action buttons remain at the bottom of the screen while
+  ~ the terms content scrolls independently. Fits system windows for insets.
+  ~
+  ~ @see TermsPolicyActivity
+  ~ @see R.id#topBar
+  ~ @see R.id#terms
+  ~ @see R.id#actionButtons
+  -->
 <FrameLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="match_parent"
@@ -12,16 +33,19 @@
     android:layout_gravity="top"
     android:orientation="vertical">
 
+    <!-- Scrollable content area with weight to push buttons to bottom -->
     <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="0dp"
       android:layout_weight="1"
       android:orientation="vertical">
 
+      <!-- Top app bar with back button and title -->
       <include
         android:id="@+id/topBar"
         layout="@layout/activity_terms_condi_1_p0" />
 
+      <!-- Terms introduction / header section -->
       <include
         layout="@layout/activity_terms_condi_1_p3"
         android:layout_width="match_parent"
@@ -29,6 +53,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp" />
 
+      <!-- Scrollable terms content -->
       <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -38,6 +63,7 @@
           android:layout_height="wrap_content"
           android:orientation="vertical">
 
+          <!-- Terms and conditions content with expandable sections -->
           <include
             android:id="@+id/terms"
             layout="@layout/activity_terms_condi_1_p1"
@@ -50,6 +76,7 @@
       </ScrollView>
     </LinearLayout>
 
+    <!-- Bottom action buttons (Agree, Decline, Accept) -->
     <include
       android:id="@+id/actionButtons"
       layout="@layout/activity_terms_condi_1_p2"

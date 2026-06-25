@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2024 TubeAIO. All rights reserved.
+  ~
+  ~ Layout for the Terms and Conditions introduction / header section.
+  ~ This component displays the last updated date and an introductory
+  ~ text explaining the purpose of the terms document.
+  ~
+  ~ The layout includes:
+  ~   - Last updated date row with calendar icon and bold date text
+  ~   - Introductory text describing the terms and conditions
+  ~   - Divider line separating the header from the terms content
+  ~
+  ~ @see TermsPolicyActivity
+  ~ @see R.id#termsIntro
+  -->
 <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools"
@@ -7,6 +22,7 @@
   android:gravity="center_vertical"
   android:orientation="vertical">
 
+  <!-- Last updated date row -->
   <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -14,6 +30,7 @@
     android:orientation="horizontal"
     android:padding="10dp">
 
+    <!-- Calendar icon -->
     <ImageView
       android:layout_width="20dp"
       android:layout_height="20dp"
@@ -23,6 +40,7 @@
       android:tint="@color/style_color_icon"
       tools:ignore="UseAppTint" />
 
+    <!-- Label: "Last Updated" -->
     <TextView
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
@@ -33,6 +51,7 @@
       android:textSize="@dimen/normal_text_size"
       tools:ignore="SpUsage,TextSizeCheck" />
 
+    <!-- Date value (bold, link color) -->
     <TextView
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
@@ -44,6 +63,7 @@
 
   </LinearLayout>
 
+  <!-- Introductory text -->
   <TextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -54,6 +74,7 @@
     android:textSize="@dimen/message_text_size"
     tools:ignore="SpUsage,TextSizeCheck,TextContrastCheck" />
 
+  <!-- Divider line -->
   <View
     android:layout_width="match_parent"
     android:layout_height="1dp"

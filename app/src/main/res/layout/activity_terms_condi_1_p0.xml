@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2024 TubeAIO. All rights reserved.
+  ~
+  ~ Layout for the top app bar / action bar on the Terms and Conditions screen.
+  ~ This component provides:
+  ~   - Back button for navigation (arrow icon with touch feedback background)
+  ~   - Screen title indicating the current screen ("Terms & Conditions")
+  ~
+  ~ The title is displayed in bold font, single line, with ellipsis for long text.
+  ~ The back button uses a negative button background for touch feedback.
+  ~
+  ~ @see TermsPolicyActivity
+  ~ @see R.id#btnBack
+  -->
 <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools"
@@ -12,6 +26,7 @@
     android:orientation="horizontal"
     tools:ignore="UselessParent">
 
+    <!-- Back navigation button -->
     <ImageView
       android:id="@+id/btnBack"
       android:layout_width="50dp"
@@ -25,6 +40,7 @@
       android:tint="@color/style_color_text_primary"
       tools:ignore="UseAppTint" />
 
+    <!-- Screen title -->
     <com.google.android.material.textview.MaterialTextView
       android:layout_width="match_parent"
       android:layout_height="wrap_content"

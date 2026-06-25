@@ -3,10 +3,8 @@ package userInterface.termsConsPolicy;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.TextView;
 
 import com.nextgen.R;
-import com.nextgen.databinding.ActivityTermsCondi1Binding;
 import com.nextgen.databinding.ActivityTermsCondi1Binding;
 
 import coreUtils.base.BaseActivity;
@@ -14,7 +12,6 @@ import coreUtils.library.process.LoggerUtils;
 import coreUtils.library.strings.StringHelper;
 import coreUtils.library.views.ActivityAnimator;
 import coreUtils.library.views.StylizedToastView;
-import coreUtils.library.views.TextViewsUtils;
 import dataRepo.appConfigs.AppConfigs;
 import dataRepo.appConfigs.AppConfigsRepo;
 import userInterface.mainScreen.MainActivity;
@@ -96,13 +93,44 @@ public final class TermsPolicyActivity
 		return ActivityTermsCondi1Binding.inflate(inflater);
 	}
 	
+	/**
+	 * Performs post-layout initialization after the content view has been inflated.
+	 * This method is invoked by the base activity at the end of {@code onCreate()}
+	 * and is responsible for hiding the expanded details sections and setting up
+	 * all button click listeners.
+	 *
+	 * <p><strong>Initialization order:</strong>
+	 * <ol>
+	 * <li>Hides all expandable detail sections via {@link #hideExpandedDetails()}.</li>
+	 * <li>Sets up all button click events via {@link #setupButtonClickEvents()}.</li>
+	 * </ol>
+	 *
+	 * @see BaseActivity#onLoadedLayout()
+	 * @see #hideExpandedDetails()
+	 * @see #setupButtonClickEvents()
+	 */
 	@Override
 	protected void onLoadedLayout() {
 		hideExpandedDetails();
 		setupButtonClickEvents();
 	}
 	
-	
+	/**
+	 * Initializes all button click listeners for the terms and conditions screen.
+	 * This method aggregates the setup calls for individual button configurations,
+	 * ensuring all interactive elements respond appropriately to user input.
+	 *
+	 * <p><strong>Buttons configured:</strong>
+	 * <ul>
+	 * <li>Back button via {@link #setupBackButtonClickEvent()}.</li>
+	 * <li>Expandable terms sections via {@link #setupExpandTermsButtonClickEvent()}.</li>
+	 * <li>Agree & Continue button via {@link #setupAgreeTermsButton()}.</li>
+	 * </ul>
+	 *
+	 * @see #setupBackButtonClickEvent()
+	 * @see #setupExpandTermsButtonClickEvent()
+	 * @see #setupAgreeTermsButton()
+	 */
 	private void setupButtonClickEvents() {
 		setupBackButtonClickEvent();
 		setupExpandTermsButtonClickEvent();
@@ -166,21 +194,44 @@ public final class TermsPolicyActivity
 			toggleVisibility(binding.terms.extraChanges));
 	}
 	
+	/**
+	 * Configures the "Agree & Continue" button click listener. When the user clicks
+	 * the button, this method sets the terms agreement flag to {@code true} in the
+	 * application configuration, saves the change, and determines the appropriate
+	 * next action based on the launch origin.
+	 *
+	 * <p><strong>Behavior matrix:</strong>
+	 * <ul>
+	 * <li>If launched from opening screen → opens {@link MainActivity} with fade animation.</li>
+	 * <li>If launched from elsewhere (e.g., settings) → simulates back button press
+	 *     to return to previous screen.</li>
+	 * <li>If terms not agreed (should not occur as flag is set above) → shows error
+	 *     toast with haptic feedback and finishes the activity.</li>
+	 * </ul>
+	 *
+	 * <p>The terms agreement status is persisted via {@link AppConfigsRepo#save(AppConfigs)}.
+	 *
+	 * @see #isLaunchedFromOpeningScreen()
+	 * @see StylizedToastView#showError(BaseActivity, CharSequence)
+	 * @see #vibrate()
+	 */
 	private void setupAgreeTermsButton() {
 		binding.actionButtons.btnAgreeContinue.setOnClickListener(view -> {
 			AppConfigs appConfigs = AppConfigsRepo.getConfig();
 			appConfigs.isTermsConditionsAgreed = true;
 			appConfigs.save();
 			
-			if (appConfigs.isTermsConditionsAgreed && isLaunchedFromOpeningScreen()) {
+			boolean fromOpeningScreen = isLaunchedFromOpeningScreen();
+			if (appConfigs.isTermsConditionsAgreed && fromOpeningScreen) {
 				Intent intent = new Intent(this, MainActivity.class);
 				startActivity(intent);
 				ActivityAnimator.animActivityFade(this);
 				finish();
-			} else if (appConfigs.isTermsConditionsAgreed && !isLaunchedFromOpeningScreen()) {
+			} else if (appConfigs.isTermsConditionsAgreed) {
 				binding.topBar.btnBack.performClick();
 			} else {
-				String toastMessage = StringHelper.getText(R.string.hint_you_must_accept_the_terms);
+				String toastMessage =
+					StringHelper.getText(R.string.hint_you_must_accept_the_terms);
 				StylizedToastView.showError(this, toastMessage);
 				vibrate();
 				finish();

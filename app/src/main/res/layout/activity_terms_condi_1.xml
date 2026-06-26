@@ -76,6 +76,12 @@
       </ScrollView>
     </LinearLayout>
 
+    <!-- Divider line -->
+    <View
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:background="@color/style_color_divider" />
+
     <!-- Bottom action buttons (Agree, Decline, Accept) -->
     <include
       android:id="@+id/actionButtons"

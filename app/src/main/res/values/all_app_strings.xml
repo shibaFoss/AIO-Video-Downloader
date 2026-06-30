@@ -255,4 +255,5 @@
   <string name="label_end_encrypted_storage">End-to-end encrypted storage</string>
   <string name="label_secure_https_connections">Secure HTTP connections</string>
   <string name="label_review_privacy_policy">Review Privacy Policy</string>
+  <string name="label_about_us">About Us</string>
 </resources>

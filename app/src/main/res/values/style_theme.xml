@@ -8,7 +8,16 @@
     <item name="colorError">@color/style_color_error</item>
 
     <!-- Window -->
+    <item name="android:statusBarColor">@color/style_color_background</item>
+    <item name="android:navigationBarColor">@color/style_color_background</item>
+
     <item name="android:windowBackground">@color/style_color_background</item>
+    <item name="android:windowActivityTransitions">false</item>
+    <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+    <item name="android:windowTranslucentStatus">false</item>
+    <item name="android:windowTranslucentNavigation">false</item>
+    <item name="android:fitsSystemWindows">true</item>
+    <item name="android:autofilledHighlight">@color/transparent</item>
 
     <!-- System Bar Icons (Light Theme) -->
     <item name="android:windowLightStatusBar">true</item>

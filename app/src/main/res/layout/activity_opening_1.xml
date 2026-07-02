@@ -29,7 +29,7 @@
             android:layout_gravity="center_horizontal"
             android:fontFamily="@font/font_family_extrabold"
             android:gravity="center"
-            android:text="@string/title_app_name_full"
+            android:text="@string/label_app_name_full"
             android:textColor="@color/style_color_text_primary"
             android:textSize="@dimen/extra_large_text_size"
             tools:ignore="SpUsage,TextSizeCheck" />

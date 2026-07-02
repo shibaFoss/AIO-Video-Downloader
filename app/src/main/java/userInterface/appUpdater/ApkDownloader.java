@@ -115,7 +115,7 @@ public class ApkDownloader {
 			return;
 		}
 		
-		String fileName = StringHelper.getText(R.string.title_app_name_full) +
+		String fileName = StringHelper.getText(R.string.label_app_name_full) +
 			"_" + updateInfo.getVersionCode() + "_" + updateInfo.getVersionName() + ".apk";
 		
 		File outputFile = new File(downloadDir, fileName);

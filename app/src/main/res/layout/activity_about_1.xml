@@ -9,5 +9,8 @@
 
   <include layout="@layout/activity_about_1_p0" />
 
+  <include layout="@layout/activity_about_1_p1" />
+
+  <include layout="@layout/activity_about_1_p2" />
 
 </LinearLayout>

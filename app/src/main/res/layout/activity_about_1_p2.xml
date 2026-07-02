@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:layout_marginLeft="10dp"
+  android:layout_marginTop="10dp"
+  android:layout_marginRight="10dp"
+  app:cardBackgroundColor="@color/style_color_card"
+  app:cardCornerRadius="5dp"
+  app:strokeColor="@color/style_color_card_stroke"
+  app:strokeWidth="1dp">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="10dp"
+    android:paddingTop="10dp"
+    android:paddingRight="10dp"
+    android:paddingBottom="10dp">
+
+    <com.google.android.material.textview.MaterialTextView
+      android:id="@+id/tvVersion"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:ellipsize="end"
+      android:fontFamily="@font/font_family_medium"
+      android:gravity="center"
+      android:maxLines="1"
+      android:singleLine="true"
+      android:textColor="@color/style_color_text_secondary"
+      android:textSize="@dimen/normal_text_size"
+      tools:ignore="SpUsage,TextSizeCheck"
+      tools:text="Version (2026.07.10) [89]" />
+
+    <com.google.android.material.textview.MaterialTextView
+      android:id="@+id/btnVisitOfficial"
+      android:layout_width="match_parent"
+      android:layout_height="32dp"
+      android:layout_marginLeft="10dp"
+      android:layout_marginTop="5dp"
+      android:layout_marginRight="10dp"
+      android:background="@drawable/bg_button_accent"
+      android:ellipsize="end"
+      android:fontFamily="@font/font_family_regular"
+      android:gravity="center"
+      android:maxLines="1"
+      android:paddingLeft="10dp"
+      android:paddingTop="2dp"
+      android:paddingRight="10dp"
+      android:paddingBottom="2dp"
+      android:singleLine="true"
+      android:text="@string/label_visit_official_site"
+      android:textColor="@color/style_color_surface"
+      android:textSize="@dimen/message_text_size"
+      tools:ignore="SpUsage,TextSizeCheck,TextContrastCheck" />
+
+  </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

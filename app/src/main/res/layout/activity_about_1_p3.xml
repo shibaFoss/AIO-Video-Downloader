@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2024 TubeAIO. All rights reserved.
+  ~
+  ~ About screen content with app info, mission, values, and contact options.
+  ~ Displays story, mission, value statements, and contact methods.
+  ~
+  ~ @see AboutActivity
+  -->
 <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,6 +15,7 @@
   android:layout_height="wrap_content"
   android:orientation="vertical">
 
+  <!-- App info and values card -->
   <com.google.android.material.card.MaterialCardView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -23,6 +32,7 @@
       android:layout_height="wrap_content"
       android:orientation="vertical">
 
+      <!-- Our Story -->
       <LinearLayout
         android:id="@+id/btnOurStory"
         android:layout_width="match_parent"
@@ -88,6 +98,7 @@
         android:layout_marginRight="15dp"
         android:background="@color/style_color_divider" />
 
+      <!-- Our Mission -->
       <LinearLayout
         android:id="@+id/btnOurMission"
         android:layout_width="match_parent"
@@ -153,7 +164,7 @@
         android:layout_marginRight="15dp"
         android:background="@color/style_color_divider" />
 
-      <!-- Item: What We Value -->
+      <!-- What We Value -->
       <LinearLayout
         android:id="@+id/btnWhatWeValue"
         android:layout_width="match_parent"
@@ -219,7 +230,7 @@
         android:layout_marginRight="15dp"
         android:background="@color/style_color_divider" />
 
-      <!-- Item: Why We Built This -->
+      <!-- Why We Built This -->
       <LinearLayout
         android:id="@+id/btnWhyWeBuiltThis"
         android:layout_width="match_parent"

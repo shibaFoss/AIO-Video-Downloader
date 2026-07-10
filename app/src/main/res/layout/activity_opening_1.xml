@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2024 TubeAIO. All rights reserved.
+  ~
+  ~ Splash screen layout displayed during app startup. Shows app logo,
+  ~ name, tagline, loading indicator, and version information.
+  ~
+  ~ Components:
+  ~   - App logo with primary dark tint
+  ~   - App name in black font
+  ~   - Tagline description
+  ~   - Indeterminate progress indicator (centered bottom)
+  ~   - Version text (hidden initially)
+  ~
+  ~ @see OpeningActivity
+  -->
 <RelativeLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -8,6 +23,7 @@
   android:background="@color/style_color_background"
   android:orientation="vertical">
 
+  <!-- Centered content: Logo, app name, tagline -->
   <LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -48,6 +64,7 @@
 
   </LinearLayout>
 
+  <!-- Bottom content: Progress indicator and version -->
   <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"

@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2024 TubeAIO. All rights reserved.
+  ~
+  ~ Application themes and styles defining the visual appearance of the app.
+  ~ Includes main application theme, video player theme, transparent theme
+  ~ for dialogs, and reusable widget styles.
+  ~
+  ~ Theme hierarchy:
+  ~   - style.application - Main app theme (Material3 Dark, NoActionBar)
+  ~   - style.application.video_player_activity - Video player variant with cutout
+  ~   - style.transparent_activity - Transparent theme for overlays/dialogs
+  ~   - style_webview_loading - WebView progress bar style
+  ~   - style_padding_textview_style - TextView padding and spacing reset
+  ~
+  ~ @see AndroidManifest.xml
+  ~ @see styles.xml
+  -->
 <resources>
 
+  <!-- Main Application Theme -->
   <style name="style.application" parent="Theme.Material3.Dark.NoActionBar">
 
     <!-- App Colors -->
@@ -12,9 +30,9 @@
     <item name="android:statusBarColor">@color/style_color_background</item>
     <item name="android:navigationBarColor">@color/style_color_background</item>
 
-    <!-- System Bar Icons (Light Theme) -->
-    <item name="android:windowLightStatusBar">true</item>
-    <item name="android:windowLightNavigationBar">true</item>
+    <!-- System Bar Icons (Dark Theme) -->
+    <item name="android:windowLightStatusBar">false</item>
+    <item name="android:windowLightNavigationBar">false</item>
 
     <!-- Typography -->
     <item name="android:fontFamily">@font/style_app_fonts</item>
@@ -33,6 +51,7 @@
 
   </style>
 
+  <!-- Video Player Theme (allows display cutout) -->
   <style name="style.application.video_player_activity" parent="style.application">
     <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
     <item name="android:windowTranslucentStatus">true</item>
@@ -40,16 +59,10 @@
     <item name="android:fitsSystemWindows">false</item>
   </style>
 
-  <style name="style.application.opening_activity" parent="style.application">
-    <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
-    <item name="android:windowTranslucentStatus">true</item>
-    <item name="android:windowTranslucentNavigation">true</item>
-    <item name="android:fitsSystemWindows">false</item>
-  </style>
-
+  <!-- Transparent Theme for Dialog/Overlay Activities -->
   <style name="style.transparent_activity" parent="Theme.AppCompat.Light.NoActionBar">
-    <item name="android:statusBarColor">@color/color_surface</item>
-    <item name="android:navigationBarColor">@color/color_surface</item>
+    <item name="android:statusBarColor">@color/style_color_surface</item>
+    <item name="android:navigationBarColor">@color/style_color_surface</item>
     <item name="android:windowLightStatusBar">true</item>
     <item name="android:windowLightNavigationBar">true</item>
     <item name="android:windowActivityTransitions">false</item>
@@ -68,10 +81,10 @@
     <item name="android:windowTranslucentNavigation">true</item>
     <item name="android:fitsSystemWindows">true</item>
 
-    <item name="colorPrimary">@color/color_primary</item>
-    <item name="colorPrimaryDark">@color/color_primary_variant</item>
-    <item name="colorError">@color/color_error</item>
-    <item name="colorAccent">@color/color_secondary</item>
+    <item name="colorPrimary">@color/style_color_primary</item>
+    <item name="colorPrimaryDark">@color/style_color_primary_variant</item>
+    <item name="colorError">@color/style_color_error</item>
+    <item name="colorAccent">@color/style_color_secondary</item>
 
     <item name="android:layoutDirection">ltr</item>
 
@@ -80,23 +93,25 @@
     <item name="android:scrollbarThumbVertical">@android:color/transparent</item>
     <item name="android:scrollbarThumbHorizontal">@android:color/transparent</item>
 
-    <item name="android:textColorPrimary">@color/color_text_primary</item>
-    <item name="android:textColorSecondary">@color/color_text_secondary</item>
-    <item name="android:textColorHint">@color/color_secondary_variant</item>
-    <item name="android:textColor">@color/color_text_primary</item>
-    <item name="android:textColorLink">@color/color_secondary</item>
+    <item name="android:textColorPrimary">@color/style_color_text_primary</item>
+    <item name="android:textColorSecondary">@color/style_color_text_secondary</item>
+    <item name="android:textColorHint">@color/style_color_secondary_variant</item>
+    <item name="android:textColor">@color/style_color_text_primary</item>
+    <item name="android:textColorLink">@color/style_color_secondary</item>
 
     <item name="android:fontFamily">@font/style_app_fonts</item>
     <item name="android:textViewStyle">@style/style_padding_textview_style</item>
     <item name="android:checkboxStyle">@style/style_padding_textview_style</item>
   </style>
 
+  <!-- WebView Loading Progress Bar Style -->
   <style name="style_webview_loading" parent="android:Widget.ProgressBar.Horizontal">
     <item name="android:indeterminateOnly">false</item>
     <item name="android:progressDrawable">@drawable/ic_webview_progress</item>
     <item name="android:minHeight">@dimen/_4</item>
   </style>
 
+  <!-- TextView Padding Reset Style -->
   <style name="style_padding_textview_style">
     <item name="android:includeFontPadding">false</item>
     <item name="android:lineSpacingMultiplier">1</item>

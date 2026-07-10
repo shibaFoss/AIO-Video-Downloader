@@ -49,6 +49,10 @@
     <item name="android:checkboxStyle">@style/style_padding_textview_style</item>
     <item name="android:switchStyle">@style/style_padding_textview_style</item>
 
+    <item name="android:scrollbars">none</item>
+    <item name="android:fadeScrollbars">true</item>
+    <item name="android:scrollbarThumbVertical">@android:color/transparent</item>
+    <item name="android:scrollbarThumbHorizontal">@android:color/transparent</item>
   </style>
 
   <!-- Video Player Theme (allows display cutout) -->

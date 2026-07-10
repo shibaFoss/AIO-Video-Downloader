@@ -21,14 +21,11 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="38dp"
-
   android:background="@drawable/bg_button_negative"
   android:button="@drawable/bg_button_radio"
   android:buttonTint="@color/bg_radio_button"
-
   android:drawableRight="@drawable/ic_arrow_right_small"
-  android:drawableTint="@color/color_primary_variant"
-
+  android:drawableTint="@color/style_color_primary_variant"
   android:ellipsize="end"
   android:fontFamily="@font/font_family_regular"
   android:gravity="center_vertical"
@@ -41,7 +38,6 @@
   android:textColor="@color/style_color_text_primary"
   android:textSize="@dimen/normal_text_size"
   app:buttonTint="@color/bg_radio_button"
-
   tools:checked="true"
   tools:ignore="SpUsage,VisualLintButtonSize,TextSizeCheck,TouchTargetSizeCheck"
   tools:text="@string/label_hindi" />

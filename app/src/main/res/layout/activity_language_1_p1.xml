@@ -10,12 +10,13 @@
   ~ The Continue button uses a filled style with a checkmark icon.
   ~ The Skip button uses an outlined style with a right arrow icon.
   -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical">
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical">
 
   <!-- Primary button: Continue with selected language -->
   <com.google.android.material.button.MaterialButton
@@ -23,9 +24,10 @@
     style="@style/Widget.Material3.Button.IconButton.Filled"
     android:layout_width="match_parent"
     android:layout_height="52dp"
-    android:fontFamily="@font/font_family_medium"
+    android:fontFamily="@font/font_family_bold"
     android:text="@string/label_continue"
     android:textAllCaps="false"
+    android:textColor="@color/style_color_text_inverse"
     android:textSize="@dimen/normal_text_size"
     app:backgroundTint="@color/style_color_button_primary"
     app:cornerRadius="5dp"
@@ -33,6 +35,7 @@
     app:iconGravity="textStart"
     app:iconPadding="10dp"
     app:iconSize="24dp"
+    app:iconTint="@color/style_color_text_inverse"
     tools:ignore="SpUsage,VisualLintButtonSize,TextSizeCheck" />
 
   <!-- Secondary button: Skip language selection -->
@@ -41,7 +44,7 @@
     style="@style/Widget.Material3.Button.IconButton.Outlined"
     android:layout_width="match_parent"
     android:layout_height="52dp"
-    android:fontFamily="@font/font_family_medium"
+    android:fontFamily="@font/font_family_regular"
     android:text="@string/label_skip_for_now"
     android:textColor="@color/style_color_button_outline"
     android:textSize="@dimen/normal_text_size"

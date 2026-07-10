@@ -54,23 +54,23 @@
           <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/font_family_regular"
+            android:fontFamily="@font/font_family_medium"
             android:text="@string/label_our_story"
             android:textColor="@color/style_color_text_primary"
             android:textSize="@dimen/normal_text_size"
-            tools:ignore="SpUsage" />
+            tools:ignore="SpUsage,TextSizeCheck" />
 
           <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
             android:ellipsize="end"
-            android:fontFamily="@font/font_family_light"
+            android:fontFamily="@font/font_family_regular"
             android:maxLines="2"
             android:text="@string/desc_learn_more_about_how_we_started"
             android:textColor="@color/style_color_text_secondary"
             android:textSize="@dimen/small_text_size"
-            tools:ignore="SpUsage" />
+            tools:ignore="SpUsage,TextSizeCheck" />
         </LinearLayout>
 
         <ImageView
@@ -119,23 +119,23 @@
           <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/font_family_regular"
+            android:fontFamily="@font/font_family_medium"
             android:text="@string/label_our_mission"
             android:textColor="@color/style_color_text_primary"
             android:textSize="@dimen/normal_text_size"
-            tools:ignore="SpUsage" />
+            tools:ignore="SpUsage,TextSizeCheck" />
 
           <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
             android:ellipsize="end"
-            android:fontFamily="@font/font_family_light"
+            android:fontFamily="@font/font_family_regular"
             android:maxLines="2"
             android:text="@string/desc_deliver_simple_reliable_experience"
             android:textColor="@color/style_color_text_secondary"
             android:textSize="@dimen/small_text_size"
-            tools:ignore="SpUsage" />
+            tools:ignore="SpUsage,TextSizeCheck" />
         </LinearLayout>
 
         <ImageView
@@ -151,7 +151,7 @@
         android:layout_height="1dp"
         android:layout_marginLeft="75dp"
         android:layout_marginRight="15dp"
-        android:background="@color/style_color_card_stroke" />
+        android:background="@color/style_color_divider" />
 
       <!-- Item: What We Value -->
       <LinearLayout
@@ -185,23 +185,23 @@
           <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/font_family_regular"
+            android:fontFamily="@font/font_family_medium"
             android:text="@string/label_what_we_value"
             android:textColor="@color/style_color_text_primary"
             android:textSize="@dimen/normal_text_size"
-            tools:ignore="SpUsage" />
+            tools:ignore="SpUsage,TextSizeCheck" />
 
           <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
             android:ellipsize="end"
-            android:fontFamily="@font/font_family_light"
+            android:fontFamily="@font/font_family_regular"
             android:maxLines="2"
             android:text="@string/desc_privacy_transparency"
             android:textColor="@color/style_color_text_secondary"
             android:textSize="@dimen/small_text_size"
-            tools:ignore="SpUsage" />
+            tools:ignore="SpUsage,TextSizeCheck" />
         </LinearLayout>
 
         <ImageView
@@ -217,7 +217,7 @@
         android:layout_height="1dp"
         android:layout_marginLeft="75dp"
         android:layout_marginRight="15dp"
-        android:background="@color/style_color_card_stroke" />
+        android:background="@color/style_color_divider" />
 
       <!-- Item: Why We Built This -->
       <LinearLayout
@@ -251,23 +251,23 @@
           <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/font_family_regular"
+            android:fontFamily="@font/font_family_medium"
             android:text="@string/label_why_we_built_this"
             android:textColor="@color/style_color_text_primary"
             android:textSize="@dimen/normal_text_size"
-            tools:ignore="SpUsage" />
+            tools:ignore="SpUsage,TextSizeCheck" />
 
           <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
             android:ellipsize="end"
-            android:fontFamily="@font/font_family_light"
+            android:fontFamily="@font/font_family_regular"
             android:maxLines="2"
             android:text="@string/desc_empowering_users_with_tools"
             android:textColor="@color/style_color_text_secondary"
             android:textSize="@dimen/small_text_size"
-            tools:ignore="SpUsage" />
+            tools:ignore="SpUsage,TextSizeCheck" />
         </LinearLayout>
 
         <ImageView
@@ -327,7 +327,7 @@
             android:text="@string/label_get_in_touch"
             android:textColor="@color/style_color_text_primary"
             android:textSize="@dimen/normal_text_size"
-            tools:ignore="SpUsage" />
+            tools:ignore="SpUsage,TextSizeCheck" />
 
           <TextView
             android:layout_width="match_parent"
@@ -337,7 +337,7 @@
             android:text="@string/desc_we_d_love_to_hear_from_you"
             android:textColor="@color/style_color_text_secondary"
             android:textSize="@dimen/small_text_size"
-            tools:ignore="SpUsage" />
+            tools:ignore="SpUsage,TextSizeCheck" />
         </LinearLayout>
       </LinearLayout>
 
@@ -359,7 +359,8 @@
           android:focusable="true"
           android:gravity="center"
           android:orientation="horizontal"
-          android:padding="8dp">
+          android:padding="8dp"
+          tools:ignore="TouchTargetSizeCheck">
 
           <ImageView
             android:layout_width="20dp"
@@ -372,17 +373,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:fontFamily="@font/font_family_medium"
+            android:fontFamily="@font/font_family_regular"
             android:text="@string/label_email_us"
             android:textColor="@color/style_color_text_primary"
             android:textSize="@dimen/small_text_size"
-            tools:ignore="SpUsage" />
+            tools:ignore="SpUsage,TextSizeCheck" />
         </LinearLayout>
 
         <View
           android:layout_width="1dp"
           android:layout_height="20dp"
-          android:background="@color/style_color_card_stroke" />
+          android:background="@color/style_color_divider" />
 
         <!-- Twitter -->
         <LinearLayout
@@ -395,7 +396,8 @@
           android:focusable="true"
           android:gravity="center"
           android:orientation="horizontal"
-          android:padding="8dp">
+          android:padding="8dp"
+          tools:ignore="TouchTargetSizeCheck">
 
           <ImageView
             android:layout_width="20dp"
@@ -408,17 +410,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:fontFamily="@font/font_family_medium"
+            android:fontFamily="@font/font_family_regular"
             android:text="@string/label_twitter"
             android:textColor="@color/style_color_text_primary"
             android:textSize="@dimen/small_text_size"
-            tools:ignore="SpUsage" />
+            tools:ignore="SpUsage,TextSizeCheck" />
         </LinearLayout>
 
         <View
           android:layout_width="1dp"
           android:layout_height="20dp"
-          android:background="@color/style_color_card_stroke" />
+          android:background="@color/style_color_divider" />
 
         <!-- Website -->
         <LinearLayout
@@ -426,12 +428,13 @@
           android:layout_width="0dp"
           android:layout_height="wrap_content"
           android:layout_weight="1"
-          android:background="?attr/selectableItemBackground"
+          android:background="@drawable/bg_button_negative"
           android:clickable="true"
           android:focusable="true"
           android:gravity="center"
           android:orientation="horizontal"
-          android:padding="8dp">
+          android:padding="8dp"
+          tools:ignore="TouchTargetSizeCheck">
 
           <ImageView
             android:layout_width="20dp"
@@ -444,11 +447,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:fontFamily="@font/font_family_medium"
+            android:fontFamily="@font/font_family_regular"
             android:text="@string/label_website"
             android:textColor="@color/style_color_text_primary"
             android:textSize="@dimen/small_text_size"
-            tools:ignore="SpUsage" />
+            tools:ignore="SpUsage,TextSizeCheck" />
         </LinearLayout>
       </LinearLayout>
     </LinearLayout>

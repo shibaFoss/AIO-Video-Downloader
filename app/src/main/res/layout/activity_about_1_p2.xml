@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2024 TubeAIO. All rights reserved.
+  ~
+  ~ Layout for the footer section in the About screen.
+  ~ This component displays the application version information and a button
+  ~ to visit the official website.
+  ~
+  ~ The layout uses a MaterialCardView as the container with rounded corners
+  ~ and a subtle stroke. Inside, a vertical LinearLayout contains:
+  ~   - Version information text (centered, medium weight, secondary color)
+  ~   - Visit Official Site button (accent background, clickable)
+  ~
+  ~ @see AboutActivity
+  ~ @see R.id#tvVersion
+  ~ @see R.id#btnVisitOfficial
+  -->
 <com.google.android.material.card.MaterialCardView
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -22,6 +38,7 @@
     android:paddingRight="10dp"
     android:paddingBottom="10dp">
 
+    <!-- Application version information -->
     <com.google.android.material.textview.MaterialTextView
       android:id="@+id/tvVersion"
       android:layout_width="match_parent"
@@ -36,6 +53,7 @@
       tools:ignore="SpUsage,TextSizeCheck"
       tools:text="Version (2026.07.10) [89]" />
 
+    <!-- Visit Official Website button -->
     <com.google.android.material.textview.MaterialTextView
       android:id="@+id/btnVisitOfficial"
       android:layout_width="match_parent"

@@ -1,4 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2024 TubeAIO. All rights reserved.
+  ~
+  ~ Main layout for the About screen. This activity displays information about
+  ~ the application including version details, developer credits, privacy policy
+  ~ links, and other relevant metadata.
+  ~
+  ~ The layout is composed of three included sections:
+  ~   - Header / top section with app icon, name, and version
+  ~   - Content section with developer details, links, and description
+  ~   - Footer section with additional information or action buttons
+  ~
+  ~ The layout fits system windows to handle status bar and navigation bar insets.
+  ~
+  ~ @see AboutActivity
+  ~ @see R.id#activity_about_1_p0
+  ~ @see R.id#activity_about_1_p1
+  ~ @see R.id#activity_about_1_p2
+  -->
 <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="match_parent"
@@ -7,10 +26,29 @@
   android:fitsSystemWindows="true"
   android:orientation="vertical">
 
-  <include layout="@layout/activity_about_1_p0" />
+  <!-- Top section: App icon, name, and version -->
+  <include
+    android:id="@+id/topBar"
+    layout="@layout/activity_about_1_p0" />
 
   <include layout="@layout/activity_about_1_p1" />
 
-  <include layout="@layout/activity_about_1_p2" />
+  <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp">
 
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
+
+      <include layout="@layout/activity_about_1_p3" />
+
+      <include
+        android:id="@+id/versionInfo"
+        layout="@layout/activity_about_1_p2" />
+
+    </LinearLayout>
+  </ScrollView>
 </LinearLayout>

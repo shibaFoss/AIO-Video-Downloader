@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2024 TubeAIO. All rights reserved.
+  ~
+  ~ Layout for the about section displaying app information in the About screen.
+  ~ This component shows the app logo, name, and a tagline/description.
+  ~
+  ~ The layout uses a MaterialCardView as the container with rounded corners
+  ~ and a subtle stroke. Inside, a horizontal LinearLayout contains:
+  ~   - App logo icon with circular background and tint
+  ~   - App name (bold, single line)
+  ~   - Tagline or description text (regular, up to 2 lines)
+  ~
+  ~ @see AboutActivity
+  ~ @see R.id#activity_about_1_p0
+  -->
 <com.google.android.material.card.MaterialCardView
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -21,6 +36,7 @@
     android:paddingRight="10dp"
     android:paddingBottom="10dp">
 
+    <!-- App logo icon with circular background -->
     <androidx.appcompat.widget.AppCompatImageView
       android:layout_width="70dp"
       android:layout_height="70dp"
@@ -32,12 +48,14 @@
       android:src="@drawable/img_app_logo"
       android:tint="@color/style_color_surface" />
 
+    <!-- App name and tagline container -->
     <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_gravity="center_vertical"
       android:orientation="vertical">
 
+      <!-- App name (bold) -->
       <com.google.android.material.textview.MaterialTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -52,6 +70,7 @@
         android:textSize="@dimen/sub_heading_text_size_v2"
         tools:ignore="SpUsage,TextSizeCheck" />
 
+      <!-- Tagline / description -->
       <com.google.android.material.textview.MaterialTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

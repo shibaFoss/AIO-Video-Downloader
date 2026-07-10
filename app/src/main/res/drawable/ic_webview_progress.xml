@@ -5,10 +5,10 @@
       <corners android:radius="0dip" />
       <gradient
         android:angle="270"
-        android:centerColor="@color/transparent"
+        android:centerColor="@color/style_color_transparent"
         android:centerY="0.50"
-        android:endColor="@color/transparent"
-        android:startColor="@color/transparent" />
+        android:endColor="@color/style_color_transparent"
+        android:startColor="@color/style_color_transparent" />
     </shape>
   </item>
   <item android:id="@android:id/secondaryProgress">

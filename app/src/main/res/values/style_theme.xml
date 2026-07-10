@@ -24,7 +24,7 @@
     <item name="android:textColorSecondary">@color/style_color_text_secondary</item>
     <item name="android:textColorHint">@color/style_color_text_hint</item>
     <item name="android:textColorLink">@color/style_color_text_link</item>
-    <item name="android:autofilledHighlight">@color/transparent</item>
+    <item name="android:autofilledHighlight">@color/style_color_transparent</item>
 
     <!-- Widget Styles -->
     <item name="android:textViewStyle">@style/style_padding_textview_style</item>
@@ -54,7 +54,7 @@
     <item name="android:windowLightNavigationBar">true</item>
     <item name="android:windowActivityTransitions">false</item>
 
-    <item name="android:windowBackground">@color/transparent</item>
+    <item name="android:windowBackground">@color/style_color_transparent</item>
     <item name="android:windowIsTranslucent">true</item>
     <item name="android:windowIsFloating">false</item>
     <item name="android:backgroundDimEnabled">false</item>

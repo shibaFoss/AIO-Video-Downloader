@@ -967,7 +967,7 @@ public final class StylizedDialogBuilder {
 				alertDialog.show();
 				Window alertDialogWindow = alertDialog.getWindow();
 				if (alertDialogWindow != null) {
-					int resId = R.color.transparent;
+					int resId = R.color.style_color_transparent;
 					alertDialogWindow.setBackgroundDrawableResource(resId);
 				}
 				
@@ -1075,7 +1075,7 @@ public final class StylizedDialogBuilder {
 			WindowManager.LayoutParams params = alertDialog.getWindow().getAttributes();
 			params.y = 0;
 			alertDialog.getWindow().setAttributes(params);
-			alertDialog.getWindow().setBackgroundDrawableResource(R.color.transparent);
+			alertDialog.getWindow().setBackgroundDrawableResource(R.color.style_color_transparent);
 			alertDialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,
 				ViewGroup.LayoutParams.WRAP_CONTENT);
 		}

@@ -8,7 +8,7 @@
     <item name="android:textColor">@color/color_text_primary</item>
     <item name="android:textColorLink">@color/color_secondary_variant</item>
     <item name="android:textColorHint">@color/color_text_hint</item>
-    <item name="android:autofilledHighlight">@color/transparent</item>
+    <item name="android:autofilledHighlight">@color/style_color_transparent</item>
     <item name="android:textCursorDrawable">@drawable/bg_edittext_cursor</item>
     <item name="android:fontFamily">@font/font_family_regular</item>
     <item name="android:singleLine">true</item>
@@ -19,7 +19,7 @@
     <item name="android:drawableTint">@color/color_primary</item>
     <item name="android:drawableLeft">@drawable/ic_edit_note</item>
     <item name="android:drawablePadding">@dimen/_5</item>
-    <item name="android:background">@color/transparent</item>
+    <item name="android:background">@color/style_color_transparent</item>
     <item name="android:gravity">center_vertical</item>
   </style>
 
@@ -53,7 +53,7 @@
   </style>
 
   <style name="style_dialog_window" parent="Theme.MaterialComponents.Dialog.MinWidth">
-    <item name="android:windowBackground">@color/transparent</item>
+    <item name="android:windowBackground">@color/style_color_transparent</item>
     <item name="android:windowIsFloating">true</item>
     <item name="android:windowIsTranslucent">true</item>
     <item name="android:backgroundDimEnabled">true</item>

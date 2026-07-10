@@ -328,7 +328,7 @@ public final class MessageDialogBuilder {
 				alertDialog.show();
 				Window window = alertDialog.getWindow();
 				if (window != null) {
-					window.setBackgroundDrawableResource(R.color.transparent);
+					window.setBackgroundDrawableResource(R.color.style_color_transparent);
 				}
 			}
 		} catch (Exception error) {
@@ -370,7 +370,7 @@ public final class MessageDialogBuilder {
 			WindowManager.LayoutParams params = alertDialog.getWindow().getAttributes();
 			params.y = 0;
 			alertDialog.getWindow().setAttributes(params);
-			alertDialog.getWindow().setBackgroundDrawableResource(R.color.transparent);
+			alertDialog.getWindow().setBackgroundDrawableResource(R.color.style_color_transparent);
 			alertDialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,
 				ViewGroup.LayoutParams.WRAP_CONTENT);
 		}

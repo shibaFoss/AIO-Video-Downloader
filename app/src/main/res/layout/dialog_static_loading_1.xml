@@ -20,10 +20,10 @@
   android:layout_width="match_parent"
   android:layout_height="wrap_content"
   android:layout_margin="10dp"
-  app:cardBackgroundColor="@color/transparent"
+  app:cardBackgroundColor="@color/style_color_transparent"
   app:cardCornerRadius="5dp"
   app:cardElevation="0dp"
-  app:strokeColor="@color/transparent"
+  app:strokeColor="@color/style_color_transparent"
   app:strokeWidth="1dp">
 
   <!-- Semi-transparent circular background container -->

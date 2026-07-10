@@ -29,7 +29,7 @@
     android:layout_margin="@dimen/_5"
     android:layout_toLeftOf="@+id/controllerContainer"
     android:layout_toRightOf="@+id/imgThumbnail"
-    android:background="@color/transparent"
+    android:background="@color/style_color_transparent"
     android:clickable="true"
     android:orientation="vertical"
     android:textStyle="italic"

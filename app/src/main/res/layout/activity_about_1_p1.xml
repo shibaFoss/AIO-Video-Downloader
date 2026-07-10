@@ -67,7 +67,7 @@
         android:singleLine="true"
         android:text="@string/label_app_name_full"
         android:textColor="@color/style_color_text_primary"
-        android:textSize="@dimen/sub_heading_text_size_v2"
+        android:textSize="@dimen/sub_heading_text_size"
         tools:ignore="SpUsage,TextSizeCheck" />
 
       <!-- Tagline / description -->

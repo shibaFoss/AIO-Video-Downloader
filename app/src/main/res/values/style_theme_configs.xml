@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-  <style name="style.application" parent="Theme.Material3.DayNight.NoActionBar">
+  <style name="style.application" parent="Theme.Material3.Dark.NoActionBar">
 
     <!-- App Colors -->
     <item name="colorPrimary">@color/style_color_primary</item>

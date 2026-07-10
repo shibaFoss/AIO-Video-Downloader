@@ -60,7 +60,7 @@
       android:singleLine="false"
       tools:text="@string/label_sample_video_title"
       android:textColor="@color/color_text_primary"
-      android:textSize="@dimen/sub_heading_text_size_v2"
+      android:textSize="@dimen/sub_heading_text_size"
       tools:ignore="SpUsage,TextSizeCheck,UseCompatTextViewDrawableXml,
       VisualLintSystemUi,TouchTargetSizeCheck,VisualLintSystemUi" />
 
@@ -133,7 +133,7 @@
             android:fontFamily="@font/font_family_regular"
             tools:text="@string/label_100k_subscribers"
             android:textColor="@color/color_text_hint"
-            android:textSize="@dimen/small_text_size_x2"
+            android:textSize="@dimen/small_text_size_v2"
             tools:ignore="SpUsage,TextSizeCheck,TextContrastCheck" />
         </LinearLayout>
       </LinearLayout>
@@ -192,7 +192,7 @@
             android:gravity="center_vertical"
             tools:text="10K"
             android:textColor="@color/color_text_hint"
-            android:textSize="@dimen/small_text_size_x2"
+            android:textSize="@dimen/small_text_size_v2"
             tools:ignore="HardcodedText,SpUsage,TextContrastCheck,TextSizeCheck" />
         </LinearLayout>
       </LinearLayout>

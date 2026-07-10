@@ -82,4 +82,14 @@
     <item name="android:windowEnterAnimation">@anim/anim_fade_enter</item>
     <item name="android:windowExitAnimation">@anim/anim_fade_exit</item>
   </style>
+
+  <style name="circular_image_view">
+    <item name="cornerFamily">rounded</item>
+    <item name="cornerSize">50%</item>
+  </style>
+
+  <style name="rounded_image_view">
+    <item name="cornerFamily">rounded</item>
+    <item name="cornerSize">10%</item>
+  </style>
 </resources>

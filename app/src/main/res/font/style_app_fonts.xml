@@ -27,7 +27,7 @@
     android:fontWeight="600" />
 
   <font
-    android:font="@font/font_family_semibold"
+    android:font="@font/font_family_bold"
     android:fontStyle="normal"
     android:fontWeight="700" />
 
@@ -37,46 +37,46 @@
     android:fontWeight="800" />
 
   <font
-    android:font="@font/font_family_extrabold"
+    android:font="@font/font_family_black"
     android:fontStyle="normal"
     android:fontWeight="900" />
 
   <font
-    android:font="@font/font_family_extralight"
+    android:font="@font/font_family_extralightitalic"
     android:fontStyle="italic"
     android:fontWeight="200" />
   <font
-    android:font="@font/font_family_light"
+    android:font="@font/font_family_lightitalic"
     android:fontStyle="italic"
     android:fontWeight="300" />
 
   <font
-    android:font="@font/font_family_regular"
+    android:font="@font/font_family_italic"
     android:fontStyle="italic"
     android:fontWeight="400" />
 
   <font
-    android:font="@font/font_family_medium"
+    android:font="@font/font_family_mediumitalic"
     android:fontStyle="italic"
     android:fontWeight="500" />
 
   <font
-    android:font="@font/font_family_semibold"
+    android:font="@font/font_family_semibolditalic"
     android:fontStyle="italic"
     android:fontWeight="600" />
 
   <font
-    android:font="@font/font_family_semibold"
+    android:font="@font/font_family_bolditalic"
     android:fontStyle="italic"
     android:fontWeight="700" />
 
   <font
-    android:font="@font/font_family_bold"
+    android:font="@font/font_family_bolditalic"
     android:fontStyle="italic"
     android:fontWeight="800" />
 
   <font
-    android:font="@font/font_family_extrabold"
+    android:font="@font/font_family_blackitalic"
     android:fontStyle="italic"
     android:fontWeight="900" />
 

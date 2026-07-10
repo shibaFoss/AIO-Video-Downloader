@@ -62,7 +62,7 @@
     android:gravity="center"
     android:text="@string/hint_select_language"
     android:textColor="@color/style_color_text_secondary"
-    android:textSize="@dimen/sub_heading_text_size_v2"
+    android:textSize="@dimen/sub_heading_text_size"
     tools:ignore="SpUsage,TextSizeCheck" />
 
 </LinearLayout>

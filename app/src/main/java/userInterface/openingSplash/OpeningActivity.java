@@ -385,9 +385,9 @@ public final class OpeningActivity extends BaseActivity<ActivityOpening1Binding>
             logger.debug("Locale is already configured, opening main activity");
         else logger.debug("Locale is not configured, opening language activity.");
 
-        startActivity(destinationIntent);
-        ActivityAnimator.animActivityFade(OpeningActivity.this);
-        finish();
+//        startActivity(destinationIntent);
+//        ActivityAnimator.animActivityFade(OpeningActivity.this);
+//        finish();
     }
 
 

@@ -2,34 +2,39 @@
 <!--
   ~ Copyright (c) 2024 TubeAIO. All rights reserved.
   ~
-  ~ Application dimension resources defining text sizes used throughout the app.
-  ~ These values ensure consistent typography across all screens and components.
+  ~ Application dimension resources in dp (density-independent pixels).
+  ~ These values define spacing, padding, margins, and layout dimensions
+  ~ used consistently across the app.
   ~
-  ~ Text size progression (smallest to largest):
-  ~   - smallest_text_size (7sp)  - Smallest text, used for labels and badges
-  ~   - smaller_text_size (8sp)   - Very small text, used for secondary info
-  ~   - small_text_size_v2 (9sp)  - Small text variant
-  ~   - small_text_size (10sp)    - Standard small text, used for footers
-  ~   - message_text_size (11sp)  - Message/body text for dialogs
-  ~   - normal_text_size (13sp)   - Primary body text
-  ~   - sub_heading_text_size (15sp) - Section headings
-  ~   - title_text_size (17sp)    - Screen titles and headings
-  ~   - actionbar_text_size (20sp) - Action bar / toolbar text
-  ~   - extra_large_text_size (21sp) - Extra large text for prominent UI
-  ~   - large_text_size (24sp)    - Largest text, used for big titles
-  ~
-  ~ @see styles.xml
   -->
 <resources>
-  <dimen name="smallest_text_size">7sp</dimen>
-  <dimen name="smaller_text_size">8sp</dimen>
-  <dimen name="small_text_size_v2">9sp</dimen>
-  <dimen name="small_text_size">10sp</dimen>
-  <dimen name="message_text_size">11sp</dimen>
-  <dimen name="normal_text_size">13sp</dimen>
-  <dimen name="sub_heading_text_size">15sp</dimen>
-  <dimen name="title_text_size">17sp</dimen>
-  <dimen name="actionbar_text_size">20sp</dimen>
-  <dimen name="extra_large_text_size">21sp</dimen>
-  <dimen name="large_text_size">24sp</dimen>
+  <!-- Smallest dimension (8dp) - Used for micro spacing -->
+  <dimen name="smallest_text_size">8dp</dimen>
+
+  <!-- Very small (9dp) - Used for tight spacing between elements -->
+  <dimen name="smaller_text_size">9dp</dimen>
+
+  <!-- Small variant (10dp) - Alternative small spacing -->
+  <dimen name="small_text_size_v2">10dp</dimen>
+
+  <!-- Standard small (11dp) - Used for compact margins/paddings -->
+  <dimen name="small_text_size">11dp</dimen>
+
+  <!-- Message/body (12dp) - Used for dialog message spacing -->
+  <dimen name="message_text_size">12dp</dimen>
+
+  <!-- Normal (14dp) - Standard spacing for most UI elements -->
+  <dimen name="normal_text_size">14dp</dimen>
+
+  <!-- Sub heading (16dp) - Section header spacing -->
+  <dimen name="sub_heading_text_size">16dp</dimen>
+
+  <!-- Title (18dp) - Screen title spacing -->
+  <dimen name="title_text_size">18dp</dimen>
+
+  <!-- Extra large (22dp) - Large element spacing -->
+  <dimen name="extra_large_text_size">22dp</dimen>
+
+  <!-- Large (25dp) - Maximum spacing for prominent elements -->
+  <dimen name="large_text_size">25dp</dimen>
 </resources>

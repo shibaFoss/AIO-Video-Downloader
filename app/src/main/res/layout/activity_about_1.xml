@@ -1,13 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~ Copyright (c) 2024 TubeAIO. All rights reserved.
-  ~
-  ~ About screen layout displaying app information, developer credits,
-  ~ legal links, and version details. The layout includes a top app bar,
-  ~ a scrollable content area with app info and version footer.
-  ~
-  ~ @see AboutActivity
-  -->
 <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="match_parent"
@@ -16,7 +7,6 @@
   android:fitsSystemWindows="true"
   android:orientation="vertical">
 
-  <!-- Top app bar with back button and title -->
   <include
     android:id="@+id/topBar"
     layout="@layout/activity_about_1_p0" />
@@ -35,10 +25,9 @@
       android:layout_height="wrap_content"
       android:orientation="vertical">
 
-      <!-- Developer credits and legal links -->
-      <include layout="@layout/activity_about_1_p3" />
+      <include
+        layout="@layout/activity_about_1_p3" />
 
-      <!-- Version info and official website link -->
       <include
         android:id="@+id/versionInfo"
         layout="@layout/activity_about_1_p2" />

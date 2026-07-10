@@ -44,7 +44,7 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_gravity="center_horizontal"
-      android:fontFamily="@font/font_family_black"
+      android:fontFamily="@font/font_family_bold"
       android:gravity="center"
       android:text="@string/label_app_name_full"
       android:textColor="@color/style_color_text_primary"

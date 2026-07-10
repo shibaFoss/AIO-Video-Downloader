@@ -79,7 +79,7 @@
             android:maxLines="2"
             android:text="@string/desc_learn_more_about_how_we_started"
             android:textColor="@color/style_color_text_secondary"
-            android:textSize="@dimen/small_text_size"
+            android:textSize="@dimen/message_text_size"
             tools:ignore="SpUsage,TextSizeCheck" />
         </LinearLayout>
 
@@ -145,7 +145,7 @@
             android:maxLines="2"
             android:text="@string/desc_deliver_simple_reliable_experience"
             android:textColor="@color/style_color_text_secondary"
-            android:textSize="@dimen/small_text_size"
+            android:textSize="@dimen/message_text_size"
             tools:ignore="SpUsage,TextSizeCheck" />
         </LinearLayout>
 
@@ -211,7 +211,7 @@
             android:maxLines="2"
             android:text="@string/desc_privacy_transparency"
             android:textColor="@color/style_color_text_secondary"
-            android:textSize="@dimen/small_text_size"
+            android:textSize="@dimen/message_text_size"
             tools:ignore="SpUsage,TextSizeCheck" />
         </LinearLayout>
 
@@ -277,7 +277,7 @@
             android:maxLines="2"
             android:text="@string/desc_empowering_users_with_tools"
             android:textColor="@color/style_color_text_secondary"
-            android:textSize="@dimen/small_text_size"
+            android:textSize="@dimen/message_text_size"
             tools:ignore="SpUsage,TextSizeCheck" />
         </LinearLayout>
 
@@ -347,7 +347,7 @@
             android:fontFamily="@font/font_family_regular"
             android:text="@string/desc_we_d_love_to_hear_from_you"
             android:textColor="@color/style_color_text_secondary"
-            android:textSize="@dimen/small_text_size"
+            android:textSize="@dimen/message_text_size"
             tools:ignore="SpUsage,TextSizeCheck" />
         </LinearLayout>
       </LinearLayout>
@@ -387,7 +387,7 @@
             android:fontFamily="@font/font_family_regular"
             android:text="@string/label_email_us"
             android:textColor="@color/style_color_text_primary"
-            android:textSize="@dimen/small_text_size"
+            android:textSize="@dimen/message_text_size"
             tools:ignore="SpUsage,TextSizeCheck" />
         </LinearLayout>
 
@@ -424,7 +424,7 @@
             android:fontFamily="@font/font_family_regular"
             android:text="@string/label_twitter"
             android:textColor="@color/style_color_text_primary"
-            android:textSize="@dimen/small_text_size"
+            android:textSize="@dimen/message_text_size"
             tools:ignore="SpUsage,TextSizeCheck" />
         </LinearLayout>
 
@@ -461,7 +461,7 @@
             android:fontFamily="@font/font_family_regular"
             android:text="@string/label_website"
             android:textColor="@color/style_color_text_primary"
-            android:textSize="@dimen/small_text_size"
+            android:textSize="@dimen/message_text_size"
             tools:ignore="SpUsage,TextSizeCheck" />
         </LinearLayout>
       </LinearLayout>

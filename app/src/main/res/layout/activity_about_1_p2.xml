@@ -57,15 +57,18 @@
     <!-- Visit Official Website button -->
     <com.google.android.material.textview.MaterialTextView
       android:id="@+id/btnVisitOfficial"
-      android:layout_width="match_parent"
+      android:layout_width="wrap_content"
       android:layout_height="32dp"
+      android:layout_gravity="center_horizontal"
       android:layout_marginLeft="10dp"
       android:layout_marginTop="5dp"
       android:layout_marginRight="10dp"
-      android:clickable="true"
       android:background="@drawable/bg_button_accent"
+      android:clickable="true"
+      android:drawableRight="@drawable/ic_open_in_new_small"
+      android:drawablePadding="10dp"
       android:ellipsize="end"
-      android:fontFamily="@font/font_family_regular"
+      android:fontFamily="@font/font_family_bold"
       android:gravity="center"
       android:maxLines="1"
       android:paddingLeft="10dp"
@@ -75,8 +78,8 @@
       android:singleLine="true"
       android:text="@string/label_visit_official_site"
       android:textColor="@color/style_color_surface"
-      android:textSize="@dimen/message_text_size"
-      tools:ignore="SpUsage,TextSizeCheck,TextContrastCheck" />
+      android:textSize="@dimen/normal_text_size"
+      tools:ignore="SpUsage,TextSizeCheck,TextContrastCheck,TouchTargetSizeCheck" />
 
   </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

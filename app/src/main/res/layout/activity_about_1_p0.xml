@@ -29,7 +29,7 @@
     <!-- Back navigation button -->
     <ImageView
       android:id="@+id/btnBack"
-      android:layout_width="50dp"
+      android:layout_width="40dp"
       android:layout_height="match_parent"
       android:layout_gravity="center_vertical"
       android:adjustViewBounds="true"
@@ -51,7 +51,7 @@
       android:singleLine="true"
       android:text="@string/label_about_us"
       android:textColor="@color/style_color_text_primary"
-      android:textSize="@dimen/title_text_size"
+      android:textSize="@dimen/normal_text_size"
       tools:ignore="SpUsage,TextSizeCheck" />
   </LinearLayout>
 </LinearLayout>

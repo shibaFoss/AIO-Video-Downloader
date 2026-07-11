@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2024 TubeAIO. All rights reserved.
+  ~
+  ~ About screen layout displaying app information, developer credits,
+  ~ legal links, and version details. The layout includes:
+  ~   - Top app bar with back button and title
+  ~   - App logo, name, and tagline
+  ~   - Scrollable content with about details and version info
+  ~
+  ~ @see AboutActivity
+  -->
 <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="match_parent"
@@ -7,31 +18,24 @@
   android:fitsSystemWindows="true"
   android:orientation="vertical">
 
+  <!-- Top app bar -->
   <include
     android:id="@+id/topBar"
     layout="@layout/activity_about_1_p0" />
 
   <!-- App icon, name, and tagline -->
-  <include layout="@layout/activity_about_1_p1" />
+  <include
+    android:id="@+id/appInfo"
+    layout="@layout/activity_about_1_p1" />
 
-  <!-- Scrollable content area -->
-  <ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="5dp">
+  <!-- About info and contact details -->
+  <include
+    android:id="@+id/userInteraction"
+    layout="@layout/activity_about_1_p3" />
 
-    <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:orientation="vertical">
+  <!-- Version info and official site link -->
+  <include
+    android:id="@+id/versionInfo"
+    layout="@layout/activity_about_1_p2" />
 
-      <include
-        layout="@layout/activity_about_1_p3" />
-
-      <include
-        android:id="@+id/versionInfo"
-        layout="@layout/activity_about_1_p2" />
-
-    </LinearLayout>
-  </ScrollView>
 </LinearLayout>

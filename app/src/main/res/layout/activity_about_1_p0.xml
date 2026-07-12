@@ -1,18 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~ Copyright (c) 2024 TubeAIO. All rights reserved.
-  ~
-  ~ Layout for the top app bar / action bar on the About screen.
-  ~ This component provides:
-  ~   - Back button for navigation (arrow icon with touch feedback background)
-  ~   - Screen title indicating the current screen ("About Us")
-  ~
-  ~ The title is displayed in bold font, single line, with ellipsis for long text.
-  ~ The back button uses a negative button background for touch feedback.
-  ~
-  ~ @see AboutActivity
-  ~ @see R.id#btnBack
-  -->
 <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools"
@@ -22,31 +8,31 @@
 
   <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="50dp"
+    android:layout_height="45dp"
     android:orientation="horizontal"
     tools:ignore="UselessParent">
 
-    <!-- Back navigation button -->
     <ImageView
       android:id="@+id/btnBack"
-      android:layout_width="40dp"
+      android:layout_width="50dp"
       android:layout_height="match_parent"
       android:layout_gravity="center_vertical"
       android:adjustViewBounds="true"
       android:background="@drawable/bg_button_negative"
       android:importantForAccessibility="no"
-      android:padding="10dp"
-      android:src="@drawable/ic_arrow_back"
+      android:padding="15dp"
+      android:src="@drawable/ic_arrow_back_ios"
       android:tint="@color/style_color_text_primary"
       tools:ignore="UseAppTint" />
 
-    <!-- Screen title -->
     <com.google.android.material.textview.MaterialTextView
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_gravity="center_vertical"
+      android:layout_marginRight="50dp"
       android:ellipsize="end"
       android:fontFamily="@font/font_family_bold"
+      android:gravity="center"
       android:maxLines="1"
       android:singleLine="true"
       android:text="@string/label_about_us"
@@ -54,4 +40,10 @@
       android:textSize="@dimen/normal_text_size"
       tools:ignore="SpUsage,TextSizeCheck" />
   </LinearLayout>
+
+  <View
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:alpha="0.6"
+    android:background="@color/style_color_divider" />
 </LinearLayout>

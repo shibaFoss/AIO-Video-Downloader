@@ -1,90 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~ Copyright (c) 2024 TubeAIO. All rights reserved.
-  ~
-  ~ Layout for the about section displaying app information in the About screen.
-  ~ This component shows the app logo, name, and a tagline/description.
-  ~
-  ~ The layout uses a MaterialCardView as the container with rounded corners
-  ~ and a subtle stroke. Inside, a horizontal LinearLayout contains:
-  ~   - App logo icon with circular background and tint
-  ~   - App name (bold, single line)
-  ~   - Tagline or description text (regular, up to 2 lines)
-  ~
-  ~ @see AboutActivity
-  ~ @see R.id#activity_about_1_p0
-  -->
-<com.google.android.material.card.MaterialCardView
+<LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="wrap_content"
-  android:layout_marginLeft="10dp"
-  android:layout_marginRight="10dp"
-  app:cardBackgroundColor="@color/style_color_card"
-  app:cardCornerRadius="5dp"
-  app:strokeColor="@color/style_color_card_stroke"
-  app:strokeWidth="1dp">
+  android:orientation="vertical">
 
-  <LinearLayout
-    android:layout_width="match_parent"
+  <com.google.android.material.imageview.ShapeableImageView
+    android:layout_width="120dp"
+    android:layout_height="120dp"
+    android:layout_gravity="center_horizontal"
+    android:adjustViewBounds="true"
+    android:src="@drawable/img_app_logo"
+    app:tint="@color/style_color_primary" />
+
+  <com.google.android.material.textview.MaterialTextView
+    android:id="@+id/tvVersion"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
+    android:layout_gravity="center_horizontal"
     android:paddingLeft="10dp"
-    android:paddingTop="10dp"
+    android:paddingTop="2dp"
     android:paddingRight="10dp"
-    android:paddingBottom="10dp">
+    android:paddingBottom="2dp"
+    android:textColor="@color/style_color_text_primary"
+    android:textSize="@dimen/normal_text_size"
+    tools:ignore="SpUsage,TextSizeCheck"
+    tools:text="2026.06.10" />
 
-    <!-- App logo icon with circular background -->
-    <androidx.appcompat.widget.AppCompatImageView
-      android:layout_width="60dp"
-      android:layout_height="60dp"
-      android:layout_gravity="center_vertical"
-      android:adjustViewBounds="true"
-      android:background="@drawable/bg_color_circle"
-      android:backgroundTint="@color/style_color_primary_variant"
-      android:padding="10dp"
-      android:src="@drawable/img_app_logo"
-      android:tint="@color/style_color_surface" />
-
-    <!-- App name and tagline container -->
-    <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_gravity="center_vertical"
-      android:orientation="vertical">
-
-      <!-- App name (bold) -->
-      <com.google.android.material.textview.MaterialTextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:ellipsize="end"
-        android:fontFamily="@font/font_family_bold"
-        android:maxLines="1"
-        android:singleLine="true"
-        android:text="@string/label_app_name_full"
-        android:textColor="@color/style_color_text_primary"
-        android:textSize="@dimen/normal_text_size"
-        tools:ignore="SpUsage,TextSizeCheck" />
-
-      <!-- Tagline / description -->
-      <com.google.android.material.textview.MaterialTextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:ellipsize="end"
-        android:fontFamily="@font/font_family_regular"
-        android:maxLines="3"
-        android:singleLine="false"
-        android:text="@string/text_about_us_info_tagline"
-        android:textColor="@color/style_color_text_secondary"
-        android:textSize="@dimen/message_text_size"
-        tools:ignore="SpUsage,TextSizeCheck" />
-
-    </LinearLayout>
-  </LinearLayout>
-</com.google.android.material.card.MaterialCardView>
+</LinearLayout>

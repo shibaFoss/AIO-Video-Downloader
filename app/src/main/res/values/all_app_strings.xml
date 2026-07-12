@@ -270,4 +270,7 @@
   <string name="label_email_us">Email Us</string>
   <string name="label_website">Website</string>
   <string name="label_twitter">Twitter</string>
+
+  <string name="text_agreement_html"><![CDATA[By continuing, you agree to our <a href="https://terms.tubeaio.com">User Agreement</a> and <a href="https://privacy.tubeaio.com">Privacy Policy</a>.]]></string>
+
 </resources>

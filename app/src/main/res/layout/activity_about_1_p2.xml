@@ -1,85 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~ Copyright (c) 2024 TubeAIO. All rights reserved.
-  ~
-  ~ Layout for the footer section in the About screen.
-  ~ This component displays the application version information and a button
-  ~ to visit the official website.
-  ~
-  ~ The layout uses a MaterialCardView as the container with rounded corners
-  ~ and a subtle stroke. Inside, a vertical LinearLayout contains:
-  ~   - Version information text (centered, medium weight, secondary color)
-  ~   - Visit Official Site button (accent background, clickable)
-  ~
-  ~ @see AboutActivity
-  ~ @see R.id#tvVersion
-  ~ @see R.id#btnVisitOfficial
-  -->
-<com.google.android.material.card.MaterialCardView
+<LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
-  android:layout_height="wrap_content"
-  android:layout_marginLeft="10dp"
-  android:layout_marginTop="10dp"
-  android:layout_marginRight="10dp"
-  android:layout_marginBottom="10dp"
-  app:cardBackgroundColor="@color/style_color_card"
-  app:cardCornerRadius="5dp"
-  app:strokeColor="@color/style_color_card_stroke"
-  app:strokeWidth="1dp">
+  android:layout_height="match_parent"
+  android:orientation="vertical">
 
-  <LinearLayout
+  <com.google.android.material.textview.MaterialTextView
+    android:id="@+id/tvUserAgreement"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:paddingLeft="10dp"
-    android:paddingTop="10dp"
-    android:paddingRight="10dp"
-    android:paddingBottom="10dp">
+    android:layout_gravity="center"
+    android:ellipsize="end"
+    android:fontFamily="@font/font_family_regular"
+    android:gravity="center"
+    android:maxLines="2"
+    android:textColor="@color/style_color_text_primary"
+    android:textSize="@dimen/message_text_size"
+    tools:ignore="SpUsage,TextSizeCheck"
+    android:text="By continuing, you agree to our User Agreement and Privacy Policy." />
 
-    <!-- Application version information -->
-    <com.google.android.material.textview.MaterialTextView
-      android:id="@+id/tvVersion"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:ellipsize="end"
-      android:fontFamily="@font/font_family_medium"
-      android:gravity="center"
-      android:maxLines="1"
-      android:singleLine="true"
-      android:textColor="@color/style_color_text_secondary"
-      android:textSize="@dimen/normal_text_size"
-      tools:ignore="SpUsage,TextSizeCheck"
-      tools:text="Version (2026.07.10) [89]" />
-
-    <!-- Visit Official Website button -->
-    <com.google.android.material.textview.MaterialTextView
-      android:id="@+id/btnVisitOfficial"
-      android:layout_width="wrap_content"
-      android:layout_height="32dp"
-      android:layout_gravity="center_horizontal"
-      android:layout_marginLeft="10dp"
-      android:layout_marginTop="5dp"
-      android:layout_marginRight="10dp"
-      android:background="@drawable/bg_button_accent"
-      android:clickable="true"
-      android:drawableRight="@drawable/ic_open_in_new_small"
-      android:drawablePadding="10dp"
-      android:ellipsize="end"
-      android:fontFamily="@font/font_family_bold"
-      android:gravity="center"
-      android:maxLines="1"
-      android:paddingLeft="10dp"
-      android:paddingTop="2dp"
-      android:paddingRight="10dp"
-      android:paddingBottom="2dp"
-      android:singleLine="true"
-      android:text="@string/label_visit_official_site"
-      android:textColor="@color/style_color_surface"
-      android:textSize="@dimen/normal_text_size"
-      tools:ignore="SpUsage,TextSizeCheck,TextContrastCheck,TouchTargetSizeCheck" />
-
-  </LinearLayout>
-</com.google.android.material.card.MaterialCardView>
+</LinearLayout>

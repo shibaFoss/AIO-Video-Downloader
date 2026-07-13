@@ -1,31 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~ Copyright (c) 2024 TubeAIO. All rights reserved.
-  ~
-  ~ Layout for the action buttons and footer section in the AppCrashedActivity.
-  ~ This component provides two primary actions for the user after a crash:
-  ~   - Send Report: Submit crash details to the developers
-  ~   - Continue Anyway: Dismiss the crash screen and proceed to the app
-  ~
-  ~ The layout also includes a security/privacy footer reassuring users that
-  ~ crash reports help improve the app and are handled securely.
-  -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical">
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical">
 
-  <!-- Primary button: Send crash report -->
   <com.google.android.material.button.MaterialButton
     android:id="@+id/btnSendReport"
     style="@style/Widget.Material3.Button.IconButton.Filled"
     android:layout_width="match_parent"
-    android:layout_height="52dp"
-    android:fontFamily="@font/font_family_medium"
+    android:layout_height="wrap_content"
+    android:ellipsize="end"
+    android:fontFamily="@font/font_family_bold"
+    android:maxLines="1"
+    android:singleLine="true"
     android:text="@string/label_send_report"
     android:textAllCaps="false"
+    android:textColor="@color/style_color_text_inverse"
     android:textSize="@dimen/normal_text_size"
     app:backgroundTint="@color/style_color_button_primary"
     app:cornerRadius="5dp"
@@ -33,15 +26,18 @@
     app:iconGravity="textStart"
     app:iconPadding="10dp"
     app:iconSize="24dp"
+    app:iconTint="@color/style_color_text_inverse"
     tools:ignore="SpUsage,VisualLintButtonSize,TextSizeCheck" />
 
-  <!-- Secondary button: Continue without sending report -->
   <com.google.android.material.button.MaterialButton
     android:id="@+id/btnContinueAnyway"
     style="@style/Widget.Material3.Button.IconButton.Outlined"
     android:layout_width="match_parent"
-    android:layout_height="52dp"
-    android:fontFamily="@font/font_family_medium"
+    android:layout_height="wrap_content"
+    android:ellipsize="end"
+    android:fontFamily="@font/font_family_bold"
+    android:maxLines="1"
+    android:singleLine="true"
     android:text="@string/label_continue_anyway"
     android:textColor="@color/style_color_button_outline"
     android:textSize="@dimen/normal_text_size"
@@ -55,7 +51,6 @@
     app:strokeWidth="1dp"
     tools:ignore="SpUsage,VisualLintButtonSize,TextSizeCheck" />
 
-  <!-- Footer: Privacy/security reassurance text -->
   <LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -63,7 +58,6 @@
     android:layout_marginTop="2dp"
     android:orientation="horizontal">
 
-    <!-- Shield icon indicating security -->
     <com.google.android.material.imageview.ShapeableImageView
       android:layout_width="13dp"
       android:layout_height="13dp"
@@ -71,10 +65,9 @@
       android:layout_marginRight="5dp"
       android:adjustViewBounds="true"
       android:src="@drawable/ic_shield_lock_fill"
-      android:tint="@color/style_color_text_hint"
+      android:tint="@color/style_color_text_secondary"
       tools:ignore="ImageContrastCheck" />
 
-    <!-- Footer text reassuring users -->
     <com.google.android.material.textview.MaterialTextView
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
@@ -82,7 +75,7 @@
       android:fontFamily="@font/font_family_light"
       android:gravity="center_vertical"
       android:text="@string/label_reports_help_us_improve_the_app"
-      android:textColor="@color/style_color_text_hint"
+      android:textColor="@color/style_color_text_secondary"
       android:textSize="@dimen/small_text_size"
       tools:ignore="SpUsage,TextSizeCheck,TextContrastCheck" />
   </LinearLayout>

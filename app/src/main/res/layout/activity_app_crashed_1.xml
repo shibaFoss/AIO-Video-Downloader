@@ -1,32 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~ Copyright (c) 2024 TubeAIO. All rights reserved.
-  ~
-  ~ Main layout for the AppCrashedActivity. This screen displays crash information
-  ~ to the user after an unexpected app termination, allowing them to view the
-  ~ error details and optionally share the crash log or restart the application.
-  ~
-  ~ Layout structure:
-  ~   - Scrollable content area containing crash information display
-  ~   - Bottom action buttons (e.g., Share Report, Restart App, Close)
-  ~
-  ~ The layout fits system windows to handle status bar and navigation bar insets.
-  ~ The crash info section includes details such as stack trace, device info,
-  ~ app version, and timestamp of the crash.
-  -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="@color/style_color_background"
-              android:fitsSystemWindows="true"
-              android:orientation="vertical">
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/style_color_background"
+  android:fitsSystemWindows="true"
+  android:orientation="vertical">
+
+  <include
+    android:id="@+id/actionBar"
+    layout="@layout/activity_app_crashed_1_p2" />
 
   <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <!-- Scrollable crash information area -->
     <ScrollView
       android:layout_width="match_parent"
       android:layout_height="0dp"
@@ -37,18 +26,15 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Crash details display (stack trace, device info, timestamp) -->
         <include
           android:id="@+id/crashInfo"
           layout="@layout/activity_app_crashed_1_p0"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:layout_marginTop="50dp"
           android:layout_marginBottom="10dp" />
       </LinearLayout>
     </ScrollView>
 
-    <!-- Bottom action buttons (Share, Restart, Close) -->
     <include
       android:id="@+id/actionButtons"
       layout="@layout/activity_app_crashed_1_p1"

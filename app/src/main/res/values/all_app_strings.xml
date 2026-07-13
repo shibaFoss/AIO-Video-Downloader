@@ -202,7 +202,7 @@
   <string name="player_end_screen_title">Up next</string>
   <string name="player_no_title">Unknown title</string>
   <string name="label_app_crashed">App Crashed</string>
-  <string name="desc_an_unexpected_error_occurred">An unexpected error occurred and the app was closed. Please help us fix it by sending a crash report to the developer team.</string>
+  <string name="desc_an_unexpected_error_occurred">An unexpected error occurred and the app closed. Help us fix it by sending a crash report.</string>
   <string name="label_what_were_you_doing_optional"><b>What were you doing? </b>(Optional) </string>
   <string name="label_tell_us_what_happened">Tell us what happened…</string>
   <string name="label_include_crash_log">Include crash log</string>

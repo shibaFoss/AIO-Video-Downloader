@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.nextgen.R;
 import com.nextgen.databinding.ActivityAppCrashed1Binding;
+import com.nextgen.databinding.ActivityAppCrashed1P1Binding;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -158,7 +159,8 @@ public final class AppCrashedActivity extends BaseActivity<ActivityAppCrashed1Bi
 	 * @see AppCrashedViewModel#sendCrashInfoToServer(AppCrashedInfo)
 	 */
 	private void setupSendReportButton() {
-		binding.actionButtons.btnSendReport.setOnClickListener(view -> {
+		ActivityAppCrashed1P1Binding actionButtons = binding.actionButtons;
+		actionButtons.btnSendReport.setOnClickListener(view -> {
 			AppCrashedInfo crashedInfo = getCrashedInfoFromIntent();
 			if (crashedInfo != null) {
 				crashedInfo.setUserGivenMessage(getEnteredDescription());
@@ -168,7 +170,7 @@ public final class AppCrashedActivity extends BaseActivity<ActivityAppCrashed1Bi
 				buttonVibrate();
 				String toastMessage = StringHelper.getText(R.string.hint_feedback_sent_thank_you);
 				StylizedToastView.show(AppCrashedActivity.this, toastMessage);
-				binding.actionButtons.btnContinueAnyway.performClick();
+				actionButtons.btnContinueAnyway.performClick();
 			} else {
 				logger.debug("AppCrashInfo object is null, failed to submit report.");
 			}
@@ -190,10 +192,11 @@ public final class AppCrashedActivity extends BaseActivity<ActivityAppCrashed1Bi
 	 * @see #setupSendReportButton()
 	 */
 	private void applyPrivacyRestrictions(AppCrashedInfo crashedInfo) {
-		if (binding.crashInfo.btnCheckCrashLog.isChecked()) {
+		if (!binding.crashInfo.btnCheckCrashLog.isChecked()) {
 			crashedInfo.setStackStraceInfo("user_denied");
 		}
-		if (binding.crashInfo.btnCheckDeviceInfo.isChecked()) {
+		
+		if (!binding.crashInfo.btnCheckDeviceInfo.isChecked()) {
 			crashedInfo.setDetailedInfo("user_denied");
 		}
 	}

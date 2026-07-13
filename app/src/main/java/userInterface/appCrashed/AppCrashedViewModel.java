@@ -109,7 +109,6 @@ public final class AppCrashedViewModel extends ViewModel {
 				AppCrashedPocketbase appCrashedPocketbase = new AppCrashedPocketbase();
 				appCrashedPocketbase.sendCrashInfoToServer(crashedInfo);
 				logger.debug("Successful at saving crashed report to the server");
-				
 			} catch (Exception error) {
 				logger.error("Failed on saving crashed report to server: ", error);
 			}

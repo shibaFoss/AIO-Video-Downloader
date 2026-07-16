@@ -1,16 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~ Copyright (c) 2024 TubeAIO. All rights reserved.
-  ~
-  ~ Layout for feedback action buttons and footer. This component provides
-  ~ the primary send button, a clear attachment button (shown conditionally),
-  ~ and a footer note indicating that feedback is secure and encrypted.
-  ~
-  ~ The layout includes:
-  ~   - Send Feedback button (filled, with email icon)
-  ~   - Clear Attachment button (outlined, with delete icon, initially hidden)
-  ~   - Security footer (shield icon + text)
-  -->
 <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -19,15 +7,15 @@
   android:layout_height="match_parent"
   android:orientation="vertical">
 
-  <!-- Primary send feedback button -->
   <com.google.android.material.button.MaterialButton
     android:id="@+id/btnSendReport"
     style="@style/Widget.Material3.Button.IconButton.Filled"
     android:layout_width="match_parent"
-    android:layout_height="52dp"
-    android:fontFamily="@font/font_family_medium"
+    android:layout_height="wrap_content"
+    android:fontFamily="@font/font_family_bold"
     android:text="@string/btn_send_feedback"
     android:textAllCaps="false"
+    android:textColor="@color/style_color_text_inverse"
     android:textSize="@dimen/normal_text_size"
     app:backgroundTint="@color/style_color_button_primary"
     app:cornerRadius="5dp"
@@ -35,15 +23,15 @@
     app:iconGravity="textStart"
     app:iconPadding="10dp"
     app:iconSize="24dp"
+    app:iconTint="@color/style_color_text_inverse"
     tools:ignore="SpUsage,VisualLintButtonSize,TextSizeCheck" />
 
-  <!-- Clear attachment button (visible only when a screenshot is attached) -->
   <com.google.android.material.button.MaterialButton
     android:id="@+id/btnClearAttachment"
     style="@style/Widget.Material3.Button.IconButton.Outlined"
     android:layout_width="match_parent"
     android:layout_height="52dp"
-    android:fontFamily="@font/font_family_medium"
+    android:fontFamily="@font/font_family_bold"
     android:text="@string/btn_clear_attachment"
     android:textColor="@color/style_color_button_outline"
     android:textSize="@dimen/normal_text_size"
@@ -56,11 +44,9 @@
     app:iconTint="@color/style_color_button_primary"
     app:strokeColor="@color/style_color_button_outline"
     app:strokeWidth="1dp"
-
     tools:ignore="SpUsage,VisualLintButtonSize,TextSizeCheck"
     tools:visibility="visible" />
 
-  <!-- Security footer indicating feedback is safe and encrypted -->
   <LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -68,7 +54,6 @@
     android:layout_marginTop="2dp"
     android:orientation="horizontal">
 
-    <!-- Shield lock icon -->
     <com.google.android.material.imageview.ShapeableImageView
       android:layout_width="13dp"
       android:layout_height="13dp"
@@ -79,12 +64,11 @@
       android:tint="@color/style_color_text_hint"
       tools:ignore="ImageContrastCheck" />
 
-    <!-- Security assurance text -->
     <com.google.android.material.textview.MaterialTextView
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_gravity="center_vertical"
-      android:fontFamily="@font/font_family_light"
+      android:fontFamily="@font/font_family_regular"
       android:gravity="center_vertical"
       android:text="@string/footer_feedback_safe"
       android:textColor="@color/style_color_text_hint"

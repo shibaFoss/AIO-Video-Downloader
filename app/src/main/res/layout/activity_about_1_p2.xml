@@ -18,6 +18,6 @@
     android:textColor="@color/style_color_text_primary"
     android:textSize="@dimen/message_text_size"
     tools:ignore="SpUsage,TextSizeCheck"
-    android:text="By continuing, you agree to our User Agreement and Privacy Policy." />
+    tools:text="By continuing, you agree to our User Agreement and Privacy Policy." />
 
 </LinearLayout>

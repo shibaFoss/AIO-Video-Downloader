@@ -330,7 +330,7 @@ public class FeedbackActivity extends BaseActivity<ActivityFeedback1Binding> {
 	 */
 	private void clearAttachmentPreview() {
 		Drawable defaultPreviewBG = ContextCompat
-			.getDrawable(this, R.drawable.ic_rd_primary_light_color);
+			.getDrawable(this, R.drawable.ic_rd_primary_color);
 		binding.userMessage.ivAttachmentPreview.setImageDrawable(defaultPreviewBG);
 		
 		binding.userMessage.tvAddImage.setVisibility(View.VISIBLE);
@@ -617,9 +617,9 @@ public class FeedbackActivity extends BaseActivity<ActivityFeedback1Binding> {
 	 *
 	 * <p>Supported reactions: Happy (Excellent), Good, Average, Poor, Angry.
 	 *
-	 * @param reaction        The reaction string value to store in the ViewModel
-	 *                        (e.g., "Excellent", "Good", "Average", "Poor", "Angry").
-	 * @param selectedImage   The ImageView corresponding to the selected reaction.
+	 * @param reaction         The reaction string value to store in the ViewModel
+	 *                         (e.g., "Excellent", "Good", "Average", "Poor", "Angry").
+	 * @param selectedImage    The ImageView corresponding to the selected reaction.
 	 * @param selectedTextView The TextView corresponding to the selected reaction.
 	 * @see FeedbackViewModel#setSelectedReaction(String)
 	 * @see #selectExcellentReactionByDefault()

@@ -1,15 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~ Copyright (c) 2024 TubeAIO. All rights reserved.
-  ~
-  ~ Layout for the top app bar / action bar on the feedback screen.
-  ~ This component provides a back button for navigation and a title
-  ~ indicating the current screen ("Send Feedback").
-  ~
-  ~ The layout includes:
-  ~   - Back button (arrow icon) with touch feedback background
-  ~   - Screen title text (bold, single line, ellipsized if needed)
-  -->
 <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools"
@@ -19,11 +8,10 @@
 
   <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="50dp"
+    android:layout_height="45dp"
     android:orientation="horizontal"
     tools:ignore="UselessParent">
 
-    <!-- Back navigation button -->
     <ImageView
       android:id="@+id/btnBack"
       android:layout_width="50dp"
@@ -32,23 +20,31 @@
       android:adjustViewBounds="true"
       android:background="@drawable/bg_button_negative"
       android:importantForAccessibility="no"
-      android:padding="10dp"
-      android:src="@drawable/ic_arrow_back"
+      android:padding="15dp"
+      android:src="@drawable/ic_arrow_back_ios"
       android:tint="@color/style_color_text_primary"
       tools:ignore="UseAppTint" />
 
-    <!-- Screen title -->
     <com.google.android.material.textview.MaterialTextView
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_gravity="center_vertical"
+      android:layout_marginRight="50dp"
       android:ellipsize="end"
       android:fontFamily="@font/font_family_bold"
+      android:gravity="center"
       android:maxLines="1"
       android:singleLine="true"
       android:text="@string/label_send_feedback"
       android:textColor="@color/style_color_text_primary"
-      android:textSize="@dimen/title_text_size"
+      android:textSize="@dimen/normal_text_size"
       tools:ignore="SpUsage,TextSizeCheck" />
   </LinearLayout>
+
+  <View
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:alpha="0.6"
+    android:background="@color/style_color_divider" />
+
 </LinearLayout>

@@ -1,20 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~ Copyright (c) 2024 TubeAIO. All rights reserved.
-  ~
-  ~ Main layout for the FeedbackActivity. This screen allows users to submit
-  ~ feedback including sentiment (reaction), a message, optional email,
-  ~ and optional screenshot attachment.
-  ~
-  ~ Layout structure:
-  ~   - Top app bar with back button and title (included layout)
-  ~   - Scrollable content area containing:
-  ~       * Reaction selection card (5 sentiment options)
-  ~       * Message input form (subject, email, feedback text, attachment)
-  ~   - Bottom action buttons (Send Feedback, Clear Attachment, footer)
-  ~
-  ~ The layout fits system windows to handle status bar and navigation bar insets.
-  -->
 <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="match_parent"
@@ -28,12 +12,10 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <!-- Top app bar with back button and screen title -->
     <include
       android:id="@+id/topBar"
       layout="@layout/activity_feedback_1_p0" />
 
-    <!-- Scrollable content area -->
     <ScrollView
       android:layout_width="match_parent"
       android:layout_height="0dp"
@@ -44,7 +26,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Reaction selection card (Excellent, Good, Average, Poor, Angry) -->
         <include
           android:id="@+id/reactions"
           layout="@layout/activity_feedback_1_p1"
@@ -55,7 +36,6 @@
           android:layout_marginRight="10dp"
           android:layout_marginBottom="7dp" />
 
-        <!-- User message input form (subject, email, feedback, attachment) -->
         <include
           android:id="@+id/userMessage"
           layout="@layout/activity_feedback_1_p2"
@@ -68,7 +48,6 @@
       </LinearLayout>
     </ScrollView>
 
-    <!-- Bottom action buttons (Send, Clear Attachment, security footer) -->
     <include
       android:id="@+id/actionButtons"
       layout="@layout/activity_feedback_1_p3"

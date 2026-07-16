@@ -1,16 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~ Copyright (c) 2024 TubeAIO. All rights reserved.
-  ~
-  ~ Layout for the top section of the language selection screen.
-  ~ This component displays:
-  ~   - Language icon with circular background
-  ~   - Title ("Select Language")
-  ~   - Description text prompting user to choose their preferred language
-  ~
-  ~ The icon uses a primary color tint with a light circular background.
-  ~ The title is bold, and the description is centered with secondary text color.
-  -->
 <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools"
@@ -18,7 +6,6 @@
   android:layout_height="wrap_content"
   android:orientation="vertical">
 
-  <!-- Language icon with circular background -->
   <FrameLayout
     android:layout_width="70dp"
     android:layout_height="70dp"
@@ -42,7 +29,6 @@
       tools:ignore="UseAppTint" />
   </FrameLayout>
 
-  <!-- Title: Select Language -->
   <com.google.android.material.textview.MaterialTextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -53,7 +39,6 @@
     android:textSize="@dimen/title_text_size"
     tools:ignore="SpUsage,TextSizeCheck" />
 
-  <!-- Description / hint text -->
   <com.google.android.material.textview.MaterialTextView
     android:layout_width="300dp"
     android:layout_height="wrap_content"

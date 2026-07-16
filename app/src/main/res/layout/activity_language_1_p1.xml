@@ -1,15 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~ Copyright (c) 2024 TubeAIO. All rights reserved.
-  ~
-  ~ Layout for the action buttons section in the language selection screen.
-  ~ This component provides two buttons for the user:
-  ~   - Continue: Applies the selected language and proceeds to the next screen.
-  ~   - Skip for Now: Bypasses language selection and proceeds with default locale.
-  ~
-  ~ The Continue button uses a filled style with a checkmark icon.
-  ~ The Skip button uses an outlined style with a right arrow icon.
-  -->
 <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -18,7 +7,6 @@
   android:layout_height="match_parent"
   android:orientation="vertical">
 
-  <!-- Primary button: Continue with selected language -->
   <com.google.android.material.button.MaterialButton
     android:id="@+id/btnContinue"
     style="@style/Widget.Material3.Button.IconButton.Filled"
@@ -38,7 +26,6 @@
     app:iconTint="@color/style_color_text_inverse"
     tools:ignore="SpUsage,VisualLintButtonSize,TextSizeCheck" />
 
-  <!-- Secondary button: Skip language selection -->
   <com.google.android.material.button.MaterialButton
     android:id="@+id/btnSkipForNow"
     style="@style/Widget.Material3.Button.IconButton.Outlined"

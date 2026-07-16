@@ -1,18 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~ Copyright (c) 2024 TubeAIO. All rights reserved.
-  ~
-  ~ Main layout for the LanguageActivity. This screen allows users to select
-  ~ their preferred language for the application. The layout centers the content
-  ~ vertically and includes:
-  ~   - Top section with title and gradient text effect
-  ~   - Scrollable/grid container for language options (RadioGroup)
-  ~   - Bottom action buttons (Continue and Skip)
-  ~
-  ~ The layout uses a RelativeLayout as the root container to center the
-  ~ content vertically within the screen. Fits system windows to handle
-  ~ status bar and navigation bar insets.
-  -->
 <RelativeLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools"
@@ -22,21 +8,18 @@
   android:fitsSystemWindows="true"
   android:orientation="vertical">
 
-  <!-- Centered content container -->
   <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_centerInParent="true"
     android:orientation="vertical">
 
-    <!-- Top section: Title with gradient effect -->
     <include
       android:id="@+id/topSection"
       layout="@layout/activity_language_1_p0"
       android:layout_width="match_parent"
       android:layout_height="wrap_content" />
 
-    <!-- Language selection grid/radio button container -->
     <include
       android:id="@+id/languagesContainer"
       layout="@layout/activity_language_1_p2"
@@ -49,7 +32,6 @@
       android:layout_weight="1"
       tools:layout_height="50dp" />
 
-    <!-- Bottom action buttons: Continue and Skip -->
     <include
       android:id="@+id/buttons"
       layout="@layout/activity_language_1_p1"

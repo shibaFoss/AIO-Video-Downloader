@@ -1,20 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~ Copyright (c) 2024 TubeAIO. All rights reserved.
-  ~
-  ~ Layout for a single language selection radio button item in the language
-  ~ picker screen. This component is dynamically inflated for each language
-  ~ option and added to the RadioGroup container.
-  ~
-  ~ Features:
-  ~   - Custom radio button with background drawable for touch feedback
-  ~   - Right arrow icon indicating selection action
-  ~   - Single-line text with ellipsize for long language names
-  ~   - Consistent height (38dp) for uniform item appearance
-  ~
-  ~ The button tint and drawable tint colors are configured for proper
-  ~ visual feedback on selection state changes.
-  -->
 <com.google.android.material.radiobutton.MaterialRadioButton
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"

@@ -1,21 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~ Copyright (c) 2024 TubeAIO. All rights reserved.
-  ~
-  ~ Layout for the language selection container in the language picker screen.
-  ~ This component displays a scrollable list of language options within a
-  ~ MaterialCardView, allowing users to select their preferred language via
-  ~ radio buttons.
-  ~
-  ~ The layout uses:
-  ~   - MaterialCardView as the container with rounded corners and subtle stroke
-  ~   - ScrollView to make language list scrollable when content exceeds screen height
-  ~   - RadioGroup containing dynamically populated MaterialRadioButton views
-  ~   - BaselineLayout as a wrapper for proper baseline alignment
-  ~
-  ~ Radio buttons are added programmatically via LanguageActivity.populateLanguages()
-  ~ and each button is tagged with a LanguageItem containing the language code.
-  -->
 <com.google.android.material.card.MaterialCardView
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -28,7 +11,6 @@
   app:strokeColor="@color/style_color_card_stroke"
   app:strokeWidth="1dp">
 
-  <!-- Scrollable container for language radio group -->
   <ScrollView
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -37,7 +19,6 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content">
 
-      <!-- RadioGroup for language selection options -->
       <RadioGroup
         android:id="@+id/languageRadioGroup"
         android:layout_width="match_parent"

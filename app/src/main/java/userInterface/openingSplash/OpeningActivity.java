@@ -24,15 +24,13 @@ import dataRepo.appConfigs.AppConfigs;
 import dataRepo.appConfigs.AppConfigsHelper;
 import dataRepo.appConfigs.AppConfigsRepo;
 import dataRepo.userDetails.AppUserRepo;
-import userInterface.aboutUs.AboutActivity;
-import userInterface.appCrashed.AppCrashedActivity;
 import userInterface.appUpdater.AppUpdaterActivity;
 import userInterface.appUpdater.AppUpdaterUtils;
 import userInterface.appUpdater.AppUpdaterUtils.UpdateInfo;
 import userInterface.languagePicker.LanguageActivity;
 import userInterface.mainScreen.MainActivity;
 import userInterface.termsConsPolicy.TermsPolicyActivity;
-import userInterface.userFeedback.FeedbackActivity;
+import userInterface.userPrivacy.PrivacyPolicyActivity;
 
 /**
  * The initial splash activity shown when the application is launched.
@@ -428,7 +426,7 @@ public final class OpeningActivity extends BaseActivity<ActivityOpening1Binding>
 
         if (isLocaleConfigured) nextActivityToOpen = MainActivity.class;
 
-        destinationIntent = new Intent(this, LanguageActivity.class);
+        destinationIntent = new Intent(this, TermsPolicyActivity.class);
         //destinationIntent = new Intent(this, nextActivityToOpen);
         destinationIntent.getShortExtra(
                 TermsPolicyActivity.KEY_ACTIVITY_LAUNCHED_LOCATION,

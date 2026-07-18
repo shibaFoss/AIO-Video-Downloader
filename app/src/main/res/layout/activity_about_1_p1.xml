@@ -12,8 +12,7 @@
     android:layout_height="120dp"
     android:layout_gravity="center_horizontal"
     android:adjustViewBounds="true"
-    android:src="@drawable/img_app_logo"
-    app:tint="@color/style_color_primary" />
+    android:src="@drawable/img_app_logo" />
 
   <com.google.android.material.textview.MaterialTextView
     android:id="@+id/tvVersion"

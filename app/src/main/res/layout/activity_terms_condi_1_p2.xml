@@ -1,18 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~ Copyright (c) 2024 TubeAIO. All rights reserved.
-  ~
-  ~ Layout for the action button section in the Terms and Conditions screen.
-  ~ This component provides a single primary action button that allows users
-  ~ to agree to the terms and conditions and proceed to the next screen.
-  ~
-  ~ The button uses a filled Material 3 style with a checkmark icon positioned
-  ~ at the start (left) of the button text. The icon includes padding for proper
-  ~ spacing between the icon and text.
-  ~
-  ~ @see TermsPolicyActivity
-  ~ @see R.id#btnAgreeContinue
-  -->
 <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -26,9 +12,10 @@
     style="@style/Widget.Material3.Button.IconButton.Filled"
     android:layout_width="match_parent"
     android:layout_height="52dp"
-    android:fontFamily="@font/font_family_medium"
+    android:fontFamily="@font/font_family_bold"
     android:text="@string/label_agree_continue"
     android:textAllCaps="false"
+    android:textColor="@color/style_color_text_inverse"
     android:textSize="@dimen/normal_text_size"
     app:backgroundTint="@color/style_color_button_primary"
     app:cornerRadius="5dp"
@@ -36,5 +23,6 @@
     app:iconGravity="textStart"
     app:iconPadding="10dp"
     app:iconSize="24dp"
+    app:iconTint="@color/style_color_icon_inverse"
     tools:ignore="SpUsage,VisualLintButtonSize,TextSizeCheck" />
 </LinearLayout>

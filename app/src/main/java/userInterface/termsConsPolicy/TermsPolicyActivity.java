@@ -14,6 +14,7 @@ import coreUtils.library.views.ActivityAnimator;
 import coreUtils.library.views.StylizedToastView;
 import dataRepo.appConfigs.AppConfigs;
 import dataRepo.appConfigs.AppConfigsRepo;
+import userInterface.languagePicker.LanguageActivity;
 import userInterface.mainScreen.MainActivity;
 import userInterface.openingSplash.OpeningActivity;
 
@@ -223,7 +224,7 @@ public final class TermsPolicyActivity
 			
 			boolean fromOpeningScreen = isLaunchedFromOpeningScreen();
 			if (appConfigs.isTermsConditionsAgreed && fromOpeningScreen) {
-				Intent intent = new Intent(this, MainActivity.class);
+				Intent intent = new Intent(this, LanguageActivity.class);
 				startActivity(intent);
 				ActivityAnimator.animActivityFade(this);
 				finish();

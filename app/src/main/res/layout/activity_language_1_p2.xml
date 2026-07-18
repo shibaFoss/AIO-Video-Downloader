@@ -1,31 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView
+<ScrollView
   xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res-auto"
   android:layout_width="match_parent"
-  android:layout_height="wrap_content"
-  android:padding="5dp"
-  app:cardBackgroundColor="@color/style_color_card"
-  app:cardCornerRadius="5dp"
-  app:cardElevation="0dp"
-  app:strokeColor="@color/style_color_card_stroke"
-  app:strokeWidth="1dp">
+  android:layout_height="wrap_content">
 
-  <ScrollView
+  <com.google.android.material.internal.BaselineLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <com.google.android.material.internal.BaselineLayout
+    <RadioGroup
+      android:id="@+id/languageRadioGroup"
       android:layout_width="match_parent"
-      android:layout_height="wrap_content">
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:padding="10dp" />
 
-      <RadioGroup
-        android:id="@+id/languageRadioGroup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="10dp" />
-
-    </com.google.android.material.internal.BaselineLayout>
-  </ScrollView>
-</com.google.android.material.card.MaterialCardView>
+  </com.google.android.material.internal.BaselineLayout>
+</ScrollView>

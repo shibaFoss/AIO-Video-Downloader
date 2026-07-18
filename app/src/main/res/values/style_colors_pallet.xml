@@ -137,6 +137,6 @@
   <color name="style_color_transparent_dark">#14000000</color>
   <color name="style_color_transparent_darker">#66000000</color>
 
-  <color name="ic_launcher_background">@color/style_color_background</color>
+  <color name="ic_launcher_background">#202126</color>
 
 </resources>

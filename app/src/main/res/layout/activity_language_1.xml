@@ -10,15 +10,13 @@
 
   <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:layout_centerInParent="true"
     android:orientation="vertical">
 
     <include
-      android:id="@+id/topSection"
-      layout="@layout/activity_language_1_p0"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content" />
+      android:id="@+id/actionBar"
+      layout="@layout/activity_language_1_p0" />
 
     <include
       android:id="@+id/languagesContainer"
@@ -26,7 +24,7 @@
       android:layout_width="match_parent"
       android:layout_height="0dp"
       android:layout_marginLeft="10dp"
-      android:layout_marginTop="13dp"
+      android:layout_marginTop="10dp"
       android:layout_marginRight="10dp"
       android:layout_marginBottom="10dp"
       android:layout_weight="1"

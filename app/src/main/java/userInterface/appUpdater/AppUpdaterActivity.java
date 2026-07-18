@@ -120,7 +120,7 @@ public class AppUpdaterActivity extends BaseActivity<ActivityUpdater1Binding> {
 	 * @param inflater The layout inflater service used to create the view hierarchy.
 	 *                 Must not be {@code null}.
 	 * @return The {@link ActivityUpdater1Binding} instance containing references
-	 *         to all views defined in the app updater screen layout.
+	 * to all views defined in the app updater screen layout.
 	 * @see BaseActivity#inflateBinding(LayoutInflater)
 	 */
 	@Override
@@ -673,17 +673,21 @@ public class AppUpdaterActivity extends BaseActivity<ActivityUpdater1Binding> {
 	 * @see #requestForAllFilesAccess()
 	 */
 	private void promptForStorageAccess() {
-		new MessageDialogBuilder(this)
+		int messageStringId = R.string.text_storage_permission_required;
+		StylizedDialogBuilder dialogBuilder =
+			new MessageDialogBuilder(this, messageStringId).getDialogBuilder();
+		
+		Objects.requireNonNull(dialogBuilder)
 			.enableBackgroundBlur(60)
+			.applyBottomPositioning()
 			.setCancelable(true)
 			.enableFadeInAnimation()
 			.setDialogTitle(R.string.label_storage_permission_needed)
-			.setDialogTitle(R.string.text_storage_permission_required)
-			.setLeftButtonText(R.string.label_cancel)
-			.setRightButtonText(R.string.label_allow_now)
-			.setLeftButtonIcons(R.drawable.ic_cancel_circle, 0)
-			.setRightButtonIcons(R.drawable.ic_okay_check, 0)
-			.setOnRightClickListener(view -> requestForAllFilesAccess(), true)
+			.setNegativeButtonText(R.string.label_cancel)
+			.setPositiveButtonText(R.string.label_allow_now)
+			.setNegativeButtonIcon(R.drawable.ic_cancel_circle)
+			.setPositiveButtonIcon(R.drawable.ic_okay_check)
+			.setOnPositiveClickListener(view -> requestForAllFilesAccess(), true)
 			.show();
 	}
 	

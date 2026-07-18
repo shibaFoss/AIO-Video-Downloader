@@ -145,6 +145,7 @@ public class StylizedDialogBuilder {
 		dialogMarginPx = activity.getResources().getDimensionPixelSize(R.dimen._10);
 		setPositiveButtonIcon(null);
 		enableSlideUpAnimation();
+		applyBottomPositioning();
 		setCancelable(true);
 	}
 	

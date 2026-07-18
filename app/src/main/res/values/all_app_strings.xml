@@ -145,7 +145,7 @@
   <string name="label_download_has_failed">Download Has Failed</string>
   <string name="desc_download_failed_reason">The download was interrupted. <b>This may occur if the app was closed or your network connection dropped.</b></string>
   <string name="label_something_went_wrong">Something went wrong, try again later.</string>
-  <string name="text_storage_permission_required">Storage permission is required to download and install the update package. Please enable permission to continue</string>
+  <string name="text_storage_permission_required">The storage permission is required to download and install the latest app version. <b>Please allow the permission to continue.</b></string>
   <string name="label_allow_now">Allow Now</string>
   <string name="label_storage_permission_needed">Storage Permission Needed</string>
   <string name="title_app_crashed">Something Went Wrong</string>

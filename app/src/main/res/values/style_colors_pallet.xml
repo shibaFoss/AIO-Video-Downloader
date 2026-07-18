@@ -94,7 +94,7 @@
   <!-- Error -->
   <color name="style_color_error">#EF5350</color>
   <color name="style_color_error_container">#351A1A</color>
-  <color name="style_color_error_text">#FF8A80</color>
+  <color name="style_color_error_text">#FF6B5E</color>
   <color name="style_color_error_border">#8A2B2B</color>
 
   <!-- Info -->

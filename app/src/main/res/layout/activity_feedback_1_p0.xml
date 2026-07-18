@@ -12,7 +12,7 @@
     android:orientation="horizontal"
     tools:ignore="UselessParent">
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
       android:id="@+id/btnBack"
       android:layout_width="50dp"
       android:layout_height="match_parent"

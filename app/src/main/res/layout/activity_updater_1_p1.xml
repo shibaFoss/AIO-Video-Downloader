@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~ Copyright (c) 2024 TubeAIO. All rights reserved.
-  ~
-  ~ Layout for the action buttons section in the AppUpdaterActivity.
-  ~ This component provides three action buttons for the user:
-  ~   - Update Now: Starts the APK download process.
-  ~   - Remind Later: Schedules a reminder for the update.
-  ~   - Visit Official Site: Opens the official website in a browser.
-  ~
-  ~ The layout also includes a security footer reassuring users that
-  ~ updates are delivered from official sources and are secure.
-  -->
+
 <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -19,78 +8,63 @@
   android:layout_height="match_parent"
   android:orientation="vertical">
 
-  <!-- Primary button: Start update download -->
   <com.google.android.material.button.MaterialButton
     android:id="@+id/btnUpdateNow"
     style="@style/Widget.Material3.Button.IconButton.Filled"
     android:layout_width="match_parent"
     android:layout_height="52dp"
-
-    android:fontFamily="@font/font_family_medium"
+    android:fontFamily="@font/font_family_bold"
     android:text="@string/label_download_update"
     android:textAllCaps="false"
+    android:textColor="@color/style_color_text_inverse"
     android:textSize="@dimen/normal_text_size"
     app:backgroundTint="@color/style_color_button_primary"
     app:cornerRadius="5dp"
-
     app:icon="@drawable/ic_download"
     app:iconGravity="textStart"
     app:iconPadding="10dp"
     app:iconSize="23dp"
-
+    app:iconTint="@color/style_color_text_inverse"
     tools:ignore="SpUsage,VisualLintButtonSize,TextSizeCheck" />
 
-  <!-- Secondary button: Postpone update with reminder -->
   <com.google.android.material.button.MaterialButton
     android:id="@+id/btnRemindLater"
     style="@style/Widget.Material3.Button.IconButton.Outlined"
     android:layout_width="match_parent"
     android:layout_height="52dp"
-
-    android:fontFamily="@font/font_family_medium"
+    android:fontFamily="@font/font_family_regular"
     android:text="@string/label_remind_me_later"
     android:textColor="@color/style_color_button_outline"
     android:textSize="@dimen/normal_text_size"
-
     app:cornerRadius="5dp"
-
     app:icon="@drawable/ic_stopwatch_timer"
     app:iconGravity="textStart"
     app:iconPadding="10dp"
     app:iconSize="22dp"
     app:iconTint="@color/style_color_button_primary"
-
     app:strokeColor="@color/style_color_button_outline"
     app:strokeWidth="1dp"
-
     tools:ignore="SpUsage,VisualLintButtonSize,TextSizeCheck" />
 
-  <!-- Secondary button: Open official website -->
   <com.google.android.material.button.MaterialButton
     android:id="@+id/btnVisitOfficial"
     style="@style/Widget.Material3.Button.IconButton.Outlined"
     android:layout_width="match_parent"
     android:layout_height="52dp"
-
-    android:fontFamily="@font/font_family_medium"
+    android:fontFamily="@font/font_family_regular"
     android:text="@string/label_visit_official_site"
     android:textColor="@color/style_color_button_outline"
     android:textSize="@dimen/normal_text_size"
-
     app:cornerRadius="5dp"
-
     app:icon="@drawable/ic_browser_pointer"
     app:iconGravity="textStart"
     app:iconPadding="10dp"
     app:iconSize="20dp"
     app:iconTint="@color/style_color_button_primary"
-
     app:strokeColor="@color/style_color_button_outline"
     app:strokeWidth="1dp"
-
     tools:ignore="SpUsage,VisualLintButtonSize,TextSizeCheck" />
 
-  <!-- Security footer: Official source reassurance -->
   <LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -98,33 +72,25 @@
     android:layout_marginTop="2dp"
     android:orientation="horizontal">
 
-    <!-- Shield lock icon -->
     <com.google.android.material.imageview.ShapeableImageView
       android:layout_width="13dp"
       android:layout_height="13dp"
-
       android:layout_gravity="center_vertical"
       android:layout_marginRight="5dp"
       android:adjustViewBounds="true"
-
       android:src="@drawable/ic_shield_lock_fill"
-      android:tint="@color/style_color_text_hint"
-
+      android:tint="@color/style_color_text_secondary"
       tools:ignore="ImageContrastCheck" />
 
-    <!-- Footer text -->
     <com.google.android.material.textview.MaterialTextView
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_gravity="center_vertical"
-
-      android:fontFamily="@font/font_family_light"
+      android:fontFamily="@font/font_family_regular"
       android:gravity="center_vertical"
-
       android:text="@string/desc_secure_update_from_official_source"
-      android:textColor="@color/style_color_text_hint"
+      android:textColor="@color/style_color_text_secondary"
       android:textSize="@dimen/small_text_size"
-
       tools:ignore="SpUsage,TextSizeCheck,TextContrastCheck" />
   </LinearLayout>
 </LinearLayout>

@@ -1,15 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~ Copyright (c) 2024 TubeAIO. All rights reserved.
-  ~
-  ~ Layout for the download progress section in the download dialog.
-  ~ This component displays the current APK download status including:
-  ~   - Percentage progress with LinearProgressIndicator
-  ~   - Download speed (MB/s)
-  ~   - Estimated time remaining
-  ~   - Total file size
-  ~   - Warning message to keep the app open during download
-  -->
 <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -18,7 +7,6 @@
   android:layout_height="wrap_content"
   android:orientation="vertical">
 
-  <!-- Progress bar row -->
   <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -31,24 +19,22 @@
     android:paddingTop="5dp"
     android:paddingBottom="5dp">
 
-    <!-- Percentage text -->
     <com.google.android.material.textview.MaterialTextView
       android:id="@+id/tvPercentage"
-      android:layout_width="50dp"
+      android:layout_width="55dp"
       android:layout_height="wrap_content"
       android:ellipsize="end"
-      android:fontFamily="@font/font_family_medium"
+      android:fontFamily="@font/font_family_regular"
       android:gravity="left|center_vertical"
       android:maxLines="1"
       android:paddingLeft="10dp"
-      android:paddingRight="10dp"
+      android:paddingRight="5dp"
       android:singleLine="true"
       android:textColor="@color/style_color_text_primary"
       android:textSize="@dimen/message_text_size"
       tools:ignore="SpUsage,TextSizeCheck"
       tools:text="100%" />
 
-    <!-- Horizontal progress bar -->
     <com.google.android.material.progressindicator.LinearProgressIndicator
       android:id="@+id/pbDownload"
       android:layout_width="match_parent"
@@ -63,7 +49,6 @@
       tools:progress="10" />
   </LinearLayout>
 
-  <!-- Speed, time, and size metrics row -->
   <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -72,7 +57,6 @@
     android:baselineAligned="false"
     android:orientation="horizontal">
 
-    <!-- Download speed column -->
     <LinearLayout
       android:layout_width="0dp"
       android:layout_height="wrap_content"
@@ -93,7 +77,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:fontFamily="@font/font_family_bold"
+        android:fontFamily="@font/font_family_regular"
         android:textColor="@color/style_color_text_primary"
         android:textSize="@dimen/small_text_size"
         tools:ignore="SpUsage,TextSizeCheck"
@@ -102,20 +86,19 @@
       <com.google.android.material.textview.MaterialTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/font_family_regular"
         android:text="@string/label_download_speed"
         android:textColor="@color/style_color_text_secondary"
         android:textSize="@dimen/smaller_text_size"
         tools:ignore="SpUsage,TextSizeCheck,TextContrastCheck" />
     </LinearLayout>
 
-    <!-- Vertical divider -->
     <View
       android:layout_width="1dp"
       android:layout_height="match_parent"
       android:alpha="0.1"
       android:background="@color/color_text_hint" />
 
-    <!-- Time remaining column -->
     <LinearLayout
       android:layout_width="0dp"
       android:layout_height="wrap_content"
@@ -136,7 +119,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:fontFamily="@font/font_family_bold"
+        android:fontFamily="@font/font_family_regular"
         android:textColor="@color/style_color_text_primary"
         android:textSize="@dimen/small_text_size"
         tools:ignore="SpUsage,TextSizeCheck"
@@ -145,20 +128,19 @@
       <com.google.android.material.textview.MaterialTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/font_family_regular"
         android:text="@string/label_time_left"
         android:textColor="@color/style_color_text_secondary"
         android:textSize="@dimen/smaller_text_size"
         tools:ignore="SpUsage,TextSizeCheck,TextContrastCheck" />
     </LinearLayout>
 
-    <!-- Vertical divider -->
     <View
       android:layout_width="1dp"
       android:layout_height="match_parent"
       android:alpha="0.1"
       android:background="@color/color_text_hint" />
 
-    <!-- Total size column -->
     <LinearLayout
       android:layout_width="0dp"
       android:layout_height="wrap_content"
@@ -179,7 +161,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:fontFamily="@font/font_family_bold"
+        android:fontFamily="@font/font_family_regular"
         android:textColor="@color/style_color_text_primary"
         android:textSize="@dimen/small_text_size"
         tools:ignore="SpUsage,TextSizeCheck"
@@ -188,6 +170,7 @@
       <com.google.android.material.textview.MaterialTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/font_family_regular"
         android:text="@string/label_total_size"
         android:textColor="@color/style_color_text_secondary"
         android:textSize="@dimen/smaller_text_size"
@@ -195,7 +178,6 @@
     </LinearLayout>
   </LinearLayout>
 
-  <!-- Warning message: keep app open during download -->
   <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -204,7 +186,6 @@
     android:orientation="horizontal"
     android:padding="10dp">
 
-    <!-- Shield icon -->
     <com.google.android.material.imageview.ShapeableImageView
       android:id="@+id/ivShield"
       android:layout_width="50dp"
@@ -219,7 +200,6 @@
       app:shapeAppearance="@style/circular_image_view"
       tools:ignore="UseAppTint" />
 
-    <!-- Warning text container -->
     <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
@@ -229,7 +209,7 @@
       <com.google.android.material.textview.MaterialTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/font_family_semibold"
+        android:fontFamily="@font/font_family_bold"
         android:text="@string/label_dont_close_app"
         android:textColor="@color/style_color_error_text"
         android:textSize="@dimen/normal_text_size"
@@ -238,6 +218,7 @@
       <com.google.android.material.textview.MaterialTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:ellipsize="end"
         android:fontFamily="@font/font_family_regular"
         android:maxLines="3"
         android:singleLine="false"

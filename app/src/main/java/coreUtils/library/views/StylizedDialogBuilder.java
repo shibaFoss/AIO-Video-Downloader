@@ -60,7 +60,7 @@ import coreUtils.library.process.LoggerUtils;
  * @see #show()
  * @see #close()
  */
-public final class StylizedDialogBuilder {
+public class StylizedDialogBuilder {
 	
 	private final LoggerUtils logger = LoggerUtils.from(getClass());
 	private final WeakReference<BaseActivity<?>> weakActivityRef;
@@ -570,9 +570,9 @@ public final class StylizedDialogBuilder {
 	 * close after user interaction. When {@code false}, the dialog remains open,
 	 * allowing the user to continue interacting (e.g., for multi-step confirmations).
 	 *
-	 * @param listener                   The click listener to attach to the positive button.
+	 * @param listener                  The click listener to attach to the positive button.
 	 * @param shouldCloseAfterExecution If {@code true}, closes the dialog after listener
-	 *                                     execution.
+	 *                                  execution.
 	 * @return This builder instance for method chaining.
 	 * @see #setCloseOnPositiveButtonClick()
 	 * @see #close()
@@ -736,9 +736,9 @@ public final class StylizedDialogBuilder {
 	 * close after user interaction. When {@code false}, the dialog remains open,
 	 * allowing the user to continue interacting without re-opening.
 	 *
-	 * @param listener                   The click listener to attach to the negative button.
+	 * @param listener                  The click listener to attach to the negative button.
 	 * @param shouldCloseAfterExecution If {@code true}, closes the dialog after listener
-	 *                                     execution.
+	 *                                  execution.
 	 * @return This builder instance for method chaining.
 	 * @see #setNegativeButtonVisible(boolean)
 	 * @see #setCloseOnNegativeButtonClick()
@@ -928,7 +928,7 @@ public final class StylizedDialogBuilder {
 	 * cleared (e.g., after garbage collection) or if the activity was destroyed.
 	 *
 	 * @return The {@link BaseActivity} instance hosting this dialog, or
-	 *         {@code null} if the reference is no longer valid.
+	 * {@code null} if the reference is no longer valid.
 	 * @see BaseActivity
 	 * @see WeakReference
 	 */

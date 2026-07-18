@@ -1,17 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~ Copyright (c) 2024 TubeAIO. All rights reserved.
-  ~
-  ~ Main layout for the AppUpdaterActivity. This screen displays update information
-  ~ to the user including version details, release date, file size, changelog,
-  ~ and action buttons to start the download or postpone the update.
-  ~
-  ~ Layout structure:
-  ~   - Scrollable content area containing update details (version info, changelog)
-  ~   - Bottom action buttons (Update Now, Remind Later, Visit Official Website)
-  ~
-  ~ The layout fits system windows to handle status bar and navigation bar insets.
-  -->
 <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="match_parent"
@@ -25,7 +12,6 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <!-- Scrollable update details area -->
     <ScrollView
       android:layout_width="match_parent"
       android:layout_height="0dp"
@@ -36,7 +22,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Update details card (version, release date, file size, changelog) -->
         <include
           android:id="@+id/updateDetails"
           layout="@layout/activity_updater_1_p0"
@@ -45,7 +30,6 @@
       </LinearLayout>
     </ScrollView>
 
-    <!-- Bottom action buttons (Update Now, Remind Later, Visit Official) -->
     <include
       android:id="@+id/actionButtons"
       layout="@layout/activity_updater_1_p1"

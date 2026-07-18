@@ -47,7 +47,7 @@
         android:orientation="vertical"
         tools:ignore="UseCompoundDrawables">
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
           android:id="@+id/imgHappy"
           android:layout_width="50dp"
           android:layout_height="wrap_content"
@@ -77,7 +77,7 @@
         android:orientation="vertical"
         tools:ignore="UseCompoundDrawables">
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
           android:id="@+id/imgGood"
           android:layout_width="50dp"
           android:layout_height="wrap_content"
@@ -107,7 +107,7 @@
         android:orientation="vertical"
         tools:ignore="UseCompoundDrawables">
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
           android:id="@+id/imgAverage"
           android:layout_width="50dp"
           android:layout_height="wrap_content"
@@ -137,7 +137,7 @@
         android:orientation="vertical"
         tools:ignore="UseCompoundDrawables">
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
           android:id="@+id/imgPoor"
           android:layout_width="50dp"
           android:layout_height="wrap_content"
@@ -167,7 +167,7 @@
         android:orientation="vertical"
         tools:ignore="UseCompoundDrawables">
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
           android:id="@+id/imgAngry"
           android:layout_width="50dp"
           android:layout_height="wrap_content"

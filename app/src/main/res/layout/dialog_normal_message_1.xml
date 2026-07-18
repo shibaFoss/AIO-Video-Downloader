@@ -1,165 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
   xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
-  style="@style/style_dialog_window"
   android:layout_width="match_parent"
-  android:layout_height="wrap_content"
-  tools:ignore="UseAppTint,UseCompatTextViewDrawableXml">
+  android:layout_height="wrap_content">
 
-  <com.github.dangiashish.StyledCardView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:background_ColorType="gradient_linear"
-    app:background_Gradient_Angle="45"
-    app:background_Gradient_Color0="@color/color_card"
-    app:background_Gradient_Color1="@color/color_surface"
-    app:background_Type="fill_stroke"
-    app:cornerRadius="@dimen/default_radius"
-    app:shadow0_Outer_Alpha=".1"
-    app:shadow0_Outer_Angle="-45"
-    app:shadow0_Outer_Blur="@dimen/_5"
-    app:shadow0_Outer_Color="@color/color_primary_variant"
-    app:shadow0_Outer_Distance="@dimen/_5"
-    app:shadow1_Outer_Alpha="0.1"
-    app:shadow1_Outer_Angle="360"
-    app:shadow1_Outer_Blur="@dimen/_5"
-    app:shadow1_Outer_Color="@color/color_secondary"
-    app:shadow1_Outer_Distance="@dimen/_2"
-    app:shadow_Outer_Area="@dimen/_10"
-    app:stroke_Alpha=".3"
-    app:stroke_ColorType="gradient_sweep"
-    app:stroke_Gradient_Angle="-45"
-    app:stroke_Gradient_Color0="@color/color_primary"
-    app:stroke_Gradient_Color1="@color/color_primary_variant"
-    app:stroke_Width="1dp">
-
-    <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:orientation="vertical">
-
-      <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/color_primary_light"
-        android:elevation="@dimen/_1"
-        android:orientation="vertical">
-
-        <TextView
-          android:id="@+id/tvDialogTitle"
-          style="@style/style_textviews"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          android:layout_margin="@dimen/_15"
-          android:ellipsize="end"
-          android:fontFamily="@font/font_family_bold"
-          android:gravity="center"
-          android:maxLines="1"
-          android:shadowColor="@color/color_surface"
-          android:shadowDx="1"
-          android:shadowDy="1"
-          android:shadowRadius=".1"
-          android:text="@string/label__"
-          android:textColor="@color/color_text_primary"
-          android:textSize="@dimen/message_text_size"
-          tools:ignore="SpUsage,TextSizeCheck" />
-      </LinearLayout>
-
-      <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_margin="@dimen/_10"
-        android:layout_weight="1">
-
-        <TextView
-          android:id="@+id/tvDialogMessage"
-          style="@style/style_textviews"
-          android:autoLink="web"
-          android:fontFamily="@font/font_family_regular"
-          android:maxLines="5"
-          android:singleLine="false"
-          android:text="@string/label__"
-          android:textSize="@dimen/message_text_size"
-          tools:ignore="SpUsage,TextSizeCheck" />
-      </ScrollView>
-
-      <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/_10"
-        android:layout_marginTop="@dimen/_0"
-        android:layout_marginRight="@dimen/_10"
-        android:layout_marginBottom="@dimen/_10"
-        android:baselineAligned="true"
-        android:orientation="horizontal">
-
-        <RelativeLayout
-          android:id="@+id/btnDialogLeft"
-          android:layout_width="0dp"
-          android:layout_height="@dimen/_38"
-          android:layout_marginRight="@dimen/_5"
-          android:layout_weight="1"
-          android:background="@drawable/bg_button_negative"
-          android:clickable="true"
-          tools:ignore="TouchTargetSizeCheck">
-
-          <TextView
-            android:id="@+id/tvDialogLeftBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_margin="@dimen/_5"
-            android:alpha=".8"
-            android:drawableStart="@drawable/ic_cancel_circle"
-            android:drawablePadding="@dimen/_5"
-            android:drawableTint="@color/color_text_secondary"
-            android:ellipsize="end"
-            android:fontFamily="@font/font_family_regular"
-            android:gravity="center"
-            android:maxLines="1"
-            android:text="@string/label_cancel"
-            android:textColor="@color/color_text_secondary"
-            android:textSize="@dimen/message_text_size"
-            tools:ignore="SpUsage,TextSizeCheck,TextContrastCheck" />
-        </RelativeLayout>
-
-        <RelativeLayout
-          android:id="@+id/btnDialogRight"
-          android:layout_width="0dp"
-          android:layout_height="@dimen/_38"
-          android:layout_marginLeft="@dimen/_5"
-          android:layout_weight="1"
-          android:background="@drawable/bg_button_gradient"
-          android:clickable="true"
-          tools:ignore="TouchTargetSizeCheck">
-
-          <TextView
-            android:id="@+id/tvDialogRightBtn"
-            style="@style/style_textviews"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_margin="@dimen/_5"
-            android:drawableStart="@drawable/ic_okay_check"
-            android:drawablePadding="@dimen/_5"
-            android:drawableTint="@color/color_surface"
-            android:ellipsize="end"
-            android:fontFamily="@font/font_family_bold"
-            android:gravity="center_vertical|center_horizontal"
-            android:maxLines="1"
-            android:shadowColor="@color/color_primary"
-            android:shadowDx="1"
-            android:shadowDy="1"
-            android:shadowRadius=".1"
-            android:text="@string/label_okay"
-            android:textColor="@color/color_surface"
-            android:textSize="@dimen/message_text_size"
-            tools:ignore="SpUsage,TextSizeCheck" />
-        </RelativeLayout>
-
-      </LinearLayout>
-    </LinearLayout>
-  </com.github.dangiashish.StyledCardView>
-</LinearLayout>
+  <com.google.android.material.textview.MaterialTextView
+    android:id="@+id/tvDialogMessage"
+    style="@style/style_textviews"
+    android:autoLink="web"
+    android:ellipsize="end"
+    android:fontFamily="@font/font_family_regular"
+    android:maxLines="10"
+    android:singleLine="false"
+    android:textColor="@color/style_color_text_primary"
+    android:textSize="@dimen/message_text_size"
+    tools:ignore="SpUsage,TextSizeCheck"
+    tools:text="@string/label_something_went_wrong" />
+</ScrollView>

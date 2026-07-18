@@ -426,8 +426,7 @@ public final class OpeningActivity extends BaseActivity<ActivityOpening1Binding>
 
         if (isLocaleConfigured) nextActivityToOpen = MainActivity.class;
 
-        destinationIntent = new Intent(this, TermsPolicyActivity.class);
-        //destinationIntent = new Intent(this, nextActivityToOpen);
+        destinationIntent = new Intent(this, nextActivityToOpen);
         destinationIntent.getShortExtra(
                 TermsPolicyActivity.KEY_ACTIVITY_LAUNCHED_LOCATION,
                 TermsPolicyActivity.LAUNCHED_FROM_OPENING_SCREEN);

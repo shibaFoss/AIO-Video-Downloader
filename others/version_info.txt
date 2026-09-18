@@ -1,6 +1,6 @@
 latest_version=2026.08.15
 latest_apk_url=https://github.com/shibaFoss/AIO-Video-Downloader/releases/download/v2026.09.18/app-arm64-v8a-release.apk
 changelog_url=https://github.com/shibaFoss/AIO-Video-Downloader/blob/master/CHANGELOG.md
-published_date=2026.08.15
+published_date=2026.09.18
 version_hash=773b92a98112d8c7ad03741c0d91251f8d57a26a8e0ddc5b002d444b9c17e46b
 self_destruct=false
